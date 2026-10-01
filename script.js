@@ -310,23 +310,33 @@ document.addEventListener('click', e => {
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
     const href = a.getAttribute('href');
-    const c = $('#nv');
-    if (c && c.classList.contains('show') && window.bootstrap) {
-        const inst = bootstrap.Collapse.getInstance(c) || new bootstrap.Collapse(c, { toggle: false });
-        inst.hide();
-    }
     if (!href || href === '#' || href.length < 2) return;
     const target = document.querySelector(href);
-    if (target) {
-        e.preventDefault();
+    if (!target) return;
+
+    e.preventDefault();
+
+    const c = $('#nv');
+    const isOpen = c && c.classList.contains('show');
+
+    const doScroll = () => {
         const navPill = document.querySelector('.npill');
         const offset = (navPill ? navPill.offsetHeight : 70) + 15;
         const targetPos = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({
-            top: Math.max(0, targetPos),
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: Math.max(0, targetPos), behavior: 'smooth' });
         history.pushState(null, '', href);
+    };
+
+    if (isOpen && window.bootstrap) {
+        const inst = bootstrap.Collapse.getInstance(c) || new bootstrap.Collapse(c, { toggle: false });
+        // Listen for collapse to finish, then scroll
+        c.addEventListener('hidden.bs.collapse', function onHidden() {
+            c.removeEventListener('hidden.bs.collapse', onHidden);
+            doScroll();
+        });
+        inst.hide();
+    } else {
+        doScroll();
     }
 });
 })();
