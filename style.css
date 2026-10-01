@@ -2697,39 +2697,67 @@ footer li a:hover {
    ========================================================================== */
 
 @media (max-width: 991px) {
-    .npill {
+    .npill,
+    .npill.sc {
         width: 100%;
         border-radius: 0;
-        padding: 0.65rem 0;
-        background: rgba(6, 11, 26, 0.94);
+        padding: 0.75rem 0;
+        background: #ffffff !important;
+        border-bottom: 1px solid rgba(10, 134, 190, 0.16) !important;
+        box-shadow: 0 4px 20px rgba(10, 26, 60, 0.08) !important;
     }
 
     .npill .navbar-collapse {
-        padding: 1rem 0.8rem 0.6rem;
+        background: #ffffff !important;
+        border: 1px solid rgba(10, 134, 190, 0.16);
+        border-radius: 20px;
+        padding: 1.15rem 1rem;
+        margin-top: 0.85rem;
         width: 100%;
+        box-shadow: 0 16px 45px rgba(10, 26, 60, 0.12);
     }
 
     .npill .navbar-nav {
         gap: 0.25rem;
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.75rem;
     }
 
     .npill .nav-link {
+        color: #0a1a3c !important;
         padding: 0.65rem 1rem !important;
-        border-radius: 14px;
+        border-radius: 12px;
+        font-weight: 600;
+    }
+
+    .npill .nav-link:hover,
+    .npill .nav-link.show,
+    .npill .nav-link:focus {
+        color: #0A86BE !important;
+        background: rgba(10, 134, 190, 0.08) !important;
     }
 
     .npill .dropdown-menu {
-        background: rgba(10, 16, 36, 0.96);
-        border: 1px solid rgba(39, 194, 232, 0.2);
+        background: #ffffff !important;
+        border: 1px solid rgba(10, 134, 190, 0.14) !important;
+        border-radius: 14px;
+        box-shadow: 0 8px 24px rgba(10, 26, 60, 0.08) !important;
         margin: 0.3rem 0 0.6rem;
+    }
+
+    .npill .dropdown-item {
+        color: #0a1a3c !important;
+    }
+
+    .npill .dropdown-item:hover {
+        color: #0A86BE !important;
+        background: rgba(10, 134, 190, 0.08) !important;
     }
 
     .npill .nav-actions {
         width: 100%;
         padding-top: 0.85rem;
         margin-top: 0.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-top: 1px solid rgba(10, 134, 190, 0.12) !important;
         justify-content: space-between;
     }
 
@@ -2777,20 +2805,18 @@ footer li a:hover {
         padding: 0.75rem 1.35rem;
     }
 
-    /* Navbar on phone (Full Width Fill Type) */
-    .npill {
+    /* Navbar on phone (Full Width Fill Type - All Time White) */
+    .npill,
+    .npill.sc {
         top: 0;
         left: 0;
         right: 0;
         width: 100%;
         border-radius: 0;
         padding: 0.65rem 0;
-    }
-
-    .npill.sc {
-        top: 0;
-        width: 100%;
-        padding: 0.65rem 0;
+        background: #ffffff !important;
+        border-bottom: 1px solid rgba(10, 134, 190, 0.16) !important;
+        box-shadow: 0 4px 18px rgba(10, 26, 60, 0.08) !important;
     }
 
     .brand {
@@ -3522,12 +3548,14 @@ footer li a:hover {
 
 @media (max-width: 480px) {
     /* Extra fine-tuning for compact mobile phones */
-    .npill {
+    .npill,
+    .npill.sc {
         width: 100%;
         left: 0;
         top: 0;
         border-radius: 0;
         padding: 0.6rem 0;
+        background: #ffffff !important;
     }
 
     .brand {
