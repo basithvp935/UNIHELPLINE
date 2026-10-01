@@ -61,18 +61,28 @@ if (twText) {
 const names=unis.map(u=>u[0]);const mq1=$('#mq1');if(mq1)mq1.innerHTML=[...names,...names].map(x=>'<span>'+x+'</span>').join('');
 const dhalf=[...dests,...dests];
 const dh=[...dhalf,...dhalf].map(x=>'<span>'+x+'</span>').join('');
-$('#d1').innerHTML=dh;
-$('#d2').innerHTML=dh;
+const d1El=$('#d1'), d2El=$('#d2');
+if(d1El) d1El.innerHTML=dh;
+if(d2El) d2El.innerHTML=dh;
 
 /* universities + wishlist */
 const wl=new Set(),mono=n=>n.split(' ').filter(w=>/^[A-Z]/.test(w)).slice(0,2).map(w=>w[0]).join('');
-$('#us').innerHTML=unis.map((u,i)=>`<div class="uc rv" data-rv="up"><div class="lg"><img src="${u[2]}" alt="${u[0]}" loading="lazy" referrerpolicy="no-referrer" onerror="this.outerHTML='<span class=mono>${mono(u[0])}</span>'"></div><div class="uc-body"><h6 title="${u[0]}">${u[0]}</h6><div class="uc-loc"><i class="bi bi-geo-alt-fill"></i><span>${u[1]}</span></div></div><div class="rb"><a class="vp" href="https://unihelpline.com/university_profile/${u[3]}" target="_blank" rel="noopener"><span>View profile</span><i class="bi bi-arrow-up-right"></i></a><button class="hrt" data-i="${i}" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button></div></div>`).join('');
-function rwl(){$('#wc').textContent=wl.size;$('#wlb').innerHTML=wl.size?[...wl].map(i=>`<div class="wli"><span>${unis[i][0]}</span><a href="https://unihelpline.com/university_profile/${unis[i][3]}" target="_blank" rel="noopener" class="acc"><i class="bi bi-box-arrow-up-right"></i></a></div>`).join(''):'<p class="text-secondary">Your wishlist is empty. Tap the heart on a university to save it.</p>';$$('.hrt').forEach(b=>{const on=wl.has(+b.dataset.i);b.classList.toggle('on',on);b.firstChild.className='bi bi-heart'+(on?'-fill':'')})}
-$('#us').addEventListener('click',e=>{const b=e.target.closest('.hrt');if(!b)return;const i=+b.dataset.i;wl.has(i)?wl.delete(i):wl.add(i);rwl()});rwl();
+const us=$('#us');
+function rwl(){
+    const wc=$('#wc'), wlb=$('#wlb');
+    if(wc) wc.textContent=wl.size;
+    if(wlb) wlb.innerHTML=wl.size?[...wl].map(i=>`<div class="wli"><span>${unis[i][0]}</span><a href="https://unihelpline.com/university_profile/${unis[i][3]}" target="_blank" rel="noopener" class="acc"><i class="bi bi-box-arrow-up-right"></i></a></div>`).join(''):'<p class="text-secondary">Your wishlist is empty. Tap the heart on a university to save it.</p>';
+    $$('.hrt').forEach(b=>{const on=wl.has(+b.dataset.i);b.classList.toggle('on',on);b.firstChild.className='bi bi-heart'+(on?'-fill':'')});
+}
+if(us){
+    us.innerHTML=unis.map((u,i)=>`<div class="uc rv" data-rv="up"><div class="lg"><img src="${u[2]}" alt="${u[0]}" loading="lazy" referrerpolicy="no-referrer" onerror="this.outerHTML='<span class=mono>${mono(u[0])}</span>'"></div><div class="uc-body"><h6 title="${u[0]}">${u[0]}</h6><div class="uc-loc"><i class="bi bi-geo-alt-fill"></i><span>${u[1]}</span></div></div><div class="rb"><a class="vp" href="https://unihelpline.com/university_profile/${u[3]}" target="_blank" rel="noopener"><span>View profile</span><i class="bi bi-arrow-up-right"></i></a><button class="hrt" data-i="${i}" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button></div></div>`).join('');
+    us.addEventListener('click',e=>{const b=e.target.closest('.hrt');if(!b)return;const i=+b.dataset.i;wl.has(i)?wl.delete(i):wl.add(i);rwl()});
+}
+rwl();
 
 /* auto-slider & controls (slide 4 on desktop, 2 on mobile) */
-const us=$('#us');
 const getSlideAmount=()=>{
+    if(!us) return 310;
     const c=us.querySelector('.uc');
     if(!c) return 310;
     const isDesk=window.innerWidth>=992;
@@ -82,6 +92,7 @@ const getSlideAmount=()=>{
 };
 
 const slideNext=()=>{
+    if(!us) return;
     const amount=getSlideAmount();
     if(us.scrollLeft+us.clientWidth>=us.scrollWidth-25){
         us.scrollTo({left:0,behavior:'smooth'});
@@ -91,6 +102,7 @@ const slideNext=()=>{
 };
 
 const slidePrev=()=>{
+    if(!us) return;
     const amount=getSlideAmount();
     if(us.scrollLeft<=25){
         us.scrollTo({left:us.scrollWidth,behavior:'smooth'});
@@ -102,13 +114,14 @@ const slidePrev=()=>{
 let autoTimer=null,isHover=false;
 const startAuto=()=>{
     stopAuto();
-    if(rm)return;
+    if(rm||!us)return;
     autoTimer=setInterval(()=>{if(!isHover&&!dn)slideNext()},3800);
 };
 const stopAuto=()=>{if(autoTimer){clearInterval(autoTimer);autoTimer=null}};
 
-$('#pv').onclick=()=>{slidePrev();startAuto()};
-$('#nx').onclick=()=>{slideNext();startAuto()};
+const pv=$('#pv'), nx=$('#nx');
+if(pv) pv.onclick=()=>{slidePrev();startAuto()};
+if(nx) nx.onclick=()=>{slideNext();startAuto()};
 
 /* pagination dots for sets of 4 (desktop) or 2 (mobile) */
 const dotsWrap=$('#uni-dots');
@@ -121,7 +134,7 @@ function renderDots(){
 renderDots();
 
 function updateDots(){
-    if(!dotsWrap)return;
+    if(!dotsWrap||!us)return;
     const perPage=window.innerWidth>=992?4:2;
     const c=us.querySelector('.uc');
     if(!c)return;
@@ -130,9 +143,10 @@ function updateDots(){
     const activeIdx=Math.min(Math.round(us.scrollLeft/step),$$('.uni-dot',dotsWrap).length-1);
     $$('.uni-dot',dotsWrap).forEach((d,i)=>d.classList.toggle('active',i===activeIdx));
 }
-us.addEventListener('scroll',updateDots,{passive:true});
+if(us) us.addEventListener('scroll',updateDots,{passive:true});
 
 dotsWrap&&dotsWrap.addEventListener('click',e=>{
+    if(!us)return;
     const d=e.target.closest('.uni-dot');
     if(!d)return;
     const page=+d.dataset.page;
@@ -147,32 +161,41 @@ dotsWrap&&dotsWrap.addEventListener('click',e=>{
 
 addEventListener('resize',()=>{renderDots();updateDots()});
 
-us.addEventListener('mouseenter',()=>{isHover=true});
-us.addEventListener('mouseleave',()=>{isHover=false});
-const arw=$('.arw');
-if(arw){arw.addEventListener('mouseenter',()=>{isHover=true});arw.addEventListener('mouseleave',()=>{isHover=false})}
-us.addEventListener('touchstart',()=>{isHover=true},{passive:true});
-us.addEventListener('touchend',()=>{setTimeout(()=>{isHover=false},1200)},{passive:true});
-
 let dn=false,sx=0,sl=0,mv=false;
-us.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;mv=false;sx=e.clientX;sl=us.scrollLeft;us.style.scrollSnapType='none'});
-addEventListener('pointermove',e=>{if(!dn)return;const d=e.clientX-sx;if(Math.abs(d)>4)mv=true;us.scrollLeft=sl-d});
-addEventListener('pointerup',()=>{if(dn){dn=false;us.style.scrollSnapType='';startAuto()}});
-us.addEventListener('click',e=>{if(mv){e.preventDefault();e.stopPropagation();mv=false}},true);
-startAuto();
+if(us){
+    us.addEventListener('mouseenter',()=>{isHover=true});
+    us.addEventListener('mouseleave',()=>{isHover=false});
+    const arw=$('.arw');
+    if(arw){arw.addEventListener('mouseenter',()=>{isHover=true});arw.addEventListener('mouseleave',()=>{isHover=false})}
+    us.addEventListener('touchstart',()=>{isHover=true},{passive:true});
+    us.addEventListener('touchend',()=>{setTimeout(()=>{isHover=false},1200)},{passive:true});
+
+    us.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;mv=false;sx=e.clientX;sl=us.scrollLeft;us.style.scrollSnapType='none'});
+    addEventListener('pointermove',e=>{if(!dn)return;const d=e.clientX-sx;if(Math.abs(d)>4)mv=true;us.scrollLeft=sl-d});
+    addEventListener('pointerup',()=>{if(dn){dn=false;us.style.scrollSnapType='';startAuto()}});
+    us.addEventListener('click',e=>{if(mv){e.preventDefault();e.stopPropagation();mv=false}},true);
+    startAuto();
+}
 
 /* courses */
 const cb=$('#cats'),cpn=$('#cpan');
-cats.forEach((c,i)=>{const b=document.createElement('button');b.innerHTML=`<i class="bi ${c[1]}"></i>${c[0]}`;b.onclick=()=>sc(i);cb.append(b)});
-function sc(i){const c=cats[i];$$('button',cb).forEach((b,j)=>b.classList.toggle('on',j===i));cpn.innerHTML=`<div class="pin"><h3>${c[0]}</h3><div class="cg">${c[3].map(x=>`<a href="${C+x[1]}" target="_blank" rel="noopener">${x[0]}<i class="bi bi-arrow-up-right"></i></a>`).join('')}</div><a class="btn-o" href="https://unihelpline.com/getdepcourses/${c[2]}" target="_blank" rel="noopener">View all ${c[0]} →</a></div>`}
-sc(0);
+if(cb && cpn){
+    cats.forEach((c,i)=>{const b=document.createElement('button');b.innerHTML=`<i class="bi ${c[1]}"></i>${c[0]}`;b.onclick=()=>sc(i);cb.append(b)});
+    function sc(i){const c=cats[i];$$('button',cb).forEach((b,j)=>b.classList.toggle('on',j===i));cpn.innerHTML=`<div class="pin"><h3>${c[0]}</h3><div class="cg">${c[3].map(x=>`<a href="${C+x[1]}" target="_blank" rel="noopener">${x[0]}<i class="bi bi-arrow-up-right"></i></a>`).join('')}</div><a class="btn-o" href="https://unihelpline.com/getdepcourses/${c[2]}" target="_blank" rel="noopener">View all ${c[0]} →</a></div>`}
+    sc(0);
+}
 
 /* search */
 const idx=cats.flatMap(c=>c[3].map(x=>({t:x[0],c:c[0],u:C+x[1]}))),q=$('#q'),res=$('#res');
-q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase();if(!v){res.style.display='none';return}const m=idx.filter(x=>x.t.toLowerCase().includes(v)).slice(0,8);res.innerHTML=m.length?m.map(x=>`<a href="${x.u}" target="_blank" rel="noopener"><span>${x.t}</span><small>${x.c}</small></a>`).join(''):'<a href="#contact"><span>No match. Ask our counsellors</span></a>';res.style.display='block'});
-document.addEventListener('click',e=>{if(!e.target.closest('#sf'))res.style.display='none'});
-$('#sf').addEventListener('submit',e=>{e.preventDefault();const v=q.value.trim().toLowerCase(),m=idx.filter(x=>x.t.toLowerCase().includes(v)).slice(0,3),sm=$('#smsg');if(sm)sm.innerHTML=`<strong>${$('#level').value}</strong> in <strong>${$('#country').value}</strong>${v?' for “'+q.value+'”':''}. `+(v&&m.length?m.map(x=>`<a class="acc" href="${x.u}" target="_blank" rel="noopener">${x.t}</a>`).join(' · ')+' · ':'')+'<a class="acc" href="#contact">Ask a counsellor</a>';res.style.display='none'});
-$$('.cmd-tag').forEach(b=>b.addEventListener('click',()=>{q.value=b.dataset.kw;q.dispatchEvent(new Event('input'));q.focus()}));
+if(q && res){
+    q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase();if(!v){res.style.display='none';return}const m=idx.filter(x=>x.t.toLowerCase().includes(v)).slice(0,8);res.innerHTML=m.length?m.map(x=>`<a href="${x.u}" target="_blank" rel="noopener"><span>${x.t}</span><small>${x.c}</small></a>`).join(''):'<a href="#contact"><span>No match. Ask our counsellors</span></a>';res.style.display='block'});
+    document.addEventListener('click',e=>{if(!e.target.closest('#sf'))res.style.display='none'});
+    const sf=$('#sf');
+    if(sf){
+        sf.addEventListener('submit',e=>{e.preventDefault();const v=q.value.trim().toLowerCase(),m=idx.filter(x=>x.t.toLowerCase().includes(v)).slice(0,3),sm=$('#smsg');if(sm)sm.innerHTML=`<strong>${$('#level').value}</strong> in <strong>${$('#country').value}</strong>${v?' for “'+q.value+'”':''}. `+(v&&m.length?m.map(x=>`<a class="acc" href="${x.u}" target="_blank" rel="noopener">${x.t}</a>`).join(' · ')+' · ':'')+'<a class="acc" href="#contact">Ask a counsellor</a>';res.style.display='none'});
+    }
+}
+$$('.cmd-tag').forEach(b=>b.addEventListener('click',()=>{if(q){q.value=b.dataset.kw;q.dispatchEvent(new Event('input'));q.focus()}}));
 
 /* about more */
 const more=$('#more'),rmb=$('#rm');if(rmb&&more){rmb.onclick=()=>{const o=more.style.maxHeight;more.style.maxHeight=o?'':more.scrollHeight+'px';rmb.firstChild.textContent=o?'Read more':'Show less'};}
