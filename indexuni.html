@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" class="js" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UniHelpLine – Study Abroad Consultants | Overseas Education Consultants</title>
+    <meta name="description"
+        content="Expert study abroad consultants guiding you to top universities, visa support and scholarships. Start your journey today.">
+    <link rel="icon"
+        href="data:image/png;base64,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">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="prog"></div>
+
+    <nav class="npill navbar navbar-expand-lg">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a class="brand" href="#home"><span class="lg"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI0AAAB1CAYAAABzn2LRAAAf/UlEQVR42u2dd3xUVfbAv+e+NyUFQhGlKaChhQ4qKurib9X9uS42DCJNwRV0BRQsawE3q+tiL1jBjigI9rYu+1tkFRdEQwkIoSNFBAwtfco7vz9m0shMSIMkkPNhyMy7r973feeee96550K9VExGPjiGPz70t+O5Ckw9BRUUcdYB9zHmsfdB5bisgrbtB/cV0TPEIahYPjHqETHxKhormDgH8QiOEWNcgtgOYgQQxFGDX1T9KsZByBPINsbKVjRLHfYakV8s7H1+AvsDTQK/blnwRl6dr7E/prQG1yYslwvL3oKb3/L0xE3HEzS2SFBVzckYuQbVNgqgCoCKEgYEtOC5UkDQwq8S/hVaU8PbiggqEMRBxOS797n3deg9ZqeqbjMiGSB7VGQ9jtnsuM3aDd89u71O1FiALGxygASgLUF7JeOfu4ypY/993Gia4j/aJg49S0zwPsH8IcRAITKh71KAR2g5El6FYusWLQj/M6hQtI/w35LrScDAT4qkK7IKkaWWbS1dvShhE6Q4tarGrk9pju3ahOWKwbLBssHYYNlX8+To9487aAqkQ4cRrQISnIww5ihBU6xcwusLiPyiwo8WshCHr2OCOYtTU6fn1GiNjXqgB8ZajuXiEGjAZd/EI6OmHZfQFEibjsPbGeM8ZVQuryFowmsU7uAAwn/F8IUJWF+v+i5+1VHXRKP+eiXG/iAiNLYLbPe1/H3o7OMWmgJp12FYD2PJDES61zA04W0Lv/8C8rGKvrdmYfz8owLQqJSHMO57C4E5FJrQsmT+du17xzU0BXJa0oixCk8I4q4l0BQa4IjsQPRT4/DBqm8f/b+wmX4E/DR/XYTtOqsQlEOhMTZYriCu2HNJuWzxcQ8NQKdOI5r6jHwgyPm1DJqiCzJmpyKvEQxOX/3tI1urrbaum9wHY/9QBEdUaMB2Z+DWbtw3cOdx79xLT5+RsWn1m78Bxtfi62oh6H1imZ+6/Ober7ueP+mq6nnEzJDyP2faFMc9o17THCKJnUf2xtZPUVrWMk1TdIGF67ADw6OOul5bvSAlq8IXO+K+VoiVjrHjse1yaBoX2G6w7Mnce8nfjmtNU1w2rHl9aYLb3RaYVweutZWoPGNpIKNb/8lPdeifckKFtnb0fiC+YodUQB5kyvw+9ZomktbpNvJZkLG1WNMUHlND7gOfYJ63PflTlv1jyp4yL27IXRcg1vxCTVJuTeMC4waXZwF3XXBBPTQRwRk1UUSeqCPQFBxDBR5uEuT+BQtSAqUuasDoWIlPSFPLdVohIBWFxnaD7RrL7ec9f9w3T6Waq5WvPSmqo+tWFago3JNhSUa3ix68pdRT5Y1/B+S0Kh4DxNxKipp6aCLIupWvvazCiDpYFw1F9bluFz6w9oz+j/YE4JqbXhAxl1cPm057Gi25tb55KkM6dL/hOhV5o/Y3TxTuo6DcpXZWtu3btL5hRtegC4N6wbiKmqUKN0/hnpRx/4TVpCPj2+fXa5pIGift1TdRua0uVorPBOIbBLzde+5rYZrmxoEdBMupDh9zG8i8qq5rmiPaxq5Pe/kZgfvrnvoV8iw/IHTa35T2+xKwFHA7RT3pyu/86npoDiNrV0x/UJA5dQ4cFfzGIdPto2luDL12JZCQbYEnWMVak0t5cXmremgO11Qtn3YN6JI6afApZLsCiApJu2M5eY8LbAfsSmscD459UT005ZCgcYYCuXWykhR8lkOOS2m9z0XSVhuXo+CpDDgKlvy2HppyyMalr25QuKEuVlJBDJGiZHqVBjmG7puEuBwgRioOjnJ6PTTlNYyXTZsFvFqX/RNGIceriAPdNwQ4ISMI8SbU5ddy09OWF9e2qoemnBIwejvC9rr8pImCzy3kuaD9Zh+ttuVDjAGr3FrHi6FdPTTllE2p0w+gtToWp3zgOErAFnK8QrutebTdnAMeG+xygqPath6aivSmlr70oQof1HlwFBwjHIy3abkjh/bp+8BrgdscHhxjmtZDU1Fb0JFJgL/Og0NoQGFWvIsTduXSflUGuCxwGSgzzF0S6qGpqFG89IU1qD7KMSRZDdyc8Es2HVfughgXuK0yjGN11UNTCbE8/ieBX48FYAQQVTIT3DT95SCJy3eEbRwrclMlR2i0xLEOzepFr+4VlaeOJW0jClkNYzhp617arP4ZGngjd8dVsuuhqaT4xP888MuxBY6S2SiWlut30XrNDkiILb2S4+yrh6YKXXCF1zjWRCCngZeTV/3ECdv2QEIcOMUtY7OzHpqq2DaW9cYxB42CY1nkx3o4bfEa4jIyS4IT1A112X6rFdLpjFveBhlSzZF7jojsEmWriuwRI5kCAQdRxHgFaYxRPyongpwuxSILCyL5NPzbhL9rYfoVCUcAhoLnKVZuCsoQ1LKIycwmLz6OlZf0Q9WCoOwhNq4DI9vtr4vQ2LVI5b3mwJAq7iYb4VtUFzoiqS6sNYE99o7Vq1N80TZISk5xW3uZBkfmJaI4DrkN44jLOMCpS1ax8fwzwa+b6iowtQqa1d8//+9OZ4xdCXSr4KbbUOYYlXl+cRatXfhoZnk37H5Byp90r04BaXhEH4igQ07jBE5c/xP727Qmo3PHz+tyy2vXppMR0S9VpVzQKDpPxDy1euFjX1b0OEkXTO5iROYomnQUTRzyYmM4ae0WGm3fRbMLHr4rt1GjCzDGi8g+R2WzBd94vN7537097GC9TVNO6Xjm2NNF5fsybJo8MfKCCQYfXfXdM7sqc4zu/Sc/5gh3lDUaoTptmoKRForg2BbufL9j5Qc0r0GcVWh5GYMWZP0RcRzkSyx5OG32yG/qoSmXQTwuVYXeh0DjV5EXcXwPpC95PqMy++127t2nYtsfA10PN4TlSEGjhfsx4e0kEjSht1kiiJr/OpZMTJs94rv65qlsir9Q6F1Mrb+L+m9J/65ysAB0Pf/eUSryau15QsKpUg93QqLnGGVxj2tmvJ+X6x+59pMbMmvD2de6YaKOaoGNshWj/dZ+98zgymoXgK7973sFkTobLRi29QbGxLp39b72rUH10EQ+o59VdUpAtFv6oqn/rbR91O+uBl3Ov2cxqjdwbEiMqrzb69qZb9TbNEdAOp93b28RnS+QUJlhuUfepjnkeNFsmgK7LuSxLH6+q201//v97Gu31WuaapCu/e66yIguklBG8WNVkoJGV/YaPOv0emiqqmHOvWu4iswD3Bz7kiCG73sPnXVlPTSVffTOvWu8IDM4zkSRD/oMm31zvU1TYQ1z562CebrwgqqYauSI2jRGslVlH0iWiGQqHBBjDjpIjkDQGHFUjUPovaylYowIXlGrIUJDhHhF4oxIQ5BGKmKLgDGuv/4wY2BKPTTl0TDn3DEeMc9UZ36aKkKTb5D1KmaTOKxHzDrbcXZYQbNXxDmAy8kIaExm6qdjKj3HQ//+X9n7226Jd+V5G+S7JMGlpg1in2xl/TzXp/6gT2NaegDjlh2pc8ccqIempIYZIcqb1Z3UqALQ5CJsFLGWWbAEPyvE7axJ/fSOGot7TkpOcWvwhBYuh0QxJkkVr2JtcQf4KvXTMb8e19B07jfx94L5/EhkwioLGsfICkHmuR1Z4LWCixZ+fk+tDdtMvGSqxxvr7maUM1FpiyW7EevTtLk3rD3uoEk6e8KZiFmIiOsoQJMjIvMs5N+2Bj5fMm/y5nKf6B0z4jCcAk5LoC0izbDwolZjkAYI8YgVh2CHJuwzCviwTCaYLOAAxjqAkSzUbMHoFiz3Zu6+qMJNTtvrX/c2zAxcCXRBTI6tzmdL378x7biApmvfW09yLCsN5MQjlXMvPE3RfEvMG0F1fZA2787Djxy4bVoLLOkJ2g2sXgjtwZyK0JhiRjFGwp3W8LElnDxATGh5iWVySLmASDZi0hFZCWYRoou4+6KVFanDHle9eoEYHQDmFydov5H24YjdxzQ0nc+e+K0I5xyhRI2bVJnm9ZtZ3389qWxv623Pd8aRC0H7YkxXRJIAV4kbXujRrVZoSi4L7XsLIgsx5kuy4j4k5fRyGdk9r37tcsfIxRaycNmc62cdk9AknTXhWRUZW93ZPVXMt+Lw0Mr5f/lH9KbmsTh87vNQvQzMJYi0Lbz5pth0NDUDTbHf5IGZC+ZZ7uj3/eHqtPvwGXFWfnCiYhoGLNfjq2YN2XXMQNPprFtvFMz06k0Ja+Z6NDD5h6/+tjYqKDn2FaDXIuZ/QGJC7tCC49VKaML7MSCSjpEUbjv73cPVb6/Bb/xWlWGo/cryOcO+rfPQJPUdl6RiLQNxVxkaAUfkPdtn3bdiYcq6iAcc88hFiBkKJhkhtsRNq1vQhP4aWQdmAree8UVZ9dwn+c1T1JJJipm3bPaw9+o0NJ3PnPAtRs+pavJpRBYYPzelfRtBs4x+OAHRm1AzFpHWpW56XYamcB3zL8QMZXzvPWV10+MTGk9F5L/LZw17s05C0+nM8X8RMSlVzFi+0VL504qv/1Z6iqEbH+iC47oDS4YA7og3+liBxhjA+BCGMK539OmgU1JMr3WJz6Pm62WzhsyqU9AknTGhi2Oc5YLYlYXGiDy48j9/vz8yLGYKIgOKbgocB9AUxOhMYWyve8s0kAP2VCM6M/WdoV8VL6vVb7kd4zxLJeOYFb53+bRdKWBGp3Tiugf+hWNWAQM4bkXu4fkVr0QrTXtrRLZxzN9Bru81eFbLOgFNx77jRwIVnlhLBUT13tVfTzlz+eKHtxQWjPh7U65LeQ2/rMFwIfUCKjfwwo8vRitOfXfwRkU/NkZvr/XQJCaO84jyl0polx1evyat+ubhKSUKrp88EfHtRBhZT0qpWruJF3+8PVrp0neGfgDi7zVk9uBaDY1prH8B2lRwszmxufvaLV386JrCJSMn9+W6yT+i8kRdTld2FORxpq09N1phQPUtRC/qM3qaq1ZCk9h3XGuR8k/5o4DlyD2rFz5yTWrq9KLEjyPum0JAFwNJ9UyUpyKdp6MVrZg15EfU7CAn4TqohYPlXMp4B2LKCYzaQefSlYsfK3L/Xz+pPUHnE5RO9SRUiJo+TEu/mTGdIto4xuhHIINqnabp3OuWNqqMLafBu9frd3qtXPxEETBD774Gf3BdPTCVlj9FNYpnDl6K4vQaMefsWgWNuuRWyqFlVGStS6XzsiVPrigC5p6pKLPr73uVpCsvrY/qhhDRn4xqj1rTPJ3aZ3QCytByaJgV7kzpl5b2eCjGZdw4Dxmxn6B6cf09rw73TfBS4NNIRY6Y9eLohbUGGo+4himceBhglsXlZ52bmjY9FC+SnBJv9uQsdAw9IjTCxbyoxazmw4kTDHttpWDOnlArbrtL+89VQ3mCLYti77dC26lG9rdr+L/CMifkXFIFy5TevwFcniKPM2EvbzAYPkY1OvUVEHNWVJ7ySMVDv1oDjcKoMu+lsLyFJ+GcBYueygNg8F0tjWZ/C9K21MpuF2QcgN17weMGRyEmBlqfFKroaPBYBoLAntzQd7FCn6auEEjOITfJ7YKsXNixK5TaXgw4Aq2aQcN48AdLH8M2kBeEjNwQcBKGrmkM4bEuxduD0Do//wz7s4uuJaEhNG8W+l790p6X17fmxvalZspJnTvoQJ9hc121AppOp4/tD9q7DBtmc0LQd+GCBSkhYEaOa2Zy9BuEthE1zN4D9GzZmPMuOpODPj+xHi+7cvx8sHJDeNKmCKacKmTn0KJzHy7r1h5fMIgYGyuuER+v3sru1H9BbExJjZLro2VwPwP6J+KzPagYYt1uvtj4C1uy8sAbYaBndj5tWrXi0t+0JicItuXC8Tbg/fQdHNi+Fjzeoqc+Nh5+Wk9/ew/dzu7EwfwADeJjWbdzN/P2BKF5G/DnVa+2gVgk2AYiT6+kOHm1AhpV5wqJcuEq7I33B/svSQ2nGxl1VwOTFfwGo6dG1P/GwJ69XH7JWaSMvqZw8aadGXxw25OhJ90TZdRuZj49miXw0qUdSyz+cfseducGoEQOaYF9B+jWtjEv3V5SSQ56chZbUrdD62YlM5ULcDCPs3o35Pk/dCmxzeJNuzmQFwxNcVi4voE9GYwdeiYDL/td4eIFP6xg3vRF0PxIvW+2mkRtopDsGu89te1/vReRK6I1sR6fuSI1derWwsvJDHyJ0LHMhk4En1NyCpQ8fwDUKfupNEKWr/TEMIFgoFgsccnmIxAB3IAStosidkHIi9Cs+JxghGdAQQz+Q875YH4wfB1HaHoFx7HL6EGZGofGkxVzMVFeGZigXpu29KnCvHPm6gnTHeGcytlMWuk61mpev/bPpGFyyjAuY2veT6NyWeSKlUfW/DC1yO9y9W23qXBjfZ/4qHS7o6bgV+O4axoagdJhCir6xdolz9xduCB5QjdBnqi/m0dF9uCPiTh8p+f1HzZCJVCj0HTqfXPvCE3TTtu4hpcgy3Fe4hhMwFRLZTV/arMvsrng7y3grdneUwT7RIQbVy96am/hgoHjb6WSdkyNXZYYsGwwVmgCjcLwVEC09sbYhs4vNbop4bRRZUeNQqPKbw6pwYfXLHm2KAV88ugEUbmnrg0Ezd6VAes2g89X5AYwVgik3Vkc2FeL5wdT888yoDrNUf2qxqBJSkp2B4U+xd0h6W13TaL4mMCg9zYMJ9U1/X7LVefT//SOJCQ0DI87sgqhOZDv0LVFo9p66msY035epII+w+ecIqryw9vXzK8xaHyxTbtYWuTRVSPjmTu3yO8+5ObGks+4umgUXNa3K5f17VoXu00zordMwQFgZYJojRmXliM9i/ktpq9d8tz8Eivk2YOAOjt3dd0Tsx/Hei26KSGdHPiEmuyRCFow28oBS/0pEWyyAfU38qjekOncnBgx5UjvIbOHipG8ZW8PWg01GO6podQcqOp9a5ZOL+lMumpca+CimjgvR6vur71nxhd8tHwTLVucABLuRdk2WG5+Pujjim6nMOUPPcpbU6W6AUXnWG0dhG2Q9dcyHvBz1TGFY6RqDhqkp6AH1y198fkIDei5iHFX9pEB5dAXoE7QCb97KvOkQgmpDlXcBaM4iwJsypQV63eQvupn0g8GQ7EyBaMwjYHdmXzfMK5C13NogIVdPH6nenwEkxgTOadN7yFvj1bYu/SdQak1Ck3HfqMakKcnAZOjdPv6VrVOAsGSLyy9LrsoQCoaMQ6cFFc62jRYUF5O8TSKh+ZN4YRGRTEvBUNyHSGugbec7Icg3Z9X8iVqi3gPSDDUM4sW7FX+5+tDbkqKaACfkTynuUOgHyZwd8mHqCYkz3s6sMLjj4sykbt2qIrzBzFk5OaXWNy+9Yl0SIiHg1kR4mkENABBw5nNTyi1y305uYBTbLx3Oc9DlZJRehVtK4Pg8pK+vWSSh96d2tHBrfDrgVBwWeVlJ2pFfZ8XsP13qvKv1JnDd9Y4NA5ON1Q/K4zzLfUEaOV9M44DXg/p20rPD3/L5f1hRwZk7IdgADQY+pufA9syaNDyFIb0SyyxTXoObNz5K7hq4N10wAeNm7J61/6S1ePy8sCVZ8DqVNi4E7L9oWjA3ADkFHz8kOMLgRctHER1OGM7R5wWqdfgmaNQYpbOGjLz0LIaaZ4stdcifFWG3mxQJU3TpDGLN2xjy9YdtD2lVWHR+AHn4jUWEz9YQPaBbAhqyEvrjaVt367MGXUxJ8eWrOBP1ufBjm3gqYEBmgE/tGrFNz9uZfOPP9KuS1Hg1jUXnMGpJyTwxNfpLM/K4aDa2JYLsd1guxDLjbi97PAp/vzcCNpVxzC2578jOvKGzuymjv5PXsA9PlJ5jUDjZB1c5fOZjDKVUVUk1kNwew4vfTSfh8eXePfJ6EvPZthvTydt+x5+PpiHZdm0bdaIrs0blorrzgZemL8UcndC08Y10A0WsMBnN+bh2f9k2oMlo/3O6NaB2d06gDr48n04CBIOqPe4LPKD0HXGWjbsOwjxxUMCeYixvaZHBCZ5ToI6+X/GyHOr5w7aW2ugyQ/k9EWdLcDSKAZa1VKz+/3Q7mQemftvTmvRjBuT/7ckU14XZyW2PEzvDgbMWMtP330Fjbxho5Oj/BpMICcTunRl+sIFdJ72FreNGR5hNYPbW9q4dpmwXVRSpjKu16So123lPabI58veHrY4qhuwRvxIYhoYl6t3Gatsr/JBbAOtWzD62Tlc/tdpLF37U7k2CwJv/rifUx76F1999h40BFyxJWN9izWFdgSl6BaJPlJAlZgI3Xq3sSJ30EQgPwvOOo8J3+xmwP0v8P2yVeD4D3stRsA2pth+5TnG97412vo9r3nzaYVVy2YNLzM9bI1oGmPYERTtUUbjtBLDwCodJBgErwdOO4VP/rOUT/6bRmLn0zi/82l0bNmMJvFxxMR6ccSQkxdgZ7aP5b8c4D8bdrJ/0zYI7oPGsWDHhcMbTGldlNCANRn7ue+VOeTbblQsYl0ulu7aC40blAZNgQYeUvdkMmn+BnKDim3bBFxx7Mz3g8eKrG2CQZB86N2XzzZu4bOn5tG65Xf0bNGUls0aER8bg4qFWjZYLrBs3LYbn3Hziz8Y3q8+xvg+d0Wrrh6D3nxAVX9d/u51U8vTUz/qkpiY3Cxg5J5cr2fyrrS3SvegrhjbX4x8VSL1WGE8SjizeLHljimRjLF0yjLbhqAD+zIhNz801sjjAdsVMhBVQ9HgBogxEOsCd2yRIo6WPs3lhuxc2LE7dIwCP1DLE6FhXGjc06Hn4rLC455yisY9GQuaxoa0Y2jAWuT0aargiQHLA/sPQGZOGMyCN+kFf+3QMtsOjaey7QmMP+PpaPej16DXH1axMpe/O+Kh8rp3akTatB/0gAhLt6yb81GpwuRkS4LN0xFJrDI0ptj2RkpqDAUkPADOWKGKFqvYvJGHy7knoRtkWUU1WWD7FBhAZeXfK5YtPXQOrnLm3Av/tuySo0iL5w0M9ZYCqLmaiWd9HOkeJCXPcbtN9qOobF8+5/rHy91S1BQ0RmWlUTk7YuHcuUHhCAzmLxguW/A0GxO66cYuggWtgPdXQk1XMBBqQgo+6pT9mJZ4EEyRhqiQKzfsk3KC4Y8T+qgTukaHzWiwYzRgel7xeiM32dNUSa8IMDUKzeYN785V1NuuY3LEMUyOyAzqwmiP2imvc/s5pzLxvE2RCrsOfLk7tjMNYe6KOSNfqvADX5NXJshyUevaiIXvT10v8Ej9/a+Q5KF6FXecF3VcfLeBr1xhibnPqPPQ8jkjv6hUK1GTV7hp/buvo7Rpm3hNxEwFTkaTyUB6PQvlaXplDo51Inf2/zBi5+OSqZ4eV738gEB/CZgxlZ3rqca63CXNDHkHkRuB0s6kBSkBvXrCaMH5+hidd7469PU2gtzEvf2jao2uA1863VYzTkUXpb1/4/3V4HKseWnX/tr7RMS1ad07KRFXGHjrMBHzVpV7TyWWm0PWr3MZywNg7ueeC6dEq9f+/VPsfU1OulWR7o5YT6yqgnapNc1ToVG8ftZDiDY/teOQyJmw3n9mpio312uVwj7gVFyuFmUB0/XKly7a1+TElxyH/I5Wk1HVBUyt0TQALVuOjvXGZU0XMe9tXDfzo4grDZo4TOCt41fT8AY4k5g0YEdUR91Vz7UJKDcLJkGN9czK98dUu01YqwyFxMTkZo7leUrhk81rZ86JuFLybT2NWJ9hpNVxAk0OKs+g7qdJ+V3UuSb7JE9L8Of7/2SEUwOGj1d9OPazI9frrWWSmDi0odo8DpK2MX3mc5HBmRBjbPvlUGLHYxaatRheIib2Ze78XdQhmd0ufaGxWIHBKvQQMSsCrl9fXT03xXdkXSW1VBI7DUtRpIkEnEkbNrx9MOJKg+/oazCvO0Y6HyPQ5GGYjVgvknLlkrLqJ+l3TzaxPdZw0C4qssLt9s5MnTvmwNG4N7W6H5uYNDxZkQGqOnvTmreiO6KuvXsgopNAetY9aCQTMV8i8gm5+R/y+IgyB3r3uuTxpIBlrkJNEyw2BfOdd1b/c+Leo+uUreVyatLwUxRuN4gv6DbPb1n+xpbo8Pz5XIy5Mzzxl9RaaMT8isOXWOYjXPY/SRmUVaZWSU5xm9zY/pZjfouROBX91kWDj1M/HZNTE/ekznjMTu08/PdGzB8cZJex7Vc3pL0SPVBrxD1Nwf4dqgMxciFIw5qFxmwHWYSR+bhc32E1X0nKBYHDXXPP3z/aM6jOxRamZVDMr8DXK7+44+sadyfWKQ9FcrKVuCZuiEI/kA3G0f9bv/qN5WVuMzolFp/TDzG/Ac4B6QDSHBN+rVy90PgQ8wsiW8CsxPADxqTyyPWrQjEYh38X0OPCh3tiaU8sOqgaLyrLXS7r89RP7/i11vig66J3Kykp2e2z4i8BOV+RgIEVlt//z/T0GRmH3TglxbDbbkVAEvE7nTCmDZaciJiWKE2BWMTEIhKKlxARRAKICYDkYiQXOIDITsTajbAbkc24ZAPq2c5j1+8qHyAhOfvsCTHZ8Y3OEbG7K6aFiOOoyHqwFqZ9+ee1tfLFRV13j57W7Y99DHoJBo9isozqTscx325YNX1jpXeakmJzoKGLfI9FbI4StByy4wJMH+Ov6vn27ZvSMD+G3uoynVSlARBrBI+K2aA4X6XNm7y5ttf5MfMWsH//FHtHxrZzjMVZjlpNRch1DPvtoGx1OWZ506YnbV2wICVwNM+p+8V3xFm5rjYBl6uLQnMR01gFN4qIsX4WR9MOBp3vtxRkYq8jcsy+Ou7U48YOjsjZGNNERS0c4zWWqATIx9KfJejs9/idPY6lOw8eDPy6ZcsbFb5xffqkxBpzsKljWc18ljlJjMQq5hQ1GqNijFERtSQXR/0ikmvEWq523I9p8+7Mrst1e9zEG7TteVsjr+R2VmNagzlBRE9ExKdIjIhxQHwgbgygZBmRLER9iKiKsYyjHkdMvIjEIqJGxOc4eESMUdEcQbwg+8VijzhmLya4KTcma/OGfzybf6zV5f8DtASgu1VNzjQAAAAASUVORK5CYII="
+                        alt="UHL logo"></span>UniHelpLine</a>
+            <button class="navbar-toggler ms-auto" data-bs-toggle="collapse" data-bs-target="#nv" aria-label="Menu"><i
+                    class="bi bi-list fs-2"></i></button>
+            <div class="collapse navbar-collapse" id="nv">
+                <ul class="navbar-nav mx-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                            data-bs-toggle="dropdown">Our Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#services">Career Counselling</a></li>
+                            <li><a class="dropdown-item" href="#services">Admission Guidance</a></li>
+                            <li><a class="dropdown-item" href="#services">Application Process</a></li>
+                            <li><a class="dropdown-item" href="#services">Visa Assistance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                            data-bs-toggle="dropdown">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#about">UniHelpLine</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Study Destinations</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-2 nav-actions"><button class="wish" data-bs-toggle="offcanvas"
+                        data-bs-target="#wl" aria-label="Wishlist"><i class="bi bi-heart"></i><span
+                            id="wc">0</span></button>
+                    <a class="btn-x" href="#contact" data-tab="meet" style="padding:.35rem .35rem .35rem 1.3rem">Schedule a
+                        Meeting<i style="width:36px;height:36px" class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="mesh"><i></i><i></i><i></i></div>
+        <div class="dots"></div>
+        <div class="container position-relative">
+            <span class="tag fx mb-3"><i class="bi bi-patch-check-fill text-info me-1"></i> Valued by universities
+                across the globe</span>
+            <h1><span class="ln"><span>UniHelpLine.</span></span><span class="ln"><span>Matching you
+                        to</span></span><span class="ln"><span class="gt" id="typewriter-text">the perfect course.</span><span class="type-cursor" aria-hidden="true">|</span></span></h1>
+
+            <form class="cmd fx" id="sf" autocomplete="off">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-3 col-md-6 fld"><label>Study Level</label><select class="form-select" id="level">
+                            <option>All Level</option>
+                            <option>Master Degree</option>
+                            <option>Bachelor Degree</option>
+                            <option>Bachelor Top-up</option>
+                            <option>Post Graduate Diploma / Certificate - 1 Year</option>
+                            <option>Post Graduate Diploma / Certificate - 2 Year</option>
+                            <option>Undergraduate Diploma - 2 Year</option>
+                            <option>Undergraduate Diploma - 1 Year</option>
+                        </select></div>
+                    <div class="col-lg-3 col-md-6 fld"><label>Destination</label><select class="form-select"
+                            id="country">
+                            <option>All Country</option>
+                            <option>United Kingdom</option>
+                            <option>United States of America</option>
+                            <option>Ireland</option>
+                            <option>Canada</option>
+                            <option>Germany</option>
+                            <option>Georgia</option>
+                            <option>Hungary</option>
+                            <option>Poland</option>
+                            <option>Malta</option>
+                            <option>France</option>
+                            <option>Dubai / United Arab Emirates</option>
+                        </select></div>
+                    <div class="col-lg-4 col-md-8 fld"><label>Course</label><input class="form-control" id="q"
+                            placeholder="Nursing, MBA, Data Science…"></div>
+                    <div class="col-lg-2 col-md-4 p-2 d-grid"><button class="btn-x justify-content-between"
+                            type="submit" style="padding-left:1.3rem">Search<i class="bi bi-search"></i></button></div>
+                </div>
+                <div class="res" id="res"></div>
+            </form>
+
+            <div class="d-flex gap-2 flex-wrap mt-2 mb-4 fx hero-actions">
+                <a href="#contact" class="btn-x">Start your journey<i class="bi bi-arrow-up-right"></i></a>
+                <a href="#universities" class="btn-o">Explore universities</a>
+            </div>
+
+            <div class="tiles">
+                <div class="tile rv" data-rv="up"><b class="gt" data-n="97">0</b><span>Universities</span></div>
+                <div class="tile rv" data-rv="up"><b class="gt" data-n="8536">0</b><span>Courses</span></div>
+                <div class="tile rv" data-rv="up"><b class="gt" data-n="11">0</b><span>Countries</span></div>
+                <div class="tile rv" data-rv="up"><b class="gt" data-n="10000"
+                        data-plus="1">0</b><span>Placements</span></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="light l1">
+        <div class="dotsbg"></div>
+        <div class="container">
+            <div class="mb-4"><span class="tag rv" data-rv="up">About UniHelpLine</span>
+                <h2 class="h2 mt-3 rv" data-rv="up">Nearly 15 years of<br><span class="gt">sending students
+                        abroad.</span></h2>
+            </div>
+            <div class="bento">
+                <div class="bc b-a rv" data-rv="up">
+                    <div>
+                        <p class="fs-5">We represent International Universities and Institutes all over the world. We
+                            are a
+                            valued brand by universities across the globe and have enjoyed a very strong presence in the
+                            education industry for nearly 15 years and this gives us the edge.</p>
+                        <p class="text-secondary">Our team members have more than 15 years of experience in the middle
+                            east
+                            education market. Also, we have an excellent business relationship with various Universities
+                            across the world. We provide end-to-end guidance from your initial application to
+                            pre-departure.</p>
+                    </div>
+                    <div class="chk-grid">
+                        <div class="chk-card"><i class="bi bi-file-earmark-check-fill"></i><span>Pre-departure &amp;
+                                Visa Services</span></div>
+                        <div class="chk-card"><i class="bi bi-shield-plus"></i><span>Medical Insurance Coverage</span>
+                        </div>
+                        <div class="chk-card"><i class="bi bi-house-check-fill"></i><span>Accommodation &amp; Stay
+                                Support</span></div>
+                        <div class="chk-card"><i class="bi bi-airplane-engines-fill"></i><span>Airport Transfers &amp;
+                                Arrival</span></div>
+                    </div>
+                    <div class="b-a-foot">
+                        <a href="#services" class="btn-x">Explore all services<i class="bi bi-arrow-up-right"></i></a>
+                        <span class="text-secondary small d-inline-flex align-items-center"><i
+                                class="bi bi-patch-check-fill text-info me-1"></i> Trusted by 10,000+ students</span>
+                    </div>
+                </div>
+                <div class="bc b-b rv" data-rv="up" style="--d:.1s">
+                    <div class="giant gt">15+</div>
+                    <p class="mt-3 mb-0 text-secondary">years of experience in the Middle East education market</p>
+                </div>
+                <div class="bc b-c rv" data-rv="up" style="--d:.2s">
+                    <h5>Our offices</h5>
+                    <div class="mt-3"><span class="pill"><i class="bi bi-geo-alt-fill"></i>Dubai</span><span
+                            class="pill"><i class="bi bi-geo-alt-fill"></i>Riyadh</span><span class="pill"><i
+                                class="bi bi-geo-alt-fill"></i>Bangalore</span><span class="pill"><i
+                                class="bi bi-geo-alt-fill"></i>Kottayam</span></div>
+                </div>
+                <div class="bc b-d rv" data-rv="up"><i class="bi bi-translate fs-2 acc"></i>
+                    <h5 class="mt-3">Counsellors in your language</h5>
+                    <p class="text-secondary mb-0">Highly professional, well-qualified counsellors who speak different
+                        native languages.</p>
+                </div>
+                <div class="bc b-e rv" data-rv="up" style="--d:.1s"><i class="bi bi-airplane fs-2 acc"></i>
+                    <h5 class="mt-3">Application to travel</h5>
+                    <p class="text-secondary mb-0">Support from filling the application to travel, with medical
+                        insurance, stay and airport transfers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background:var(--s1)">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-5">
+                <div><span class="tag rv" data-rv="up"><i class="bi bi-patch-check-fill text-info me-1"></i> End-to-End Support</span>
+                    <h2 class="h2 mt-3 rv" data-rv="up">Our Services</h2>
+                </div>
+                <p class="lead2 mb-0 rv" data-rv="up">Four comprehensive ways we empower your global education journey, from your first question to your first day on campus.</p>
+            </div>
+            <div class="sx rv" data-rv="up" id="sx">
+                <!-- Service 01 -->
+                <div class="ex on">
+                    <div class="ex-watermark">01</div>
+                    <div class="ex-head">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="ic"><i class="bi bi-compass"></i></div>
+                            <span class="ex-tag"><i class="bi bi-stars"></i> 1-on-1 Guidance</span>
+                        </div>
+                        <span class="num">01</span>
+                    </div>
+                    <div class="ex-preview">
+                        <span class="ex-sub">Career Counselling</span>
+                        <span class="ex-hint">Explore Service <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-title-wrap">
+                            <span class="ex-kicker">Step 01 · Discovery &amp; Roadmap</span>
+                            <h3>Career Counselling</h3>
+                        </div>
+                        <div class="det">
+                            <p class="ex-desc">Personalized evaluation of your academic profile, strengths, and budget to design an optimal study abroad roadmap tailored specifically to your career ambitions.</p>
+                            <div class="ex-features">
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Course &amp; Country Matching</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Scholarship Assessment</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Native Language Counsellors</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Future Career &amp; PR ROI</span>
+                            </div>
+                            <div class="ex-footer">
+                                <a href="https://unihelpline.com/service_details/1" target="_blank" rel="noopener" class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
+                                <span class="ex-badge-stat"><i class="bi bi-shield-check"></i> 100% Free Consultation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 02 -->
+                <div class="ex">
+                    <div class="ex-watermark">02</div>
+                    <div class="ex-head">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="ic"><i class="bi bi-mortarboard"></i></div>
+                            <span class="ex-tag"><i class="bi bi-award-fill"></i> 97+ Tie-Ups</span>
+                        </div>
+                        <span class="num">02</span>
+                    </div>
+                    <div class="ex-preview">
+                        <span class="ex-sub">Admission Guidance</span>
+                        <span class="ex-hint">Explore Service <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-title-wrap">
+                            <span class="ex-kicker">Step 02 · Shortlisting &amp; Prep</span>
+                            <h3>Admission Guidance</h3>
+                        </div>
+                        <div class="det">
+                            <p class="ex-desc">Direct access to renowned global universities. We curate a strategic mix of dream, reach, and safe institutions while elevating your SOP, essays, and portfolio.</p>
+                            <div class="ex-features">
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> University Shortlisting</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> SOP &amp; LOR Drafting Support</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Application Fee Waiver Assistance</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Direct University Admissions Desk</span>
+                            </div>
+                            <div class="ex-footer">
+                                <a href="https://unihelpline.com/service_details/2" target="_blank" rel="noopener" class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
+                                <span class="ex-badge-stat"><i class="bi bi-mortarboard-fill"></i> 8,500+ Courses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 03 -->
+                <div class="ex">
+                    <div class="ex-watermark">03</div>
+                    <div class="ex-head">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="ic"><i class="bi bi-file-earmark-check"></i></div>
+                            <span class="ex-tag"><i class="bi bi-lightning-charge-fill"></i> Fast-Track</span>
+                        </div>
+                        <span class="num">03</span>
+                    </div>
+                    <div class="ex-preview">
+                        <span class="ex-sub">Application Process</span>
+                        <span class="ex-hint">Explore Service <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-title-wrap">
+                            <span class="ex-kicker">Step 03 · Submission &amp; Tracking</span>
+                            <h3>Application Process</h3>
+                        </div>
+                        <div class="det">
+                            <p class="ex-desc">End-to-end management of complex university applications, rigorous document verification, deadline monitoring, and active follow-ups to secure early offers.</p>
+                            <div class="ex-features">
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Error-Free Document Audits</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Real-Time Status Tracking</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Priority Turnaround Times</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Conditional Offer Follow-ups</span>
+                            </div>
+                            <div class="ex-footer">
+                                <a href="https://unihelpline.com/service_details/3" target="_blank" rel="noopener" class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
+                                <span class="ex-badge-stat"><i class="bi bi-patch-check-fill"></i> 10,000+ Placements</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 04 -->
+                <div class="ex">
+                    <div class="ex-watermark">04</div>
+                    <div class="ex-head">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="ic"><i class="bi bi-passport"></i></div>
+                            <span class="ex-tag"><i class="bi bi-shield-check"></i> 99% Success</span>
+                        </div>
+                        <span class="num">04</span>
+                    </div>
+                    <div class="ex-preview">
+                        <span class="ex-sub">Visa Assistance</span>
+                        <span class="ex-hint">Explore Service <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                    <div class="ex-body">
+                        <div class="ex-title-wrap">
+                            <span class="ex-kicker">Step 04 · Visas &amp; Pre-Departure</span>
+                            <h3>Visa Assistance</h3>
+                        </div>
+                        <div class="det">
+                            <p class="ex-desc">Comprehensive visa file compilation, financial proof advisory, embassy mock interview drills, pre-departure briefings, health insurance, and airport reception.</p>
+                            <div class="ex-features">
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Embassy Mock Interview Prep</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Financial Proof Advisory</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Medical &amp; Travel Insurance</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Accommodation &amp; Airport Transfers</span>
+                            </div>
+                            <div class="ex-footer">
+                                <a href="https://unihelpline.com/service_details/4" target="_blank" rel="noopener" class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
+                                <span class="ex-badge-stat"><i class="bi bi-airplane-fill"></i> Full Travel Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="light l2">
+        <div class="dotsbg"></div>
+        <div class="container text-center">
+            <span class="tag rv" data-rv="up">How it works</span>
+            <h2 class="h2 mt-3 rv" data-rv="up">Your journey with us</h2>
+            <div class="jr" id="jr">
+                <div class="js2">
+                    <div class="d"><i class="bi bi-chat-dots"></i></div>
+                    <h5>Counselling</h5>
+                    <p>Career guidance in your language.</p>
+                </div>
+                <div class="js2">
+                    <div class="d"><i class="bi bi-building"></i></div>
+                    <h5>Admission</h5>
+                    <p>Pick the right university.</p>
+                </div>
+                <div class="js2">
+                    <div class="d"><i class="bi bi-file-earmark-text"></i></div>
+                    <h5>Application</h5>
+                    <p>Filled and submitted.</p>
+                </div>
+                <div class="js2">
+                    <div class="d"><i class="bi bi-passport"></i></div>
+                    <h5>Visa</h5>
+                    <p>Visa services and insurance.</p>
+                </div>
+                <div class="js2">
+                    <div class="d"><i class="bi bi-airplane"></i></div>
+                    <h5>Travel</h5>
+                    <p>Stay and airport transfers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="universities" style="background:var(--s1)">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+                <div><span class="tag rv" data-rv="up">Partners</span>
+                    <h2 class="h2 mt-3 rv" data-rv="up">Major Universities</h2>
+                    <p class="lead2 mt-3 mb-0 rv" data-rv="up">Major universities preferred by most of the students
+                        going abroad.</p>
+                </div>
+                <div class="arw"><button id="pv" aria-label="Previous"><i class="bi bi-arrow-left"></i></button><button
+                        id="nx" aria-label="Next"><i class="bi bi-arrow-right"></i></button></div>
+            </div>
+            <div class="us" id="us"></div>
+            <div class="uni-pagination" id="uni-dots"></div>
+            <div class="text-center mt-3"><a class="btn-x" href="https://unihelpline.com/university" target="_blank"
+                    rel="noopener">View all universities<i class="bi bi-arrow-up-right"></i></a></div>
+        </div>
+    </section>
+
+    <section id="courses" class="light l1">
+        <div class="dotsbg"></div>
+        <div class="container">
+            <span class="tag rv" data-rv="up">Programmes</span>
+            <h2 class="h2 mt-3 rv" data-rv="up">Courses Offered</h2>
+            <p class="lead2 mt-3 rv" data-rv="up">Popular courses preferred by most of the students going abroad.</p>
+            <div class="cats rv" data-rv="up" id="cats"></div>
+            <div class="cpan rv" data-rv="up" id="cpan"></div>
+            <div class="text-center mt-5"><a class="btn-x" href="https://unihelpline.com/departments" target="_blank"
+                    rel="noopener">View all Courses<i class="bi bi-arrow-up-right"></i></a></div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="stx">
+            <div class="rv" data-rv="up"><b data-n="97">0</b><span>Universities</span></div>
+            <div class="rv" data-rv="up"><b data-n="8536">0</b><span>Courses</span></div>
+            <div class="rv" data-rv="up"><b data-n="11">0</b><span>Countries</span></div>
+            <div class="rv" data-rv="up"><b data-n="10000" data-plus="1">0</b><span>Placements</span></div>
+        </div>
+    </div>
+
+    <section id="destinations" class="px-0">
+        <div class="container mb-4"><span class="tag rv" data-rv="up">Where to study</span>
+            <h2 class="h2 mt-3 rv" data-rv="up">Study Destinations</h2>
+        </div>
+        <div class="dm">
+            <div class="tr" id="d1"></div>
+        </div>
+        <div class="dm">
+            <div class="tr" id="d2"></div>
+        </div>
+        <div class="container text-center mt-4"><a class="btn-x"
+                href="https://unihelpline.com/destinations-study-abroad-consultants" target="_blank" rel="noopener">All
+                destinations<i class="bi bi-arrow-up-right"></i></a></div>
+    </section>
+
+    <section class="pt-0">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="cta a rv" data-rv="left">
+                        <h3>Study abroad consultant in Kerala</h3>
+                        <div>
+                            <p class="opacity-75">Offices in Kottayam and Bangalore, with counsellors who speak your
+                                language.</p><a href="#contact" class="btn-x">Talk to us<i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cta b rv" data-rv="right">
+                        <h3>Book a free session with our counsellors</h3>
+                        <div>
+                            <p class="opacity-75">Pick a date and time that suits you.</p><a href="#contact"
+                                data-tab="meet" class="btn-x">Schedule a Meeting<i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="light l2">
+        <div class="dotsbg"></div>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-end justify-content-between mb-5 gap-3">
+                <div>
+                    <span class="tag rv" data-rv="up"><i class="bi bi-compass-fill me-1"></i> Knowledge Hub</span>
+                    <h2 class="h2 mt-3 mb-0 rv" data-rv="up">Your Guide to Global Education<br>and <span class="gt">Opportunities</span></h2>
+                </div>
+                <p class="text-secondary rv mb-0" data-rv="up" style="max-width: 440px; font-size: 0.95rem; line-height: 1.6;">
+                    Curated intelligence, step-by-step country handbooks, and direct course listings updated weekly for ambitious students worldwide.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="bl rv" data-rv="up" href="https://unihelpline.com/study-abroad-news" target="_blank" rel="noopener">
+                        <div class="bl-hero bl-hero-news">
+                            <div class="bl-hero-top">
+                                <span class="bl-badge bl-badge-live"><i class="bi bi-broadcast"></i> Live Updates</span>
+                                <span class="bl-hero-pill">Weekly Bulletin</span>
+                            </div>
+                            <div class="bl-icon-center">
+                                <div class="bl-icon-orb">
+                                    <i class="bi bi-newspaper"></i>
+                                </div>
+                            </div>
+                            <div class="bl-hero-bottom">
+                                <span class="bl-stat-text"><i class="bi bi-clock-history"></i> Updated weekly</span>
+                                <span class="bl-stat-tag">2026–27 Intakes</span>
+                            </div>
+                        </div>
+                        <div class="bl-body">
+                            <div class="bl-meta">
+                                <span><i class="bi bi-lightning-charge-fill me-1"></i> Policy & News Hub</span>
+                            </div>
+                            <h4 class="bl-title">Study Abroad News & Visa Insights</h4>
+                            <p class="bl-desc">Stay informed with the latest updates on international student visa rules, post-study work rights, scholarship cycles, and immigration policies.</p>
+                            <div class="bl-pills">
+                                <span class="bl-pill"><i class="bi bi-shield-check"></i> Visa Alerts</span>
+                                <span class="bl-pill"><i class="bi bi-award"></i> Scholarships</span>
+                                <span class="bl-pill"><i class="bi bi-calendar-event"></i> Deadlines</span>
+                            </div>
+                            <div class="bl-foot">
+                                <span>Explore News & Bulletins</span>
+                                <div class="bl-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a class="bl rv" data-rv="up" style="--d:.1s" href="https://unihelpline.com/destinations-study-abroad-consultants" target="_blank" rel="noopener">
+                        <div class="bl-hero bl-hero-dest">
+                            <div class="bl-hero-top">
+                                <span class="bl-badge bl-badge-dest"><i class="bi bi-compass"></i> Top Study Hubs</span>
+                                <span class="bl-hero-pill">11 Countries</span>
+                            </div>
+                            <div class="bl-icon-center">
+                                <div class="bl-icon-orb">
+                                    <i class="bi bi-globe-americas"></i>
+                                </div>
+                            </div>
+                            <div class="bl-hero-bottom">
+                                <span class="bl-stat-text"><i class="bi bi-geo-alt-fill"></i> UK · USA · CAN · AUS</span>
+                                <span class="bl-stat-tag">PR Guides</span>
+                            </div>
+                        </div>
+                        <div class="bl-body">
+                            <div class="bl-meta">
+                                <span><i class="bi bi-globe2 me-1"></i> Country Profiles</span>
+                            </div>
+                            <h4 class="bl-title">Global Study Destinations</h4>
+                            <p class="bl-desc">Explore comprehensive country guides detailing top university rankings, tuition structures, living expenses, and post-graduation settlement opportunities.</p>
+                            <div class="bl-pills">
+                                <span class="bl-pill"><i class="bi bi-cash-stack"></i> Cost of Living</span>
+                                <span class="bl-pill"><i class="bi bi-briefcase"></i> Work Rights</span>
+                                <span class="bl-pill"><i class="bi bi-buildings"></i> Top Campuses</span>
+                            </div>
+                            <div class="bl-foot">
+                                <span>Browse 11 Destinations</span>
+                                <div class="bl-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <a class="bl rv" data-rv="up" style="--d:.2s" href="https://unihelpline.com/departments" target="_blank" rel="noopener">
+                        <div class="bl-hero bl-hero-course">
+                            <div class="bl-hero-top">
+                                <span class="bl-badge bl-badge-course"><i class="bi bi-mortarboard"></i> Course Finder</span>
+                                <span class="bl-hero-pill">8,536+ Programs</span>
+                            </div>
+                            <div class="bl-icon-center">
+                                <div class="bl-icon-orb">
+                                    <i class="bi bi-journal-bookmark-fill"></i>
+                                </div>
+                            </div>
+                            <div class="bl-hero-bottom">
+                                <span class="bl-stat-text"><i class="bi bi-layers-fill"></i> Bachelors · Masters · PhD</span>
+                                <span class="bl-stat-tag">High ROI</span>
+                            </div>
+                        </div>
+                        <div class="bl-body">
+                            <div class="bl-meta">
+                                <span><i class="bi bi-book-half me-1"></i> Academic Directory</span>
+                            </div>
+                            <h4 class="bl-title">All Degree Courses & Majors</h4>
+                            <p class="bl-desc">Browse through 8,500+ accredited university degree programs across Computer Science, Business, Engineering, Healthcare, and emerging global fields.</p>
+                            <div class="bl-pills">
+                                <span class="bl-pill"><i class="bi bi-cpu"></i> STEM Degrees</span>
+                                <span class="bl-pill"><i class="bi bi-graph-up-arrow"></i> Fast Track</span>
+                                <span class="bl-pill"><i class="bi bi-check-circle"></i> Eligibility</span>
+                            </div>
+                            <div class="bl-foot">
+                                <span>Search Academic Courses</span>
+                                <div class="bl-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5"><span class="tag rv" data-rv="up">Get in touch</span>
+                    <h2 class="h2 mt-3 rv" data-rv="up" style="font-size:clamp(2.2rem,4.4vw,3.8rem)">Our experts are
+                        ready to answer all your queries</h2>
+                    <p class="lead2 mt-3 rv" data-rv="up">Please write to us at info@unihelpline.com or call us.</p>
+                    <div class="ci rv" data-rv="left"><i class="bi bi-envelope"></i>
+                        <div><b>Email</b><br><a href="mailto:info@unihelpline.com">info@unihelpline.com</a></div>
+                    </div>
+                    <div class="ci rv" data-rv="left"><i class="bi bi-telephone"></i>
+                        <div><b>Call us</b><br>UAE: +971 50 586 3293<br>India: +91 755 895 1509<br>UK: +44 7435 456580
+                        </div>
+                    </div>
+                    <div class="ci rv" data-rv="left"><i class="bi bi-geo-alt"></i>
+                        <div><b>Offices</b><br>Dubai · Riyadh · Bangalore · Kottayam</div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="fc rv" data-rv="right">
+                        <div class="ctab"><button class="on" data-t="enq">Send Enquiry</button><button
+                                data-t="meet">Schedule a Meeting</button></div>
+                        <form class="row g-3 enq" id="f-enq">
+                            <div class="col-md-6"><label>First Name</label><input class="form-control" required></div>
+                            <div class="col-md-6"><label>Last Name</label><input class="form-control" required></div>
+                            <div class="col-12"><label>Email</label><input type="email" class="form-control" required>
+                            </div>
+                            <div class="col-12"><label>Comment</label><textarea rows="4" class="form-control"
+                                    required></textarea></div>
+                            <div class="col-12"><button class="btn-x" type="submit">Submit<i
+                                        class="bi bi-arrow-up-right"></i></button><span
+                                    class="msg ms-3 small text-success"></span></div>
+                        </form>
+                        <form class="row g-3 enq d-none" id="f-meet">
+                            <div class="col-md-6"><label>Name</label><input class="form-control" required></div>
+                            <div class="col-md-6"><label>Email</label><input type="email" class="form-control" required>
+                            </div>
+                            <div class="col-12"><label>Mobile</label><input type="tel" class="form-control" required>
+                            </div>
+                            <div class="col-md-6"><label>Date</label><input type="date" class="form-control" required>
+                            </div>
+                            <div class="col-md-6"><label>Time</label><input type="time" class="form-control" required>
+                            </div>
+                            <div class="col-12"><label>Comment</label><textarea rows="3"
+                                    class="form-control"></textarea></div>
+                            <div class="col-12"><button class="btn-x" type="submit">Submit<i
+                                        class="bi bi-arrow-up-right"></i></button><span
+                                    class="msg ms-3 small text-success"></span></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5"><a class="brand mb-3" href="#home"><span class="lg"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI0AAAB1CAYAAABzn2LRAAAf/UlEQVR42u2dd3xUVfbAv+e+NyUFQhGlKaChhQ4qKurib9X9uS42DCJNwRV0BRQsawE3q+tiL1jBjigI9rYu+1tkFRdEQwkIoSNFBAwtfco7vz9m0shMSIMkkPNhyMy7r973feeee96550K9VExGPjiGPz70t+O5Ckw9BRUUcdYB9zHmsfdB5bisgrbtB/cV0TPEIahYPjHqETHxKhormDgH8QiOEWNcgtgOYgQQxFGDX1T9KsZByBPINsbKVjRLHfYakV8s7H1+AvsDTQK/blnwRl6dr7E/prQG1yYslwvL3oKb3/L0xE3HEzS2SFBVzckYuQbVNgqgCoCKEgYEtOC5UkDQwq8S/hVaU8PbiggqEMRBxOS797n3deg9ZqeqbjMiGSB7VGQ9jtnsuM3aDd89u71O1FiALGxygASgLUF7JeOfu4ypY/993Gia4j/aJg49S0zwPsH8IcRAITKh71KAR2g5El6FYusWLQj/M6hQtI/w35LrScDAT4qkK7IKkaWWbS1dvShhE6Q4tarGrk9pju3ahOWKwbLBssHYYNlX8+To9487aAqkQ4cRrQISnIww5ihBU6xcwusLiPyiwo8WshCHr2OCOYtTU6fn1GiNjXqgB8ZajuXiEGjAZd/EI6OmHZfQFEibjsPbGeM8ZVQuryFowmsU7uAAwn/F8IUJWF+v+i5+1VHXRKP+eiXG/iAiNLYLbPe1/H3o7OMWmgJp12FYD2PJDES61zA04W0Lv/8C8rGKvrdmYfz8owLQqJSHMO57C4E5FJrQsmT+du17xzU0BXJa0oixCk8I4q4l0BQa4IjsQPRT4/DBqm8f/b+wmX4E/DR/XYTtOqsQlEOhMTZYriCu2HNJuWzxcQ8NQKdOI5r6jHwgyPm1DJqiCzJmpyKvEQxOX/3tI1urrbaum9wHY/9QBEdUaMB2Z+DWbtw3cOdx79xLT5+RsWn1m78Bxtfi62oh6H1imZ+6/Ober7ueP+mq6nnEzJDyP2faFMc9o17THCKJnUf2xtZPUVrWMk1TdIGF67ADw6OOul5bvSAlq8IXO+K+VoiVjrHjse1yaBoX2G6w7Mnce8nfjmtNU1w2rHl9aYLb3RaYVweutZWoPGNpIKNb/8lPdeifckKFtnb0fiC+YodUQB5kyvw+9ZomktbpNvJZkLG1WNMUHlND7gOfYJ63PflTlv1jyp4yL27IXRcg1vxCTVJuTeMC4waXZwF3XXBBPTQRwRk1UUSeqCPQFBxDBR5uEuT+BQtSAqUuasDoWIlPSFPLdVohIBWFxnaD7RrL7ec9f9w3T6Waq5WvPSmqo+tWFago3JNhSUa3ix68pdRT5Y1/B+S0Kh4DxNxKipp6aCLIupWvvazCiDpYFw1F9bluFz6w9oz+j/YE4JqbXhAxl1cPm057Gi25tb55KkM6dL/hOhV5o/Y3TxTuo6DcpXZWtu3btL5hRtegC4N6wbiKmqUKN0/hnpRx/4TVpCPj2+fXa5pIGift1TdRua0uVorPBOIbBLzde+5rYZrmxoEdBMupDh9zG8i8qq5rmiPaxq5Pe/kZgfvrnvoV8iw/IHTa35T2+xKwFHA7RT3pyu/86npoDiNrV0x/UJA5dQ4cFfzGIdPto2luDL12JZCQbYEnWMVak0t5cXmremgO11Qtn3YN6JI6afApZLsCiApJu2M5eY8LbAfsSmscD459UT005ZCgcYYCuXWykhR8lkOOS2m9z0XSVhuXo+CpDDgKlvy2HppyyMalr25QuKEuVlJBDJGiZHqVBjmG7puEuBwgRioOjnJ6PTTlNYyXTZsFvFqX/RNGIceriAPdNwQ4ISMI8SbU5ddy09OWF9e2qoemnBIwejvC9rr8pImCzy3kuaD9Zh+ttuVDjAGr3FrHi6FdPTTllE2p0w+gtToWp3zgOErAFnK8QrutebTdnAMeG+xygqPath6aivSmlr70oQof1HlwFBwjHIy3abkjh/bp+8BrgdscHhxjmtZDU1Fb0JFJgL/Og0NoQGFWvIsTduXSflUGuCxwGSgzzF0S6qGpqFG89IU1qD7KMSRZDdyc8Es2HVfughgXuK0yjGN11UNTCbE8/ieBX48FYAQQVTIT3DT95SCJy3eEbRwrclMlR2i0xLEOzepFr+4VlaeOJW0jClkNYzhp617arP4ZGngjd8dVsuuhqaT4xP888MuxBY6S2SiWlut30XrNDkiILb2S4+yrh6YKXXCF1zjWRCCngZeTV/3ECdv2QEIcOMUtY7OzHpqq2DaW9cYxB42CY1nkx3o4bfEa4jIyS4IT1A112X6rFdLpjFveBhlSzZF7jojsEmWriuwRI5kCAQdRxHgFaYxRPyongpwuxSILCyL5NPzbhL9rYfoVCUcAhoLnKVZuCsoQ1LKIycwmLz6OlZf0Q9WCoOwhNq4DI9vtr4vQ2LVI5b3mwJAq7iYb4VtUFzoiqS6sNYE99o7Vq1N80TZISk5xW3uZBkfmJaI4DrkN44jLOMCpS1ax8fwzwa+b6iowtQqa1d8//+9OZ4xdCXSr4KbbUOYYlXl+cRatXfhoZnk37H5Byp90r04BaXhEH4igQ07jBE5c/xP727Qmo3PHz+tyy2vXppMR0S9VpVzQKDpPxDy1euFjX1b0OEkXTO5iROYomnQUTRzyYmM4ae0WGm3fRbMLHr4rt1GjCzDGi8g+R2WzBd94vN7537097GC9TVNO6Xjm2NNF5fsybJo8MfKCCQYfXfXdM7sqc4zu/Sc/5gh3lDUaoTptmoKRForg2BbufL9j5Qc0r0GcVWh5GYMWZP0RcRzkSyx5OG32yG/qoSmXQTwuVYXeh0DjV5EXcXwPpC95PqMy++127t2nYtsfA10PN4TlSEGjhfsx4e0kEjSht1kiiJr/OpZMTJs94rv65qlsir9Q6F1Mrb+L+m9J/65ysAB0Pf/eUSryau15QsKpUg93QqLnGGVxj2tmvJ+X6x+59pMbMmvD2de6YaKOaoGNshWj/dZ+98zgymoXgK7973sFkTobLRi29QbGxLp39b72rUH10EQ+o59VdUpAtFv6oqn/rbR91O+uBl3Ov2cxqjdwbEiMqrzb69qZb9TbNEdAOp93b28RnS+QUJlhuUfepjnkeNFsmgK7LuSxLH6+q201//v97Gu31WuaapCu/e66yIguklBG8WNVkoJGV/YaPOv0emiqqmHOvWu4iswD3Bz7kiCG73sPnXVlPTSVffTOvWu8IDM4zkSRD/oMm31zvU1TYQ1z562CebrwgqqYauSI2jRGslVlH0iWiGQqHBBjDjpIjkDQGHFUjUPovaylYowIXlGrIUJDhHhF4oxIQ5BGKmKLgDGuv/4wY2BKPTTl0TDn3DEeMc9UZ36aKkKTb5D1KmaTOKxHzDrbcXZYQbNXxDmAy8kIaExm6qdjKj3HQ//+X9n7226Jd+V5G+S7JMGlpg1in2xl/TzXp/6gT2NaegDjlh2pc8ccqIempIYZIcqb1Z3UqALQ5CJsFLGWWbAEPyvE7axJ/fSOGot7TkpOcWvwhBYuh0QxJkkVr2JtcQf4KvXTMb8e19B07jfx94L5/EhkwioLGsfICkHmuR1Z4LWCixZ+fk+tDdtMvGSqxxvr7maUM1FpiyW7EevTtLk3rD3uoEk6e8KZiFmIiOsoQJMjIvMs5N+2Bj5fMm/y5nKf6B0z4jCcAk5LoC0izbDwolZjkAYI8YgVh2CHJuwzCviwTCaYLOAAxjqAkSzUbMHoFiz3Zu6+qMJNTtvrX/c2zAxcCXRBTI6tzmdL378x7biApmvfW09yLCsN5MQjlXMvPE3RfEvMG0F1fZA2787Djxy4bVoLLOkJ2g2sXgjtwZyK0JhiRjFGwp3W8LElnDxATGh5iWVySLmASDZi0hFZCWYRoou4+6KVFanDHle9eoEYHQDmFydov5H24YjdxzQ0nc+e+K0I5xyhRI2bVJnm9ZtZ3389qWxv623Pd8aRC0H7YkxXRJIAV4kbXujRrVZoSi4L7XsLIgsx5kuy4j4k5fRyGdk9r37tcsfIxRaycNmc62cdk9AknTXhWRUZW93ZPVXMt+Lw0Mr5f/lH9KbmsTh87vNQvQzMJYi0Lbz5pth0NDUDTbHf5IGZC+ZZ7uj3/eHqtPvwGXFWfnCiYhoGLNfjq2YN2XXMQNPprFtvFMz06k0Ja+Z6NDD5h6/+tjYqKDn2FaDXIuZ/QGJC7tCC49VKaML7MSCSjpEUbjv73cPVb6/Bb/xWlWGo/cryOcO+rfPQJPUdl6RiLQNxVxkaAUfkPdtn3bdiYcq6iAcc88hFiBkKJhkhtsRNq1vQhP4aWQdmAree8UVZ9dwn+c1T1JJJipm3bPaw9+o0NJ3PnPAtRs+pavJpRBYYPzelfRtBs4x+OAHRm1AzFpHWpW56XYamcB3zL8QMZXzvPWV10+MTGk9F5L/LZw17s05C0+nM8X8RMSlVzFi+0VL504qv/1Z6iqEbH+iC47oDS4YA7og3+liBxhjA+BCGMK539OmgU1JMr3WJz6Pm62WzhsyqU9AknTGhi2Oc5YLYlYXGiDy48j9/vz8yLGYKIgOKbgocB9AUxOhMYWyve8s0kAP2VCM6M/WdoV8VL6vVb7kd4zxLJeOYFb53+bRdKWBGp3Tiugf+hWNWAQM4bkXu4fkVr0QrTXtrRLZxzN9Bru81eFbLOgFNx77jRwIVnlhLBUT13tVfTzlz+eKHtxQWjPh7U65LeQ2/rMFwIfUCKjfwwo8vRitOfXfwRkU/NkZvr/XQJCaO84jyl0polx1evyat+ubhKSUKrp88EfHtRBhZT0qpWruJF3+8PVrp0neGfgDi7zVk9uBaDY1prH8B2lRwszmxufvaLV386JrCJSMn9+W6yT+i8kRdTld2FORxpq09N1phQPUtRC/qM3qaq1ZCk9h3XGuR8k/5o4DlyD2rFz5yTWrq9KLEjyPum0JAFwNJ9UyUpyKdp6MVrZg15EfU7CAn4TqohYPlXMp4B2LKCYzaQefSlYsfK3L/Xz+pPUHnE5RO9SRUiJo+TEu/mTGdIto4xuhHIINqnabp3OuWNqqMLafBu9frd3qtXPxEETBD774Gf3BdPTCVlj9FNYpnDl6K4vQaMefsWgWNuuRWyqFlVGStS6XzsiVPrigC5p6pKLPr73uVpCsvrY/qhhDRn4xqj1rTPJ3aZ3QCytByaJgV7kzpl5b2eCjGZdw4Dxmxn6B6cf09rw73TfBS4NNIRY6Y9eLohbUGGo+4himceBhglsXlZ52bmjY9FC+SnBJv9uQsdAw9IjTCxbyoxazmw4kTDHttpWDOnlArbrtL+89VQ3mCLYti77dC26lG9rdr+L/CMifkXFIFy5TevwFcniKPM2EvbzAYPkY1OvUVEHNWVJ7ySMVDv1oDjcKoMu+lsLyFJ+GcBYueygNg8F0tjWZ/C9K21MpuF2QcgN17weMGRyEmBlqfFKroaPBYBoLAntzQd7FCn6auEEjOITfJ7YKsXNixK5TaXgw4Aq2aQcN48AdLH8M2kBeEjNwQcBKGrmkM4bEuxduD0Do//wz7s4uuJaEhNG8W+l790p6X17fmxvalZspJnTvoQJ9hc121AppOp4/tD9q7DBtmc0LQd+GCBSkhYEaOa2Zy9BuEthE1zN4D9GzZmPMuOpODPj+xHi+7cvx8sHJDeNKmCKacKmTn0KJzHy7r1h5fMIgYGyuuER+v3sru1H9BbExJjZLro2VwPwP6J+KzPagYYt1uvtj4C1uy8sAbYaBndj5tWrXi0t+0JicItuXC8Tbg/fQdHNi+Fjzeoqc+Nh5+Wk9/ew/dzu7EwfwADeJjWbdzN/P2BKF5G/DnVa+2gVgk2AYiT6+kOHm1AhpV5wqJcuEq7I33B/svSQ2nGxl1VwOTFfwGo6dG1P/GwJ69XH7JWaSMvqZw8aadGXxw25OhJ90TZdRuZj49miXw0qUdSyz+cfseducGoEQOaYF9B+jWtjEv3V5SSQ56chZbUrdD62YlM5ULcDCPs3o35Pk/dCmxzeJNuzmQFwxNcVi4voE9GYwdeiYDL/td4eIFP6xg3vRF0PxIvW+2mkRtopDsGu89te1/vReRK6I1sR6fuSI1derWwsvJDHyJ0LHMhk4En1NyCpQ8fwDUKfupNEKWr/TEMIFgoFgsccnmIxAB3IAStosidkHIi9Cs+JxghGdAQQz+Q875YH4wfB1HaHoFx7HL6EGZGofGkxVzMVFeGZigXpu29KnCvHPm6gnTHeGcytlMWuk61mpev/bPpGFyyjAuY2veT6NyWeSKlUfW/DC1yO9y9W23qXBjfZ/4qHS7o6bgV+O4axoagdJhCir6xdolz9xduCB5QjdBnqi/m0dF9uCPiTh8p+f1HzZCJVCj0HTqfXPvCE3TTtu4hpcgy3Fe4hhMwFRLZTV/arMvsrng7y3grdneUwT7RIQbVy96am/hgoHjb6WSdkyNXZYYsGwwVmgCjcLwVEC09sbYhs4vNbop4bRRZUeNQqPKbw6pwYfXLHm2KAV88ugEUbmnrg0Ezd6VAes2g89X5AYwVgik3Vkc2FeL5wdT888yoDrNUf2qxqBJSkp2B4U+xd0h6W13TaL4mMCg9zYMJ9U1/X7LVefT//SOJCQ0DI87sgqhOZDv0LVFo9p66msY035epII+w+ecIqryw9vXzK8xaHyxTbtYWuTRVSPjmTu3yO8+5ObGks+4umgUXNa3K5f17VoXu00zordMwQFgZYJojRmXliM9i/ktpq9d8tz8Eivk2YOAOjt3dd0Tsx/Hei26KSGdHPiEmuyRCFow28oBS/0pEWyyAfU38qjekOncnBgx5UjvIbOHipG8ZW8PWg01GO6podQcqOp9a5ZOL+lMumpca+CimjgvR6vur71nxhd8tHwTLVucABLuRdk2WG5+Pujjim6nMOUPPcpbU6W6AUXnWG0dhG2Q9dcyHvBz1TGFY6RqDhqkp6AH1y198fkIDei5iHFX9pEB5dAXoE7QCb97KvOkQgmpDlXcBaM4iwJsypQV63eQvupn0g8GQ7EyBaMwjYHdmXzfMK5C13NogIVdPH6nenwEkxgTOadN7yFvj1bYu/SdQak1Ck3HfqMakKcnAZOjdPv6VrVOAsGSLyy9LrsoQCoaMQ6cFFc62jRYUF5O8TSKh+ZN4YRGRTEvBUNyHSGugbec7Icg3Z9X8iVqi3gPSDDUM4sW7FX+5+tDbkqKaACfkTynuUOgHyZwd8mHqCYkz3s6sMLjj4sykbt2qIrzBzFk5OaXWNy+9Yl0SIiHg1kR4mkENABBw5nNTyi1y305uYBTbLx3Oc9DlZJRehVtK4Pg8pK+vWSSh96d2tHBrfDrgVBwWeVlJ2pFfZ8XsP13qvKv1JnDd9Y4NA5ON1Q/K4zzLfUEaOV9M44DXg/p20rPD3/L5f1hRwZk7IdgADQY+pufA9syaNDyFIb0SyyxTXoObNz5K7hq4N10wAeNm7J61/6S1ePy8sCVZ8DqVNi4E7L9oWjA3ADkFHz8kOMLgRctHER1OGM7R5wWqdfgmaNQYpbOGjLz0LIaaZ4stdcifFWG3mxQJU3TpDGLN2xjy9YdtD2lVWHR+AHn4jUWEz9YQPaBbAhqyEvrjaVt367MGXUxJ8eWrOBP1ufBjm3gqYEBmgE/tGrFNz9uZfOPP9KuS1Hg1jUXnMGpJyTwxNfpLM/K4aDa2JYLsd1guxDLjbi97PAp/vzcCNpVxzC2578jOvKGzuymjv5PXsA9PlJ5jUDjZB1c5fOZjDKVUVUk1kNwew4vfTSfh8eXePfJ6EvPZthvTydt+x5+PpiHZdm0bdaIrs0blorrzgZemL8UcndC08Y10A0WsMBnN+bh2f9k2oMlo/3O6NaB2d06gDr48n04CBIOqPe4LPKD0HXGWjbsOwjxxUMCeYixvaZHBCZ5ToI6+X/GyHOr5w7aW2ugyQ/k9EWdLcDSKAZa1VKz+/3Q7mQemftvTmvRjBuT/7ckU14XZyW2PEzvDgbMWMtP330Fjbxho5Oj/BpMICcTunRl+sIFdJ72FreNGR5hNYPbW9q4dpmwXVRSpjKu16So123lPabI58veHrY4qhuwRvxIYhoYl6t3Gatsr/JBbAOtWzD62Tlc/tdpLF37U7k2CwJv/rifUx76F1999h40BFyxJWN9izWFdgSl6BaJPlJAlZgI3Xq3sSJ30EQgPwvOOo8J3+xmwP0v8P2yVeD4D3stRsA2pth+5TnG97412vo9r3nzaYVVy2YNLzM9bI1oGmPYERTtUUbjtBLDwCodJBgErwdOO4VP/rOUT/6bRmLn0zi/82l0bNmMJvFxxMR6ccSQkxdgZ7aP5b8c4D8bdrJ/0zYI7oPGsWDHhcMbTGldlNCANRn7ue+VOeTbblQsYl0ulu7aC40blAZNgQYeUvdkMmn+BnKDim3bBFxx7Mz3g8eKrG2CQZB86N2XzzZu4bOn5tG65Xf0bNGUls0aER8bg4qFWjZYLrBs3LYbn3Hziz8Y3q8+xvg+d0Wrrh6D3nxAVX9d/u51U8vTUz/qkpiY3Cxg5J5cr2fyrrS3SvegrhjbX4x8VSL1WGE8SjizeLHljimRjLF0yjLbhqAD+zIhNz801sjjAdsVMhBVQ9HgBogxEOsCd2yRIo6WPs3lhuxc2LE7dIwCP1DLE6FhXGjc06Hn4rLC455yisY9GQuaxoa0Y2jAWuT0aargiQHLA/sPQGZOGMyCN+kFf+3QMtsOjaey7QmMP+PpaPej16DXH1axMpe/O+Kh8rp3akTatB/0gAhLt6yb81GpwuRkS4LN0xFJrDI0ptj2RkpqDAUkPADOWKGKFqvYvJGHy7knoRtkWUU1WWD7FBhAZeXfK5YtPXQOrnLm3Av/tuySo0iL5w0M9ZYCqLmaiWd9HOkeJCXPcbtN9qOobF8+5/rHy91S1BQ0RmWlUTk7YuHcuUHhCAzmLxguW/A0GxO66cYuggWtgPdXQk1XMBBqQgo+6pT9mJZ4EEyRhqiQKzfsk3KC4Y8T+qgTukaHzWiwYzRgel7xeiM32dNUSa8IMDUKzeYN785V1NuuY3LEMUyOyAzqwmiP2imvc/s5pzLxvE2RCrsOfLk7tjMNYe6KOSNfqvADX5NXJshyUevaiIXvT10v8Ej9/a+Q5KF6FXecF3VcfLeBr1xhibnPqPPQ8jkjv6hUK1GTV7hp/buvo7Rpm3hNxEwFTkaTyUB6PQvlaXplDo51Inf2/zBi5+OSqZ4eV738gEB/CZgxlZ3rqca63CXNDHkHkRuB0s6kBSkBvXrCaMH5+hidd7469PU2gtzEvf2jao2uA1863VYzTkUXpb1/4/3V4HKseWnX/tr7RMS1ad07KRFXGHjrMBHzVpV7TyWWm0PWr3MZywNg7ueeC6dEq9f+/VPsfU1OulWR7o5YT6yqgnapNc1ToVG8ftZDiDY/teOQyJmw3n9mpio312uVwj7gVFyuFmUB0/XKly7a1+TElxyH/I5Wk1HVBUyt0TQALVuOjvXGZU0XMe9tXDfzo4grDZo4TOCt41fT8AY4k5g0YEdUR91Vz7UJKDcLJkGN9czK98dUu01YqwyFxMTkZo7leUrhk81rZ86JuFLybT2NWJ9hpNVxAk0OKs+g7qdJ+V3UuSb7JE9L8Of7/2SEUwOGj1d9OPazI9frrWWSmDi0odo8DpK2MX3mc5HBmRBjbPvlUGLHYxaatRheIib2Ze78XdQhmd0ufaGxWIHBKvQQMSsCrl9fXT03xXdkXSW1VBI7DUtRpIkEnEkbNrx9MOJKg+/oazCvO0Y6HyPQ5GGYjVgvknLlkrLqJ+l3TzaxPdZw0C4qssLt9s5MnTvmwNG4N7W6H5uYNDxZkQGqOnvTmreiO6KuvXsgopNAetY9aCQTMV8i8gm5+R/y+IgyB3r3uuTxpIBlrkJNEyw2BfOdd1b/c+Leo+uUreVyatLwUxRuN4gv6DbPb1n+xpbo8Pz5XIy5Mzzxl9RaaMT8isOXWOYjXPY/SRmUVaZWSU5xm9zY/pZjfouROBX91kWDj1M/HZNTE/ekznjMTu08/PdGzB8cZJex7Vc3pL0SPVBrxD1Nwf4dqgMxciFIw5qFxmwHWYSR+bhc32E1X0nKBYHDXXPP3z/aM6jOxRamZVDMr8DXK7+44+sadyfWKQ9FcrKVuCZuiEI/kA3G0f9bv/qN5WVuMzolFp/TDzG/Ac4B6QDSHBN+rVy90PgQ8wsiW8CsxPADxqTyyPWrQjEYh38X0OPCh3tiaU8sOqgaLyrLXS7r89RP7/i11vig66J3Kykp2e2z4i8BOV+RgIEVlt//z/T0GRmH3TglxbDbbkVAEvE7nTCmDZaciJiWKE2BWMTEIhKKlxARRAKICYDkYiQXOIDITsTajbAbkc24ZAPq2c5j1+8qHyAhOfvsCTHZ8Y3OEbG7K6aFiOOoyHqwFqZ9+ee1tfLFRV13j57W7Y99DHoJBo9isozqTscx325YNX1jpXeakmJzoKGLfI9FbI4StByy4wJMH+Ov6vn27ZvSMD+G3uoynVSlARBrBI+K2aA4X6XNm7y5ttf5MfMWsH//FHtHxrZzjMVZjlpNRch1DPvtoGx1OWZ506YnbV2wICVwNM+p+8V3xFm5rjYBl6uLQnMR01gFN4qIsX4WR9MOBp3vtxRkYq8jcsy+Ou7U48YOjsjZGNNERS0c4zWWqATIx9KfJejs9/idPY6lOw8eDPy6ZcsbFb5xffqkxBpzsKljWc18ljlJjMQq5hQ1GqNijFERtSQXR/0ikmvEWq523I9p8+7Mrst1e9zEG7TteVsjr+R2VmNagzlBRE9ExKdIjIhxQHwgbgygZBmRLER9iKiKsYyjHkdMvIjEIqJGxOc4eESMUdEcQbwg+8VijzhmLya4KTcma/OGfzybf6zV5f8DtASgu1VNzjQAAAAASUVORK5CYII="
+                                alt="UHL logo"></span>UniHelpLine</a>
+                    <p class="text-secondary" style="max-width:380px">Matching you to the perfect course. Study abroad
+                        consultants with offices in Dubai, Riyadh, Bangalore and Kottayam.</p>
+                    <div class="soc"><a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a><a
+                            href="https://twitter.com/creaticksedu" target="_blank" rel="noopener"
+                            aria-label="Twitter"><i class="bi bi-twitter-x"></i></a><a
+                            href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a></div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h6>Explore</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#universities">Universities</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#destinations">Study Destinations</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <h6>Contact</h6>
+                    <ul class="list-unstyled">
+                        <li>info@unihelpline.com</li>
+                        <li>UAE +971 50 586 3293</li>
+                        <li>India +91 755 895 1509</li>
+                        <li>UK +44 7435 456580</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="word">UniHelpLine</div>
+            <p class="small text-secondary text-center mt-4 mb-0">© 2020 Unihelpline. All rights reserved. Powered by <a
+                    href="https://livecomputers.net/" target="_blank" rel="noopener" class="text-white">live
+                    computers</a></p>
+        </div>
+    </footer>
+
+    <button id="top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+    <div class="dial" id="dial"><a class="it" style="background:#25D366" href="https://wa.me/+917558951509"
+            target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a class="it"
+            style="background:#3b82f6" href="tel:+917558951509" aria-label="Call us"><i
+                class="bi bi-telephone-fill"></i></a><a class="it" style="background:#ef4444"
+            href="mailto:info@unihelpline.com" aria-label="Mail us"><i class="bi bi-envelope-fill"></i></a><button
+            class="mn" id="dm" aria-label="Contact options"><i class="bi bi-plus-lg"></i></button></div>
+    <div class="offcanvas offcanvas-end" id="wl">
+        <div class="offcanvas-header">
+            <h4 class="mb-0">Wishlist</h4><button class="btn-close" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="wlb"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

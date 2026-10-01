@@ -1,0 +1,218 @@
+(function(){
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const U='https://unihelpline.com/public/uploads/universities/';
+const unis=[["University of Georgia","Georgia",U+"17156336401715633640.png","University@of@Georgia"],["Swansea University","United Kingdom",U+"16617549451661754945.jpg","Swansea@University"],["University of Information Technology and Management in Rzeszow","Poland",U+"16548644011654864401.png","University@of@Information@Technology@and@Management@in@Rzeszow"],["Gannon University","USA",U+"16483268811648326881.jpg","Gannon@Univeristy"],["Trent University","Canada",U+"16901892501690189250.jpg","Trent@University"],["Southern Illinois University Carbondale","USA",U+"17290934941729093494.jpeg","Southern@Illinois@University@Carbondale"],["Ulster University – Belfast","United Kingdom",U+"16461710981646171098.png","Ulster@University@-@Belfast"],["Technological University Dublin","Ireland",U+"16777636461677763646.jpg","Technological@University@Dublin"],["University of Europe for Applied Sciences","Germany",U+"17447255421744725542.png","University@of@Europe@for@Applied@Sciences"],["University of the Fraser Valley","Canada",U+"16901895171690189517.jpg","Univeristy@of@Fraser@valley"],["Dublin City University","Ireland",U+"16777636461677763646.jpg","Dublin@City@University"],["University of Greenwich","United Kingdom",U+"16461710981646171098.png","University@of@Greenwich"]];
+const C='https://unihelpline.com/search_cat_course/';
+const cats=[["Business","bi-briefcase",2,[["Finance",8],["Accounting",11],["Business Management",12],["Marketing",14],["MBA",32],["Banking",57],["Insurance",58],["Risk Management",59]]],
+["Engineering","bi-gear-wide-connected",1,[["Mechanical Engineering",3],["Civil Engineering",9],["Electronic Engineering",10],["Aerospace Engineering",15],["Electrical",26],["Construction",27],["Architecture Engineering",28],["Automobile Engineering",33]]],
+["Computer Science","bi-cpu",6,[["Data Science and Analytics",34],["Cyber Security / Information Security",35],["Computer Science, Software Development",41],["Artificial Intelligence and Machine Learning",122],["IT Business Analysis",123],["Computer Information Systems",124],["Computer Technology",125],["Computer / Game Programing",126]]],
+["Science","bi-radioactive",4,[["Food Science",18],["Chemistry",19],["Biology",20],["Physics",21],["Environmental Science and Marine Science",22],["Psychology",23],["Health Science",31],["Veterinarian & Animal",38]]],
+["Health","bi-heart-pulse",3,[["Nursing",1],["Medicine",5],["Physiology",6],["Health and Safety",7],["Physiotherapy / Physical Therapy",13],["Health Care and Management",36],["Dental",40],["Dietetics, Food and Nutrition",43]]],
+["Automotive & Transportation","bi-truck",5,[["Automotive",29],["Transport Management",30],["Aviation",314]]],
+["Social Service","bi-people",10,[["Counselling",158],["Child Care",159],["Community Development",160],["Personal Support Work",161],["Social History",162],["Social Work",163],["Politics",176],["Special Educational Needs and Disabilities",179]]],
+["Education","bi-book",9,[["Language and Linguistics",151],["TESOL",155],["Education and Educational Studies",164],["Educational Leadership",165],["Childhood Studies",167],["Philosophy",173],["Sports Coaching",178],["Physical Education",181]]],
+["Arts","bi-palette",7,[["Creative Writing",140],["Languages and Cultures",141],["Journalism",142],["Music, Media, Multimedia & Performance",143],["Theology and Religious Studies",144],["History, Anthropology and Archaeology",145],["Art, Fine Arts and Design",146],["Drama, Theatre",147]]],
+["Law","bi-bank2",8,[["Law",149],["Criminology",150],["Forensic",170],["Human Rights",205],["Commercial Law",221],["Maritime Law",272],["Legal Practice",274],["Tax Law",302]]]];
+const dests=["United Kingdom","United States of America","Ireland","Canada","Germany","Georgia","Hungary","Poland","Malta","France","Dubai / UAE"];
+
+/* typewriter effect on hero heading (3-phrase continuous loop) */
+const twText = $('#typewriter-text');
+if (twText) {
+    const phrases = [
+        "the perfect course.",
+        "top universities.",
+        "your dream career."
+    ];
+    let pIdx = 0;
+    let charIdx = phrases[0].length;
+    let isDeleting = true;
+
+    function typeLoop() {
+        const current = phrases[pIdx];
+
+        if (isDeleting) {
+            charIdx--;
+            twText.textContent = current.substring(0, charIdx);
+            if (charIdx === 0) {
+                isDeleting = false;
+                pIdx = (pIdx + 1) % phrases.length;
+                setTimeout(typeLoop, 350);
+                return;
+            }
+            setTimeout(typeLoop, 45);
+        } else {
+            charIdx++;
+            twText.textContent = current.substring(0, charIdx);
+            if (charIdx === current.length) {
+                isDeleting = true;
+                setTimeout(typeLoop, 2000);
+                return;
+            }
+            setTimeout(typeLoop, 75 + Math.random() * 30);
+        }
+    }
+
+    // Start deleting after initial 1.6s so the user reads the initial heading
+    setTimeout(typeLoop, 1600);
+}
+
+/* marquees */
+const names=unis.map(u=>u[0]);const mq1=$('#mq1');if(mq1)mq1.innerHTML=[...names,...names].map(x=>'<span>'+x+'</span>').join('');
+const dh=[...dests,...dests,...dests].map(x=>'<span>'+x+'</span>').join('');$('#d1').innerHTML=dh;$('#d2').innerHTML=dh;
+
+/* universities + wishlist */
+const wl=new Set(),mono=n=>n.split(' ').filter(w=>/^[A-Z]/.test(w)).slice(0,2).map(w=>w[0]).join('');
+$('#us').innerHTML=unis.map((u,i)=>`<div class="uc rv" data-rv="up"><div class="lg"><img src="${u[2]}" alt="${u[0]}" loading="lazy" referrerpolicy="no-referrer" onerror="this.outerHTML='<span class=mono>${mono(u[0])}</span>'"></div><div class="uc-body"><h6 title="${u[0]}">${u[0]}</h6><div class="uc-loc"><i class="bi bi-geo-alt-fill"></i><span>${u[1]}</span></div></div><div class="rb"><a class="vp" href="https://unihelpline.com/university_profile/${u[3]}" target="_blank" rel="noopener"><span>View profile</span><i class="bi bi-arrow-up-right"></i></a><button class="hrt" data-i="${i}" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button></div></div>`).join('');
+function rwl(){$('#wc').textContent=wl.size;$('#wlb').innerHTML=wl.size?[...wl].map(i=>`<div class="wli"><span>${unis[i][0]}</span><a href="https://unihelpline.com/university_profile/${unis[i][3]}" target="_blank" rel="noopener" class="acc"><i class="bi bi-box-arrow-up-right"></i></a></div>`).join(''):'<p class="text-secondary">Your wishlist is empty. Tap the heart on a university to save it.</p>';$$('.hrt').forEach(b=>{const on=wl.has(+b.dataset.i);b.classList.toggle('on',on);b.firstChild.className='bi bi-heart'+(on?'-fill':'')})}
+$('#us').addEventListener('click',e=>{const b=e.target.closest('.hrt');if(!b)return;const i=+b.dataset.i;wl.has(i)?wl.delete(i):wl.add(i);rwl()});rwl();
+
+/* auto-slider & controls (slide 4 then 4) */
+const us=$('#us');
+const getSlideAmount=()=>{
+    const c=us.querySelector('.uc');
+    if(!c) return 310;
+    const gap=20; // 1.25rem = 20px
+    if(window.innerWidth>=992){
+        return (c.offsetWidth+gap)*4;
+    }else if(window.innerWidth>=768){
+        return (c.offsetWidth+gap)*2;
+    }else{
+        return c.offsetWidth+15;
+    }
+};
+
+const slideNext=()=>{
+    const amount=getSlideAmount();
+    if(us.scrollLeft+us.clientWidth>=us.scrollWidth-35){
+        us.scrollTo({left:0,behavior:'smooth'});
+    }else{
+        us.scrollBy({left:amount,behavior:'smooth'});
+    }
+};
+
+const slidePrev=()=>{
+    const amount=getSlideAmount();
+    if(us.scrollLeft<=35){
+        us.scrollTo({left:us.scrollWidth,behavior:'smooth'});
+    }else{
+        us.scrollBy({left:-amount,behavior:'smooth'});
+    }
+};
+
+let autoTimer=null,isHover=false;
+const startAuto=()=>{
+    stopAuto();
+    if(rm)return;
+    autoTimer=setInterval(()=>{if(!isHover&&!dn)slideNext()},3800);
+};
+const stopAuto=()=>{if(autoTimer){clearInterval(autoTimer);autoTimer=null}};
+
+$('#pv').onclick=()=>{slidePrev();startAuto()};
+$('#nx').onclick=()=>{slideNext();startAuto()};
+
+/* pagination dots for sets of 4 */
+const dotsWrap=$('#uni-dots');
+function renderDots(){
+    if(!dotsWrap)return;
+    const perPage=window.innerWidth>=992?4:(window.innerWidth>=768?2:1);
+    const pages=Math.ceil(unis.length/perPage);
+    dotsWrap.innerHTML=Array.from({length:pages},(_,i)=>`<button class="uni-dot ${i===0?'active':''}" data-page="${i}" aria-label="Page ${i+1}"></button>`).join('');
+}
+renderDots();
+
+function updateDots(){
+    if(!dotsWrap)return;
+    const perPage=window.innerWidth>=992?4:(window.innerWidth>=768?2:1);
+    const c=us.querySelector('.uc');
+    if(!c)return;
+    const step=(c.offsetWidth+20)*perPage;
+    const activeIdx=Math.min(Math.round(us.scrollLeft/step),$$('.uni-dot',dotsWrap).length-1);
+    $$('.uni-dot',dotsWrap).forEach((d,i)=>d.classList.toggle('active',i===activeIdx));
+}
+us.addEventListener('scroll',updateDots,{passive:true});
+
+dotsWrap&&dotsWrap.addEventListener('click',e=>{
+    const d=e.target.closest('.uni-dot');
+    if(!d)return;
+    const page=+d.dataset.page;
+    const perPage=window.innerWidth>=992?4:(window.innerWidth>=768?2:1);
+    const c=us.querySelector('.uc');
+    if(!c)return;
+    const step=(c.offsetWidth+20)*perPage;
+    us.scrollTo({left:page*step,behavior:'smooth'});
+    startAuto();
+});
+
+addEventListener('resize',()=>{renderDots();updateDots()});
+
+us.addEventListener('mouseenter',()=>{isHover=true});
+us.addEventListener('mouseleave',()=>{isHover=false});
+const arw=$('.arw');
+if(arw){arw.addEventListener('mouseenter',()=>{isHover=true});arw.addEventListener('mouseleave',()=>{isHover=false})}
+us.addEventListener('touchstart',()=>{isHover=true},{passive:true});
+us.addEventListener('touchend',()=>{setTimeout(()=>{isHover=false},1200)},{passive:true});
+
+let dn=false,sx=0,sl=0,mv=false;
+us.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;mv=false;sx=e.clientX;sl=us.scrollLeft;us.style.scrollSnapType='none'});
+addEventListener('pointermove',e=>{if(!dn)return;const d=e.clientX-sx;if(Math.abs(d)>4)mv=true;us.scrollLeft=sl-d});
+addEventListener('pointerup',()=>{if(dn){dn=false;us.style.scrollSnapType='';startAuto()}});
+us.addEventListener('click',e=>{if(mv){e.preventDefault();e.stopPropagation();mv=false}},true);
+startAuto();
+
+/* courses */
+const cb=$('#cats'),cpn=$('#cpan');
+cats.forEach((c,i)=>{const b=document.createElement('button');b.innerHTML=`<i class="bi ${c[1]}"></i>${c[0]}`;b.onclick=()=>sc(i);cb.append(b)});
+function sc(i){const c=cats[i];$$('button',cb).forEach((b,j)=>b.classList.toggle('on',j===i));cpn.innerHTML=`<div class="pin"><h3>${c[0]}</h3><div class="cg">${c[3].map(x=>`<a href="${C+x[1]}" target="_blank" rel="noopener">${x[0]}<i class="bi bi-arrow-up-right"></i></a>`).join('')}</div><a class="btn-o" href="https://unihelpline.com/getdepcourses/${c[2]}" target="_blank" rel="noopener">View all ${c[0]} →</a></div>`}
+sc(0);
+
+/* search */
+const idx=cats.flatMap(c=>c[3].map(x=>({t:x[0],c:c[0],u:C+x[1]}))),q=$('#q'),res=$('#res');
+q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase();if(!v){res.style.display='none';return}const m=idx.filter(x=>x.t.toLowerCase().includes(v)).slice(0,8);res.innerHTML=m.length?m.map(x=>`<a href="${x.u}" target="_blank" rel="noopener"><span>${x.t}</span><small>${x.c}</small></a>`).join(''):'<a href="#contact"><span>No match. Ask our counsellors</span></a>';res.style.display='block'});
+document.addEventListener('click',e=>{if(!e.target.closest('#sf'))res.style.display='none'});
+$('#sf').addEventListener('submit',e=>{e.preventDefault();const v=q.value.trim().toLowerCase(),m=idx.filter(x=>x.t.toLowerCase().includes(v)).slice(0,3),sm=$('#smsg');if(sm)sm.innerHTML=`<strong>${$('#level').value}</strong> in <strong>${$('#country').value}</strong>${v?' for “'+q.value+'”':''}. `+(v&&m.length?m.map(x=>`<a class="acc" href="${x.u}" target="_blank" rel="noopener">${x.t}</a>`).join(' · ')+' · ':'')+'<a class="acc" href="#contact">Ask a counsellor</a>';res.style.display='none'});
+$$('.cmd-tag').forEach(b=>b.addEventListener('click',()=>{q.value=b.dataset.kw;q.dispatchEvent(new Event('input'));q.focus()}));
+
+/* about more */
+const more=$('#more'),rmb=$('#rm');if(rmb&&more){rmb.onclick=()=>{const o=more.style.maxHeight;more.style.maxHeight=o?'':more.scrollHeight+'px';rmb.firstChild.textContent=o?'Read more':'Show less'};}
+
+/* services expand */
+$$('#sx .ex').forEach(x=>{const on=()=>{$$('#sx .ex').forEach(y=>y.classList.toggle('on',y===x))};x.addEventListener('mouseenter',on);x.addEventListener('click',on);x.addEventListener('focus',on)});
+
+/* contact tabs + forms */
+function tab(t){$$('.ctab button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));$('#f-enq').classList.toggle('d-none',t!=='enq');$('#f-meet').classList.toggle('d-none',t!=='meet')}
+$$('.ctab button').forEach(b=>b.onclick=()=>tab(b.dataset.t));$$('[data-tab]').forEach(a=>a.addEventListener('click',()=>tab(a.dataset.tab)));
+$$('.enq').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();$('.msg',f).textContent='Thank you! We will contact you soon.';f.reset()}));
+
+/* dial/top */
+$('#dm').onclick=()=>$('#dial').classList.toggle('open');$('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -4% 0px'});
+$$('.rv').forEach(el=>{if(!el.style.getPropertyValue('--d')){const k=[...el.parentNode.children].indexOf(el);el.style.setProperty('--d',Math.min(k,7)*.08+'s')}rm?el.classList.add('in'):io.observe(el)});
+
+/* counters */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.n;let c=0;const s=Math.max(1,Math.ceil(t/70));const iv=setInterval(()=>{c=Math.min(t,c+s);el.textContent=c.toLocaleString()+(c===t&&el.dataset.plus?'+':'');if(c===t)clearInterval(iv)},22);cio.unobserve(el)}),{threshold:.6});
+$$('[data-n]').forEach(el=>cio.observe(el));
+
+/* scroll: progress, nav, journey line, destination marquees */
+const nv=$('.npill'),pg=$('#prog'),tp=$('#top'),jr=$('#jr'),js=$$('.js2'),d1=$('#d1'),d2=$('#d2'),dsec=$('#destinations');let tk=false;
+function onS(){const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;pg.style.width=(y/h*100)+'%';nv.classList.toggle('sc',y>40);tp.classList.toggle('show',y>800);
+const r=jr.getBoundingClientRect(),p=Math.max(0,Math.min(1,(innerHeight*.75-r.top)/(r.height+innerHeight*.2)));jr.style.setProperty('--p',p);js.forEach((s,i)=>s.classList.toggle('lit',p>=i/4-.02&&p>0));
+if(!rm){const dr=dsec.getBoundingClientRect(),o=(dr.top-innerHeight/2)*.5;d1.style.transform='translateX('+(-600+o)+'px)';d2.style.transform='translateX('+(-1400-o)+'px)'}tk=false}
+addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(onS)}},{passive:true});addEventListener('resize',onS);onS();
+
+/* spotlight on bento */
+document.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const c=e.target.closest&&e.target.closest('.bc');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}});
+
+/* mobile navbar auto-close on link tap */
+$$('.npill .nav-link:not(.dropdown-toggle), .npill .dropdown-item, .npill .btn-x').forEach(a=>{
+    a.addEventListener('click',()=>{
+        const c=$('#nv');
+        if(c && c.classList.contains('show') && window.bootstrap){
+            const inst=bootstrap.Collapse.getInstance(c) || new bootstrap.Collapse(c, {toggle:false});
+            inst.hide();
+        }
+    });
+});
+})();
