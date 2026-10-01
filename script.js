@@ -263,8 +263,8 @@ function tab(t){$$('.ctab button').forEach(b=>b.classList.toggle('on',b.dataset.
 $$('.ctab button').forEach(b=>b.onclick=()=>tab(b.dataset.t));$$('[data-tab]').forEach(a=>a.addEventListener('click',()=>tab(a.dataset.tab)));
 $$('.enq').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();$('.msg',f).textContent='Thank you! We will contact you soon.';f.reset()}));
 
-/* dial/top */
-$('#dm').onclick=()=>$('#dial').classList.toggle('open');$('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+/* back to top */
+$('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
 
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -4% 0px'});
