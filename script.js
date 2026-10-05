@@ -287,7 +287,8 @@ $$('.ctab button').forEach(b=>b.onclick=()=>tab(b.dataset.t));$$('[data-tab]').f
 $$('.enq').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();$('.msg',f).textContent='Thank you! We will contact you soon.';f.reset()}));
 
 /* back to top */
-$('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const topBtn = $('#top') || $('#btt');
+if (topBtn) topBtn.onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
 
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -4% 0px'});

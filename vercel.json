@@ -1,6 +1,15 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/indexuni.html", "destination": "/index.html" }
+    { "source": "/indexuni.html", "destination": "/index.html" },
+    { "source": "/study-abroad-news", "destination": "/news.html" },
+    { "source": "/service_details/1", "destination": "/career-counselling.html" },
+    { "source": "/career-counselling", "destination": "/career-counselling.html" },
+    { "source": "/service_details/2", "destination": "/admission-guidance.html" },
+    { "source": "/admission-guidance", "destination": "/admission-guidance.html" },
+    { "source": "/service_details/3", "destination": "/application-process.html" },
+    { "source": "/application-process", "destination": "/application-process.html" },
+    { "source": "/service_details/4", "destination": "/visa-assistance.html" },
+    { "source": "/visa-assistance", "destination": "/visa-assistance.html" }
   ]
 }

@@ -1,0 +1,801 @@
+/* ==========================================================================
+   UNIHELPLINE — MOBILE ENHANCEMENT LAYER
+   Loaded LAST on every page (after inline <style>), so equal-specificity
+   rules here win. Every rule is scoped to mobile/tablet breakpoints only;
+   desktop layout is not affected.
+   Brand: #050a18 · #38bdf8 · #0284c7 · #ffffff · #475569
+   Fonts: Bricolage Grotesque (headings) · DM Sans (body)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLET & BELOW (≤ 991px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+    }
+
+    /* Two-column editorial rows: tighter vertical gap once stacked */
+    .row.g-5 {
+        --bs-gutter-y: 2.25rem;
+    }
+
+    /* Photo frames sit naturally above text when stacked */
+    .counselling-photo-frame,
+    .admission-photo-frame,
+    .application-photo-frame,
+    .visual-media-box {
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .official-verification-card,
+    .source-graphic-chip {
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Section headers centred on tablet */
+    .light-section-desc,
+    .section-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. MOBILE (≤ 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+
+    /* ---------- 2.1 Base rhythm ---------- */
+    .container,
+    .container-fluid {
+        padding-left: 1.1rem !important;
+        padding-right: 1.1rem !important;
+    }
+
+    section,
+    main {
+        scroll-margin-top: 80px;
+    }
+
+    p {
+        overflow-wrap: break-word;
+    }
+
+    h1,
+    h2,
+    h3 {
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: manual;
+    }
+
+    /* ---------- 2.2 Navbar ---------- */
+    .npill .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .npill .brand {
+        font-size: 1.15rem;
+    }
+
+    .npill .navbar-collapse {
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+    }
+
+    .npill .dropdown-menu {
+        border: 0;
+        background: #f0f9ff;
+        border-radius: 14px;
+        padding: 0.35rem;
+        margin: 0.25rem 0 0.5rem;
+        box-shadow: none;
+    }
+
+    .npill .dropdown-item {
+        border-radius: 10px;
+        padding: 0.6rem 0.9rem;
+        font-weight: 600;
+    }
+
+    .npill .nav-actions {
+        gap: 0.75rem !important;
+    }
+
+    /* ---------- 2.3 Buttons: full-width, aligned, thumb-friendly ---------- */
+    .btn-x,
+    .btn-o {
+        min-height: 52px;
+        font-size: 0.95rem;
+    }
+
+    .btn-x i {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    /* Button groups → stacked full-width pills, text left / icon right */
+    .hero-actions,
+    .cta-action-btns,
+    .btn-cta-group,
+    .b-a-foot,
+    .editorial-text-wrap > .d-flex,
+    .col-lg-7 > .d-flex.flex-wrap,
+    .cta-glass-box > .d-flex.flex-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+        width: 100%;
+    }
+
+    .hero-actions > .btn-x,
+    .hero-actions > .btn-o,
+    .cta-action-btns > .btn-x,
+    .cta-action-btns > .btn-o,
+    .btn-cta-group > .btn-x,
+    .btn-cta-group > .btn-o,
+    .b-a-foot > .btn-x,
+    .editorial-text-wrap > .d-flex > .btn-x,
+    .col-lg-7 > .d-flex.flex-wrap > .btn-x,
+    .cta-glass-box > .d-flex.flex-wrap > .btn-x {
+        width: 100% !important;
+        justify-content: space-between !important;
+        padding: 0.4rem 0.4rem 0.4rem 1.4rem !important;
+    }
+
+    .hero-actions > .btn-o,
+    .cta-action-btns > .btn-o,
+    .btn-cta-group > .btn-o {
+        justify-content: center !important;
+        padding: 0.9rem 1.4rem !important;
+    }
+
+    /* Buttons without an icon should centre their label */
+    .btn-x:not(:has(i)) {
+        justify-content: center !important;
+        padding: 0.85rem 1.4rem !important;
+    }
+
+    .b-a-foot > span {
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Floating action buttons — keep clear of content */
+    #wa-btn {
+        right: 14px !important;
+        bottom: 14px !important;
+        width: 52px !important;
+        height: 52px !important;
+    }
+
+    #top {
+        right: 14px !important;
+        bottom: 78px !important;
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    /* ---------- 2.4 Banner heroes (inner pages) ---------- */
+    .banner-hero,
+    .service-banner-hero,
+    .contact-banner-hero,
+    .news-hero-section,
+    .service-hero {
+        padding: 7.25rem 0 2.75rem !important;
+    }
+
+    .service-hero-title,
+    .banner-hero h1 {
+        font-size: clamp(2rem, 9vw, 2.5rem) !important;
+        line-height: 1.12 !important;
+        letter-spacing: -0.025em;
+    }
+
+    .service-hero-lead,
+    .banner-hero .lead2 {
+        font-size: 0.98rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 1.5rem !important;
+        padding: 0 0.25rem;
+    }
+
+    .banner-top-pill,
+    .service-badge {
+        font-size: 0.68rem !important;
+        letter-spacing: 0.06em !important;
+        padding: 0.4rem 0.9rem !important;
+        line-height: 1.4;
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* Stat pills → tidy 2×2 glass grid */
+    .service-stats-pills {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.55rem !important;
+        width: 100%;
+        padding: 0.75rem !important;
+        border-radius: 20px !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .service-stat-item {
+        background: rgba(56, 189, 248, 0.08);
+        border: 1px solid rgba(56, 189, 248, 0.16);
+        border-radius: 12px;
+        padding: 0.55rem 0.6rem;
+        font-size: 0.74rem !important;
+        line-height: 1.3;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    /* Breadcrumbs */
+    .banner-breadcrumb-pill,
+    .uhl-breadcrumbs {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.78rem !important;
+        row-gap: 0.25rem;
+        max-width: 100%;
+    }
+
+    /* ---------- 2.5 Home hero ---------- */
+    .hero {
+        padding: 7.5rem 0 1.5rem !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.1rem, 10vw, 2.75rem) !important;
+        line-height: 1.08 !important;
+    }
+
+    .hero .tag {
+        font-size: 0.72rem;
+        line-height: 1.4;
+    }
+
+    .cmd {
+        border-radius: 22px !important;
+        padding: 0.4rem !important;
+    }
+
+    .cmd .fld {
+        border-right: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 0.7rem 0.9rem !important;
+    }
+
+    .cmd .d-grid {
+        padding: 0.6rem !important;
+    }
+
+    .cmd .d-grid .btn-x {
+        width: 100%;
+    }
+
+    .tiles {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.65rem !important;
+    }
+
+    .tile {
+        padding: 1rem 0.85rem !important;
+        border-radius: 18px !important;
+        text-align: center;
+    }
+
+    .tile b {
+        font-size: 1.7rem !important;
+    }
+
+    /* Home bento & checklists */
+    .bento {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 0.9rem !important;
+    }
+
+    .bento .bc {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        padding: 1.5rem 1.25rem !important;
+        border-radius: 22px !important;
+    }
+
+    .bento .giant {
+        font-size: 4rem !important;
+    }
+
+    .chk-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.6rem !important;
+    }
+
+    .chk-card {
+        padding: 0.8rem !important;
+        font-size: 0.82rem !important;
+    }
+
+    .h2 {
+        font-size: clamp(1.85rem, 8vw, 2.3rem) !important;
+        line-height: 1.15 !important;
+    }
+
+    /* Home contact section */
+    #contact .h2 {
+        font-size: clamp(1.9rem, 8.5vw, 2.4rem) !important;
+    }
+
+    #contact .fc {
+        padding: 1.4rem 1.1rem !important;
+        border-radius: 22px !important;
+    }
+
+    .ctab {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem;
+    }
+
+    .ctab button {
+        font-size: 0.85rem;
+        padding: 0.65rem 0.5rem !important;
+    }
+
+    .fc .btn-x[type="submit"] {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .fc .msg {
+        display: block;
+        margin: 0.6rem 0 0 !important;
+        text-align: center;
+    }
+
+    /* ---------- 2.6 Light editorial sections (service pages) ---------- */
+    .counselling-core-section,
+    .admission-core-section,
+    .application-core-section,
+    .content-editorial-sec,
+    .about-content-section,
+    .dest-content-section {
+        padding: 3rem 0 3.5rem !important;
+    }
+
+    .light-counselling-section,
+    .admission-matrix-sec,
+    .application-lifecycle-sec,
+    .white-theme-section,
+    .global-hubs-sec,
+    .contact-form-section,
+    .faq-light-sec {
+        padding: 3.5rem 0 3.5rem !important;
+    }
+
+    .counselling-advisory-cta,
+    .official-cta-section,
+    .news-advisory-cta {
+        padding: 3rem 0 !important;
+    }
+
+    /* Photo frames */
+    .counselling-photo-frame,
+    .admission-photo-frame,
+    .application-photo-frame,
+    .visual-media-box {
+        border-radius: 22px !important;
+    }
+
+    .counselling-hero-img,
+    .admission-hero-img,
+    .application-hero-img,
+    .visual-media-box img.primary-photo {
+        min-height: 0 !important;
+        height: 280px !important;
+        max-height: 280px !important;
+    }
+
+    .photo-floating-pill {
+        font-size: 0.7rem !important;
+        padding: 0.42rem 0.8rem !important;
+        gap: 0.4rem !important;
+        max-width: calc(100% - 1.6rem);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .photo-floating-pill.pill-top {
+        top: 0.8rem !important;
+        left: 0.8rem !important;
+    }
+
+    .photo-floating-pill.pill-bottom {
+        bottom: 0.8rem !important;
+        right: 0.8rem !important;
+    }
+
+    .floating-badge {
+        left: 0.8rem !important;
+        bottom: 0.8rem !important;
+        padding: 0.55rem 0.85rem !important;
+    }
+
+    .floating-badge .icon-wrap {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1.05rem !important;
+    }
+
+    .official-verification-card,
+    .source-graphic-chip {
+        padding: 0.8rem 0.95rem !important;
+        gap: 0.8rem !important;
+        border-radius: 16px !important;
+    }
+
+    .official-logo-thumb {
+        height: 40px !important;
+        flex-shrink: 0;
+    }
+
+    /* Editorial copy */
+    .service-category-tag,
+    .badge-sub,
+    .tag-light,
+    .sec-tag {
+        font-size: 0.7rem !important;
+        padding: 0.35rem 0.85rem !important;
+    }
+
+    .editorial-heading {
+        font-size: clamp(1.9rem, 8.5vw, 2.35rem) !important;
+        margin-bottom: 1.1rem !important;
+    }
+
+    .editorial-lead-card {
+        padding: 1.1rem 1.15rem !important;
+        border-radius: 0 16px 16px 0 !important;
+        border-left-width: 4px !important;
+    }
+
+    .editorial-lead-text,
+    .editorial-body-text,
+    .editorial-copy {
+        font-size: 0.96rem !important;
+        line-height: 1.72 !important;
+    }
+
+    .highlight-guarantee-banner {
+        padding: 0.95rem 1.05rem !important;
+        gap: 0.75rem !important;
+        align-items: flex-start !important;
+        border-radius: 16px !important;
+    }
+
+    .highlight-guarantee-banner i {
+        font-size: 1.3rem !important;
+        margin-top: 2px;
+    }
+
+    .highlight-guarantee-banner p {
+        font-size: 0.9rem !important;
+    }
+
+    .editorial-highlight-quote {
+        font-size: 0.95rem !important;
+        padding: 1rem 1.1rem !important;
+    }
+
+    /* Pillar grids → single column */
+    .counselling-pillars-grid,
+    .admission-pillars-grid,
+    .application-pillars-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.7rem !important;
+        margin-bottom: 1.6rem !important;
+    }
+
+    .pillar-card {
+        padding: 0.85rem 1rem !important;
+        border-radius: 16px !important;
+    }
+
+    .pillar-icon-box {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.15rem !important;
+    }
+
+    .support-checklist {
+        padding: 1.2rem 1.15rem !important;
+        border-radius: 16px !important;
+    }
+
+    .support-checklist ul li {
+        font-size: 0.92rem !important;
+    }
+
+    /* Section titles */
+    .light-section-title,
+    .white-theme-section h2.section-title {
+        font-size: clamp(1.75rem, 7.8vw, 2.2rem) !important;
+        line-height: 1.18 !important;
+    }
+
+    .light-section-desc,
+    .white-theme-section p.section-desc {
+        font-size: 0.96rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .text-center.mb-5 {
+        margin-bottom: 2rem !important;
+    }
+
+    /* ---------- 2.7 Card systems ---------- */
+    .process-grid-light {
+        grid-template-columns: 1fr !important;
+        gap: 0.9rem !important;
+    }
+
+    .process-card-light,
+    .bento-card-light,
+    .bento-admission-card,
+    .timeline-step-card,
+    .framework-card,
+    .hub-card,
+    .dest-card,
+    .news-card,
+    .featured-card,
+    .contact-trust-card {
+        padding: 1.5rem 1.25rem !important;
+        border-radius: 20px !important;
+    }
+
+    .bento-admission-card,
+    .timeline-step-card {
+        gap: 1rem;
+    }
+
+    .bento-title-text,
+    .timeline-step-title,
+    .framework-card h5,
+    .process-card-light .process-title {
+        font-size: 1.15rem !important;
+    }
+
+    .bento-desc-text,
+    .timeline-step-desc,
+    .framework-card p,
+    .process-card-light .process-desc {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.9rem !important;
+    }
+
+    .bento-icon-bubble {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.35rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .bento-chip {
+        font-size: 0.7rem !important;
+        padding: 0.3rem 0.7rem !important;
+    }
+
+    /* Timeline: vertical rail on mobile */
+    .application-lifecycle-sec .row.g-4 > [class*="col-"] {
+        position: relative;
+    }
+
+    .timeline-step-card {
+        border-left: 4px solid #38bdf8 !important;
+    }
+
+    /* Evaluation / audit / quality decks */
+    .evaluation-box-light,
+    .quality-audit-deck,
+    .quality-box-light {
+        padding: 1.6rem 1.15rem !important;
+        border-radius: 22px !important;
+        margin-top: 2.5rem !important;
+    }
+
+    .quality-audit-deck .badge,
+    .quality-box-light .badge {
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .quality-audit-deck .row.g-3 > .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .audit-card-item,
+    .eval-pillar-item {
+        padding: 1.1rem 1rem !important;
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        column-gap: 0.85rem;
+        align-items: start;
+    }
+
+    .audit-card-item .audit-icon-wrap,
+    .eval-pillar-item .eval-check-icon {
+        grid-row: span 2;
+        margin-bottom: 0 !important;
+    }
+
+    .quality-box-light h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .metric-pill {
+        padding: 1rem 0.75rem !important;
+    }
+
+    .metric-pill h4 {
+        font-size: 1.6rem !important;
+    }
+
+    /* ---------- 2.8 CTA glass boxes ---------- */
+    .cta-glass-box {
+        padding: 2rem 1.15rem !important;
+        border-radius: 24px !important;
+    }
+
+    .cta-title,
+    .cta-glass-box h3.cta-title {
+        font-size: clamp(1.4rem, 6.5vw, 1.75rem) !important;
+        line-height: 1.28 !important;
+    }
+
+    .cta-desc {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .cta-contact-pills {
+        display: grid !important;
+        grid-template-columns: 1fr;
+        gap: 0.6rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .cta-contact-pill {
+        justify-content: flex-start !important;
+        padding: 0.75rem 1rem !important;
+        border-radius: 14px !important;
+        font-size: 0.88rem !important;
+    }
+
+    /* ---------- 2.9 News / destinations / contact helpers ---------- */
+    .news-grid,
+    .dest-grid,
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .news-controls-wrap .container > *,
+    .dest-filter-wrap {
+        flex-wrap: wrap;
+    }
+
+    .news-search-box {
+        width: 100% !important;
+    }
+
+    .category-filter-pills,
+    .cats {
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 0.35rem;
+        justify-content: flex-start !important;
+    }
+
+    .category-filter-pills::-webkit-scrollbar,
+    .cats::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-filter-pills > *,
+    .cats > * {
+        flex-shrink: 0;
+    }
+
+    .featured-img-box img,
+    .news-card-img-wrap img {
+        height: 210px !important;
+        object-fit: cover;
+    }
+
+    /* ---------- 2.10 Footer ---------- */
+    footer {
+        text-align: left;
+    }
+
+    footer .word {
+        font-size: clamp(3rem, 17vw, 5rem) !important;
+        line-height: 1 !important;
+        overflow: hidden;
+    }
+
+    footer h6 {
+        margin-top: 0.5rem;
+    }
+
+    footer .list-unstyled li {
+        margin-bottom: 0.4rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMALL PHONES (≤ 400px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 400px) {
+
+    .container,
+    .container-fluid {
+        padding-left: 0.9rem !important;
+        padding-right: 0.9rem !important;
+    }
+
+    .service-stats-pills {
+        grid-template-columns: 1fr;
+    }
+
+    .chk-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .counselling-hero-img,
+    .admission-hero-img,
+    .application-hero-img,
+    .visual-media-box img.primary-photo {
+        height: 240px !important;
+        max-height: 240px !important;
+    }
+
+    .photo-floating-pill.pill-bottom {
+        display: none !important;
+    }
+
+    .btn-x,
+    .btn-o {
+        font-size: 0.9rem;
+    }
+
+    .metric-pill h4 {
+        font-size: 1.35rem !important;
+    }
+}
