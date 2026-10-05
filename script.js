@@ -203,27 +203,40 @@ const more=$('#more'),rmb=$('#rm');if(rmb&&more){rmb.onclick=()=>{const o=more.s
 /* services expand + mobile slider */
 const sxTrack=$('#sx'),sxCards=$$('#sx .ex'),sxDots=$$('#sx-dots .sx-dot'),sxPrev=$('#sx-prev'),sxNext=$('#sx-next');
 let curSx=0;
+sxCards.forEach((c,i)=>{if(c.classList.contains('on'))curSx=i});
+
 function goSx(i){
     i=Math.max(0,Math.min(sxCards.length-1,i));
     curSx=i;
     const c=sxCards[i];
-    if(c&&sxTrack){
+    if(c&&sxTrack&&window.innerWidth<992){
         sxTrack.scrollTo({left:c.offsetLeft-sxTrack.offsetLeft,behavior:'smooth'});
     }
-    sxCards.forEach((y,idx)=>y.classList.toggle('on',idx===i));
+    sxCards.forEach((y,idx)=>{
+        const isOn = idx===i;
+        y.classList.toggle('on',isOn);
+        y.setAttribute('aria-expanded',isOn?'true':'false');
+    });
     sxDots.forEach((d,idx)=>d.classList.toggle('on',idx===i));
 }
+
 sxCards.forEach((x,i)=>{
-    const on=()=>{
-        if(window.innerWidth>=992){
-            sxCards.forEach(y=>y.classList.toggle('on',y===x));
-        }else{
+    x.setAttribute('tabindex','0');
+    x.setAttribute('role','button');
+    x.setAttribute('aria-expanded',x.classList.contains('on')?'true':'false');
+    
+    x.addEventListener('click',e=>{
+        if(e.target.closest('a, button:not(.ex)'))return;
+        goSx(i);
+    });
+    
+    x.addEventListener('keydown',e=>{
+        if(e.key==='Enter'||e.key===' '){
+            if(e.target.closest('a'))return;
+            e.preventDefault();
             goSx(i);
         }
-    };
-    x.addEventListener('mouseenter',()=>window.innerWidth>=992&&on());
-    x.addEventListener('click',on);
-    x.addEventListener('focus',on);
+    });
 });
 sxDots.forEach((d,i)=>d.addEventListener('click',()=>goSx(i)));
 if(sxPrev)sxPrev.addEventListener('click',()=>goSx(curSx-1));
