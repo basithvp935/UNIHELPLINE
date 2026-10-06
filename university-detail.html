@@ -505,15 +505,39 @@
             .ud-side { position: static; margin-top: 2.5rem; }
             .ud-content { padding: 4rem 0 5rem; border-radius: 34px; }
         }
+        @media (max-width: 767px) {
+            .ud-courses-box { padding: 2rem 1.1rem; border-radius: 24px; }
+            .ud-course-card { padding: 1.3rem 1.15rem; }
+        }
         @media (max-width: 575px) {
+            .ud-content .container { padding-left: 12px; padding-right: 12px; }
             .ud-hero { min-height: 480px; padding: 7.5rem 0 4.5rem; }
             .ud-hero-card { gap: 1.2rem; }
             .ud-logo-box { width: 95px; height: 95px; border-radius: 18px; padding: .6rem; }
             .ud-stats-inner { grid-template-columns: 1fr 1fr; border-radius: 18px; }
-            .ud-stat { padding: 1rem; gap: .65rem; }
-            .ud-stat i { width: 40px; height: 40px; font-size: 1.05rem; }
-            .ud-courses-box { padding: 2rem 1.2rem; border-radius: 24px; }
-            .ud-course-grid { grid-template-columns: 1fr; }
+            .ud-stat { padding: 0.85rem 0.75rem; gap: .6rem; }
+            .ud-stat i { width: 38px; height: 38px; font-size: 1rem; border-radius: 10px; }
+            .ud-stat strong { font-size: 0.95rem; }
+            .ud-stat small { font-size: 0.68rem; }
+            
+            /* Courses Section - Spacious & Decongested */
+            .ud-courses-box { padding: 2rem 1.15rem; border-radius: 24px; margin-bottom: 2.5rem; }
+            .ud-course-head { margin-bottom: 1.6rem; }
+            .ud-course-head .ud-h2 { font-size: 1.55rem; line-height: 1.22; margin-bottom: 0.5rem; }
+            .ud-course-head p { font-size: 0.86rem; line-height: 1.55; }
+            .ud-course-controls { gap: 1rem; margin-bottom: 1.6rem; }
+            .ud-search-input input { padding: .85rem 1.1rem .85rem 2.8rem; font-size: .9rem; border-radius: 50px; }
+            .ud-search-input i { left: 1rem; font-size: 1rem; }
+            .ud-dept-pills { gap: .5rem; }
+            .ud-pill { padding: .45rem .95rem; font-size: .8rem; border-radius: 50px; }
+            .ud-course-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+            .ud-course-card { padding: 1.4rem 1.2rem; border-radius: 18px; }
+            .ud-course-title { font-size: 1.2rem; line-height: 1.35; margin-bottom: 0.7rem; }
+            .ud-course-badges { gap: 0.45rem; margin-bottom: 0.85rem; }
+            .ud-course-btn { padding: .75rem 1.2rem; font-size: .88rem; border-radius: 50px; }
+            
+            .ud-req-box { padding: 1.8rem 1.2rem; border-radius: 20px; }
+            .ud-side-card { padding: 1.8rem 1.2rem; border-radius: 20px; }
         }
     </style>
     <link rel="stylesheet" href="mobile.css">
@@ -661,13 +685,13 @@
                     <!-- COURSES LISTING SECTION -->
                     <div class="ud-courses-box" id="courses">
                         <div class="ud-course-head">
-                            <div>
-                                <span class="ud-eyebrow text-info"><i class="bi bi-mortarboard-fill"></i> Academic Catalog</span>
-                                <h2 class="ud-h2 text-white mb-1">Available <span class="gt">Courses &amp; Degrees</span></h2>
+                            <div class="w-100">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <span class="ud-eyebrow text-info mb-0"><i class="bi bi-mortarboard-fill"></i> Academic Catalog</span>
+                                    <span class="badge rounded-pill bg-info text-dark px-3 py-1 fw-bold" id="udCourseCount">0 Courses</span>
+                                </div>
+                                <h2 class="ud-h2 text-white mb-2">Available <span class="gt">Courses &amp; Degrees</span></h2>
                                 <p class="text-white-50 mb-0 small">Explore undergraduate &amp; postgraduate degrees across major faculties.</p>
-                            </div>
-                            <div>
-                                <span class="badge rounded-pill bg-info text-dark px-3 py-2 fw-bold" id="udCourseCount">0 Courses</span>
                             </div>
                         </div>
 
