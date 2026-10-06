@@ -411,4 +411,23 @@ document.addEventListener('click', e => {
         doScroll();
     }
 });
+
+/* Touch and click handling for navbar dropdowns */
+document.querySelectorAll('.npill .dropdown').forEach(dd => {
+    const toggle = dd.querySelector('.dropdown-toggle');
+    const menu = dd.querySelector('.dropdown-menu');
+    if (!toggle || !menu) return;
+
+    // Ensure dropdown items navigate reliably on touch/mobile
+    menu.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', e => {
+            const href = item.getAttribute('href');
+            if (href && href !== '#' && !href.startsWith('#')) {
+                // Ensure page navigation occurs smoothly
+                window.location.href = href;
+            }
+        });
+    });
+});
 })();
+
