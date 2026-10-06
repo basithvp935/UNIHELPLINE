@@ -180,8 +180,30 @@ if(us){
     us.addEventListener('mouseleave',()=>{isHover=false});
     const arw=$('.arw');
     if(arw){arw.addEventListener('mouseenter',()=>{isHover=true});arw.addEventListener('mouseleave',()=>{isHover=false})}
-    us.addEventListener('touchstart',()=>{isHover=true},{passive:true});
-    us.addEventListener('touchend',()=>{setTimeout(()=>{isHover=false},1200)},{passive:true});
+    
+    let touchStartX = 0, touchStartY = 0;
+    us.addEventListener('touchstart', e => {
+        isHover = true;
+        if(e.touches && e.touches[0]){
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    us.addEventListener('touchend', e => {
+        setTimeout(() => { isHover = false; }, 1200);
+        if(e.changedTouches && e.changedTouches[0]){
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            const dy = e.changedTouches[0].clientY - touchStartY;
+            if(Math.abs(dx) > 35 && Math.abs(dx) > Math.abs(dy)){
+                if(dx < 0){
+                    slideNext();
+                }else{
+                    slidePrev();
+                }
+            }
+        }
+    }, { passive: true });
 
     us.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;mv=false;sx=e.clientX;sl=us.scrollLeft;us.style.scrollSnapType='none'});
     addEventListener('pointermove',e=>{if(!dn)return;const d=e.clientX-sx;if(Math.abs(d)>4)mv=true;us.scrollLeft=sl-d});

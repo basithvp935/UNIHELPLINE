@@ -1722,6 +1722,8 @@ footer .brand {
     overflow-x: auto;
     padding: 1rem 0.25rem 2.2rem;
     scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
     scroll-behavior: smooth;
     cursor: grab;
@@ -1743,6 +1745,7 @@ footer .brand {
     max-width: 100%;
     box-sizing: border-box;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     background: linear-gradient(165deg, rgba(20, 29, 56, 0.85) 0%, rgba(10, 16, 34, 0.95) 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 26px;
@@ -4002,7 +4005,10 @@ footer .credozen-badge:hover {
         gap: 10px;
         padding: 0.5rem 0.1rem 1.4rem;
         scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+        overscroll-behavior-x: contain;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-y pinch-zoom;
     }
 
     .uc {
@@ -4013,6 +4019,7 @@ footer .credozen-badge:hover {
         padding: 0.85rem 0.75rem;
         border-radius: 20px;
         scroll-snap-align: start;
+        scroll-snap-stop: always;
         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
     }
 
