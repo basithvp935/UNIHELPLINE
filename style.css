@@ -1,7 +1,7 @@
 :root {
-    --bg: #050a18;
-    --s1: #0b1226;
-    --s2: #131c38;
+    --bg: #121e3f;
+    --s1: #152246;
+    --s2: #1c2e5c;
     --line: rgba(255, 255, 255, .09);
     --tx: #eef0f6;
     --mu: #8d93a9;
@@ -616,7 +616,7 @@ footer .brand {
     position: relative;
     background-color: var(--bg);
     background-image: 
-        radial-gradient(circle at 50% 20%, rgba(10, 134, 190, 0.12) 0%, rgba(5, 10, 24, 0.6) 60%, #050a18 100%);
+        radial-gradient(circle at 50% 20%, rgba(10, 134, 190, 0.12) 0%, rgba(18, 30, 63, 0.6) 60%, var(--bg) 100%);
 }
 
 .hero::before {
@@ -1926,15 +1926,15 @@ footer .brand {
     box-sizing: border-box;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    background: linear-gradient(165deg, rgba(20, 29, 56, 0.85) 0%, rgba(10, 16, 34, 0.95) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(165deg, rgba(30, 46, 86, 0.8) 0%, rgba(20, 32, 64, 0.92) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 26px;
     padding: 1.25rem;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     transition: transform 0.35s cubic-bezier(0.16, 0.84, 0.24, 1), 
                 border-color 0.35s ease, 
                 box-shadow 0.35s ease;
@@ -1942,8 +1942,9 @@ footer .brand {
 
 .uc:hover {
     transform: translateY(-6px);
+    background: linear-gradient(165deg, rgba(36, 54, 98, 0.88) 0%, rgba(24, 38, 72, 0.95) 100%);
     border-color: rgba(39, 194, 232, 0.45);
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(39, 194, 232, 0.12);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(39, 194, 232, 0.15);
 }
 
 .uc .lg {
@@ -4201,7 +4202,7 @@ footer .credozen-badge:hover {
         border-radius: 20px;
         scroll-snap-align: start;
         scroll-snap-stop: always;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
     }
 
     .uc .lg {
