@@ -220,6 +220,81 @@ if(cb && cpn){
     sc(0);
 }
 
+/* custom select dropdowns */
+const customSelects = document.querySelectorAll('.custom-select-fld');
+const searchForm = document.querySelector('.cmd');
+
+function updateFormZIndex() {
+    if (!searchForm) return;
+    const anyOpen = Array.from(customSelects).some(f => f.classList.contains('open'));
+    searchForm.classList.toggle('has-open-dropdown', anyOpen);
+}
+
+customSelects.forEach(fld => {
+    const trigger = fld.querySelector('.custom-select-trigger');
+    const valText = fld.querySelector('.custom-select-val');
+    const select = fld.querySelector('select');
+    const options = fld.querySelectorAll('.custom-option');
+
+    if (!trigger || !select || !options.length) return;
+
+    trigger.addEventListener('click', e => {
+        e.stopPropagation();
+        const isOpen = fld.classList.contains('open');
+        customSelects.forEach(other => {
+            if (other !== fld) {
+                other.classList.remove('open');
+                const t = other.querySelector('.custom-select-trigger');
+                if (t) t.setAttribute('aria-expanded', 'false');
+            }
+        });
+        fld.classList.toggle('open', !isOpen);
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+        if (!isOpen) {
+            const menu = fld.querySelector('.custom-select-menu');
+            if (menu) menu.scrollTop = 0;
+        }
+        updateFormZIndex();
+    });
+
+    options.forEach(opt => {
+        opt.addEventListener('click', e => {
+            e.stopPropagation();
+            const val = opt.dataset.value;
+            if (valText) valText.textContent = val;
+            options.forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+            select.value = val;
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+            fld.classList.remove('open');
+            trigger.setAttribute('aria-expanded', 'false');
+            updateFormZIndex();
+        });
+    });
+});
+
+document.addEventListener('click', e => {
+    if (!e.target.closest('.custom-select-fld')) {
+        customSelects.forEach(fld => {
+            fld.classList.remove('open');
+            const t = fld.querySelector('.custom-select-trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+        });
+        updateFormZIndex();
+    }
+});
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        customSelects.forEach(fld => {
+            fld.classList.remove('open');
+            const t = fld.querySelector('.custom-select-trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+        });
+        updateFormZIndex();
+    }
+});
+
 /* search */
 const idx=cats.flatMap(c=>c[3].map(x=>({t:x[0],c:c[0],u:C+x[1]}))),q=$('#q'),res=$('#res');
 if(q && res){

@@ -74,32 +74,71 @@
 
                 <form class="cmd fx" id="sf" autocomplete="off">
                     <div class="row g-0 align-items-center">
-                        <div class="col-lg-3 col-md-6 fld"><label>Study Level</label><select class="form-select" id="level">
-                                <option>All Level</option>
-                                <option>Master Degree</option>
-                                <option>Bachelor Degree</option>
-                                <option>Bachelor Top-up</option>
-                                <option>Post Graduate Diploma / Certificate - 1 Year</option>
-                                <option>Post Graduate Diploma / Certificate - 2 Year</option>
-                                <option>Undergraduate Diploma - 2 Year</option>
-                                <option>Undergraduate Diploma - 1 Year</option>
-                            </select></div>
-                        <div class="col-lg-3 col-md-6 fld"><label>Destination</label><select class="form-select"
-                                id="country">
-                                <option>All Country</option>
-                                <option>United Kingdom</option>
-                                <option>United States of America</option>
-                                <option>Ireland</option>
-                                <option>Canada</option>
-                                <option>Germany</option>
-                                <option>Georgia</option>
-                                <option>Hungary</option>
-                                <option>Poland</option>
-                                <option>Malta</option>
-                                <option>France</option>
-                                <option>Dubai / United Arab Emirates</option>
-                            </select></div>
-                        <div class="col-lg-4 col-md-8 fld"><label>Course</label><input class="form-control" id="q"
+                        <div class="col-lg-3 col-md-6 fld custom-select-fld" id="fld-level">
+                            <label for="level">Study Level</label>
+                            <select class="form-select d-none" id="level">
+                                <option value="All Level" selected>All Level</option>
+                                <option value="Master Degree">Master Degree</option>
+                                <option value="Bachelor Degree">Bachelor Degree</option>
+                                <option value="Bachelor Top-up">Bachelor Top-up</option>
+                                <option value="Post Graduate Diploma / Certificate - 1 Year">Post Graduate Diploma / Certificate - 1 Year</option>
+                                <option value="Post Graduate Diploma / Certificate - 2 Year">Post Graduate Diploma / Certificate - 2 Year</option>
+                                <option value="Undergraduate Diploma - 2 Year">Undergraduate Diploma - 2 Year</option>
+                                <option value="Undergraduate Diploma - 1 Year">Undergraduate Diploma - 1 Year</option>
+                            </select>
+                            <button type="button" class="custom-select-trigger" id="level-trigger" aria-haspopup="listbox" aria-expanded="false">
+                                <span class="custom-select-val">All Level</span>
+                                <i class="bi bi-chevron-down custom-select-arrow"></i>
+                            </button>
+                            <div class="custom-select-menu" id="level-menu" role="listbox">
+                                <div class="custom-option selected" data-value="All Level" role="option"><span>All Level</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Master Degree" role="option"><span>Master Degree</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Bachelor Degree" role="option"><span>Bachelor Degree</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Bachelor Top-up" role="option"><span>Bachelor Top-up</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Post Graduate Diploma / Certificate - 1 Year" role="option"><span>Post Graduate Diploma / Certificate - 1 Year</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Post Graduate Diploma / Certificate - 2 Year" role="option"><span>Post Graduate Diploma / Certificate - 2 Year</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Undergraduate Diploma - 2 Year" role="option"><span>Undergraduate Diploma - 2 Year</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Undergraduate Diploma - 1 Year" role="option"><span>Undergraduate Diploma - 1 Year</span><i class="bi bi-check2"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 fld custom-select-fld" id="fld-country">
+                            <label for="country">Destination</label>
+                            <select class="form-select d-none" id="country">
+                                <option value="All Country" selected>All Country</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="United States of America">United States of America</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Hungary">Hungary</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Malta">Malta</option>
+                                <option value="France">France</option>
+                                <option value="Dubai / United Arab Emirates">Dubai / United Arab Emirates</option>
+                            </select>
+                            <button type="button" class="custom-select-trigger" id="country-trigger" aria-haspopup="listbox" aria-expanded="false">
+                                <span class="custom-select-val">All Country</span>
+                                <i class="bi bi-chevron-down custom-select-arrow"></i>
+                            </button>
+                            <div class="custom-select-menu" id="country-menu" role="listbox">
+                                <div class="custom-option selected" data-value="All Country" role="option"><span>All Country</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="United Kingdom" role="option"><span>United Kingdom</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="United States of America" role="option"><span>United States of America</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Ireland" role="option"><span>Ireland</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Canada" role="option"><span>Canada</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Germany" role="option"><span>Germany</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Georgia" role="option"><span>Georgia</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Hungary" role="option"><span>Hungary</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Poland" role="option"><span>Poland</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Malta" role="option"><span>Malta</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="France" role="option"><span>France</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Dubai / United Arab Emirates" role="option"><span>Dubai / United Arab Emirates</span><i class="bi bi-check2"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-8 fld"><label for="q">Course</label><input class="form-control" id="q"
                                 placeholder="Nursing, MBA, Data Science…"></div>
                         <div class="col-lg-2 col-md-4 p-2 d-grid"><button class="btn-x justify-content-between"
                                 type="submit" style="padding-left:1.3rem">Search<i class="bi bi-search"></i></button></div>
