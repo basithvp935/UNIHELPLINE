@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en" class="js" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Study Abroad Destination | UNIHELPLINE Study Abroad Consultants</title>
+    <meta name="description" id="metaDesc"
+        content="Explore study abroad destinations with UNIHELPLINE. Country overview, key benefits, quick facts and the list of partner universities.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3.3">
+    <style>
+        html { scroll-padding-top: 100px; }
+        body { overflow-x: hidden; background: #050a18; }
+
+        .rv, .rv[data-rv] { opacity: 1 !important; transform: none !important; filter: none !important; }
+
+        /* ───────── HERO ───────── */
+        .dd-hero {
+            position: relative;
+            min-height: 620px;
+            display: flex;
+            align-items: flex-end;
+            padding: 9rem 0 6.5rem;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .dd-hero-bg {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -2;
+            transform: scale(1.06);
+            animation: ddZoom 18s ease-in-out infinite alternate;
+        }
+        @keyframes ddZoom { to { transform: scale(1.16); } }
+        .dd-hero::before {
+            content: ''; position: absolute; inset: 0; z-index: -1;
+            background:
+                radial-gradient(ellipse at 15% 20%, rgba(39,194,232,.28) 0%, transparent 55%),
+                linear-gradient(180deg, rgba(5,10,24,.55) 0%, rgba(5,10,24,.7) 50%, rgba(5,10,24,.96) 100%);
+        }
+        .dd-breadcrumb {
+            display: inline-flex; align-items: center; gap: .55rem;
+            background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+            backdrop-filter: blur(12px); border-radius: 50px;
+            padding: .45rem 1.1rem; font-size: .82rem; color: rgba(255,255,255,.7);
+            margin-bottom: 1.4rem;
+        }
+        .dd-breadcrumb a { color: #fff; text-decoration: none; font-weight: 600; }
+        .dd-breadcrumb a:hover { color: #27C2E8; }
+        .dd-breadcrumb .cur { color: #27C2E8; font-weight: 700; }
+        .dd-flag-pill {
+            display: inline-flex; align-items: center; gap: .6rem;
+            background: linear-gradient(120deg, rgba(39,194,232,.22), rgba(10,134,190,.18));
+            border: 1px solid rgba(39,194,232,.45);
+            border-radius: 50px; padding: .4rem 1rem .4rem .5rem;
+            color: #fff; font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
+        }
+        .dd-flag-pill .flag {
+            width: 30px; height: 30px; border-radius: 50%; background: #fff;
+            display: inline-flex; align-items: center; justify-content: center; font-size: 1rem;
+        }
+        .dd-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(2.4rem, 6vw, 4.6rem);
+            font-weight: 800; letter-spacing: -.035em; line-height: 1.02;
+            color: #fff; margin: 1.1rem 0 1rem;
+        }
+        .dd-tagline { color: rgba(255,255,255,.78); font-size: 1.1rem; max-width: 640px; line-height: 1.7; margin-bottom: 2rem; }
+        .dd-hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+        .dd-btn-ghost {
+            display: inline-flex; align-items: center; gap: .55rem;
+            padding: .75rem 1.4rem; border-radius: 50px;
+            border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.08);
+            backdrop-filter: blur(10px); color: #fff; font-weight: 700; text-decoration: none;
+            transition: all .25s ease;
+        }
+        .dd-btn-ghost:hover { background: rgba(255,255,255,.18); color: #fff; transform: translateY(-2px); }
+
+        /* stat strip */
+        .dd-stats {
+            position: relative; z-index: 3; margin-top: -3.2rem;
+        }
+        .dd-stats-inner {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            background: rgba(10, 22, 48, .82);
+            border: 1px solid rgba(39,194,232,.25);
+            backdrop-filter: blur(18px);
+            border-radius: 22px; overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,.35);
+        }
+        .dd-stat { padding: 1.35rem 1.4rem; display: flex; gap: .9rem; align-items: center; border-right: 1px solid rgba(255,255,255,.08); }
+        .dd-stat:last-child { border-right: 0; }
+        .dd-stat i {
+            width: 46px; height: 46px; flex-shrink: 0; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #fff;
+            background: linear-gradient(135deg, #27C2E8, #0A86BE 55%, #3A4BB0);
+            box-shadow: 0 8px 22px rgba(10,134,190,.35);
+        }
+        .dd-stat small { display: block; color: rgba(255,255,255,.55); font-size: .74rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+        .dd-stat strong { color: #fff; font-size: 1rem; font-weight: 700; }
+
+        /* ───────── WHITE CONTENT ───────── */
+        .dd-content {
+            background: #fff; color: #07152f;
+            border-radius: 46px 46px 0 0; margin-top: 3rem; margin-bottom: 0 !important;
+            padding: 5rem 0 5.5rem; position: relative; z-index: 2;
+            box-shadow: 0 -20px 50px rgba(5,10,24,.22);
+        }
+        .dd-eyebrow {
+            display: inline-flex; align-items: center; gap: .5rem;
+            background: linear-gradient(135deg, rgba(56,189,248,.12), rgba(2,132,199,.08));
+            border: 1px solid rgba(56,189,248,.28); color: #0284c7;
+            font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+            padding: .42rem 1rem; border-radius: 50px; margin-bottom: 1rem;
+        }
+        .dd-h2 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+            font-weight: 800; letter-spacing: -.03em; line-height: 1.15; color: #07152f; margin-bottom: 1rem;
+        }
+        .dd-overview p { color: #475569; font-size: 1.02rem; line-height: 1.85; margin-bottom: 1.1rem; }
+        .dd-overview p strong { color: #07152f; }
+
+        /* highlights */
+        .dd-hl-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-top: 1.6rem; }
+        .dd-hl {
+            position: relative; padding: 1.4rem; border-radius: 18px;
+            background: linear-gradient(160deg, #f8fbff 0%, #eef6fd 100%);
+            border: 1px solid rgba(10,134,190,.14);
+            transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease, border-color .3s;
+            overflow: hidden;
+        }
+        .dd-hl::after {
+            content: ''; position: absolute; right: -40px; top: -40px; width: 110px; height: 110px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(39,194,232,.18), transparent 70%);
+        }
+        .dd-hl:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(10,134,190,.14); border-color: rgba(39,194,232,.5); }
+        .dd-hl-ic {
+            width: 44px; height: 44px; border-radius: 13px; margin-bottom: .9rem;
+            display: flex; align-items: center; justify-content: center; font-size: 1.15rem; color: #fff;
+            background: linear-gradient(135deg, #27C2E8, #0A86BE 55%, #3A4BB0);
+        }
+        .dd-hl h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.08rem; font-weight: 700; color: #07152f; margin-bottom: .35rem; }
+        .dd-hl p { font-size: .9rem; color: #64748b; margin: 0; line-height: 1.6; }
+
+        /* sidebar */
+        .dd-side { position: sticky; top: 110px; }
+        .dd-facts {
+            background: linear-gradient(150deg, #07152f 0%, #0a2448 60%, #0d2f5c 100%);
+            border-radius: 22px; padding: 1.7rem; color: #fff; position: relative; overflow: hidden;
+            box-shadow: 0 22px 50px rgba(7,21,47,.25);
+        }
+        .dd-facts::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 100% 0%, rgba(39,194,232,.22), transparent 55%);
+            pointer-events: none;
+        }
+        .dd-facts h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.1rem; position: relative; }
+        .dd-fact { display: flex; justify-content: space-between; gap: 1rem; padding: .72rem 0; border-bottom: 1px dashed rgba(255,255,255,.12); position: relative; font-size: .9rem; }
+        .dd-fact:last-child { border-bottom: 0; }
+        .dd-fact span { color: rgba(255,255,255,.6); display: flex; align-items: center; gap: .5rem; }
+        .dd-fact span i { color: #27C2E8; }
+        .dd-fact strong { text-align: right; font-weight: 700; }
+        .dd-side-cta {
+            margin-top: 1.1rem; border-radius: 22px; padding: 1.6rem;
+            background: linear-gradient(135deg, #e9f7fd, #f3f8ff); border: 1px solid rgba(10,134,190,.18);
+        }
+        .dd-side-cta h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; font-weight: 700; color: #07152f; }
+        .dd-side-cta p { color: #64748b; font-size: .88rem; margin-bottom: 1rem; }
+        .dd-btn-grad {
+            display: inline-flex; align-items: center; justify-content: center; gap: .55rem; width: 100%;
+            padding: .8rem 1.2rem; border-radius: 50px; color: #fff; font-weight: 700; text-decoration: none;
+            background: linear-gradient(120deg, #27C2E8, #0A86BE 50%, #3A4BB0);
+            box-shadow: 0 10px 26px rgba(10,134,190,.35); transition: transform .25s, box-shadow .25s;
+        }
+        .dd-btn-grad:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 14px 34px rgba(10,134,190,.45); }
+        .dd-btn-wa { background: linear-gradient(120deg, #25D366, #128C7E); box-shadow: 0 10px 26px rgba(37,211,102,.3); margin-top: .6rem; }
+
+        /* steps */
+        .dd-block { margin-top: 3.2rem; }
+        .dd-steps { position: relative; margin-top: 1.5rem; padding-left: 2.2rem; }
+        .dd-steps::before { content: ''; position: absolute; left: 15px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(#27C2E8, #3A4BB0); border-radius: 2px; }
+        .dd-step { position: relative; margin-bottom: 1.3rem; padding: 1.1rem 1.3rem; background: #f8fbff; border: 1px solid rgba(10,134,190,.12); border-radius: 16px; }
+        .dd-step::before {
+            content: attr(data-n); position: absolute; left: -2.2rem; top: 1rem;
+            width: 32px; height: 32px; border-radius: 50%; background: #fff; border: 2px solid #0A86BE;
+            color: #0A86BE; font-weight: 800; font-size: .85rem; display: flex; align-items: center; justify-content: center;
+            transform: translateX(-1px);
+        }
+        .dd-step h5 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.02rem; color: #07152f; margin-bottom: .3rem; }
+        .dd-step p { color: #64748b; font-size: .9rem; margin: 0; line-height: 1.65; }
+
+        .dd-docs { display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem; margin-top: 1.3rem; }
+        .dd-doc { display: flex; gap: .65rem; align-items: flex-start; padding: .8rem 1rem; border-radius: 12px; background: #f8fbff; border: 1px solid rgba(10,134,190,.1); font-size: .9rem; color: #334155; }
+        .dd-doc i { color: #0A86BE; margin-top: .1rem; }
+
+        /* ───────── UNIVERSITIES ───────── */
+        .dd-uni-wrap {
+            margin-top: 4.5rem; padding: 3.2rem 2.4rem; border-radius: 32px;
+            background: linear-gradient(180deg, #f3f8fe 0%, #eaf3fc 100%);
+            border: 1px solid rgba(10,134,190,.12);
+        }
+        .dd-uni-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1.2rem; margin-bottom: 2rem; }
+        .dd-uni-count {
+            display: inline-flex; align-items: center; gap: .4rem; background: #07152f; color: #fff;
+            padding: .3rem .8rem; border-radius: 50px; font-size: .78rem; font-weight: 700; margin-left: .5rem; vertical-align: middle;
+        }
+        .dd-uni-search { position: relative; min-width: 280px; }
+        .dd-uni-search i { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #0284c7; }
+        .dd-uni-search input {
+            width: 100%; border-radius: 50px; border: 1.5px solid rgba(2,132,199,.2); background: #fff;
+            padding: .75rem 1.1rem .75rem 2.6rem; font-size: .92rem; color: #07152f; outline: none;
+        }
+        .dd-uni-search input:focus { border-color: #38bdf8; box-shadow: 0 0 0 3px rgba(56,189,248,.14); }
+        .dd-uni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.3rem; }
+        .dd-uni {
+            background: #fff; border-radius: 20px; padding: 1.3rem; display: flex; flex-direction: column;
+            border: 1px solid rgba(10,134,190,.12); box-shadow: 0 8px 24px rgba(7,21,47,.05);
+            transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s, border-color .35s;
+            animation: ddFade .5s ease both;
+        }
+        @keyframes ddFade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+        .dd-uni:hover { transform: translateY(-7px); box-shadow: 0 22px 46px rgba(10,134,190,.18); border-color: rgba(39,194,232,.55); }
+        .dd-uni-logo {
+            height: 120px; border-radius: 14px; background: #f8fafc; border: 1px solid #eef2f7;
+            display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 1rem; padding: .8rem;
+        }
+        .dd-uni-logo img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform .4s ease; }
+        .dd-uni:hover .dd-uni-logo img { transform: scale(1.06); }
+        .dd-uni-init {
+            width: 72px; height: 72px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
+            font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.5rem; color: #fff;
+            background: linear-gradient(135deg, #27C2E8, #0A86BE 55%, #3A4BB0);
+        }
+        .dd-uni-tag {
+            align-self: flex-start; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+            color: #0A86BE; background: rgba(10,134,190,.08); border-radius: 50px; padding: .25rem .65rem; margin-bottom: .55rem;
+        }
+        .dd-uni h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.05rem; font-weight: 700; color: #07152f; line-height: 1.3; margin-bottom: .35rem; }
+        .dd-uni-loc { color: #64748b; font-size: .85rem; display: flex; align-items: center; gap: .35rem; margin-bottom: 1.1rem; }
+        .dd-uni-loc i { color: #27C2E8; }
+        .dd-uni-link {
+            margin-top: auto; display: inline-flex; align-items: center; justify-content: space-between;
+            padding: .6rem 1rem; border-radius: 50px; background: #f1f6fc; color: #07152f; font-weight: 700; font-size: .85rem;
+            text-decoration: none; transition: all .25s ease;
+        }
+        .dd-uni-link i { width: 26px; height: 26px; border-radius: 50%; background: #fff; display: inline-flex; align-items: center; justify-content: center; transition: transform .25s; }
+        .dd-uni:hover .dd-uni-link { background: linear-gradient(120deg, #27C2E8, #0A86BE 50%, #3A4BB0); color: #fff; }
+        .dd-uni:hover .dd-uni-link i { color: #0A86BE; transform: rotate(45deg); }
+        .dd-empty { grid-column: 1/-1; text-align: center; padding: 2rem; color: #64748b; }
+
+        /* other destinations */
+        .dd-others { margin-top: 4rem; }
+        .dd-other-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.3rem; }
+        .dd-other {
+            display: inline-flex; align-items: center; gap: .55rem; padding: .55rem 1.1rem .55rem .55rem;
+            border-radius: 50px; background: #fff; border: 1.5px solid rgba(10,134,190,.16); color: #07152f;
+            font-weight: 700; font-size: .9rem; text-decoration: none; transition: all .25s ease;
+        }
+        .dd-other span { width: 30px; height: 30px; border-radius: 50%; background: #f1f6fc; display: inline-flex; align-items: center; justify-content: center; }
+        .dd-other:hover { border-color: #27C2E8; color: #0A86BE; transform: translateY(-3px); box-shadow: 0 10px 24px rgba(10,134,190,.15); }
+
+        /* CTA */
+        .dd-cta {
+            margin-top: 4rem; border-radius: 26px; padding: 2.6rem 2.2rem; position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #07152f 0%, #0a1f3d 50%, #0d2a52 100%); border: 1px solid rgba(56,189,248,.2);
+        }
+        .dd-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 0% 50%, rgba(56,189,248,.14), transparent 60%); }
+        .dd-cta h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; color: #fff; font-size: 1.45rem; position: relative; }
+        .dd-cta p { color: rgba(255,255,255,.68); position: relative; margin: 0; }
+        .dd-cta .dd-btn-grad { width: auto; position: relative; }
+
+        @media (max-width: 991px) {
+            .dd-stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .dd-stat:nth-child(2) { border-right: 0; }
+            .dd-stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.08); }
+            .dd-side { position: static; margin-top: 2.5rem; }
+            .dd-content { padding: 4rem 0 5rem; border-radius: 34px; }
+        }
+        @media (max-width: 575px) {
+            .dd-hero { min-height: 540px; padding: 8rem 0 5.5rem; }
+            .dd-stats-inner { grid-template-columns: 1fr 1fr; border-radius: 18px; }
+            .dd-stat { padding: 1rem; gap: .65rem; }
+            .dd-stat i { width: 38px; height: 38px; font-size: 1rem; border-radius: 11px; }
+            .dd-stat strong { font-size: .88rem; }
+            .dd-hl-grid, .dd-docs { grid-template-columns: 1fr; }
+            .dd-uni-wrap { padding: 2rem 1.1rem; border-radius: 24px; }
+            .dd-uni-search { min-width: 100%; }
+            .dd-cta { padding: 1.8rem 1.3rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body class="destinations-page">
+    <div id="prog"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="npill navbar navbar-expand-lg">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a class="brand" href="index.html#home">
+                <span class="lg">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/>
+                        <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/>
+                    </svg>
+                </span>UniHelpLine</a>
+            <button class="navbar-toggler ms-auto" data-bs-toggle="collapse" data-bs-target="#nv" aria-label="Menu"><i
+                    class="bi bi-list fs-2"></i></button>
+            <div class="collapse navbar-collapse" id="nv">
+                <ul class="navbar-nav mx-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                            data-bs-toggle="dropdown">Our Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="career-counselling.html">Career Counselling</a></li>
+                            <li><a class="dropdown-item" href="admission-guidance.html">Admission Guidance</a></li>
+                            <li><a class="dropdown-item" href="application-process.html">Application Process</a></li>
+                            <li><a class="dropdown-item" href="visa-assistance.html">Visa Assistance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                            data-bs-toggle="dropdown">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">UniHelpLine</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active text-info" href="destinations.html">Study Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-2 nav-actions">
+                    <a class="btn-x" href="index.html#contact" style="padding:.35rem .35rem .35rem 1.3rem">Schedule a Meeting<i
+                            style="width:36px;height:36px" class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="dd-hero" id="ddHero">
+        <img class="dd-hero-bg" id="ddHeroImg" alt="" referrerpolicy="no-referrer">
+        <div class="container">
+            <div class="dd-breadcrumb">
+                <a href="index.html">Home</a><span>/</span>
+                <a href="destinations.html">Study Destinations</a><span>/</span>
+                <span class="cur" id="ddCrumb">Destination</span>
+            </div>
+            <div><span class="dd-flag-pill"><span class="flag" id="ddFlag">🌍</span><span id="ddChip">Study Abroad</span></span></div>
+            <h1 class="dd-title">Study in <span class="gt" id="ddTitle">Destination</span></h1>
+            <p class="dd-tagline" id="ddTagline"></p>
+            <div class="dd-hero-actions">
+                <a href="#universities" class="btn-x">Explore Universities<i class="bi bi-arrow-down-right"></i></a>
+                <a href="contact.html" class="dd-btn-ghost"><i class="bi bi-chat-dots"></i> Free Counselling</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stat strip -->
+    <div class="dd-stats">
+        <div class="container">
+            <div class="dd-stats-inner" id="ddStats"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="dd-content">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <span class="dd-eyebrow"><i class="bi bi-globe2"></i> Country Overview</span>
+                    <h2 class="dd-h2" id="ddOverviewTitle">About the Destination</h2>
+                    <div class="dd-overview" id="ddOverview"></div>
+
+                    <div class="dd-block">
+                        <span class="dd-eyebrow"><i class="bi bi-stars"></i> Key Advantages</span>
+                        <h2 class="dd-h2" id="ddWhyTitle">Why Study Here?</h2>
+                        <div class="dd-hl-grid" id="ddHighlights"></div>
+                    </div>
+
+                    <div class="dd-block" id="ddStepsBlock" hidden>
+                        <span class="dd-eyebrow"><i class="bi bi-signpost-split"></i> Step by Step</span>
+                        <h2 class="dd-h2">Admission &amp; Visa Process</h2>
+                        <div class="dd-steps" id="ddSteps"></div>
+                    </div>
+
+                    <div class="dd-block" id="ddDocsBlock" hidden>
+                        <span class="dd-eyebrow"><i class="bi bi-file-earmark-check"></i> Checklist</span>
+                        <h2 class="dd-h2">Required Documents</h2>
+                        <div class="dd-docs" id="ddDocs"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <aside class="dd-side">
+                        <div class="dd-facts">
+                            <h3><i class="bi bi-info-circle me-2" style="color:#27C2E8"></i>Quick Facts</h3>
+                            <div id="ddFacts"></div>
+                        </div>
+                        <div class="dd-side-cta">
+                            <h4>Plan your study in <span id="ddSideName">this country</span></h4>
+                            <p>Get free 1-on-1 guidance on universities, admissions, scholarships and visas.</p>
+                            <a href="index.html#contact" class="dd-btn-grad">Book Free Consultation <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="dd-btn-grad dd-btn-wa"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- Universities -->
+            <div class="dd-uni-wrap" id="universities">
+                <div class="dd-uni-head">
+                    <div>
+                        <span class="dd-eyebrow"><i class="bi bi-bank"></i> Partner Institutions</span>
+                        <h2 class="dd-h2 mb-0">Major Universities in <span class="gt" id="ddUniName">Country</span><span class="dd-uni-count" id="ddUniCount">0</span></h2>
+                    </div>
+                    <div class="dd-uni-search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" id="ddUniSearch" placeholder="Search university or city..." aria-label="Search universities">
+                    </div>
+                </div>
+                <div class="dd-uni-grid" id="ddUniGrid"></div>
+            </div>
+
+            <!-- Other destinations -->
+            <div class="dd-others">
+                <span class="dd-eyebrow"><i class="bi bi-compass"></i> Keep Exploring</span>
+                <h2 class="dd-h2">Other Study Destinations</h2>
+                <div class="dd-other-row" id="ddOthers"></div>
+            </div>
+
+            <!-- CTA -->
+            <div class="dd-cta">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <h3>Our Unihelpline experts are ready to answer all your queries to overseas education</h3>
+                        <p>Write to <a href="mailto:info@unihelpline.com" class="text-info text-decoration-none fw-semibold">info@unihelpline.com</a> or call UAE +971 50 586 3293 · India +91 755 895 1509 · UK +44 7435 456580</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="contact.html" class="dd-btn-grad">Ask Our Experts <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Website Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4 g-lg-5">
+                <div class="col-lg-4 col-md-6">
+                    <a class="brand mb-3" href="index.html#home">
+                        <span class="lg">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/>
+                                <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/>
+                            </svg>
+                        </span>
+                        UniHelpLine
+                    </a>
+                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
+                    <div class="footer-trust-badge mb-3">
+                        <i class="bi bi-patch-check-fill"></i> Certified Study Abroad Advisors
+                    </div>
+                    <div class="soc">
+                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="footer-title">Explore</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home"><i class="bi bi-chevron-right small text-info"></i> Home</a></li>
+                        <li><a href="about.html"><i class="bi bi-chevron-right small text-info"></i> About Us</a></li>
+                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i> Universities</a></li>
+                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a></li>
+                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i> Destinations</a></li>
+                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp; Insights</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <h6 class="footer-title">Our Services</h6>
+                    <ul class="footer-links">
+                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career Counselling</a></li>
+                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i> Admission Guidance</a></li>
+                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i> Application Process</a></li>
+                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa Assistance</a></li>
+                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i> Scholarship Guidance</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1 Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h6 class="footer-title">Contact</h6>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box"><i class="bi bi-envelope-fill"></i></div>
+                        <div><span class="d-block small text-secondary">Email</span><a href="mailto:info@unihelpline.com">info@unihelpline.com</a></div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div><span class="d-block small text-secondary">UAE Office</span><a href="tel:+971505863293">+971 50 586 3293</a></div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box"><i class="bi bi-telephone-fill"></i></div>
+                        <div><span class="d-block small text-secondary">India Office</span><a href="tel:+917558951509">+91 755 895 1509</a></div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box"><i class="bi bi-building"></i></div>
+                        <div><span class="d-block small text-secondary">UK Office</span><a href="tel:+447435456580">+44 7435 456580</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+                <p class="small text-secondary mb-0">© 2026 UniHelpLine. All rights reserved.</p>
+                <p class="small powered-tag mb-0">Powered by <span class="credozen-badge">CREDOZEN LLP</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    (function () {
+        const UP = 'https://unihelpline.com/public/uploads/';
+        const PROFILE = 'https://unihelpline.com/university_profile/';
+
+        const D = {
+            uk: {
+                name: 'United Kingdom', short: 'UK', flag: '🇬🇧', chip: 'Top Choice',
+                img: UP + 'countries/16398289141639828914.jpg',
+                fb: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'World-class education, historic universities and globally recognised degrees — with one-year master\'s programmes and a 2-year post-study work route.',
+                stats: [['bi-mortarboard-fill', 'Master\'s', '1 Year'], ['bi-briefcase-fill', 'Post-Study Work', '2 Years'], ['bi-clock-fill', 'Part-Time Work', '20 hrs/week'], ['bi-calendar-event-fill', 'Intakes', 'Jan · May · Sep']],
+                overview: [
+                    'The UK is the <strong>second most preferred study destination</strong> after the US. The total <strong>cost of education</strong> for an international student to study in the UK can be lower compared to the USA and other countries.',
+                    'The UK is a <strong>world leader</strong> in many areas of education including engineering, science, art and design, business and management, law and finance. UK qualifications are recognised and respected throughout the world. Its flexible education system suits all streams of students and gives countless career opportunities worldwide.'
+                ],
+                highlights: [
+                    ['bi-hourglass-split', 'One-Year Master\'s', 'A UK master\'s is only ONE year — lighter on your wallet, excellent value for money, and you enter the workplace quickly.'],
+                    ['bi-briefcase', 'Post-Study Work Visa', 'The Graduate Route lets you work, or look for work, in any career for two years after completing your studies.'],
+                    ['bi-clock-history', 'Part-Time Jobs', 'Students can work up to 20 hours/week during term and up to 40 hours during vacations.'],
+                    ['bi-people', 'Dependents Allowed', 'Eligible dependents can travel with students and work full time.'],
+                    ['bi-heart-pulse', 'Free Schooling & Healthcare', 'Free school education for children and access to healthcare.'],
+                    ['bi-award', 'Globally Recognised', 'UK degrees are respected by employers and institutions all over the world.']
+                ],
+                facts: [['bi-geo-alt', 'Capital', 'London'], ['bi-translate', 'Language', 'English'], ['bi-currency-pound', 'Currency', 'Pound Sterling (GBP)'], ['bi-calendar3', 'Intakes', 'January, May, September'], ['bi-briefcase', 'Stay Back', '2 Years (Graduate Route)'], ['bi-clock', 'Work Rights', '20 hrs/week']],
+                unis: [
+                    ['Bournemouth University', 'Bournemouth University', '16641885491664188549.png', 'Poole, England'],
+                    ['Manchester Metropolitan University', 'Manchester Metropolitan University', '16625299481662529948.png', 'Manchester, England'],
+                    ['Glasgow Caledonian University', 'Glasgow Caledonian University', '16625288581662528858.jpg', 'Glasgow, Scotland'],
+                    ['Swansea University', 'Swansea University', '16617549451661754945.jpg', 'Swansea, Wales'],
+                    ['University of Greenwich', 'University of Greenwich', '16602998931660299893.png', 'London, England'],
+                    ['University of Northampton', 'University of Northampton', '16474589891647458989.png', 'Northampton, England'],
+                    ['De Montfort University', 'De Montfort University', '16469415501646941550.jpg', 'Leicester, England'],
+                    ['University of Bedfordshire', 'University of Bedfordshire', '16462166601646216660.jpg', 'Luton, England'],
+                    ['Sheffield Hallam University', 'Sheffield Hallam University - Sheffield', '16462164751646216475.png', 'Sheffield, England'],
+                    ['University of East London', 'University of East London', '16461717521646171752.png', 'London, England']
+                ]
+            },
+            usa: {
+                name: 'United States of America', short: 'USA', flag: '🇺🇸', chip: 'Global Leader',
+                img: UP + 'countries/16450922991645092299.jpg',
+                fb: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'Over 4,000 institutions, cutting-edge technology, flexible curriculum and up to three years of OPT work experience after graduation.',
+                stats: [['bi-bank2', 'Institutions', '4,000+'], ['bi-briefcase-fill', 'OPT Stay Back', 'Up to 3 Years'], ['bi-cash-coin', 'Visa Fee', 'USD 185'], ['bi-calendar-event-fill', 'Intakes', 'Fall · Spring']],
+                overview: [
+                    'The U.S. is a country of 50 states covering a vast swath of North America. Major cities include New York, a global finance and culture centre, the capital Washington DC, Chicago and Los Angeles.',
+                    'The USA is an <strong>educational hub with over 4,000 institutions</strong> offering undergraduate, postgraduate and doctorate degrees. Studying in the USA remains attractive thanks to quality education, cutting-edge technology, work opportunities, excellent funding options and a flexible curriculum.',
+                    'Many Indian students choose Canada for diploma courses — but why not study a proper degree in the USA and settle there afterwards? The <strong>Optional Practical Training (OPT)</strong> programme allows international students to work in their field of study for <strong>up to three years</strong> after graduation.',
+                    'It is widely believed that studying in the USA is very expensive and that getting a visa is very difficult — this is not entirely true. A wide variety of institutions offer a broad range of tuition fees, and visa success rates are currently higher compared to Canada and Australia.'
+                ],
+                highlights: [
+                    ['bi-building', '4,000+ Institutions', 'The widest choice of degree-granting institutions of any English-speaking country.'],
+                    ['bi-briefcase', 'OPT up to 3 Years', 'The three-year stay-back (OPT) rule has remained unchanged for over 15 years.'],
+                    ['bi-cpu', 'Technology Leader', 'Access the latest technologies, research and methodologies.'],
+                    ['bi-wallet2', 'Flexible Tuition', 'Both low- and high-tuition institutions are available to suit every budget.'],
+                    ['bi-shield-check', 'Higher Visa Success', 'If rejected, students can reapply immediately — many succeed on the second attempt.'],
+                    ['bi-cash-coin', 'Low Visa Fee', 'The visa fee is only USD 185 — lower than any other English-speaking country.']
+                ],
+                facts: [['bi-geo-alt', 'Capital', 'Washington, D.C.'], ['bi-translate', 'Language', 'English'], ['bi-currency-dollar', 'Currency', 'US Dollar (USD)'], ['bi-calendar3', 'Intakes', 'Fall, Spring, Summer'], ['bi-briefcase', 'Stay Back', 'Up to 3 Years (OPT)'], ['bi-cash', 'Visa Fee', 'USD 185']],
+                unis: [
+                    ['Saint Leo University', 'Saint Leo University', '17686737821768673782.png', 'Florida'],
+                    ['Seattle Colleges', 'Seattle Colleges', '17360000011736000001.jpeg', 'Seattle, Washington'],
+                    ['Southern Illinois University Carbondale', 'Southern Illinois University Carbondale', '17290934941729093494.jpeg', 'Carbondale, Illinois'],
+                    ['Middle Tennessee State University', 'Middle Tennessee State University', '17044533491704453349.webp', 'Murfreesboro, Tennessee'],
+                    ['St. Francis College', 'St. Francis College', '', 'New York'],
+                    ['Schiller International University (GEDU)', 'Schiller International University (GEDU)', '17007810901700781090.jpg', 'Tampa, Florida'],
+                    ['Washington University of Science and Technology', 'Washington University of Science and Technology (WUST)', '16951516721695151672.jpg', 'Virginia'],
+                    ['Mercy University', 'Mercy Univeristy', '16948798861694879886.jpg', 'New York'],
+                    ['University of Arizona', 'University of Arizona', '16947617891694761789.webp', 'Tucson, Arizona'],
+                    ['Montclair State University - INTO', 'Montclair State University - INTO', '16902944731690294473.jpg', 'New Jersey']
+                ]
+            },
+            ireland: {
+                name: 'Ireland', short: 'Ireland', flag: '🇮🇪', chip: 'Tech Hub',
+                img: UP + 'countries/16460589201646058920.jpg',
+                fb: 'https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'Europe\'s technology capital with seven globally ranked public universities and a 24-month post-study stay-back permission.',
+                stats: [['bi-trophy-fill', 'Public Universities', '7 QS Ranked'], ['bi-briefcase-fill', 'Stay Back', '24 Months'], ['bi-hourglass-split', 'Visa Processing', '4–6 Weeks'], ['bi-piggy-bank-fill', 'Funds Proof', '€10,000']],
+                overview: [
+                    'Ireland is an island in the North Atlantic, separated from Great Britain to its east by the North Channel, the Irish Sea and St George\'s Channel.',
+                    'The higher education system in Ireland consists of the university sector, institutes of technology and private independent colleges. The quality of the Irish education system is a major contributing factor to the rapid economic growth Ireland has experienced over the last few decades, and Irish institutions are widely recognised for excellence in many disciplines.',
+                    'Ireland\'s <strong>seven public universities are all ranked within the world\'s top 700</strong> in the QS World University Rankings. Ireland also has private-sector colleges ranging from the tiny Burren College of Art to the large Dublin Business School.'
+                ],
+                highlights: [
+                    ['bi-briefcase', 'Two-Year Stay Back', 'The Third Level Graduate Scheme allows graduates to remain in Ireland for up to 24 months to seek employment.'],
+                    ['bi-card-checklist', 'Green Card Pathway', 'After 24 months you may be eligible for the Green Card or Work Permit Scheme.'],
+                    ['bi-trophy', 'Globally Ranked', 'All seven public universities feature in the QS top 700.'],
+                    ['bi-laptop', 'European Tech Capital', 'Home to the European headquarters of many global technology companies.']
+                ],
+                steps: [
+                    ['Submit Application', 'Submit all required documents and applications to the university for an admission letter.'],
+                    ['Clear Offer Conditions', 'Verify the terms of a conditional offer and obtain an unconditional offer before making payment. Accept before the deadline.'],
+                    ['Pay Tuition Deposit', 'Pay 50% of the tuition fee if it is more than €12,000, or €6,000 if the fee is €12,000 or less. Submit the payment receipt.'],
+                    ['Receive Visa Letter', 'The university issues the visa letter once the tuition deposit is received.'],
+                    ['Apply for Visa (AVATS)', 'Apply online, print the summary and submit with documents at VFS. Processing takes 4–6 weeks — apply two months before travel.']
+                ],
+                docs: ['Cover letter stating purpose of travel', 'Current and all previous passports', 'AVATS online application summary', 'VFS appointment confirmation & fee receipt', 'Letter of acceptance from the institution', 'English test score (IELTS, PTE, TOEFL, Duolingo)', 'Statement of Purpose (SOP)', 'Resume / CV', '10th, 12th & degree mark sheets', 'Work experience letters', 'Private medical insurance', 'Police Clearance Certificate (≤ 6 months)', 'Two passport-size photographs', 'Proof of tuition fee payment', 'Proof of funds (€10,000) – 6-month statement', 'ITR / salary slips / affidavit of sponsors'],
+                facts: [['bi-geo-alt', 'Capital', 'Dublin'], ['bi-translate', 'Language', 'English, Irish'], ['bi-currency-euro', 'Currency', 'Euro (EUR)'], ['bi-calendar3', 'Intakes', 'January, September'], ['bi-briefcase', 'Stay Back', 'Up to 24 Months'], ['bi-piggy-bank', 'Living Funds', '€10,000']],
+                unis: [
+                    ['South East Technological University (SETU)', 'South East Technological University (SITU)', '16868938181686893818.png', 'Waterford & Carlow'],
+                    ['University of Limerick', 'University of Limerick', '16851036891685103689.jpg', 'Limerick'],
+                    ['Dundalk Institute of Technology', 'Dundalk institute of Technology', '16807736451680773645.jpg', 'Dundalk'],
+                    ['Technological University Dublin', 'Technological University Dublin', '16777636461677763646.jpg', 'Dublin']
+                ]
+            },
+            canada: {
+                name: 'Canada', short: 'Canada', flag: '🇨🇦', chip: 'High PR Demand',
+                img: UP + 'countries/16450924961645092496.jpg',
+                fb: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'One of the safest countries in the world with a high standard of living, immigration-friendly policies and attractive post-graduation work permits.',
+                stats: [['bi-map-fill', 'Provinces', '10 + 3 Territories'], ['bi-shield-fill-check', 'Safety', 'Among the Safest'], ['bi-briefcase-fill', 'PGWP', 'Up to 3 Years'], ['bi-calendar-event-fill', 'Intakes', 'Jan · May · Sep']],
+                overview: [
+                    'Canada is the largest country in North America and consists of <strong>10 provinces and 3 territories</strong>. Its capital is Ottawa, and it is the second-largest country in the world by territory.',
+                    'With its <strong>immigration-friendly policies</strong>, studying in Canada has become easier than ever. It is also a popular destination for vocational and diploma courses among international students.',
+                    'Canada is one of the safest countries, with one of the highest standards of living in the world. It is a free country where people are, by and large, judged on their actions and character rather than their appearance or country of origin.'
+                ],
+                highlights: [
+                    ['bi-shield-check', 'Safe & Welcoming', 'One of the safest countries with a highly multicultural society.'],
+                    ['bi-house-heart', 'High Quality of Life', 'Consistently ranked among the best countries for standard of living.'],
+                    ['bi-passport', 'Immigration Friendly', 'Clear pathways from study to work and permanent residency.'],
+                    ['bi-tools', 'Diplomas & Degrees', 'Wide choice of vocational, diploma and university degree programmes.']
+                ],
+                facts: [['bi-geo-alt', 'Capital', 'Ottawa'], ['bi-translate', 'Language', 'English, French'], ['bi-currency-dollar', 'Currency', 'Canadian Dollar (CAD)'], ['bi-calendar3', 'Intakes', 'January, May, September'], ['bi-briefcase', 'Stay Back', 'PGWP up to 3 Years'], ['bi-clock', 'Work Rights', 'Part-time during studies']],
+                unis: [
+                    ['University of Regina', 'University of Regina', '16901900941690190094.png', 'Regina, Saskatchewan'],
+                    ['University of the Fraser Valley', 'Univeristy of Fraser valley', '16901895171690189517.jpg', 'Abbotsford, British Columbia'],
+                    ['Trent University', 'Trent University', '16901892501690189250.jpg', 'Peterborough, Ontario'],
+                    ['University Canada West (GUS)', 'University Canada West (GUS)', '16729320781672932078.jpg', 'Vancouver, British Columbia'],
+                    ['MacEwan University', 'MacEwan University', '16478556551647855655.png', 'Edmonton, Alberta']
+                ]
+            },
+            georgia: {
+                name: 'Georgia', short: 'Georgia', flag: '🇬🇪', chip: 'Medical Hub',
+                img: UP + 'countries/17156309921715630992.jpg',
+                fb: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'Accredited universities, English-taught programmes and highly affordable tuition — set between the Caucasus Mountains and the Black Sea.',
+                stats: [['bi-patch-check-fill', 'Universities', 'Accredited'], ['bi-translate', 'Programmes', 'English-Taught'], ['bi-wallet-fill', 'Tuition', 'Affordable'], ['bi-heart-pulse-fill', 'Popular For', 'Medicine']],
+                overview: [
+                    '<strong>Georgia</strong> is an excellent destination for international students seeking higher education. It is home to many fantastic and accredited universities, giving you the opportunity to find the right university that best fits your academic goals and ambitions.',
+                    'Make sure that you properly research each higher education institution to determine which one is the most suitable match for you. It can be time-consuming, but it is a crucial step — and our counsellors are here to help.',
+                    'Georgia experiences a diverse climate, from mild winters to warm summers. Enjoy the vibrant lifestyle, delicious cuisine and friendly locals. You\'ll need a student visa to study, and can choose between university dormitories or private rentals.'
+                ],
+                highlights: [
+                    ['bi-globe-europe-africa', 'Cultural Experience', 'A front-row seat to the country\'s rich culture and history.'],
+                    ['bi-mortarboard', 'Quality Education', 'Georgian universities maintain high academic standards.'],
+                    ['bi-wallet2', 'Affordability', 'Tuition fees and living costs are relatively affordable.'],
+                    ['bi-tree', 'Beautiful Landscape', 'Stunning scenery including the Caucasus Mountains and Black Sea coast.'],
+                    ['bi-translate', 'English-Taught Programs', 'Many programs are offered in English for international students.'],
+                    ['bi-house-door', 'Easy Accommodation', 'University dormitories or private rentals to suit every budget.']
+                ],
+                facts: [['bi-geo-alt', 'Capital', 'Tbilisi'], ['bi-translate', 'Language', 'Georgian'], ['bi-currency-exchange', 'Currency', 'Georgian Lari (GEL)'], ['bi-book', 'Medium', 'English programmes'], ['bi-sun', 'Climate', 'Mild winters, warm summers'], ['bi-passport', 'Visa', 'Student visa required']],
+                unis: [
+                    ['Alte University', 'Alte University', '17418705271741870527.jpeg', 'Tbilisi'],
+                    ['Batumi Shota Rustaveli State University', 'Batumi Shota Rustaveli State University', '17163753491716375349.jpg', 'Batumi'],
+                    ['University of Georgia', 'University of Georgia', '17156336401715633640.png', 'Tbilisi']
+                ]
+            },
+            hungary: {
+                name: 'Hungary', short: 'Hungary', flag: '🇭🇺', chip: 'Schengen Area',
+                img: UP + 'countries/16771604341677160434.jpg',
+                fb: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'Prestigious European universities, a low cost of living, Schengen mobility and a 9-month study-to-work permit after graduation.',
+                stats: [['bi-geo-alt-fill', 'Capital', 'Budapest'], ['bi-briefcase-fill', 'Post-Study Permit', '9 Months'], ['bi-airplane-fill', 'Mobility', 'Schengen'], ['bi-thermometer-half', 'Climate', '-4°C to 26°C']],
+                overview: [
+                    'Hungary is a landlocked country in Central Europe. Its capital, Budapest, is bisected by the Danube River, and its cityscape is studded with architectural landmarks from Buda\'s medieval Castle Hill and grand neoclassical buildings along Pest\'s Andrássy Avenue to the 19th-century Chain Bridge.',
+                    'Hungary is among the <strong>top tourist destinations in Europe</strong>, with Budapest regarded as one of the most beautiful cities worldwide. The country is home to numerous World Heritage Sites, UNESCO Biosphere Reserves, the second largest thermal lake in the world (Lake Hévíz) and the largest lake in Central Europe (Lake Balaton).',
+                    'Hungary has four distinct seasons and a relatively dry continental climate — summers are warm and winters can be cold, with average temperatures from -4°C in January to 26°C in July.'
+                ],
+                highlights: [
+                    ['bi-briefcase', '9-Month Study-to-Work Permit', 'Stay another 9 months after graduation to find a job or start a business.'],
+                    ['bi-bank', 'World Heritage', 'Numerous UNESCO World Heritage Sites and Biosphere Reserves.'],
+                    ['bi-airplane', 'Schengen Access', 'Travel freely across the Schengen Area while you study.'],
+                    ['bi-wallet2', 'Low Cost of Living', 'Affordable living compared to Western European countries.']
+                ],
+                facts: [['bi-geo-alt', 'Capital', 'Budapest'], ['bi-translate', 'Language', 'Hungarian'], ['bi-currency-exchange', 'Currency', 'Forint (HUF)'], ['bi-people', 'Population', '9.79 Million'], ['bi-map', 'Area', '93,022 km²'], ['bi-clock', 'Time Zone', 'CET (GMT +1)']],
+                unis: [
+                    ['University of Debrecen', 'University of Debrecen', '17011690781701169078.jpg', 'Debrecen'],
+                    ['John von Neumann University', 'John von Neumann Univeristy', '16771614471677161447.avif', 'Kecskemét']
+                ]
+            },
+            poland: {
+                name: 'Poland', short: 'Poland', flag: '🇵🇱', chip: 'Central Europe',
+                img: UP + 'countries/16504676971650467697.jpg',
+                fb: 'https://images.unsplash.com/photo-1519197924294-4ba991a11128?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'Affordable study programmes, low living expenses and a vibrant community of over 65,000 international students every year.',
+                stats: [['bi-people-fill', 'Int\'l Students', '65,000+'], ['bi-mortarboard-fill', 'Bachelor\'s', '3 Years'], ['bi-journal-bookmark-fill', 'System', 'Bologna'], ['bi-wallet-fill', 'Tuition', 'Competitive']],
+                overview: [
+                    'Poland, officially the Republic of Poland, is a country in Central Europe. It is the <strong>9th largest country in Europe</strong> and an increasingly popular destination for international students. Local universities offer a good return on investment, with affordable study programmes and accommodation costs.',
+                    'You\'ll integrate quickly in Polish academic and social life — <strong>over 65,000 international students</strong> enrol at universities in Poland every year.',
+                    'The education system is based on the <strong>Bologna principles</strong>. Most Bachelor\'s take 3 years to complete, while most Master\'s take 1 or 2 years. The quality of education is monitored and regularly evaluated, and the costs of living are a fraction of other European cities.'
+                ],
+                highlights: [
+                    ['bi-graph-up-arrow', 'Great ROI', 'Affordable programmes and accommodation for a strong return on investment.'],
+                    ['bi-people', 'International Community', 'Join 65,000+ international students from around the world.'],
+                    ['bi-journal-check', 'Bologna System', 'European-standard degrees: 3-year Bachelor\'s, 1–2 year Master\'s.'],
+                    ['bi-wallet2', 'Low Living Costs', 'A fraction of what students spend in other European cities.']
+                ],
+                facts: [['bi-geo-alt', 'Capital', 'Warsaw'], ['bi-translate', 'Language', 'Polish'], ['bi-currency-exchange', 'Currency', 'Złoty (PLN)'], ['bi-mortarboard', 'Bachelor\'s', '3 Years'], ['bi-journal', 'Master\'s', '1–2 Years'], ['bi-airplane', 'Mobility', 'Schengen / EU']],
+                unis: [
+                    ['Vistula University', 'Vistula University', '16888172861688817286.jpg', 'Warsaw'],
+                    ['University of Information Technology and Management in Rzeszów', 'University of Information Technology and Management in Rzeszow', '16548644011654864401.png', 'Rzeszów']
+                ]
+            },
+            malta: {
+                name: 'Malta', short: 'Malta', flag: '🇲🇹', chip: 'English Speaking',
+                img: UP + 'countries/16657177401665717740.jpg',
+                fb: 'https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'Mediterranean lifestyle, English-taught courses, a 9-month job-seeking visa and up to 70% of tuition fees refunded under the Get Qualified Scheme.',
+                stats: [['bi-translate', 'Languages', 'Maltese · English'], ['bi-search', 'Job-Seeking Visa', '9 Months'], ['bi-arrow-repeat', 'Tuition Refund', 'Up to 70%'], ['bi-house-fill', 'Shared Rent', '€300/month']],
+                overview: [
+                    'Malta is one of the smallest countries in Europe, situated east of Tunisia and about 100 km south of Sicily (Italy). Officially the Republic of Malta, it consists of the main island of Malta and the smaller islands of Gozo and Comino.',
+                    'Malta has a population of around 515,000 people and is among the most densely populated countries in the world. The capital city is Valletta, and the spoken languages are <strong>Maltese and English</strong>.',
+                    'Students usually get jobs and work placements while studying — it is easy to find a job in Malta, as per our previous students\' experience. Based on the <strong>Malta Get Qualified Scheme</strong>, graduates can claim <strong>70% of tuition fees back</strong> once their tax payments reach 70% of the fees after moving to a work visa.'
+                ],
+                highlights: [
+                    ['bi-search', 'Job-Seeking Visa', 'If you can\'t find a job quickly, apply for a 9-month job-seeking visa.'],
+                    ['bi-arrow-counterclockwise', '70% Fee Refund', 'Get Qualified Scheme refunds up to 70% of tuition after you move to a work visa.'],
+                    ['bi-shield-check', 'Visa Refusal Refund', 'If your visa is rejected, the institute refunds the full fee except the administration fee.'],
+                    ['bi-briefcase', 'Easy Job Market', 'Students commonly find part-time jobs and work placements while studying.']
+                ],
+                steps: [
+                    ['Application & Admission', 'Submit your application and documents. The institute issues the admission letter in around one month.'],
+                    ['Full Fee Payment', 'Pay the total fee in advance as a single payment — instalments are not accepted. The institute then issues visa-supporting documents.'],
+                    ['Visa Application', 'Show around €8,000 as living costs. Embassy decisions usually take 1–2 months.'],
+                    ['Travel & Accommodation', 'Shared accommodation costs around €300/month. Carry about €1,000 as initial expenses — we help you find housing.'],
+                    ['Work & Stay Back', 'Find work after studies or apply for a 9-month job-seeking visa. Family can join once you hold a work visa.']
+                ],
+                docs: ['Passport copy', 'Higher Secondary School Certificate', 'College certificate & mark list (if applicable)', 'Work experience letters (if applicable)', 'English proficiency certificate (IELTS, Duolingo etc.)', 'Updated CV with education and work details'],
+                facts: [['bi-geo-alt', 'Capital', 'Valletta'], ['bi-translate', 'Language', 'Maltese, English'], ['bi-currency-euro', 'Currency', 'Euro (EUR)'], ['bi-people', 'Population', '~515,000'], ['bi-piggy-bank', 'Living Funds', '€8,000'], ['bi-people-fill', 'Family', 'After work visa']],
+                unis: [
+                    ['GBS Malta', 'GBS Malta', '16928806321692880632.jpg', 'St Julian\'s'],
+                    ['Ascencia Business School Malta', 'Ascencia Business School Malta', '16817538221681753822.png', 'Malta'],
+                    ['London School of Commerce', 'London School of Commerce', '16806473481680647348.png', 'Malta'],
+                    ['Learning Works', 'Learning Works', '16657183321665718332.png', 'Malta']
+                ]
+            },
+            france: {
+                name: 'France', short: 'France', flag: '🇫🇷', chip: 'Grandes Écoles',
+                img: UP + 'countries/17010303771701030377.jpg',
+                fb: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'Pioneers in luxury, arts, business management and world-class engineering — with a wide range of English-taught programmes.',
+                stats: [['bi-trophy-fill', 'QS Ranked', '25+ Universities'], ['bi-translate', 'Courses', 'English-Taught'], ['bi-bar-chart-fill', 'Europe Rank', '#3 English Courses'], ['bi-airplane-fill', 'Mobility', 'Schengen']],
+                overview: [
+                    'Many students have been looking forward to studying abroad in France in recent years. France is one of the <strong>most preferred countries for international students</strong> due to the active efforts of the French government and institutions.',
+                    'The QS World University Rankings list <strong>more than 25 French universities</strong>. Most renowned bachelor\'s and master\'s courses are offered in English — instruction, assignments and exams included.',
+                    'France ranks <strong>third in Europe</strong> for the number of English-taught courses, behind the Netherlands and Germany. If you wish to work while studying, learning basic French is recommended.'
+                ],
+                highlights: [
+                    ['bi-trophy', '25+ Ranked Universities', 'More than 25 French universities feature in the QS World Rankings.'],
+                    ['bi-translate', 'Study in English', 'Instruction, assignments and exams in English for international students.'],
+                    ['bi-gem', 'Luxury, Arts & Business', 'Global leader in luxury, fashion, arts and business management.'],
+                    ['bi-chat-quote', 'Learn French', 'Pick up basic French to unlock part-time work and career opportunities.']
+                ],
+                facts: [['bi-geo-alt', 'Capital', 'Paris'], ['bi-translate', 'Language', 'French'], ['bi-currency-euro', 'Currency', 'Euro (EUR)'], ['bi-calendar3', 'Intakes', 'January, September'], ['bi-book', 'Medium', 'English & French'], ['bi-airplane', 'Mobility', 'Schengen / EU']],
+                unis: [
+                    ['Keyce Business School', 'Keyce Business School', '17010309941701030994.png', 'France']
+                ]
+            },
+            dubai: {
+                name: 'Dubai / UAE', short: 'Dubai', flag: '🇦🇪', chip: 'Global Hub',
+                img: UP + 'countries/17447245851744724585.jpg',
+                fb: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80',
+                tagline: 'World-class international branch campuses, tax-free career opportunities and a futuristic, multicultural city to live and study in.',
+                stats: [['bi-buildings-fill', 'Branch Campuses', 'UK · AUS · US'], ['bi-cash-stack', 'Income Tax', 'Tax-Free'], ['bi-globe2', 'Expat Population', '85%+'], ['bi-airplane-fill', 'Connectivity', 'Global Hub']],
+                overview: [
+                    'Dubai, in the United Arab Emirates, has rapidly become one of the <strong>most exciting study destinations</strong> in the world. The city hosts international branch campuses of leading UK, Australian and other universities, awarding the same degrees as their home campuses.',
+                    'Students enjoy a <strong>safe, multicultural environment</strong> where English is widely spoken, with world-class infrastructure, a booming job market and tax-free salaries after graduation.',
+                    'Being closer to home for students from India and the Middle East, Dubai offers lower travel and living costs compared to studying in Europe — with the flexibility to transfer to a home campus abroad in many programmes.'
+                ],
+                highlights: [
+                    ['bi-building-check', 'Same Global Degrees', 'Branch campuses award the same degree as the main university abroad.'],
+                    ['bi-cash-stack', 'Tax-Free Careers', 'Access a booming, tax-free job market after graduation.'],
+                    ['bi-shield-check', 'Safe & Multicultural', 'One of the safest cities in the world with a large expat community.'],
+                    ['bi-arrow-left-right', 'Campus Transfer Options', 'Many programmes allow transfer to the home campus in the UK or Australia.']
+                ],
+                facts: [['bi-geo-alt', 'Capital (UAE)', 'Abu Dhabi'], ['bi-translate', 'Language', 'Arabic, English'], ['bi-currency-exchange', 'Currency', 'UAE Dirham (AED)'], ['bi-calendar3', 'Intakes', 'January, September'], ['bi-cash', 'Income Tax', 'None'], ['bi-sun', 'Climate', 'Warm, sunny year-round']],
+                unis: [
+                    ['Middlesex University Dubai', '', '', 'Dubai Knowledge Park'],
+                    ['University of Birmingham Dubai', '', '', 'Dubai International Academic City'],
+                    ['Heriot-Watt University Dubai', '', '', 'Dubai Knowledge Park'],
+                    ['Curtin University Dubai', '', '', 'Dubai International Academic City'],
+                    ['Murdoch University Dubai', '', '', 'Dubai Knowledge Park'],
+                    ['University of Wollongong in Dubai', '', '', 'Dubai Knowledge Park']
+                ]
+            }
+        };
+
+        const key = (new URLSearchParams(location.search).get('c') || 'uk').toLowerCase();
+        const c = D[key] || D.uk;
+        const $ = id => document.getElementById(id);
+        const esc = s => String(s).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+        const initials = n => n.replace(/\(.*?\)/g, '').split(/\s+/).filter(w => /^[A-Z]/.test(w) && !['of', 'the', 'and', 'in'].includes(w.toLowerCase())).slice(0, 2).map(w => w[0]).join('');
+
+        document.title = 'Study in ' + c.name + ' | UNIHELPLINE Study Abroad Consultants';
+        $('metaDesc').setAttribute('content', 'Study in ' + c.name + ' with UNIHELPLINE. ' + c.tagline);
+
+        const hero = $('ddHeroImg');
+        hero.src = c.img;
+        hero.alt = 'Study in ' + c.name;
+        hero.onerror = function () { this.onerror = null; this.src = c.fb; };
+
+        $('ddCrumb').textContent = c.name;
+        $('ddFlag').textContent = c.flag;
+        $('ddChip').textContent = c.short + ' · ' + c.chip;
+        $('ddTitle').textContent = c.name;
+        $('ddTagline').textContent = c.tagline;
+        $('ddOverviewTitle').innerHTML = 'Studying in <span class="gt">' + esc(c.name) + '</span>';
+        $('ddWhyTitle').textContent = 'Why Study in ' + c.short + '?';
+        $('ddSideName').textContent = c.short;
+        $('ddUniName').textContent = c.name;
+
+        $('ddStats').innerHTML = c.stats.map(s => '<div class="dd-stat"><i class="bi ' + s[0] + '"></i><div><small>' + esc(s[1]) + '</small><strong>' + esc(s[2]) + '</strong></div></div>').join('');
+        $('ddOverview').innerHTML = c.overview.map(p => '<p>' + p + '</p>').join('');
+        $('ddHighlights').innerHTML = c.highlights.map(h => '<div class="dd-hl"><div class="dd-hl-ic"><i class="bi ' + h[0] + '"></i></div><h4>' + esc(h[1]) + '</h4><p>' + esc(h[2]) + '</p></div>').join('');
+        $('ddFacts').innerHTML = c.facts.map(f => '<div class="dd-fact"><span><i class="bi ' + f[0] + '"></i>' + esc(f[1]) + '</span><strong>' + esc(f[2]) + '</strong></div>').join('');
+
+        if (c.steps) {
+            $('ddStepsBlock').hidden = false;
+            $('ddSteps').innerHTML = c.steps.map((s, i) => '<div class="dd-step" data-n="' + (i + 1) + '"><h5>' + esc(s[0]) + '</h5><p>' + esc(s[1]) + '</p></div>').join('');
+        }
+        if (c.docs) {
+            $('ddDocsBlock').hidden = false;
+            $('ddDocs').innerHTML = c.docs.map(d => '<div class="dd-doc"><i class="bi bi-check-circle-fill"></i><span>' + esc(d) + '</span></div>').join('');
+        }
+
+        function renderUnis(q) {
+            q = (q || '').toLowerCase().trim();
+            const list = c.unis.filter(u => !q || u[0].toLowerCase().includes(q) || u[3].toLowerCase().includes(q));
+            $('ddUniCount').innerHTML = '<i class="bi bi-bank"></i> ' + list.length;
+            if (!list.length) { $('ddUniGrid').innerHTML = '<div class="dd-empty"><i class="bi bi-search fs-3 d-block mb-2"></i>No universities match your search.</div>'; return; }
+            $('ddUniGrid').innerHTML = list.map((u, i) => {
+                const ini = esc(initials(u[0]) || u[0][0]);
+                const logo = u[2]
+                    ? '<img src="' + UP + 'universities/' + u[2] + '" alt="' + esc(u[0]) + ' logo" loading="lazy" referrerpolicy="no-referrer" onerror="this.outerHTML=\'<div class=&quot;dd-uni-init&quot;>' + ini + '</div>\'">'
+                    : '<div class="dd-uni-init">' + ini + '</div>';
+                const href = 'university-detail.html?u=' + encodeURIComponent(u[0]) + '&c=' + encodeURIComponent(key);
+                const label = 'View University Profile';
+                return '<article class="dd-uni" style="animation-delay:' + (i * 0.05) + 's">' +
+                    '<div class="dd-uni-logo">' + logo + '</div>' +
+                    '<span class="dd-uni-tag"><i class="bi bi-patch-check-fill me-1"></i>Partner University</span>' +
+                    '<h4>' + esc(u[0]) + '</h4>' +
+                    '<div class="dd-uni-loc"><i class="bi bi-geo-alt-fill"></i>' + esc(u[3]) + '</div>' +
+                    '<a class="dd-uni-link" href="' + href + '">' + label + '<i class="bi bi-arrow-up-right"></i></a>' +
+                    '</article>';
+            }).join('');
+        }
+        renderUnis('');
+        $('ddUniSearch').addEventListener('input', e => renderUnis(e.target.value));
+
+        $('ddOthers').innerHTML = Object.keys(D).filter(k => k !== key && D[k] !== c).map(k =>
+            '<a class="dd-other" href="destination-detail.html?c=' + k + '"><span>' + D[k].flag + '</span>' + esc(D[k].name) + '</a>'
+        ).join('');
+    })();
+    </script>
+</body>
+
+</html>

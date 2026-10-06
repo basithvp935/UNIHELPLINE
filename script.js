@@ -59,8 +59,24 @@ if (twText) {
 
 /* marquees */
 const names=unis.map(u=>u[0]);const mq1=$('#mq1');if(mq1)mq1.innerHTML=[...names,...names].map(x=>'<span>'+x+'</span>').join('');
+const dslugMap = {
+    "United Kingdom": "uk",
+    "United States of America": "usa",
+    "Ireland": "ireland",
+    "Canada": "canada",
+    "Georgia": "georgia",
+    "Hungary": "hungary",
+    "Poland": "poland",
+    "Malta": "malta",
+    "France": "france",
+    "Dubai / UAE": "dubai",
+    "Germany": "france"
+};
 const dhalf=[...dests,...dests];
-const dh=[...dhalf,...dhalf].map(x=>'<span>'+x+'</span>').join('');
+const dh=[...dhalf,...dhalf].map(x=>{
+    const c = dslugMap[x] || 'uk';
+    return `<a href="destination-detail.html?c=${c}"><span>${x}</span></a>`;
+}).join('');
 const d1El=$('#d1'), d2El=$('#d2');
 if(d1El) d1El.innerHTML=dh;
 if(d2El) d2El.innerHTML=dh;
@@ -71,43 +87,46 @@ const us=$('#us');
 function rwl(){
     const wc=$('#wc'), wlb=$('#wlb');
     if(wc) wc.textContent=wl.size;
-    if(wlb) wlb.innerHTML=wl.size?[...wl].map(i=>`<div class="wli"><span>${unis[i][0]}</span><a href="https://unihelpline.com/university_profile/${unis[i][3]}" target="_blank" rel="noopener" class="acc"><i class="bi bi-box-arrow-up-right"></i></a></div>`).join(''):'<p class="text-secondary">Your wishlist is empty. Tap the heart on a university to save it.</p>';
+    if(wlb) wlb.innerHTML=wl.size?[...wl].map(i=>`<div class="wli"><span>${unis[i][0]}</span><a href="university-detail.html?u=${encodeURIComponent(unis[i][0])}" class="acc" title="View Profile"><i class="bi bi-box-arrow-up-right"></i></a></div>`).join(''):'<p class="text-secondary">Your wishlist is empty. Tap the heart on a university to save it.</p>';
     $$('.hrt').forEach(b=>{const on=wl.has(+b.dataset.i);b.classList.toggle('on',on);b.firstChild.className='bi bi-heart'+(on?'-fill':'')});
 }
 if(us){
-    us.innerHTML=unis.map((u,i)=>`<div class="uc rv" data-rv="up"><div class="lg"><img src="${u[2]}" alt="${u[0]}" loading="lazy" referrerpolicy="no-referrer" onerror="this.outerHTML='<span class=mono>${mono(u[0])}</span>'"></div><div class="uc-body"><h6 title="${u[0]}">${u[0]}</h6><div class="uc-loc"><i class="bi bi-geo-alt-fill"></i><span>${u[1]}</span></div></div><div class="rb"><a class="vp" href="https://unihelpline.com/university_profile/${u[3]}" target="_blank" rel="noopener"><span>View profile</span><i class="bi bi-arrow-up-right"></i></a><button class="hrt" data-i="${i}" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button></div></div>`).join('');
+    us.innerHTML=unis.map((u,i)=>`<div class="uc rv" data-rv="up"><div class="lg"><img src="${u[2]}" alt="${u[0]}" loading="lazy" referrerpolicy="no-referrer" onerror="this.outerHTML='<span class=mono>${mono(u[0])}</span>'"></div><div class="uc-body"><span class="uc-badge"><i class="bi bi-patch-check-fill"></i> Partner</span><h6 title="${u[0]}">${u[0]}</h6><div class="uc-loc"><i class="bi bi-geo-alt-fill"></i><span>${u[1]}</span></div></div><div class="rb"><a class="vp" href="university-detail.html?u=${encodeURIComponent(u[0])}"><span>View profile</span><i class="bi bi-arrow-up-right"></i></a><button class="hrt" data-i="${i}" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button></div></div>`).join('');
     us.addEventListener('click',e=>{const b=e.target.closest('.hrt');if(!b)return;const i=+b.dataset.i;wl.has(i)?wl.delete(i):wl.add(i);rwl()});
 }
 rwl();
 
-/* auto-slider & controls (slide 4 on desktop, 2 on mobile) */
-const getSlideAmount=()=>{
+/* auto-slider & controls (smooth full slide: 4 columns on desktop, 2 on mobile) */
+const getColsPerPage = () => window.innerWidth >= 992 ? 4 : 2;
+const getSlideAmount = () => {
     if(!us) return 310;
-    const c=us.querySelector('.uc');
+    const c = us.querySelector('.uc');
     if(!c) return 310;
-    const isDesk=window.innerWidth>=992;
-    const gap=isDesk?20:10;
-    const perPage=isDesk?4:2;
-    return (c.offsetWidth+gap)*perPage;
+    const gap = window.innerWidth >= 992 ? 20 : 10;
+    return (c.offsetWidth + gap) * getColsPerPage();
 };
 
-const slideNext=()=>{
+const slideNext = () => {
     if(!us) return;
-    const amount=getSlideAmount();
-    if(us.scrollLeft+us.clientWidth>=us.scrollWidth-25){
-        us.scrollTo({left:0,behavior:'smooth'});
+    const amount = getSlideAmount();
+    const maxScroll = us.scrollWidth - us.clientWidth;
+    if(us.scrollLeft >= maxScroll - 15){
+        us.scrollTo({left: 0, behavior: 'smooth'});
     }else{
-        us.scrollBy({left:amount,behavior:'smooth'});
+        const target = Math.min(us.scrollLeft + amount, maxScroll);
+        us.scrollTo({left: target, behavior: 'smooth'});
     }
 };
 
-const slidePrev=()=>{
+const slidePrev = () => {
     if(!us) return;
-    const amount=getSlideAmount();
-    if(us.scrollLeft<=25){
-        us.scrollTo({left:us.scrollWidth,behavior:'smooth'});
+    const amount = getSlideAmount();
+    const maxScroll = us.scrollWidth - us.clientWidth;
+    if(us.scrollLeft <= 15){
+        us.scrollTo({left: maxScroll, behavior: 'smooth'});
     }else{
-        us.scrollBy({left:-amount,behavior:'smooth'});
+        const target = Math.max(us.scrollLeft - amount, 0);
+        us.scrollTo({left: target, behavior: 'smooth'});
     }
 };
 
@@ -123,23 +142,21 @@ const pv=$('#pv'), nx=$('#nx');
 if(pv) pv.onclick=()=>{slidePrev();startAuto()};
 if(nx) nx.onclick=()=>{slideNext();startAuto()};
 
-/* pagination dots for sets of 4 (desktop) or 2 (mobile) */
+/* pagination dots for sets of 4 columns / 8 cards (desktop) or 2 columns / 4 cards (mobile) */
 const dotsWrap=$('#uni-dots');
 function renderDots(){
     if(!dotsWrap)return;
-    const perPage=window.innerWidth>=992?4:2;
-    const pages=Math.ceil(unis.length/perPage);
+    const colsPerPage=getColsPerPage();
+    const cardsPerPage=colsPerPage*2;
+    const pages=Math.ceil(unis.length/cardsPerPage);
     dotsWrap.innerHTML=Array.from({length:pages},(_,i)=>`<button class="uni-dot ${i===0?'active':''}" data-page="${i}" aria-label="Page ${i+1}"></button>`).join('');
 }
 renderDots();
 
 function updateDots(){
     if(!dotsWrap||!us)return;
-    const perPage=window.innerWidth>=992?4:2;
-    const c=us.querySelector('.uc');
-    if(!c)return;
-    const gap=window.innerWidth>=992?20:10;
-    const step=(c.offsetWidth+gap)*perPage;
+    const step=getSlideAmount();
+    if(!step)return;
     const activeIdx=Math.min(Math.round(us.scrollLeft/step),$$('.uni-dot',dotsWrap).length-1);
     $$('.uni-dot',dotsWrap).forEach((d,i)=>d.classList.toggle('active',i===activeIdx));
 }
@@ -150,11 +167,7 @@ dotsWrap&&dotsWrap.addEventListener('click',e=>{
     const d=e.target.closest('.uni-dot');
     if(!d)return;
     const page=+d.dataset.page;
-    const perPage=window.innerWidth>=992?4:2;
-    const c=us.querySelector('.uc');
-    if(!c)return;
-    const gap=window.innerWidth>=992?20:10;
-    const step=(c.offsetWidth+gap)*perPage;
+    const step=getSlideAmount();
     us.scrollTo({left:page*step,behavior:'smooth'});
     startAuto();
 });

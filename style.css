@@ -1678,7 +1678,10 @@ footer .brand {
 
 /* universities */
 .us {
-    display: flex;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 3.75rem) / 4);
     gap: 1.25rem;
     overflow-x: auto;
     padding: 1rem 0.25rem 2.2rem;
@@ -1687,6 +1690,7 @@ footer .brand {
     scroll-behavior: smooth;
     cursor: grab;
     -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
 }
 
 .us::-webkit-scrollbar {
@@ -1698,8 +1702,10 @@ footer .brand {
 }
 
 .uc {
-    flex: 0 0 290px;
-    width: 290px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     scroll-snap-align: start;
     background: linear-gradient(165deg, rgba(20, 29, 56, 0.85) 0%, rgba(10, 16, 34, 0.95) 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1758,6 +1764,22 @@ footer .brand {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+}
+
+.uc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 50px;
+    background: rgba(39, 194, 232, 0.16);
+    border: 1px solid rgba(39, 194, 232, 0.35);
+    color: #27C2E8;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.55rem;
 }
 
 .uc h6 {
@@ -2117,7 +2139,15 @@ footer .brand {
     animation-play-state: paused;
 }
 
-.dm span {
+.dm a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+}
+
+.dm span,
+.dm a span {
     font-family: 'Bricolage Grotesque';
     font-size: clamp(2.4rem, 5.2vw, 4.8rem);
     font-weight: 800;
@@ -2129,12 +2159,15 @@ footer .brand {
     cursor: pointer;
 }
 
-.dm span:hover {
+.dm span:hover,
+.dm a:hover span {
     color: var(--tx);
     -webkit-text-stroke: 0;
+    text-shadow: 0 0 30px rgba(39, 194, 232, 0.4);
 }
 
-.dm span:nth-child(odd):after {
+.dm span:nth-child(odd):after,
+.dm a:nth-child(odd) span:after {
     content: "";
     display: inline-block;
     width: .22em;
@@ -3888,12 +3921,16 @@ footer .credozen-badge:hover {
         }
     }
 
-    /* Universities Carousel - 2 Box Slide on Mobile */
+    /* Universities Carousel - 2 Row Grid Slide on Mobile */
     #universities {
         padding: 3.2rem 0;
     }
 
     .us {
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% - 10px) / 2);
         gap: 10px;
         padding: 0.5rem 0.1rem 1.4rem;
         scroll-snap-type: x mandatory;
@@ -3901,10 +3938,10 @@ footer .credozen-badge:hover {
     }
 
     .uc {
-        flex: 0 0 calc((100% - 10px) / 2);
-        width: calc((100% - 10px) / 2);
-        max-width: calc((100% - 10px) / 2);
-        min-width: calc((100% - 10px) / 2);
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        flex: none;
         padding: 0.85rem 0.75rem;
         border-radius: 20px;
         scroll-snap-align: start;
@@ -5228,15 +5265,14 @@ footer .credozen-badge:hover {
    STUDY DESTINATIONS PAGE: Luxury Directory & Visual Portals
    ============================================================ */
 .dest-content-section {
-    padding: 5.5rem 0 6.5rem;
+    padding: 5.5rem 0 5.5rem;
     position: relative;
-    background: #ffffff;
-    border-radius: 46px;
+    background: #ffffff !important;
+    border-radius: 46px 46px 0 0;
     margin-top: -38px;
-    margin-bottom: -38px;
+    margin-bottom: 0 !important;
     z-index: 2;
-    overflow: hidden;
-    box-shadow: 0 -20px 50px rgba(5, 10, 24, 0.22), 0 20px 50px rgba(5, 10, 24, 0.22);
+    box-shadow: 0 -20px 50px rgba(5, 10, 24, 0.22);
 }
 
 .dest-section-intro {
@@ -5322,7 +5358,7 @@ footer .credozen-badge:hover {
     z-index: 1;
 }
 
-/* Destination Card */
+/* Destination Card - High Performance Hardware Accelerated */
 .dest-card {
     position: relative;
     border-radius: 22px;
@@ -5333,16 +5369,18 @@ footer .credozen-badge:hover {
     justify-content: space-between;
     padding: 1.5rem;
     text-decoration: none;
-    background: linear-gradient(145deg, #0d1f3d 0%, #0a3359 50%, #07152f 100%);
-    box-shadow: 0 14px 35px rgba(10, 26, 60, 0.12);
-    border: 1px solid rgba(10, 134, 190, 0.16);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #0d1f3d;
+    box-shadow: 0 14px 35px rgba(10, 26, 60, 0.14);
+    border: 1.5px solid rgba(10, 134, 190, 0.22);
+    contain: paint;
+    transform: translateZ(0);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .dest-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 24px 55px rgba(10, 134, 190, 0.25);
-    border-color: rgba(39, 194, 232, 0.6);
+    transform: translateY(-8px) translateZ(0);
+    box-shadow: 0 24px 55px rgba(10, 134, 190, 0.28);
+    border-color: rgba(39, 194, 232, 0.7);
 }
 
 .dest-card-bg {
@@ -5351,24 +5389,20 @@ footer .credozen-badge:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 0;
 }
 
 .dest-card:hover .dest-card-bg {
-    transform: scale(1.08);
+    transform: scale(1.07);
 }
 
 .dest-card-scrim {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(5, 10, 24, 0.08) 0%, rgba(7, 21, 47, 0.35) 45%, rgba(7, 21, 47, 0.88) 100%);
-    transition: background 0.3s ease;
     z-index: 1;
-}
-
-.dest-card:hover .dest-card-scrim {
-    background: linear-gradient(180deg, rgba(5, 10, 24, 0.05) 0%, rgba(7, 21, 47, 0.38) 35%, rgba(7, 21, 47, 0.94) 100%);
+    pointer-events: none;
 }
 
 /* Card Top Badges */
@@ -5381,10 +5415,8 @@ footer .credozen-badge:hover {
 }
 
 .dest-country-badge {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 50px;
     padding: 0.35rem 0.85rem;
     font-size: 0.78rem;
@@ -5393,7 +5425,7 @@ footer .credozen-badge:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .dest-country-badge .dest-flag {
@@ -5402,16 +5434,15 @@ footer .credozen-badge:hover {
 }
 
 .dest-hub-chip {
-    background: rgba(10, 134, 190, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #0A86BE;
     color: #ffffff;
     font-size: 0.72rem;
     font-weight: 700;
     padding: 0.35rem 0.75rem;
     border-radius: 50px;
-    border: 1px solid rgba(39, 194, 232, 0.4);
+    border: 1px solid rgba(39, 194, 232, 0.5);
     letter-spacing: 0.03em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Card Bottom Info */
@@ -5428,16 +5459,11 @@ footer .credozen-badge:hover {
     letter-spacing: -0.025em;
     margin-bottom: 0.4rem;
     line-height: 1.15;
-    transition: color 0.25s ease;
-}
-
-.dest-card:hover .dest-card-title {
-    color: #ffffff;
 }
 
 .dest-card-highlight {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 1.1rem;
     line-height: 1.5;
 }
@@ -5446,10 +5472,8 @@ footer .credozen-badge:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
-    background: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50px;
     padding: 0.45rem 1rem;
     color: #ffffff;

@@ -19,7 +19,6 @@
     <style>
         /* Smooth, unstuck scrolling */
         html {
-            scroll-behavior: smooth;
             scroll-padding-top: 100px;
         }
         body {
@@ -28,6 +27,8 @@
         }
 
         /* ── FORCE ALL .rv ELEMENTS VISIBLE (prevents stuck/invisible page) ── */
+        .rv,
+        .rv[data-rv],
         .dest-content-section .rv,
         .dest-content-section .rv[data-rv],
         .banner-hero .rv,
@@ -38,18 +39,17 @@
             transition: none !important;
         }
 
-        /* Guarantees dest-content-section is clean white, never black */
+        /* Guarantees dest-content-section is clean white, perfectly connected to footer */
         .dest-content-section {
             background: #ffffff !important;
             color: #07152f !important;
             position: relative;
             z-index: 2;
-            border-radius: 46px;
+            border-radius: 46px 46px 0 0;
             margin-top: -38px;
-            margin-bottom: -38px;
-            padding: 5.5rem 0 6.5rem;
-            box-shadow: 0 -20px 50px rgba(5, 10, 24, 0.22), 0 20px 50px rgba(5, 10, 24, 0.22);
-            overflow: hidden;
+            margin-bottom: 0 !important;
+            padding: 5.5rem 0 5.5rem;
+            box-shadow: 0 -20px 50px rgba(5, 10, 24, 0.22);
         }
         .dest-grid {
             display: grid;
@@ -68,13 +68,15 @@
             justify-content: space-between;
             padding: 1.5rem;
             text-decoration: none;
-            background: #0d1f3d linear-gradient(145deg, #0d1f3d 0%, #0a3359 50%, #07152f 100%) !important;
-            box-shadow: 0 14px 35px rgba(10, 26, 60, 0.16) !important;
-            border: 1.5px solid rgba(10, 134, 190, 0.25) !important;
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+            background: #0d1f3d !important;
+            box-shadow: 0 14px 35px rgba(10, 26, 60, 0.14) !important;
+            border: 1.5px solid rgba(10, 134, 190, 0.22) !important;
+            contain: paint;
+            transform: translateZ(0);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
         }
         .dest-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-8px) translateZ(0);
             box-shadow: 0 24px 55px rgba(10, 134, 190, 0.28) !important;
             border-color: rgba(39, 194, 232, 0.7) !important;
         }
@@ -89,7 +91,7 @@
             transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .dest-card:hover .dest-card-bg {
-            transform: scale(1.08);
+            transform: scale(1.07);
         }
         .dest-card-scrim {
             position: absolute;
@@ -106,8 +108,7 @@
             align-items: center;
         }
         .dest-country-badge {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(12px);
+            background: #ffffff;
             border-radius: 50px;
             padding: 0.35rem 0.85rem;
             font-size: 0.78rem;
@@ -116,16 +117,17 @@
             display: inline-flex;
             align-items: center;
             gap: 0.45rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .dest-hub-chip {
-            background: rgba(10, 134, 190, 0.9);
+            background: #0A86BE;
             color: #ffffff;
             font-size: 0.72rem;
             font-weight: 700;
             padding: 0.35rem 0.75rem;
             border-radius: 50px;
-            border: 1px solid rgba(39, 194, 232, 0.4);
+            border: 1px solid rgba(39, 194, 232, 0.5);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
         .dest-card-bottom {
             position: relative;
@@ -150,9 +152,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.55rem;
-            background: rgba(255, 255, 255, 0.16);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 50px;
             padding: 0.45rem 1rem;
             color: #ffffff !important;
@@ -453,7 +454,7 @@
             <div class="dest-grid" id="destGrid">
 
                 <!-- 1. United Kingdom -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-united-kingdom/1" target="_blank" rel="noopener" class="dest-card" data-country="united kingdom uk">
+                <a href="destination-detail.html?c=uk" class="dest-card" data-country="united kingdom uk">
                     <img src="https://unihelpline.com/public/uploads/countries/16398289141639828914.jpg" alt="United Kingdom" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">
@@ -471,7 +472,7 @@
                 </a>
 
                 <!-- 2. United States of America -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-united-states-of-america/2" target="_blank" rel="noopener" class="dest-card" data-country="united states of america usa us">
+                <a href="destination-detail.html?c=usa" class="dest-card" data-country="united states of america usa us">
                     <img src="https://unihelpline.com/public/uploads/countries/16450922991645092299.jpg" alt="United States of America" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">
@@ -489,7 +490,7 @@
                 </a>
 
                 <!-- 3. Ireland -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-ireland/3" target="_blank" rel="noopener" class="dest-card" data-country="ireland">
+                <a href="destination-detail.html?c=ireland" class="dest-card" data-country="ireland">
                     <img src="https://unihelpline.com/public/uploads/countries/16460589201646058920.jpg" alt="Ireland" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">
@@ -507,7 +508,7 @@
                 </a>
 
                 <!-- 4. Canada -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-canada/4" target="_blank" rel="noopener" class="dest-card" data-country="canada">
+                <a href="destination-detail.html?c=canada" class="dest-card" data-country="canada">
                     <img src="https://unihelpline.com/public/uploads/countries/16450924961645092496.jpg" alt="Canada" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">
@@ -525,7 +526,7 @@
                 </a>
 
                 <!-- 5. Georgia -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-georgia/5" target="_blank" rel="noopener" class="dest-card" data-country="georgia">
+                <a href="destination-detail.html?c=georgia" class="dest-card" data-country="georgia">
                     <img src="https://unihelpline.com/public/uploads/countries/17156309921715630992.jpg" alt="Georgia" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">
@@ -543,7 +544,7 @@
                 </a>
 
                 <!-- 6. Hungary -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-hungary/6" target="_blank" rel="noopener" class="dest-card" data-country="hungary">
+                <a href="destination-detail.html?c=hungary" class="dest-card" data-country="hungary">
                     <img src="https://unihelpline.com/public/uploads/countries/16771604341677160434.jpg" alt="Hungary" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">
@@ -561,7 +562,7 @@
                 </a>
 
                 <!-- 7. Poland -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-poland/7" target="_blank" rel="noopener" class="dest-card" data-country="poland">
+                <a href="destination-detail.html?c=poland" class="dest-card" data-country="poland">
                     <img src="https://unihelpline.com/public/uploads/countries/16504676971650467697.jpg" alt="Poland" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519197924294-4ba991a11128?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">
@@ -579,7 +580,7 @@
                 </a>
 
                 <!-- 8. Malta -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-malta/8" target="_blank" rel="noopener" class="dest-card" data-country="malta">
+                <a href="destination-detail.html?c=malta" class="dest-card" data-country="malta">
                     <img src="https://unihelpline.com/public/uploads/countries/16657177401665717740.jpg" alt="Malta" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">
@@ -597,7 +598,7 @@
                 </a>
 
                 <!-- 9. France -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-france/9" target="_blank" rel="noopener" class="dest-card" data-country="france">
+                <a href="destination-detail.html?c=france" class="dest-card" data-country="france">
                     <img src="https://unihelpline.com/public/uploads/countries/17010303771701030377.jpg" alt="France" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">
@@ -615,7 +616,7 @@
                 </a>
 
                 <!-- 10. Dubai (UAE) -->
-                <a href="https://unihelpline.com/destinations-study-abroad-consultants/study-in-dubai/10" target="_blank" rel="noopener" class="dest-card" data-country="dubai uae united arab emirates">
+                <a href="destination-detail.html?c=dubai" class="dest-card" data-country="dubai uae united arab emirates">
                     <img src="https://unihelpline.com/public/uploads/countries/17447245851744724585.jpg" alt="Dubai UAE" class="dest-card-bg" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80';">
                     <div class="dest-card-scrim"></div>
                     <div class="dest-card-top">

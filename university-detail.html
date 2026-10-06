@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en" class="js" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>University Profile &amp; Courses | UNIHELPLINE Study Abroad Consultants</title>
+    <meta name="description" id="metaDesc"
+        content="Explore university overview, courses, admission requirements, tuition fees, rankings, and scholarships with UNIHELPLINE.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3.3">
+    <style>
+        html { scroll-padding-top: 90px; }
+        body { overflow-x: hidden; background: #050a18; }
+
+        .rv, .rv[data-rv] { opacity: 1 !important; transform: none !important; filter: none !important; }
+
+        /* ───────── HERO ───────── */
+        .ud-hero {
+            position: relative;
+            min-height: 520px;
+            display: flex;
+            align-items: flex-end;
+            padding: 8.5rem 0 5rem;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .ud-hero-bg {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -2;
+            transform: scale(1.05);
+            animation: udZoom 20s ease-in-out infinite alternate;
+        }
+        @keyframes udZoom { to { transform: scale(1.14); } }
+        .ud-hero::before {
+            content: ''; position: absolute; inset: 0; z-index: -1;
+            background:
+                radial-gradient(ellipse at 15% 25%, rgba(39,194,232,.32) 0%, transparent 60%),
+                linear-gradient(180deg, rgba(5,10,24,.6) 0%, rgba(5,10,24,.82) 60%, rgba(5,10,24,.98) 100%);
+        }
+        .ud-breadcrumb {
+            display: inline-flex; align-items: center; gap: .55rem;
+            background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+            backdrop-filter: blur(12px); border-radius: 50px;
+            padding: .45rem 1.1rem; font-size: .82rem; color: rgba(255,255,255,.7);
+            margin-bottom: 1.5rem; flex-wrap: wrap;
+        }
+        .ud-breadcrumb a { color: #fff; text-decoration: none; font-weight: 600; }
+        .ud-breadcrumb a:hover { color: #27C2E8; }
+        .ud-breadcrumb .cur { color: #27C2E8; font-weight: 700; }
+
+        .ud-hero-card {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .ud-logo-box {
+            width: 130px;
+            height: 130px;
+            border-radius: 24px;
+            background: #ffffff;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 16px 36px rgba(0,0,0,.45);
+            border: 2px solid rgba(39,194,232,.4);
+            flex-shrink: 0;
+        }
+        .ud-logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .ud-logo-box .mono {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #07152f;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+        .ud-hero-info { flex: 1; min-width: 280px; }
+        .ud-partner-badge {
+            display: inline-flex; align-items: center; gap: .45rem;
+            background: linear-gradient(120deg, rgba(39,194,232,.25), rgba(10,134,190,.22));
+            border: 1px solid rgba(39,194,232,.5);
+            border-radius: 50px; padding: .35rem .95rem;
+            color: #27C2E8; font-weight: 700; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
+            margin-bottom: .8rem;
+        }
+        .ud-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            font-weight: 800; letter-spacing: -.03em; line-height: 1.08;
+            color: #fff; margin: 0 0 .75rem;
+        }
+        .ud-location {
+            display: flex; align-items: center; gap: 1rem; color: rgba(255,255,255,.8);
+            font-size: 1.05rem; font-weight: 500; margin-bottom: 1.4rem; flex-wrap: wrap;
+        }
+        .ud-location i { color: #27C2E8; font-size: 1.2rem; }
+        .ud-tags {
+            display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.4rem;
+        }
+        .ud-tag-pill {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.14);
+            border-radius: 50px; padding: .35rem .9rem;
+            font-size: .82rem; color: #fff; display: inline-flex; align-items: center; gap: .4rem;
+        }
+        .ud-tag-pill i { color: #27C2E8; }
+        .ud-hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+        .ud-btn-ghost {
+            display: inline-flex; align-items: center; gap: .55rem;
+            padding: .75rem 1.4rem; border-radius: 50px;
+            border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.08);
+            backdrop-filter: blur(10px); color: #fff; font-weight: 700; text-decoration: none;
+            transition: all .25s ease;
+        }
+        .ud-btn-ghost:hover { background: rgba(255,255,255,.18); color: #fff; transform: translateY(-2px); }
+
+        /* ───────── STATS STRIP ───────── */
+        .ud-stats {
+            position: relative; z-index: 3; margin-top: -2.8rem;
+        }
+        .ud-stats-inner {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            background: rgba(10, 22, 48, .88);
+            border: 1px solid rgba(39,194,232,.3);
+            backdrop-filter: blur(18px);
+            border-radius: 22px; overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,.45);
+        }
+        .ud-stat { padding: 1.35rem 1.4rem; display: flex; gap: .9rem; align-items: center; border-right: 1px solid rgba(255,255,255,.08); }
+        .ud-stat:last-child { border-right: 0; }
+        .ud-stat i {
+            width: 48px; height: 48px; flex-shrink: 0; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: #fff;
+            background: linear-gradient(135deg, #27C2E8, #0A86BE 55%, #3A4BB0);
+            box-shadow: 0 8px 22px rgba(10,134,190,.35);
+        }
+        .ud-stat small { display: block; color: rgba(255,255,255,.55); font-size: .74rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+        .ud-stat strong { color: #fff; font-size: 1.05rem; font-weight: 700; }
+
+        /* ───────── WHITE CONTENT ───────── */
+        .ud-content {
+            background: #ffffff; color: #07152f;
+            border-radius: 46px 46px 0 0; margin-top: 3rem; margin-bottom: 0 !important;
+            position: relative; z-index: 2;
+            padding: 4.8rem 0 5rem;
+            box-shadow: 0 -20px 60px rgba(0,0,0,.35);
+        }
+
+        .ud-eyebrow {
+            display: inline-flex; align-items: center; gap: .5rem;
+            font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+            color: #0A86BE; margin-bottom: .6rem;
+        }
+        .ud-h2 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+            font-weight: 800; letter-spacing: -.025em; line-height: 1.15;
+            color: #07152f; margin-bottom: 1.4rem;
+        }
+        .ud-h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 1.35rem; font-weight: 700; color: #07152f; margin-bottom: .9rem;
+        }
+
+        .ud-prose { color: #475569; font-size: 1.05rem; line-height: 1.78; margin-bottom: 2.2rem; }
+        .ud-prose p { margin-bottom: 1.1rem; }
+        .ud-prose strong { color: #07152f; }
+
+        /* campus highlights cards */
+        .ud-hl-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem; margin-bottom: 2.5rem;
+        }
+        .ud-hl-card {
+            background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 18px;
+            padding: 1.4rem 1.3rem; transition: all .25s ease;
+        }
+        .ud-hl-card:hover { transform: translateY(-4px); border-color: #27C2E8; box-shadow: 0 12px 30px rgba(10,134,190,.1); }
+        .ud-hl-icon {
+            width: 42px; height: 42px; border-radius: 12px;
+            background: linear-gradient(135deg, rgba(39,194,232,.18), rgba(10,134,190,.15));
+            color: #0A86BE; display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; margin-bottom: 1rem;
+        }
+        .ud-hl-card h5 { font-size: 1.02rem; font-weight: 700; color: #07152f; margin-bottom: .4rem; }
+        .ud-hl-card p { font-size: .88rem; color: #64748b; margin: 0; line-height: 1.5; }
+
+        /* ───────── CAMPUS VISUAL SHOWCASE ───────── */
+        .ud-gallery-section {
+            margin-bottom: 3.5rem;
+        }
+        .ud-gallery-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+        .ud-gallery-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #07152f;
+            box-shadow: 0 14px 35px rgba(7,21,47,.12);
+            min-height: 250px;
+            isolation: isolate;
+        }
+        .ud-gallery-card.tall {
+            min-height: 410px;
+        }
+        .ud-gallery-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: -2;
+        }
+        .ud-gallery-card:hover .ud-gallery-img {
+            transform: scale(1.07);
+        }
+        .ud-gallery-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(5,10,24,0.1) 0%, rgba(5,10,24,0.4) 40%, rgba(5,10,24,0.92) 100%);
+            z-index: -1;
+            transition: opacity .3s ease;
+        }
+        .ud-gallery-card:hover::after {
+            background: linear-gradient(180deg, rgba(5,10,24,0.05) 0%, rgba(5,10,24,0.3) 30%, rgba(5,10,24,0.95) 100%);
+        }
+        .ud-gallery-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.6rem;
+            color: #fff;
+        }
+        .ud-gallery-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .3rem .85rem;
+            border-radius: 50px;
+            background: rgba(39,194,232,.25);
+            border: 1px solid rgba(39,194,232,.45);
+            color: #27C2E8;
+            font-size: .74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            width: fit-content;
+            margin-bottom: .6rem;
+            backdrop-filter: blur(8px);
+        }
+        .ud-gallery-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0 0 .3rem;
+            line-height: 1.25;
+        }
+        .ud-gallery-desc {
+            font-size: .86rem;
+            color: rgba(255,255,255,.8);
+            margin: 0;
+            line-height: 1.45;
+        }
+        .ud-gallery-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        @media (max-width: 767px) {
+            .ud-gallery-grid { grid-template-columns: 1fr; }
+            .ud-gallery-card.tall { min-height: 280px; }
+        }
+
+        /* ───────── COURSES SECTION ───────── */
+        .ud-courses-box {
+            background: #07152f;
+            border-radius: 32px;
+            padding: 3rem 2.5rem;
+            color: #fff;
+            margin-bottom: 3.5rem;
+            box-shadow: 0 20px 50px rgba(7,21,47,.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .ud-courses-box::before {
+            content: ''; position: absolute; top: -100px; right: -100px; width: 320px; height: 320px;
+            background: radial-gradient(circle, rgba(39,194,232,.18), transparent 70%);
+            pointer-events: none;
+        }
+        .ud-course-head {
+            display: flex; align-items: flex-end; justify-content: space-between;
+            gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem;
+        }
+        .ud-course-head h2 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.3rem); font-weight: 800; color: #fff; margin: 0;
+        }
+
+        /* course search & filter bar */
+        .ud-course-controls {
+            display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem;
+        }
+        .ud-search-input {
+            position: relative; max-width: 100%;
+        }
+        .ud-search-input i {
+            position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%);
+            color: rgba(255,255,255,.5); font-size: 1.1rem; pointer-events: none;
+        }
+        .ud-search-input input {
+            width: 100%; background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 50px; padding: .85rem 1.4rem .85rem 3rem;
+            color: #fff; font-size: .95rem; outline: none; transition: all .2s;
+        }
+        .ud-search-input input:focus {
+            background: rgba(255,255,255,.14); border-color: #27C2E8; box-shadow: 0 0 0 4px rgba(39,194,232,.2);
+        }
+        .ud-search-input input::placeholder { color: rgba(255,255,255,.45); }
+
+        /* department category filter pills */
+        .ud-dept-pills {
+            display: flex; flex-wrap: wrap; gap: .6rem;
+        }
+        .ud-pill {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.14);
+            border-radius: 50px; padding: .5rem 1.15rem;
+            color: rgba(255,255,255,.8); font-size: .84rem; font-weight: 600;
+            cursor: pointer; transition: all .2s ease; user-select: none;
+            display: inline-flex; align-items: center; gap: .45rem;
+        }
+        .ud-pill:hover { background: rgba(255,255,255,.14); color: #fff; }
+        .ud-pill.active {
+            background: linear-gradient(135deg, #27C2E8, #0A86BE);
+            border-color: #27C2E8; color: #fff; box-shadow: 0 4px 15px rgba(39,194,232,.35);
+        }
+
+        /* course cards grid */
+        .ud-course-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 1.2rem;
+        }
+        .ud-course-card {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 20px; padding: 1.5rem;
+            display: flex; flex-direction: column; justify-content: space-between;
+            transition: all .25s ease;
+        }
+        .ud-course-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,.08);
+            border-color: rgba(39,194,232,.5);
+            box-shadow: 0 12px 30px rgba(0,0,0,.35);
+        }
+        .ud-course-top { margin-bottom: 1.2rem; }
+        .ud-course-badges { display: flex; gap: .5rem; margin-bottom: .75rem; flex-wrap: wrap; }
+        .ud-course-badge {
+            font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+            padding: .25rem .65rem; border-radius: 6px;
+            background: rgba(39,194,232,.18); color: #27C2E8; border: 1px solid rgba(39,194,232,.3);
+        }
+        .ud-course-badge.dept {
+            background: rgba(255,255,255,.08); color: rgba(255,255,255,.75); border-color: rgba(255,255,255,.14);
+        }
+        .ud-course-title {
+            font-size: 1.12rem; font-weight: 700; color: #fff; line-height: 1.35; margin: 0 0 .5rem;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+        .ud-course-meta {
+            display: flex; gap: 1rem; color: rgba(255,255,255,.65); font-size: .82rem; margin-top: .6rem;
+            flex-wrap: wrap;
+        }
+        .ud-course-meta span { display: inline-flex; align-items: center; gap: .35rem; }
+        .ud-course-meta i { color: #27C2E8; }
+        .ud-course-btn {
+            display: inline-flex; align-items: center; justify-content: space-between;
+            width: 100%; padding: .65rem 1.1rem; border-radius: 12px;
+            background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+            color: #fff; font-size: .86rem; font-weight: 600; text-decoration: none;
+            transition: all .2s ease;
+        }
+        .ud-course-btn:hover {
+            background: linear-gradient(135deg, #27C2E8, #0A86BE);
+            border-color: #27C2E8; color: #fff;
+        }
+
+        /* ───────── REQUIREMENTS & ELIGIBILITY ───────── */
+        .ud-req-box {
+            background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 24px;
+            padding: 2.2rem 2rem; margin-bottom: 3.5rem;
+        }
+        .ud-req-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem; margin-top: 1.4rem;
+        }
+        .ud-req-item {
+            display: flex; gap: .9rem; align-items: flex-start;
+        }
+        .ud-req-item i {
+            font-size: 1.2rem; color: #0A86BE; margin-top: .15rem; flex-shrink: 0;
+        }
+        .ud-req-item h6 { font-size: .98rem; font-weight: 700; color: #07152f; margin-bottom: .2rem; }
+        .ud-req-item p { font-size: .86rem; color: #64748b; margin: 0; line-height: 1.5; }
+
+        /* ───────── SIDEBAR ───────── */
+        .ud-side {
+            position: sticky; top: 110px;
+            display: flex; flex-direction: column; gap: 1.5rem;
+        }
+        .ud-side-card {
+            background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 22px;
+            padding: 1.8rem 1.6rem;
+        }
+        .ud-side-card h4 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 1.25rem; font-weight: 800; color: #07152f; margin-bottom: 1.1rem;
+            display: flex; align-items: center; gap: .6rem;
+        }
+        .ud-fact-row {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: .75rem 0; border-bottom: 1px solid #e2e8f0; font-size: .88rem;
+        }
+        .ud-fact-row:last-child { border-bottom: 0; }
+        .ud-fact-row span { color: #64748b; display: inline-flex; align-items: center; gap: .45rem; }
+        .ud-fact-row strong { color: #07152f; font-weight: 700; text-align: right; }
+
+        /* sidebar quick apply form */
+        .ud-form-group { margin-bottom: .9rem; }
+        .ud-form-group label {
+            display: block; font-size: .8rem; font-weight: 700; color: #334155; margin-bottom: .3rem;
+            text-transform: uppercase; letter-spacing: .04em;
+        }
+        .ud-form-input {
+            width: 100%; border: 1px solid #cbd5e1; border-radius: 12px;
+            padding: .7rem 1rem; font-size: .9rem; color: #07152f; outline: none;
+            background: #fff; transition: all .2s;
+        }
+        .ud-form-input:focus { border-color: #0A86BE; box-shadow: 0 0 0 3px rgba(10,134,190,.15); }
+        .ud-btn-grad {
+            display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+            width: 100%; padding: .85rem 1.4rem; border-radius: 50px;
+            background: linear-gradient(135deg, #27C2E8 0%, #0A86BE 50%, #3A4BB0 100%);
+            color: #fff; font-weight: 700; font-size: .95rem; border: none;
+            text-decoration: none; cursor: pointer; transition: all .3s ease;
+            box-shadow: 0 8px 24px rgba(10,134,190,.3);
+        }
+        .ud-btn-grad:hover {
+            transform: translateY(-2px); box-shadow: 0 12px 30px rgba(10,134,190,.45); color: #fff;
+        }
+        .ud-btn-wa {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            box-shadow: 0 8px 24px rgba(37,211,102,.25); margin-top: .6rem;
+        }
+        .ud-btn-wa:hover { box-shadow: 0 12px 30px rgba(37,211,102,.4); }
+
+        /* ───────── OTHER UNIS ───────── */
+        .ud-other-unis { margin-top: 3.5rem; }
+        .ud-other-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem; margin-top: 1.4rem;
+        }
+        .ud-other-card {
+            background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 18px;
+            padding: 1.2rem; display: flex; align-items: center; gap: 1rem;
+            text-decoration: none; color: inherit; transition: all .25s ease;
+        }
+        .ud-other-card:hover {
+            transform: translateY(-3px); border-color: #27C2E8; box-shadow: 0 10px 25px rgba(10,134,190,.12);
+        }
+        .ud-other-logo {
+            width: 50px; height: 50px; border-radius: 12px; background: #fff;
+            border: 1px solid #e2e8f0; padding: .3rem; display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .ud-other-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .ud-other-info h6 { font-size: .94rem; font-weight: 700; color: #07152f; margin: 0 0 .2rem; line-height: 1.3; }
+        .ud-other-info span { font-size: .78rem; color: #64748b; }
+
+        @media (max-width: 991px) {
+            .ud-stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .ud-stat:nth-child(2) { border-right: 0; }
+            .ud-stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.08); }
+            .ud-side { position: static; margin-top: 2.5rem; }
+            .ud-content { padding: 4rem 0 5rem; border-radius: 34px; }
+        }
+        @media (max-width: 575px) {
+            .ud-hero { min-height: 480px; padding: 7.5rem 0 4.5rem; }
+            .ud-hero-card { gap: 1.2rem; }
+            .ud-logo-box { width: 95px; height: 95px; border-radius: 18px; padding: .6rem; }
+            .ud-stats-inner { grid-template-columns: 1fr 1fr; border-radius: 18px; }
+            .ud-stat { padding: 1rem; gap: .65rem; }
+            .ud-stat i { width: 40px; height: 40px; font-size: 1.05rem; }
+            .ud-courses-box { padding: 2rem 1.2rem; border-radius: 24px; }
+            .ud-course-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body class="destinations-page">
+    <div id="prog"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="npill navbar navbar-expand-lg">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a class="brand" href="index.html#home">
+                <span class="lg">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/>
+                        <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/>
+                    </svg>
+                </span>UniHelpLine</a>
+            <button class="navbar-toggler ms-auto" data-bs-toggle="collapse" data-bs-target="#nv" aria-label="Menu"><i
+                    class="bi bi-list fs-2"></i></button>
+            <div class="collapse navbar-collapse" id="nv">
+                <ul class="navbar-nav mx-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                            data-bs-toggle="dropdown">Our Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="career-counselling.html">Career Counselling</a></li>
+                            <li><a class="dropdown-item" href="admission-guidance.html">Admission Guidance</a></li>
+                            <li><a class="dropdown-item" href="application-process.html">Application Process</a></li>
+                            <li><a class="dropdown-item" href="visa-assistance.html">Visa Assistance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                            data-bs-toggle="dropdown">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">UniHelpLine</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active text-info" href="destinations.html">Study Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-2 nav-actions">
+                    <a class="btn-x" href="contact.html" style="padding:.35rem .35rem .35rem 1.3rem">Schedule a Meeting<i
+                            style="width:36px;height:36px" class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="ud-hero" id="udHero">
+        <img class="ud-hero-bg" id="udHeroBg" alt="Campus backdrop" referrerpolicy="no-referrer">
+        <div class="container">
+            <div class="ud-breadcrumb">
+                <a href="index.html">Home</a><span>/</span>
+                <a href="destinations.html">Study Destinations</a><span>/</span>
+                <a href="destination-detail.html?c=uk" id="udCountryCrumb">Country</a><span>/</span>
+                <span class="cur" id="udCrumb">University</span>
+            </div>
+
+            <div class="ud-hero-card">
+                <div class="ud-logo-box" id="udLogoBox">
+                    <img id="udLogo" src="" alt="University logo" referrerpolicy="no-referrer">
+                </div>
+                <div class="ud-hero-info">
+                    <span class="ud-partner-badge"><i class="bi bi-patch-check-fill"></i> Official Partner University</span>
+                    <h1 class="ud-title" id="udTitle">University Name</h1>
+                    <div class="ud-location">
+                        <span><i class="bi bi-geo-alt-fill"></i> <span id="udLocation">City, Country</span></span>
+                        <span id="udType"><i class="bi bi-building"></i> Public University</span>
+                    </div>
+                    <div class="ud-tags" id="udTags"></div>
+                    <div class="ud-hero-actions">
+                        <a href="#courses" class="btn-x">View Courses &amp; Programmes <i class="bi bi-arrow-down-right"></i></a>
+                        <a href="#apply" class="ud-btn-ghost"><i class="bi bi-send-fill"></i> Apply Now</a>
+                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="ud-btn-ghost"><i class="bi bi-whatsapp"></i> Chat Advisor</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="container ud-stats">
+        <div class="ud-stats-inner" id="udStats"></div>
+    </div>
+
+    <!-- Main Content Section -->
+    <section class="ud-content">
+        <div class="container">
+            <div class="row g-4 g-xl-5">
+                <!-- Left Primary Column -->
+                <div class="col-lg-8">
+                    <!-- Overview -->
+                    <div class="mb-5">
+                        <span class="ud-eyebrow"><i class="bi bi-info-circle-fill"></i> Institution Profile</span>
+                        <h2 class="ud-h2">About <span class="gt" id="udAboutName">University</span></h2>
+                        <div class="ud-prose" id="udOverview"></div>
+
+                        <!-- Campus highlights -->
+                        <h3 class="ud-h3 mb-3">Why Study at this University?</h3>
+                        <div class="ud-hl-grid" id="udHighlights"></div>
+                    </div>
+
+                    <!-- Campus Life & Modern Facilities Showcase -->
+                    <div class="ud-gallery-section">
+                        <span class="ud-eyebrow"><i class="bi bi-camera-fill"></i> Campus Life &amp; Facilities</span>
+                        <h3 class="ud-h3 mb-2">Modern Academic Grounds &amp; World-Class Facilities</h3>
+                        <p class="text-secondary small mb-3">Experience top-tier lecture theaters, innovative research labs, and high-tech collaborative spaces.</p>
+
+                        <div class="ud-gallery-grid">
+                            <!-- Main Large Card -->
+                            <div class="ud-gallery-card tall">
+                                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80" alt="Main University Campus Grounds" class="ud-gallery-img" id="udGalleryMain">
+                                <div class="ud-gallery-content">
+                                    <span class="ud-gallery-tag"><i class="bi bi-building"></i> Main Campus</span>
+                                    <h4 class="ud-gallery-title">Contemporary Architecture &amp; Student Quads</h4>
+                                    <p class="ud-gallery-desc">Dynamic learning spaces designed with modern sustainable architecture and vibrant student courtyards.</p>
+                                </div>
+                            </div>
+
+                            <!-- Side 2 Cards -->
+                            <div class="ud-gallery-side">
+                                <div class="ud-gallery-card">
+                                    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" alt="University Research Library" class="ud-gallery-img" id="udGalleryLib">
+                                    <div class="ud-gallery-content">
+                                        <span class="ud-gallery-tag"><i class="bi bi-book"></i> Research Library</span>
+                                        <h4 class="ud-gallery-title">Digital Library &amp; Study Hubs</h4>
+                                        <p class="ud-gallery-desc">24/7 access to millions of digital journals, silent pods, and collaborative rooms.</p>
+                                    </div>
+                                </div>
+                                <div class="ud-gallery-card">
+                                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="AI & Engineering Tech Lab" class="ud-gallery-img" id="udGalleryLab">
+                                    <div class="ud-gallery-content">
+                                        <span class="ud-gallery-tag"><i class="bi bi-cpu"></i> Innovation Lab</span>
+                                        <h4 class="ud-gallery-title">AI &amp; Engineering Tech Hub</h4>
+                                        <p class="ud-gallery-desc">Industry-standard simulation labs, 3D prototyping suites, and robotics hubs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COURSES LISTING SECTION -->
+                    <div class="ud-courses-box" id="courses">
+                        <div class="ud-course-head">
+                            <div>
+                                <span class="ud-eyebrow text-info"><i class="bi bi-mortarboard-fill"></i> Academic Catalog</span>
+                                <h2 class="ud-h2 text-white mb-1">Available <span class="gt">Courses &amp; Degrees</span></h2>
+                                <p class="text-white-50 mb-0 small">Explore undergraduate &amp; postgraduate degrees across major faculties.</p>
+                            </div>
+                            <div>
+                                <span class="badge rounded-pill bg-info text-dark px-3 py-2 fw-bold" id="udCourseCount">0 Courses</span>
+                            </div>
+                        </div>
+
+                        <!-- Filter & Search Controls -->
+                        <div class="ud-course-controls">
+                            <div class="ud-search-input">
+                                <i class="bi bi-search"></i>
+                                <input type="text" id="udCourseSearch" placeholder="Search by course title or keyword (e.g. Data Science, MBA, Mechanical)..." aria-label="Search courses">
+                            </div>
+                            <div class="ud-dept-pills" id="udDeptPills"></div>
+                        </div>
+
+                        <!-- Course Cards Grid -->
+                        <div class="ud-course-grid" id="udCourseGrid"></div>
+                    </div>
+
+                    <!-- Entry Requirements & Admission Checklist -->
+                    <div class="ud-req-box">
+                        <span class="ud-eyebrow"><i class="bi bi-shield-check"></i> Admissions</span>
+                        <h3 class="ud-h3 mb-1">Eligibility &amp; Entry Requirements</h3>
+                        <p class="text-secondary small mb-3">Standard criteria for international applicants. Our counsellors offer complete assessment.</p>
+
+                        <div class="ud-req-grid" id="udReqGrid">
+                            <div class="ud-req-item">
+                                <i class="bi bi-mortarboard"></i>
+                                <div>
+                                    <h6>Undergraduate (UG) Criteria</h6>
+                                    <p>Minimum 60% – 70% in Higher Secondary (12th Standard) with relevant subject prerequisites.</p>
+                                </div>
+                            </div>
+                            <div class="ud-req-item">
+                                <i class="bi bi-award"></i>
+                                <div>
+                                    <h6>Postgraduate (PG / Master's)</h6>
+                                    <p>Recognised Bachelor's degree with 55% – 65% aggregate score. Work experience required for certain MBAs.</p>
+                                </div>
+                            </div>
+                            <div class="ud-req-item">
+                                <i class="bi bi-translate"></i>
+                                <div>
+                                    <h6>English Proficiency</h6>
+                                    <p>IELTS 6.0 – 6.5 (min 5.5 in each band), PTE 58 – 65, Duolingo 105 – 120, or Medium of Instruction (MOI) waiver.</p>
+                                </div>
+                            </div>
+                            <div class="ud-req-item">
+                                <i class="bi bi-file-earmark-check"></i>
+                                <div>
+                                    <h6>Document Checklist</h6>
+                                    <p>Passports, Academic Transcripts, Statement of Purpose (SOP), 2 Letters of Recommendation (LOR) &amp; CV.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scholarships Banner -->
+                    <div class="p-4 rounded-4 text-white position-relative overflow-hidden" style="background:linear-gradient(135deg,#0d2a52,#07152f); border:1px solid rgba(39,194,232,.3);">
+                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-between">
+                            <div>
+                                <h4 class="fw-bold mb-1"><i class="bi bi-gift-fill text-info me-2"></i> International Scholarships Available</h4>
+                                <p class="text-white-50 mb-0 small">Merit-based bursaries and fee waivers ranging from £1,500 to £5,000+ for eligible applicants.</p>
+                            </div>
+                            <a href="#apply" class="btn-x" style="padding:.4rem 1.2rem; font-size:.86rem">Check Eligibility</a>
+                        </div>
+                    </div>
+
+                    <!-- Other Universities in same destination -->
+                    <div class="ud-other-unis">
+                        <span class="ud-eyebrow"><i class="bi bi-compass"></i> Explore More</span>
+                        <h3 class="ud-h3 mb-2">Other Top Universities in <span id="udOtherCountry">this Region</span></h3>
+                        <div class="ud-other-grid" id="udOtherGrid"></div>
+                    </div>
+                </div>
+
+                <!-- Right Sticky Column / Fast Application Form -->
+                <div class="col-lg-4">
+                    <aside class="ud-side">
+                        <!-- Quick Factsheet Card -->
+                        <div class="ud-side-card">
+                            <h4><i class="bi bi-info-circle text-info"></i> Quick Factsheet</h4>
+                            <div id="udFactRows"></div>
+                        </div>
+
+                        <!-- Direct Application Form -->
+                        <div class="ud-side-card" id="apply">
+                            <h4><i class="bi bi-send text-info"></i> Fast Application Enquiry</h4>
+                            <p class="text-secondary small mb-3">Submit your profile to receive free admission guidance and offer letter support.</p>
+
+                            <form id="udApplyForm" onsubmit="handleApplySubmit(event)">
+                                <div class="ud-form-group">
+                                    <label for="applyName">Full Name *</label>
+                                    <input type="text" id="applyName" class="ud-form-input" placeholder="e.g. Rahul Sharma" required>
+                                </div>
+                                <div class="ud-form-group">
+                                    <label for="applyPhone">WhatsApp / Phone *</label>
+                                    <input type="tel" id="applyPhone" class="ud-form-input" placeholder="e.g. +91 98765 43210" required>
+                                </div>
+                                <div class="ud-form-group">
+                                    <label for="applyEmail">Email Address *</label>
+                                    <input type="email" id="applyEmail" class="ud-form-input" placeholder="e.g. rahul@example.com" required>
+                                </div>
+                                <div class="ud-form-group">
+                                    <label for="applyCourse">Selected Course / Area</label>
+                                    <input type="text" id="applyCourse" class="ud-form-input" placeholder="e.g. MSc Data Science">
+                                </div>
+                                <div class="ud-form-group">
+                                    <label for="applyIntake">Preferred Intake</label>
+                                    <select id="applyIntake" class="ud-form-input">
+                                        <option value="Sept 2026">September / Autumn 2026</option>
+                                        <option value="Jan 2027">January / Spring 2027</option>
+                                        <option value="May 2027">May / Summer 2027</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="ud-btn-grad">
+                                    <span>Submit Application</span> <i class="bi bi-arrow-right"></i>
+                                </button>
+                                <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="ud-btn-grad ud-btn-wa">
+                                    <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+                                </a>
+                                <div id="applyStatus" class="small text-success mt-2 text-center" style="display:none;"></div>
+                            </form>
+                        </div>
+
+                        <!-- Advisor Contact Card -->
+                        <div class="ud-side-card" style="background: linear-gradient(135deg, #07152f, #0a1f3d); color: #fff; border-color: rgba(39,194,232,.25);">
+                            <h5 class="fw-bold mb-2 text-white"><i class="bi bi-headset text-info me-2"></i> Need Free Guidance?</h5>
+                            <p class="small text-white-50 mb-3">Speak directly with our university admissions team in India, the UK, or UAE.</p>
+                            <div class="d-flex flex-column gap-2 small">
+                                <div><i class="bi bi-telephone-fill text-info me-2"></i> India: <a href="tel:+917558951509" class="text-white text-decoration-none fw-semibold">+91 755 895 1509</a></div>
+                                <div><i class="bi bi-building text-info me-2"></i> UK: <a href="tel:+447435456580" class="text-white text-decoration-none fw-semibold">+44 7435 456580</a></div>
+                                <div><i class="bi bi-envelope-fill text-info me-2"></i> <a href="mailto:info@unihelpline.com" class="text-white text-decoration-none">info@unihelpline.com</a></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Website Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4 g-lg-5">
+                <div class="col-lg-4 col-md-6">
+                    <a class="brand mb-3" href="index.html#home">
+                        <span class="lg">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/>
+                                <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/>
+                            </svg>
+                        </span>
+                        UniHelpLine
+                    </a>
+                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
+                    <div class="footer-trust-badge mb-3">
+                        <i class="bi bi-patch-check-fill"></i> Certified Study Abroad Advisors
+                    </div>
+                    <div class="soc">
+                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="footer-title">Explore</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home"><i class="bi bi-chevron-right small text-info"></i> Home</a></li>
+                        <li><a href="about.html"><i class="bi bi-chevron-right small text-info"></i> About Us</a></li>
+                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i> Universities</a></li>
+                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a></li>
+                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i> Destinations</a></li>
+                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp; Insights</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <h6 class="footer-title">Our Services</h6>
+                    <ul class="footer-links">
+                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career Counselling</a></li>
+                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i> Admission Guidance</a></li>
+                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i> Application Process</a></li>
+                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa Assistance</a></li>
+                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i> Scholarship Guidance</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1 Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h6 class="footer-title">Contact</h6>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box"><i class="bi bi-envelope-fill"></i></div>
+                        <div><span class="d-block small text-secondary">Email</span><a href="mailto:info@unihelpline.com">info@unihelpline.com</a></div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div><span class="d-block small text-secondary">UAE Office</span><a href="tel:+971505863293">+971 50 586 3293</a></div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box"><i class="bi bi-telephone-fill"></i></div>
+                        <div><span class="d-block small text-secondary">India Office</span><a href="tel:+917558951509">+91 755 895 1509</a></div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box"><i class="bi bi-building"></i></div>
+                        <div><span class="d-block small text-secondary">UK Office</span><a href="tel:+447435456580">+44 7435 456580</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+                <p class="small text-secondary mb-0">© 2026 UniHelpLine. All rights reserved.</p>
+                <p class="small powered-tag mb-0">Powered by <span class="credozen-badge">CREDOZEN LLP</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    (function () {
+        const UP = 'https://unihelpline.com/public/uploads/';
+        const $ = id => document.getElementById(id);
+        const esc = s => String(s || '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+        const initials = n => (n || '').replace(/\(.*?\)/g, '').split(/\s+/).filter(w => /^[A-Z]/.test(w) && !['of', 'the', 'and', 'in'].includes(w.toLowerCase())).slice(0, 2).map(w => w[0]).join('');
+
+        // Master University Database
+        const UNIS_DATA = {
+            "Bournemouth University": {
+                name: "Bournemouth University",
+                countryKey: "uk",
+                countryName: "United Kingdom",
+                city: "Poole & Bournemouth, England",
+                logo: UP + "universities/16641885491664188549.png",
+                backdrop: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80",
+                type: "Public Research University",
+                established: "1992",
+                ranking: "Top 70 UK (Times Higher Education)",
+                avgTuition: "£14,500 – £18,000 / year",
+                livingCost: "£850 – £1,100 / month",
+                intakes: "January, September",
+                overview: [
+                    "Bournemouth University (BU) is an innovative public university renowned for its high graduate employability, world-class media and animation school (NCCA), and cutting-edge business and computing programmes.",
+                    "Situated on the scenic south coast of England, Bournemouth University offers vibrant campus life across the Talbot and Lansdowne campuses, with over 19,000 students from more than 130 countries worldwide.",
+                    "BU degrees are practically oriented with industry placements, international accreditations (AACSB, BCS, IET), and modern research facilities."
+                ],
+                highlights: [
+                    ["bi-award-fill", "Top-Ranked Media & Animation", "Home to the National Centre for Computer Animation (NCCA), Oscar-winning alumni and world-class media facilities."],
+                    ["bi-briefcase-fill", "Placement Opportunities", "Every undergraduate programme and many Master's degrees offer optional paid industry placements."],
+                    ["bi-sun-fill", "Coastal Location", "Located in one of the UK's top coastal resort towns, offering fantastic student lifestyle and clean sandy beaches."],
+                    ["bi-patch-check-fill", "AACSB Accredited Business School", "Top 5% of global business schools with prestigious AACSB accreditation."]
+                ],
+                stats: [
+                    ["bi-currency-pound", "Avg Tuition Fee", "£15,500 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "£950 / mo"],
+                    ["bi-people-fill", "Global Students", "19,000+"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Jan · Sep"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "Poole / Bournemouth, UK"],
+                    ["bi-bank", "Institution Type", "Public University"],
+                    ["bi-clock-history", "Founded", "1992 (1913 Origins)"],
+                    ["bi-briefcase", "Post-Study Work", "2 Years (Graduate Route)"],
+                    ["bi-trophy", "THE World Rank", "Top 400 Worldwide"],
+                    ["bi-translate", "Language", "English"]
+                ],
+                courses: [
+                    { title: "MSc Data Science and Artificial Intelligence", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Information Technology", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Cyber Security & Human Factors", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "BSc (Hons) Computer Science", dept: "Computer Science", level: "Undergraduate", duration: "3-4 Years", intake: "Sep" },
+                    { title: "BSc (Hons) Software Engineering", dept: "Computer Science", level: "Undergraduate", duration: "3-4 Years", intake: "Sep" },
+                    { title: "MSc Engineering Project Management", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Mechanical Engineering Design", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "BEng (Hons) Mechanical Engineering", dept: "Engineering", level: "Undergraduate", duration: "3-4 Years", intake: "Sep" },
+                    { title: "Master of Business Administration (MBA)", dept: "Business", level: "MBA", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc International Management", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Marketing Management", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Finance & Investment", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "BA (Hons) Business and Management", dept: "Business", level: "Undergraduate", duration: "3-4 Years", intake: "Sep" },
+                    { title: "MA 3D Computer Animation", dept: "Arts", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "MA Digital Effects", dept: "Arts", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "BA (Hons) Film Production", dept: "Arts", level: "Undergraduate", duration: "3 Years", intake: "Sep" },
+                    { title: "LLM International Commercial Law", dept: "Law", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "LLB (Hons) Law", dept: "Law", level: "Undergraduate", duration: "3 Years", intake: "Sep" },
+                    { title: "MSc Public Health", dept: "Health", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Adult Nursing (Pre-registration)", dept: "Health", level: "Postgraduate", duration: "2 Years", intake: "Jan / Sep" }
+                ]
+            },
+            "Manchester Metropolitan University": {
+                name: "Manchester Metropolitan University",
+                countryKey: "uk",
+                countryName: "United Kingdom",
+                city: "Manchester, England",
+                logo: UP + "universities/16625299481662529948.png",
+                backdrop: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1600&q=80",
+                type: "Public University",
+                established: "1970",
+                ranking: "Top 60 UK",
+                avgTuition: "£16,000 – £19,500 / year",
+                livingCost: "£900 – £1,200 / month",
+                intakes: "January, September",
+                overview: [
+                    "Manchester Metropolitan University (Manchester Met) is located in the heart of Manchester, one of the world's most exciting and student-friendly cities.",
+                    "With over 38,000 students, it is one of the largest universities in the UK, holding triple-accreditation (EQUIS, AACSB, AMBA) for its Business School and high world rankings in art, fashion, and technology.",
+                    "The university invests heavily in state-of-the-art facilities, including the School of Digital Arts (SODA) and advanced engineering labs."
+                ],
+                highlights: [
+                    ["bi-patch-check-fill", "Triple Crown Business School", "EQUIS, AACSB & AMBA accredited — placing it in the top 1% of business schools globally."],
+                    ["bi-geo-alt-fill", "Vibrant Manchester Location", "Ranked the UK's #1 student city with immense culture, tech hubs, and sports."],
+                    ["bi-cpu-fill", "School of Digital Arts (SODA)", "A £35m creative tech hub driving innovation in film, animation, UX, and AI."]
+                ],
+                stats: [
+                    ["bi-currency-pound", "Avg Tuition Fee", "£16,500 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "£1,050 / mo"],
+                    ["bi-people-fill", "Student Population", "38,000+"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Jan · Sep"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "Manchester, UK"],
+                    ["bi-bank", "Type", "Public University"],
+                    ["bi-trophy", "Triple Accredited", "AACSB, AMBA, EQUIS"],
+                    ["bi-briefcase", "Stay Back", "2 Years (Graduate Route)"]
+                ],
+                courses: [
+                    { title: "MSc Data Science", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Artificial Intelligence", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "MSc Cyber Security", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Project Management", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Advanced Mechanical Engineering", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "Master of Business Administration (Executive MBA)", dept: "Business", level: "MBA", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc International Business Management", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Accounting & Finance", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MA Fashion Design", dept: "Arts", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "LLM Master of Laws", dept: "Law", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "BSc (Hons) Computer Science", dept: "Computer Science", level: "Undergraduate", duration: "3-4 Years", intake: "Sep" },
+                    { title: "BA (Hons) Business and Marketing", dept: "Business", level: "Undergraduate", duration: "3 Years", intake: "Sep" }
+                ]
+            },
+            "Glasgow Caledonian University": {
+                name: "Glasgow Caledonian University",
+                countryKey: "uk",
+                countryName: "United Kingdom",
+                city: "Glasgow, Scotland & London",
+                logo: UP + "universities/16625288581662528858.jpg",
+                backdrop: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80",
+                type: "Public University",
+                established: "1993",
+                ranking: "Top 40 UK (Guardian 2024)",
+                avgTuition: "£14,500 – £17,500 / year",
+                livingCost: "£800 – £1,000 / month",
+                intakes: "January, September",
+                overview: [
+                    "Glasgow Caledonian University (GCU) is the University for the Common Good, ranked among the top 40 UK modern universities.",
+                    "With campuses in Glasgow and central London, GCU offers industry-driven education in business, health, engineering, and computing.",
+                    "93% of GCU graduates are in work or further study within six months of graduation."
+                ],
+                highlights: [
+                    ["bi-globe-europe-africa", "University for the Common Good", "Ranked #1 in Scotland for social impact and health research."],
+                    ["bi-building", "Campuses in Glasgow & London", "Choose between the vibrant cultural capital of Scotland or ultra-connected central London."],
+                    ["bi-cash-coin", "Affordable Living & Scholarships", "Scotland provides exceptional quality of life at a much lower cost than southern England."]
+                ],
+                stats: [
+                    ["bi-currency-pound", "Avg Tuition Fee", "£15,000 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "£850 / mo"],
+                    ["bi-people-fill", "Students", "22,000+"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Jan · Sep"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "Glasgow & London, UK"],
+                    ["bi-bank", "Type", "Public University"],
+                    ["bi-briefcase", "Stay Back", "2 Years (Graduate Route)"],
+                    ["bi-award", "Employability", "93% Graduate Employment"]
+                ],
+                courses: [
+                    { title: "MSc Big Data Technologies", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Cyber Security", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Mechanical Engineering", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Electrical and Electronic Engineering", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "MSc International Business Management", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc International Fashion Marketing", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Public Health", dept: "Health", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Physiotherapy (Pre-registration)", dept: "Health", level: "Postgraduate", duration: "2 Years", intake: "Jan / Sep" },
+                    { title: "BSc (Hons) Computing", dept: "Computer Science", level: "Undergraduate", duration: "4 Years", intake: "Sep" }
+                ]
+            },
+            "Swansea University": {
+                name: "Swansea University",
+                countryKey: "uk",
+                countryName: "United Kingdom",
+                city: "Swansea, Wales",
+                logo: UP + "universities/16617549451661754945.jpg",
+                backdrop: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=1600&q=80",
+                type: "Public Research University",
+                established: "1920",
+                ranking: "Top 25 UK (Guardian 2024)",
+                avgTuition: "£16,000 – £20,000 / year",
+                livingCost: "£750 – £950 / month",
+                intakes: "January, September",
+                overview: [
+                    "Swansea University is a research-led institution set across two stunning beachfront campuses in south Wales.",
+                    "Ranked in the top 25 UK universities, Swansea is internationally acclaimed for engineering, computer science, law, and business.",
+                    "Swansea boasts one of the highest student satisfaction ratings in the UK and strong connections with global industry leaders such as Rolls-Royce and Airbus."
+                ],
+                highlights: [
+                    ["bi-water", "Stunning Beachfront Campuses", "Directly situated along the Swansea coastline with world-class facilities."],
+                    ["bi-gear-wide-connected", "World-Leading Engineering", "Ranked top 10 in the UK for Engineering & Computer Science."],
+                    ["bi-trophy", "Top 25 UK University", "Consistently highly ranked in Guardian and Times university league tables."]
+                ],
+                stats: [
+                    ["bi-currency-pound", "Avg Tuition Fee", "£17,000 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "£800 / mo"],
+                    ["bi-people-fill", "Students", "20,000+"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Jan · Sep"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "Swansea, Wales, UK"],
+                    ["bi-bank", "Type", "Public Research University"],
+                    ["bi-briefcase", "Stay Back", "2 Years (Graduate Route)"],
+                    ["bi-star", "Satisfaction", "Top 10 UK Student Satisfaction"]
+                ],
+                courses: [
+                    { title: "MSc Computer Science", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Data Science", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Mechanical Engineering", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Civil Engineering", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Management (Business Analytics / Finance)", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc International Accounting and Finance", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "LLM International Maritime Law", dept: "Law", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "LLM International Commercial and Maritime Law", dept: "Law", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "BEng (Hons) Aerospace Engineering", dept: "Engineering", level: "Undergraduate", duration: "3 Years", intake: "Sep" }
+                ]
+            },
+            "University of Greenwich": {
+                name: "University of Greenwich",
+                countryKey: "uk",
+                countryName: "United Kingdom",
+                city: "London & Kent, England",
+                logo: UP + "universities/16602998931660299893.png",
+                backdrop: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=80",
+                type: "Public University",
+                established: "1890",
+                ranking: "Top London Modern University",
+                avgTuition: "£15,500 – £18,500 / year",
+                livingCost: "£1,100 – £1,350 / month",
+                intakes: "January, April, September",
+                overview: [
+                    "The University of Greenwich has a rich history dating back to 1890, located on a UNESCO World Heritage site on the banks of the River Thames in London.",
+                    "Greenwich is renowned for combining historical majesty with modern innovation, offering industry-focused programmes in engineering, computing, business, architecture, and life sciences."
+                ],
+                highlights: [
+                    ["bi-building-check", "UNESCO Heritage Campus", "Study in the heart of London in iconic architectural surroundings."],
+                    ["bi-lightbulb", "High Graduate Employability", "Strong partnerships with London's leading financial and tech enterprises."],
+                    ["bi-calendar-event", "Multiple Intakes", "Flexible entry points in January, April, and September."]
+                ],
+                stats: [
+                    ["bi-currency-pound", "Avg Tuition Fee", "£16,000 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "£1,200 / mo"],
+                    ["bi-people-fill", "Students", "21,000+"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Jan · Apr · Sep"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "London & Kent, UK"],
+                    ["bi-bank", "Type", "Public University"],
+                    ["bi-briefcase", "Stay Back", "2 Years (Graduate Route)"]
+                ],
+                courses: [
+                    { title: "MSc Big Data and Business Intelligence", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Computer Science", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Engineering Management", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MBA International Business", dept: "Business", level: "MBA", duration: "1-2 Years", intake: "Jan / Apr / Sep" },
+                    { title: "MSc Finance and Investment", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "MSc Logistics and Supply Chain Management", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Jan / Sep" },
+                    { title: "BSc (Hons) Computing", dept: "Computer Science", level: "Undergraduate", duration: "3 Years", intake: "Sep" }
+                ]
+            },
+            "Saint Leo University": {
+                name: "Saint Leo University",
+                countryKey: "usa",
+                countryName: "United States of America",
+                city: "St. Leo, Florida, USA",
+                logo: UP + "universities/17686737821768673782.png",
+                backdrop: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80",
+                type: "Private Liberal Arts University",
+                established: "1889",
+                ranking: "Top Regional University South (US News)",
+                avgTuition: "$24,000 – $28,000 / year",
+                livingCost: "$1,000 – $1,300 / month",
+                intakes: "Fall (Aug), Spring (Jan)",
+                overview: [
+                    "Saint Leo University is Florida's oldest Catholic higher education institution, known for personalized education, sunny Florida campus life, and top-ranked business, cybersecurity, and computer science degrees.",
+                    "International students at Saint Leo benefit from STEM OPT eligibility (up to 3 years work authorization in the USA) and generous merit scholarships."
+                ],
+                highlights: [
+                    ["bi-sun-fill", "Sunny Florida Campus", "Safe, picturesque campus just 35 minutes north of Tampa Bay."],
+                    ["bi-shield-check", "STEM OPT Eligible", "Up to 3 years of post-study work authorization in the United States."],
+                    ["bi-cash-stack", "Merit Scholarships", "Significant tuition reduction awards available for international students."]
+                ],
+                stats: [
+                    ["bi-currency-dollar", "Avg Tuition Fee", "$25,000 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "$1,100 / mo"],
+                    ["bi-briefcase-fill", "OPT Stay Back", "Up to 3 Years"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Aug · Jan"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "Florida, USA"],
+                    ["bi-bank", "Type", "Private University"],
+                    ["bi-briefcase", "Work Rights", "20 hrs/week + OPT"],
+                    ["bi-shield", "Accreditation", "SACSCOC Accredited"]
+                ],
+                courses: [
+                    { title: "MS Cybersecurity", dept: "Computer Science", level: "Postgraduate", duration: "2 Years", intake: "Aug / Jan" },
+                    { title: "MS Computer Science (AI & Data)", dept: "Computer Science", level: "Postgraduate", duration: "2 Years", intake: "Aug / Jan" },
+                    { title: "Master of Business Administration (MBA)", dept: "Business", level: "MBA", duration: "1.5-2 Years", intake: "Aug / Jan" },
+                    { title: "BS Computer Information Systems", dept: "Computer Science", level: "Undergraduate", duration: "4 Years", intake: "Aug / Jan" },
+                    { title: "BS Accounting & Finance", dept: "Business", level: "Undergraduate", duration: "4 Years", intake: "Aug / Jan" }
+                ]
+            },
+            "Southern Illinois University Carbondale": {
+                name: "Southern Illinois University Carbondale",
+                countryKey: "usa",
+                countryName: "United States of America",
+                city: "Carbondale, Illinois, USA",
+                logo: UP + "universities/17290934941729093494.jpeg",
+                backdrop: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80",
+                type: "Public Research University (R2)",
+                established: "1869",
+                ranking: "Top Tier National University",
+                avgTuition: "$20,000 – $26,000 / year",
+                livingCost: "$850 – $1,100 / month",
+                intakes: "Fall (Aug), Spring (Jan)",
+                overview: [
+                    "Southern Illinois University Carbondale (SIU) is a premier public research university renowned for engineering, aviation, computer science, and business management.",
+                    "SIU provides high-impact research, vibrant campus living with 11,000+ students, and strong pathways to Fortune 500 careers in Chicago and across the US."
+                ],
+                highlights: [
+                    ["bi-mortarboard-fill", "R2 Carnegie Research University", "High research activity with millions in state and federal funding."],
+                    ["bi-airplane-fill", "Premier Aviation & Engineering", "Nationally ranked School of Aviation and cutting-edge engineering labs."],
+                    ["bi-briefcase-fill", "3-Year STEM OPT", "Work in the US tech or engineering sector for up to 36 months."]
+                ],
+                stats: [
+                    ["bi-currency-dollar", "Avg Tuition Fee", "$22,000 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "$950 / mo"],
+                    ["bi-people-fill", "Students", "11,000+"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Aug · Jan"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "Illinois, USA"],
+                    ["bi-bank", "Type", "Public Research (R2)"],
+                    ["bi-briefcase", "Stay Back", "Up to 3 Years STEM OPT"]
+                ],
+                courses: [
+                    { title: "MS Computer Science", dept: "Computer Science", level: "Postgraduate", duration: "2 Years", intake: "Aug / Jan" },
+                    { title: "MS Mechanical Engineering", dept: "Engineering", level: "Postgraduate", duration: "2 Years", intake: "Aug / Jan" },
+                    { title: "MS Electrical & Computer Engineering", dept: "Engineering", level: "Postgraduate", duration: "2 Years", intake: "Aug / Jan" },
+                    { title: "Master of Business Administration (MBA)", dept: "Business", level: "MBA", duration: "1.5 Years", intake: "Aug / Jan" },
+                    { title: "BS Aviation Management", dept: "Engineering", level: "Undergraduate", duration: "4 Years", intake: "Aug" }
+                ]
+            },
+            "Technological University Dublin": {
+                name: "Technological University Dublin",
+                countryKey: "ireland",
+                countryName: "Ireland",
+                city: "Dublin, Ireland",
+                logo: UP + "universities/16777636461677763646.jpg",
+                backdrop: "https://images.unsplash.com/photo-1549918864-48ac978761a4?auto=format&fit=crop&w=1600&q=80",
+                type: "Public Technological University",
+                established: "2019 (1887 Origins)",
+                ranking: "Top 800 Worldwide (QS)",
+                avgTuition: "€13,500 – €16,500 / year",
+                livingCost: "€1,000 – €1,300 / month",
+                intakes: "September, January",
+                overview: [
+                    "TU Dublin is Ireland's first technological university, located across modern campuses in Grangegorman, Bolton Street, and Tallaght in Dublin.",
+                    "With over 29,000 students, TU Dublin is celebrated for industry-embedded education, fast-track career placement, and deep integration with Dublin's Silicon Docks tech giants (Google, Meta, Microsoft, Apple)."
+                ],
+                highlights: [
+                    ["bi-cpu-fill", "Silicon Docks Connections", "Direct career linkages with Europe's biggest tech hub in Dublin."],
+                    ["bi-briefcase-fill", "2-Year Stay Back Visa", "Ireland's Third Level Graduate Scheme gives 2 years post-study work rights."],
+                    ["bi-building-check", "State-of-the-Art Campus", "Modern £500m Grangegorman campus with top-tier research labs."]
+                ],
+                stats: [
+                    ["bi-currency-euro", "Avg Tuition Fee", "€14,500 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "€1,100 / mo"],
+                    ["bi-people-fill", "Students", "29,000+"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Sep · Jan"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "Dublin, Ireland"],
+                    ["bi-bank", "Type", "Public Technological University"],
+                    ["bi-briefcase", "Stay Back", "2 Years (Graduate Scheme)"]
+                ],
+                courses: [
+                    { title: "MSc Applied Data Science & Analytics", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "MSc Computer Science (Advanced Software Dev)", dept: "Computer Science", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "MSc Electronic & Communications Engineering", dept: "Engineering", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "MSc Supply Chain Management", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "MSc Strategic Management", dept: "Business", level: "Postgraduate", duration: "1 Year", intake: "Sep" },
+                    { title: "BSc (Hons) Computing", dept: "Computer Science", level: "Undergraduate", duration: "4 Years", intake: "Sep" }
+                ]
+            },
+            "Trent University": {
+                name: "Trent University",
+                countryKey: "canada",
+                countryName: "Canada",
+                city: "Peterborough & Durham GTA, Ontario, Canada",
+                logo: UP + "universities/16901892501690189250.jpg",
+                backdrop: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1600&q=80",
+                type: "Public University",
+                established: "1964",
+                ranking: "#1 Undergraduate University in Ontario (Maclean's)",
+                avgTuition: "CAD $25,000 – $32,000 / year",
+                livingCost: "CAD $1,200 – $1,500 / month",
+                intakes: "September, January, May",
+                overview: [
+                    "Trent University is consistently ranked the #1 undergraduate university in Ontario for 13 consecutive years.",
+                    "Located 90 minutes from Toronto, Trent offers an intimate, collegiate learning environment, guaranteed on-campus accommodation for first-year international students, and up to 3 years Post-Graduation Work Permit (PGWP)."
+                ],
+                highlights: [
+                    ["bi-trophy-fill", "#1 in Ontario", "Ranked #1 undergraduate university in Ontario 13 years running."],
+                    ["bi-briefcase-fill", "3-Year Canadian PGWP", "Eligible for 3-year Post-Graduation Work Permit with Canadian PR pathway."],
+                    ["bi-tree-fill", "Picturesque Riverfront Campus", "Over 1,400 acres of natural riverfront beauty just 90 minutes from Toronto."]
+                ],
+                stats: [
+                    ["bi-currency-dollar", "Avg Tuition Fee", "CAD $26,000 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "CAD $1,300 / mo"],
+                    ["bi-briefcase-fill", "PGWP Stay Back", "Up to 3 Years"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Sep · Jan · May"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "Peterborough / Toronto GTA, Canada"],
+                    ["bi-bank", "Type", "Public University"],
+                    ["bi-briefcase", "Work Rights", "20 hrs/week + 3 Yr PGWP"]
+                ],
+                courses: [
+                    { title: "MSc Big Data Analytics", dept: "Computer Science", level: "Postgraduate", duration: "16 Months", intake: "Sep / Jan / May" },
+                    { title: "MSc Applied Modelling and Quantitative Methods", dept: "Computer Science", level: "Postgraduate", duration: "2 Years", intake: "Sep" },
+                    { title: "Master of Management (M.Mgt)", dept: "Business", level: "Postgraduate", duration: "16 Months", intake: "Sep / Jan / May" },
+                    { title: "BSc (Hons) Computer Science", dept: "Computer Science", level: "Undergraduate", duration: "4 Years", intake: "Sep / Jan" },
+                    { title: "BBA Bachelor of Business Administration", dept: "Business", level: "Undergraduate", duration: "4 Years", intake: "Sep / Jan" }
+                ]
+            },
+            "University of Georgia": {
+                name: "University of Georgia",
+                countryKey: "georgia",
+                countryName: "Georgia",
+                city: "Tbilisi, Georgia",
+                logo: UP + "universities/17156336401715633640.png",
+                backdrop: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1600&q=80",
+                type: "Leading Private University in Georgia",
+                established: "2004",
+                ranking: "Top 3 in Georgia",
+                avgTuition: "$4,000 – $6,000 / year",
+                livingCost: "$350 – $550 / month",
+                intakes: "September, March",
+                overview: [
+                    "The University of Georgia (UG) in Tbilisi is one of the largest and most prestigious private universities in Georgia, hosting over 10,000 students including thousands of international scholars.",
+                    "UG is renowned for its world-recognized Medical (MBBS / MD), Computer Science, and Business Administration programmes taught 100% in English with European Bologna system recognition (ECTS)."
+                ],
+                highlights: [
+                    ["bi-heart-pulse-fill", "WHO & NMC Recognized MD / MBBS", "Global medical degree recognized in Europe, UK (GMC), USA (USMLE), and India."],
+                    ["bi-cash-coin", "Affordable European Tuition", "European-standard education starting from only $4,000 per year."],
+                    ["bi-shield-check", "No IELTS Requirement", "Admission through university interview and English assessment."]
+                ],
+                stats: [
+                    ["bi-currency-dollar", "Avg Tuition Fee", "$4,500 / yr"],
+                    ["bi-house-door-fill", "Est. Living Cost", "$450 / mo"],
+                    ["bi-people-fill", "Students", "10,000+"],
+                    ["bi-calendar-check-fill", "Next Intakes", "Sep · Mar"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", "Tbilisi, Georgia"],
+                    ["bi-bank", "Type", "Private European University"],
+                    ["bi-mortarboard", "System", "Bologna European Process (ECTS)"]
+                ],
+                courses: [
+                    { title: "Medical Doctor (MD / MBBS in English)", dept: "Health", level: "Undergraduate", duration: "6 Years", intake: "Sep / Mar" },
+                    { title: "BSc Information Technology (IT)", dept: "Computer Science", level: "Undergraduate", duration: "4 Years", intake: "Sep / Mar" },
+                    { title: "MSc Information Technology", dept: "Computer Science", level: "Postgraduate", duration: "2 Years", intake: "Sep / Mar" },
+                    { title: "Bachelor of Business Administration (BBA)", dept: "Business", level: "Undergraduate", duration: "4 Years", intake: "Sep / Mar" },
+                    { title: "Master of Business Administration (MBA)", dept: "Business", level: "MBA", duration: "2 Years", intake: "Sep / Mar" }
+                ]
+            }
+        };
+
+        // Parse University from URL Query
+        const urlParams = new URLSearchParams(location.search);
+        let uKey = urlParams.get('u') || urlParams.get('name') || 'Bournemouth University';
+        uKey = decodeURIComponent(uKey).replace(/@/g, ' ').trim();
+
+        // Check exact or partial match
+        let uni = UNIS_DATA[uKey];
+        if (!uni) {
+            const foundKey = Object.keys(UNIS_DATA).find(k => k.toLowerCase() === uKey.toLowerCase() || uKey.toLowerCase().includes(k.toLowerCase()) || k.toLowerCase().includes(uKey.toLowerCase()));
+            if (foundKey) uni = UNIS_DATA[foundKey];
+        }
+
+        // Generic intelligent fallback builder if not in explicit database
+        if (!uni) {
+            const cKey = urlParams.get('c') || 'uk';
+            const countryNames = { uk: "United Kingdom", usa: "United States of America", ireland: "Ireland", canada: "Canada", germany: "Germany", georgia: "Georgia", hungary: "Hungary", poland: "Poland", malta: "Malta", france: "France", dubai: "Dubai / UAE" };
+            const cName = countryNames[cKey] || "United Kingdom";
+            
+            uni = {
+                name: uKey,
+                countryKey: cKey,
+                countryName: cName,
+                city: cName,
+                logo: "",
+                backdrop: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80",
+                type: "Accredited Partner University",
+                established: "Established University",
+                ranking: "Globally Recognized",
+                avgTuition: "Competitive International Fees",
+                livingCost: "Standard Student Budget",
+                intakes: "January, September",
+                overview: [
+                    `${uKey} is a recognized institution of higher learning in ${cName}, partnering with UNIHELPLINE to offer world-class academic programmes to international students.`,
+                    `Offering modern undergraduate and postgraduate degrees with strong career pathways, modern campus infrastructure, and global faculty.`,
+                    `Contact UNIHELPLINE counselors for personalized admission assessment, course matching, and scholarship guidance for ${uKey}.`
+                ],
+                highlights: [
+                    ["bi-patch-check-fill", "Globally Recognized Degrees", "Curriculum designed to meet international standards and global employer demands."],
+                    ["bi-briefcase-fill", "Career & Post-Study Pathways", "Strong student support services, internships, and work opportunities."],
+                    ["bi-award-fill", "Scholarships Available", "Merit and country-specific fee waivers available for qualified applicants."]
+                ],
+                stats: [
+                    ["bi-bank", "Institution", "Partner University"],
+                    ["bi-briefcase", "Work Rights", "Post-Study Route"],
+                    ["bi-award", "Accredited", "Yes"],
+                    ["bi-calendar-check", "Intakes", "Jan · Sep"]
+                ],
+                facts: [
+                    ["bi-geo-alt", "Location", cName],
+                    ["bi-bank", "Type", "Partner Institution"],
+                    ["bi-translate", "Language", "English"]
+                ],
+                courses: [
+                    { title: `MSc Computer Science & Data Analytics`, dept: "Computer Science", level: "Postgraduate", duration: "1-2 Years", intake: "Jan / Sep" },
+                    { title: `MSc Cyber Security & Cloud Systems`, dept: "Computer Science", level: "Postgraduate", duration: "1-2 Years", intake: "Jan / Sep" },
+                    { title: `Master of Business Administration (MBA)`, dept: "Business", level: "MBA", duration: "1-2 Years", intake: "Jan / Sep" },
+                    { title: `MSc International Business & Management`, dept: "Business", level: "Postgraduate", duration: "1-2 Years", intake: "Jan / Sep" },
+                    { title: `MSc Engineering Management`, dept: "Engineering", level: "Postgraduate", duration: "1-2 Years", intake: "Jan / Sep" },
+                    { title: `BSc (Hons) Computer Science`, dept: "Computer Science", level: "Undergraduate", duration: "3-4 Years", intake: "Sep" },
+                    { title: `BBA Bachelor of Business Administration`, dept: "Business", level: "Undergraduate", duration: "3-4 Years", intake: "Sep" }
+                ]
+            };
+        }
+
+        // Update Page Meta & Titles
+        document.title = uni.name + ' - Courses, Admissions & Fees | UNIHELPLINE';
+        $('metaDesc').setAttribute('content', `Explore ${uni.name} courses, campus details, fees, requirements and admission guidance with UNIHELPLINE.`);
+
+        // Populate Hero
+        $('udHeroBg').src = uni.backdrop;
+        $('udCountryCrumb').textContent = uni.countryName;
+        $('udCountryCrumb').href = `destination-detail.html?c=${uni.countryKey}`;
+        $('udCrumb').textContent = uni.name;
+        $('udTitle').textContent = uni.name;
+        $('udAboutName').textContent = uni.name;
+        $('udLocation').textContent = uni.city;
+        $('udType').innerHTML = `<i class="bi bi-building"></i> ${esc(uni.type)}`;
+
+        // Populate Logo
+        const ini = esc(initials(uni.name));
+        if (uni.logo) {
+            $('udLogo').src = uni.logo;
+            $('udLogo').onerror = function() {
+                $('udLogoBox').innerHTML = `<span class="mono">${ini}</span>`;
+            };
+        } else {
+            $('udLogoBox').innerHTML = `<span class="mono">${ini}</span>`;
+        }
+
+        // Hero tags
+        const tags = [
+            `<span class="ud-tag-pill"><i class="bi bi-trophy"></i> ${esc(uni.ranking)}</span>`,
+            `<span class="ud-tag-pill"><i class="bi bi-calendar3"></i> Est. ${esc(uni.established)}</span>`,
+            `<span class="ud-tag-pill"><i class="bi bi-clock"></i> Intakes: ${esc(uni.intakes)}</span>`
+        ];
+        $('udTags').innerHTML = tags.join('');
+
+        // Stats Strip
+        $('udStats').innerHTML = uni.stats.map(s => `
+            <div class="ud-stat">
+                <i class="bi ${s[0]}"></i>
+                <div>
+                    <small>${esc(s[1])}</small>
+                    <strong>${esc(s[2])}</strong>
+                </div>
+            </div>
+        `).join('');
+
+        // Overview Text
+        $('udOverview').innerHTML = uni.overview.map(p => `<p>${p}</p>`).join('');
+
+        // Highlights
+        $('udHighlights').innerHTML = uni.highlights.map(h => `
+            <div class="ud-hl-card">
+                <div class="ud-hl-icon"><i class="bi ${h[0]}"></i></div>
+                <h5>${esc(h[1])}</h5>
+                <p>${esc(h[2])}</p>
+            </div>
+        `).join('');
+
+        // Side Factsheet
+        $('udFactRows').innerHTML = uni.facts.map(f => `
+            <div class="ud-fact-row">
+                <span><i class="bi ${f[0]} text-info"></i> ${esc(f[1])}</span>
+                <strong>${esc(f[2])}</strong>
+            </div>
+        `).join('');
+
+        // Pre-fill course form
+        const cInp = $('applyCourse');
+        if (cInp && uni.courses && uni.courses[0]) {
+            cInp.placeholder = `e.g. ${uni.courses[0].title}`;
+        }
+
+        // Department Pills & Course Filtering
+        const depts = ["All", ...new Set(uni.courses.map(c => c.dept))];
+        let currentDept = "All";
+        let searchQuery = "";
+
+        function renderDeptPills() {
+            $('udDeptPills').innerHTML = depts.map(d => `
+                <button type="button" class="ud-pill ${d === currentDept ? 'active' : ''}" data-dept="${d}">
+                    ${d === "All" ? '<i class="bi bi-grid-fill"></i> All Departments' : d}
+                </button>
+            `).join('');
+
+            $('udDeptPills').querySelectorAll('.ud-pill').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentDept = btn.dataset.dept;
+                    renderDeptPills();
+                    renderCourses();
+                });
+            });
+        }
+
+        function renderCourses() {
+            const q = searchQuery.toLowerCase().trim();
+            const list = uni.courses.filter(c => {
+                const matchDept = currentDept === "All" || c.dept === currentDept;
+                const matchQuery = !q || c.title.toLowerCase().includes(q) || c.dept.toLowerCase().includes(q) || c.level.toLowerCase().includes(q);
+                return matchDept && matchQuery;
+            });
+
+            $('udCourseCount').textContent = `${list.length} Courses`;
+
+            if (!list.length) {
+                $('udCourseGrid').innerHTML = `<div class="col-12 text-center text-white-50 py-4"><i class="bi bi-search fs-3 d-block mb-2"></i>No courses matched your query. Try another keyword or department filter.</div>`;
+                return;
+            }
+
+            $('udCourseGrid').innerHTML = list.map(c => `
+                <div class="ud-course-card">
+                    <div class="ud-course-top">
+                        <div class="ud-course-badges">
+                            <span class="ud-course-badge">${esc(c.level)}</span>
+                            <span class="ud-course-badge dept">${esc(c.dept)}</span>
+                        </div>
+                        <h4 class="ud-course-title">${esc(c.title)}</h4>
+                        <div class="ud-course-meta">
+                            <span><i class="bi bi-clock-history"></i> ${esc(c.duration)}</span>
+                            <span><i class="bi bi-calendar3"></i> ${esc(c.intake)}</span>
+                        </div>
+                    </div>
+                    <a href="#apply" class="ud-course-btn" onclick="selectCourse('${esc(c.title)}')">
+                        <span>Enquire &amp; Apply</span> <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            `).join('');
+        }
+
+        renderDeptPills();
+        renderCourses();
+
+        $('udCourseSearch').addEventListener('input', e => {
+            searchQuery = e.target.value;
+            renderCourses();
+        });
+
+        // Other Universities in same region
+        $('udOtherCountry').textContent = uni.countryName;
+        const otherUnis = Object.keys(UNIS_DATA).filter(k => k !== uni.name && UNIS_DATA[k].countryKey === uni.countryKey).slice(0, 4);
+        if (otherUnis.length) {
+            $('udOtherGrid').innerHTML = otherUnis.map(k => {
+                const item = UNIS_DATA[k];
+                const oIni = esc(initials(item.name));
+                const oLogo = item.logo ? `<img src="${item.logo}" alt="${esc(item.name)}" onerror="this.outerHTML='<strong>${oIni}</strong>'">` : `<strong>${oIni}</strong>`;
+                return `
+                    <a href="university-detail.html?u=${encodeURIComponent(item.name)}" class="ud-other-card">
+                        <div class="ud-other-logo">${oLogo}</div>
+                        <div class="ud-other-info">
+                            <h6>${esc(item.name)}</h6>
+                            <span>${esc(item.city)}</span>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+        } else {
+            const allOthers = Object.keys(UNIS_DATA).filter(k => k !== uni.name).slice(0, 4);
+            $('udOtherGrid').innerHTML = allOthers.map(k => {
+                const item = UNIS_DATA[k];
+                const oIni = esc(initials(item.name));
+                const oLogo = item.logo ? `<img src="${item.logo}" alt="${esc(item.name)}" onerror="this.outerHTML='<strong>${oIni}</strong>'">` : `<strong>${oIni}</strong>`;
+                return `
+                    <a href="university-detail.html?u=${encodeURIComponent(item.name)}" class="ud-other-card">
+                        <div class="ud-other-logo">${oLogo}</div>
+                        <div class="ud-other-info">
+                            <h6>${esc(item.name)}</h6>
+                            <span>${esc(item.countryName)}</span>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+        }
+    })();
+
+    // Helper to select course and focus on form
+    function selectCourse(courseTitle) {
+        const inp = document.getElementById('applyCourse');
+        if (inp) {
+            inp.value = courseTitle;
+            inp.focus();
+        }
+    }
+
+    // Form submission handler
+    function handleApplySubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('applyName').value;
+        const phone = document.getElementById('applyPhone').value;
+        const email = document.getElementById('applyEmail').value;
+        const course = document.getElementById('applyCourse').value || 'General Admission';
+        const intake = document.getElementById('applyIntake').value;
+        const uniName = document.getElementById('udTitle').textContent;
+
+        const msg = `Hello UniHelpLine! I would like to apply for *${course}* at *${uniName}* (${intake}). My Name: ${name}, Phone: ${phone}, Email: ${email}. Please guide me on admissions and scholarships.`;
+        const waUrl = `https://wa.me/+917558951509?text=${encodeURIComponent(msg)}`;
+
+        const status = document.getElementById('applyStatus');
+        if (status) {
+            status.style.display = 'block';
+            status.innerHTML = `<i class="bi bi-check-circle-fill"></i> Thank you ${name}! Redirecting to admissions counselor...`;
+        }
+
+        setTimeout(() => {
+            window.open(waUrl, '_blank');
+        }, 800);
+    }
+    </script>
+</body>
+
+</html>

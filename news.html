@@ -61,27 +61,27 @@
 
         /* Banner Hero Extension */
         .news-hero-section {
-            padding: 9rem 0 3.5rem;
+            padding: 6.2rem 0 0.4rem;
             position: relative;
             background: radial-gradient(circle at 50% 10%, rgba(14, 165, 233, 0.12) 0%, rgba(5, 10, 24, 0.98) 70%);
         }
 
         .news-hero-title {
             font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+            font-size: clamp(2.2rem, 4.2vw, 3.4rem);
             font-weight: 800;
             line-height: 1.12;
             letter-spacing: -0.03em;
             color: #ffffff;
-            margin-bottom: 1.25rem;
+            margin-bottom: 0.85rem;
         }
 
         .news-hero-lead {
-            font-size: clamp(1rem, 1.35vw, 1.15rem);
+            font-size: clamp(0.92rem, 1.2vw, 1.05rem);
             color: #94a3b8;
-            max-width: 680px;
-            margin: 0 auto 2rem;
-            line-height: 1.65;
+            max-width: 660px;
+            margin: 0 auto 1rem;
+            line-height: 1.55;
         }
 
         /* Quick Stat Badges */
@@ -89,82 +89,112 @@
             display: inline-flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
-            background: rgba(14, 23, 42, 0.65);
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            gap: 1.15rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.16);
             border-radius: 60px;
-            padding: 0.65rem 1.8rem;
-            margin-bottom: 2.2rem;
+            padding: 0.45rem 1.3rem;
+            margin-bottom: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         .stat-item {
             display: inline-flex;
             align-items: center;
-            gap: 0.45rem;
-            font-size: 0.84rem;
-            color: #cbd5e1;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: #e2e8f0;
             font-weight: 500;
         }
 
         .stat-item i {
             color: #38bdf8;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
         }
 
-        /* Controls Section: Search & Category Pills */
+        /* Controls Section: Search & Category Pills with Soft White Shade Glass */
         .news-controls-wrap {
             position: relative;
             z-index: 3;
-            margin-top: 1rem;
-            margin-bottom: 3.5rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .news-controls-card {
+            background: radial-gradient(ellipse 100% 160px at 50% -30px, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 100%),
+                        linear-gradient(180deg, rgba(26, 40, 75, 0.88) 0%, rgba(12, 22, 48, 0.94) 100%);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            border-radius: 22px;
+            padding: 1rem 1.4rem 0.85rem;
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.38), 0 0 30px rgba(255, 255, 255, 0.08), inset 0 1.5px 1.5px rgba(255, 255, 255, 0.45);
+            max-width: 980px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-controls-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 8%;
+            right: 8%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), rgba(39, 194, 232, 1), rgba(255, 255, 255, 0.95), transparent);
+            pointer-events: none;
         }
 
         .news-search-box {
             position: relative;
             max-width: 580px;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 0.75rem;
         }
 
         .news-search-input {
             width: 100%;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.12);
+            border: 1.5px solid rgba(255, 255, 255, 0.24);
             border-radius: 50px;
-            padding: 0.95rem 3.2rem 0.95rem 3.2rem;
+            padding: 0.65rem 2.8rem 0.65rem 2.8rem;
             color: #ffffff;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            font-weight: 500;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.22);
+        }
+
+        .news-search-input::placeholder {
+            color: rgba(255, 255, 255, 0.65);
         }
 
         .news-search-input:focus {
             outline: none;
             border-color: #38bdf8;
-            background: rgba(15, 23, 42, 0.98);
-            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2), 0 16px 36px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25), 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
         }
 
         .news-search-icon {
             position: absolute;
-            left: 1.25rem;
+            left: 1.15rem;
             top: 50%;
             transform: translateY(-50%);
-            color: #64748b;
-            font-size: 1.15rem;
+            color: #38bdf8;
+            font-size: 1.05rem;
             pointer-events: none;
         }
 
         .news-search-clear {
             position: absolute;
-            right: 1.15rem;
+            right: 1.1rem;
             top: 50%;
             transform: translateY(-50%);
             background: transparent;
             border: none;
             color: #94a3b8;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             cursor: pointer;
             display: none;
             padding: 0.2rem;
@@ -179,56 +209,59 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.6rem;
+            gap: 0.45rem;
         }
 
         .cat-pill {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.22);
             border-radius: 50px;
-            padding: 0.48rem 1.15rem;
-            color: #94a3b8;
-            font-size: 0.84rem;
+            padding: 0.35rem 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.8rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.25s ease;
             display: inline-flex;
             align-items: center;
-            gap: 0.45rem;
+            gap: 0.4rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         .cat-pill:hover {
             color: #ffffff;
-            border-color: rgba(56, 189, 248, 0.4);
-            background: rgba(30, 41, 59, 0.85);
+            border-color: rgba(56, 189, 248, 0.7);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(39, 194, 232, 0.25);
         }
 
         .cat-pill.active {
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.25) 0%, rgba(99, 102, 241, 0.25) 100%);
+            background: linear-gradient(135deg, rgba(39, 194, 232, 0.95) 0%, rgba(10, 134, 190, 0.98) 100%);
             border-color: #38bdf8;
-            color: #38bdf8;
-            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.25);
+            color: #ffffff;
+            box-shadow: 0 4px 18px rgba(39, 194, 232, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
         }
 
         .cat-pill .count {
-            background: rgba(255, 255, 255, 0.1);
-            font-size: 0.7rem;
-            padding: 0.15rem 0.5rem;
+            background: rgba(255, 255, 255, 0.18);
+            font-size: 0.68rem;
+            padding: 0.1rem 0.45rem;
             border-radius: 30px;
-            color: #cbd5e1;
+            color: #ffffff;
+            font-weight: 700;
         }
 
         .cat-pill.active .count {
-            background: #38bdf8;
-            color: #04101e;
-            font-weight: 700;
+            background: #ffffff;
+            color: #0A86BE;
+            font-weight: 800;
         }
 
         /* Featured Story Spotlight (High Impact Card) */
         .news-featured-wrap {
-            margin-bottom: 3.5rem;
+            margin-top: 0;
+            margin-bottom: 1.8rem;
             position: relative;
             z-index: 2;
         }
@@ -923,44 +956,46 @@
     <!-- Controls Section: Search & Category Filter Pills -->
     <section class="news-controls-wrap">
         <div class="container">
-            <!-- Live Search Bar -->
-            <div class="news-search-box rv" data-rv="up">
-                <i class="bi bi-search news-search-icon"></i>
-                <input type="text" id="newsSearch" class="news-search-input" placeholder="Search news by country, visa type, keyword..." autocomplete="off">
-                <button type="button" id="newsClear" class="news-search-clear" aria-label="Clear search"><i class="bi bi-x-circle-fill"></i></button>
-            </div>
+            <div class="news-controls-card">
+                <!-- Live Search Bar -->
+                <div class="news-search-box rv" data-rv="up">
+                    <i class="bi bi-search news-search-icon"></i>
+                    <input type="text" id="newsSearch" class="news-search-input" placeholder="Search news by country, visa type, keyword..." autocomplete="off">
+                    <button type="button" id="newsClear" class="news-search-clear" aria-label="Clear search"><i class="bi bi-x-circle-fill"></i></button>
+                </div>
 
-            <!-- Category Filter Pills -->
-            <div class="category-filter-pills rv" data-rv="up">
-                <button class="cat-pill active" data-category="all">
-                    <span>All Articles</span>
-                    <span class="count" id="countAll">5</span>
-                </button>
-                <button class="cat-pill" data-category="visa">
-                    <i class="bi bi-shield-check"></i>
-                    <span>Visa & Immigration</span>
-                    <span class="count">3</span>
-                </button>
-                <button class="cat-pill" data-category="uk">
-                    <i class="bi bi-flag-fill"></i>
-                    <span>United Kingdom</span>
-                    <span class="count">2</span>
-                </button>
-                <button class="cat-pill" data-category="canada">
-                    <i class="bi bi-compass-fill"></i>
-                    <span>Canada & PR</span>
-                    <span class="count">1</span>
-                </button>
-                <button class="cat-pill" data-category="student">
-                    <i class="bi bi-award-fill"></i>
-                    <span>Student Benefits</span>
-                    <span class="count">1</span>
-                </button>
-                <button class="cat-pill" data-category="rankings">
-                    <i class="bi bi-trophy-fill"></i>
-                    <span>University Rankings</span>
-                    <span class="count">1</span>
-                </button>
+                <!-- Category Filter Pills -->
+                <div class="category-filter-pills rv" data-rv="up">
+                    <button class="cat-pill active" data-category="all">
+                        <span>All Articles</span>
+                        <span class="count" id="countAll">5</span>
+                    </button>
+                    <button class="cat-pill" data-category="visa">
+                        <i class="bi bi-shield-check"></i>
+                        <span>Visa & Immigration</span>
+                        <span class="count">3</span>
+                    </button>
+                    <button class="cat-pill" data-category="uk">
+                        <i class="bi bi-flag-fill"></i>
+                        <span>United Kingdom</span>
+                        <span class="count">2</span>
+                    </button>
+                    <button class="cat-pill" data-category="canada">
+                        <i class="bi bi-compass-fill"></i>
+                        <span>Canada & PR</span>
+                        <span class="count">1</span>
+                    </button>
+                    <button class="cat-pill" data-category="student">
+                        <i class="bi bi-award-fill"></i>
+                        <span>Student Benefits</span>
+                        <span class="count">1</span>
+                    </button>
+                    <button class="cat-pill" data-category="rankings">
+                        <i class="bi bi-trophy-fill"></i>
+                        <span>University Rankings</span>
+                        <span class="count">1</span>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
