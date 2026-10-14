@@ -53,7 +53,8 @@
                 <div class="d-flex align-items-center gap-2 nav-actions"><button class="wish" data-bs-toggle="offcanvas"
                         data-bs-target="#wl" aria-label="Wishlist"><i class="bi bi-heart"></i><span
                             id="wc">0</span></button>
-                    <a class="btn-x" href="#contact" data-tab="meet" style="padding:.35rem .35rem .35rem 1.3rem">Schedule a
+                    <a class="btn-x" href="#contact" data-tab="meet"
+                        style="padding:.35rem .35rem .35rem 1.3rem">Schedule a
                         Meeting<i style="width:36px;height:36px" class="bi bi-arrow-up-right"></i></a>
                 </div>
             </div>
@@ -66,14 +67,21 @@
         <div class="container position-relative">
             <div class="hero-main">
                 <div class="hero-intro">
-                    <span class="tag fx mb-3"><i class="bi bi-patch-check-fill text-info me-1"></i> Valued by universities
+                    <span class="tag fx mb-3"><i class="bi bi-patch-check-fill text-info me-1"></i> Valued by
+                        universities
                         across the globe</span>
                     <h1><span class="ln"><span>UniHelpLine.</span></span><span class="ln"><span>Matching you
-                                to</span></span><span class="ln"><span class="gt" id="typewriter-text">the perfect course.</span><span class="type-cursor" aria-hidden="true">|</span></span></h1>
+                                to</span></span><span class="ln"><span class="gt" id="typewriter-text">the perfect
+                                course.</span><span class="type-cursor" aria-hidden="true">|</span></span></h1>
                 </div>
 
                 <form class="cmd fx" id="sf" autocomplete="off">
                     <div class="row g-0 align-items-center">
+                        <div class="col-lg-4 col-md-6 fld" id="fld-course">
+                            <label for="q">Course</label>
+                            <input class="form-control" id="q" placeholder="Nursing, MBA, Data Science…">
+                        </div>
+
                         <div class="col-lg-3 col-md-6 fld custom-select-fld" id="fld-level">
                             <label for="level">Study Level</label>
                             <select class="form-select d-none" id="level">
@@ -81,28 +89,43 @@
                                 <option value="Master Degree">Master Degree</option>
                                 <option value="Bachelor Degree">Bachelor Degree</option>
                                 <option value="Bachelor Top-up">Bachelor Top-up</option>
-                                <option value="Post Graduate Diploma / Certificate - 1 Year">Post Graduate Diploma / Certificate - 1 Year</option>
-                                <option value="Post Graduate Diploma / Certificate - 2 Year">Post Graduate Diploma / Certificate - 2 Year</option>
+                                <option value="Post Graduate Diploma / Certificate - 1 Year">Post Graduate Diploma /
+                                    Certificate - 1 Year</option>
+                                <option value="Post Graduate Diploma / Certificate - 2 Year">Post Graduate Diploma /
+                                    Certificate - 2 Year</option>
                                 <option value="Undergraduate Diploma - 2 Year">Undergraduate Diploma - 2 Year</option>
                                 <option value="Undergraduate Diploma - 1 Year">Undergraduate Diploma - 1 Year</option>
                             </select>
-                            <button type="button" class="custom-select-trigger" id="level-trigger" aria-haspopup="listbox" aria-expanded="false">
+                            <button type="button" class="custom-select-trigger" id="level-trigger"
+                                aria-haspopup="listbox" aria-expanded="false">
                                 <span class="custom-select-val">All Level</span>
                                 <i class="bi bi-chevron-down custom-select-arrow"></i>
                             </button>
                             <div class="custom-select-menu" id="level-menu" role="listbox">
-                                <div class="custom-option selected" data-value="All Level" role="option"><span>All Level</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Master Degree" role="option"><span>Master Degree</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Bachelor Degree" role="option"><span>Bachelor Degree</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Bachelor Top-up" role="option"><span>Bachelor Top-up</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Post Graduate Diploma / Certificate - 1 Year" role="option"><span>Post Graduate Diploma / Certificate - 1 Year</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Post Graduate Diploma / Certificate - 2 Year" role="option"><span>Post Graduate Diploma / Certificate - 2 Year</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Undergraduate Diploma - 2 Year" role="option"><span>Undergraduate Diploma - 2 Year</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Undergraduate Diploma - 1 Year" role="option"><span>Undergraduate Diploma - 1 Year</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option selected" data-value="All Level" role="option"><span>All
+                                        Level</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Master Degree" role="option"><span>Master
+                                        Degree</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Bachelor Degree" role="option"><span>Bachelor
+                                        Degree</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Bachelor Top-up" role="option"><span>Bachelor
+                                        Top-up</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Post Graduate Diploma / Certificate - 1 Year"
+                                    role="option"><span>Post Graduate Diploma / Certificate - 1 Year</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Post Graduate Diploma / Certificate - 2 Year"
+                                    role="option"><span>Post Graduate Diploma / Certificate - 2 Year</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Undergraduate Diploma - 2 Year" role="option">
+                                    <span>Undergraduate Diploma - 2 Year</span><i class="bi bi-check2"></i>
+                                </div>
+                                <div class="custom-option" data-value="Undergraduate Diploma - 1 Year" role="option">
+                                    <span>Undergraduate Diploma - 1 Year</span><i class="bi bi-check2"></i>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 fld custom-select-fld" id="fld-country">
+                        <div class="col-lg-3 col-md-8 fld custom-select-fld" id="fld-country">
                             <label for="country">Destination</label>
                             <select class="form-select d-none" id="country">
                                 <option value="All Country" selected>All Country</option>
@@ -118,30 +141,45 @@
                                 <option value="France">France</option>
                                 <option value="Dubai / United Arab Emirates">Dubai / United Arab Emirates</option>
                             </select>
-                            <button type="button" class="custom-select-trigger" id="country-trigger" aria-haspopup="listbox" aria-expanded="false">
+                            <button type="button" class="custom-select-trigger" id="country-trigger"
+                                aria-haspopup="listbox" aria-expanded="false">
                                 <span class="custom-select-val">All Country</span>
                                 <i class="bi bi-chevron-down custom-select-arrow"></i>
                             </button>
                             <div class="custom-select-menu" id="country-menu" role="listbox">
-                                <div class="custom-option selected" data-value="All Country" role="option"><span>All Country</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="United Kingdom" role="option"><span>United Kingdom</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="United States of America" role="option"><span>United States of America</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Ireland" role="option"><span>Ireland</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Canada" role="option"><span>Canada</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Germany" role="option"><span>Germany</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Georgia" role="option"><span>Georgia</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Hungary" role="option"><span>Hungary</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Poland" role="option"><span>Poland</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Malta" role="option"><span>Malta</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="France" role="option"><span>France</span><i class="bi bi-check2"></i></div>
-                                <div class="custom-option" data-value="Dubai / United Arab Emirates" role="option"><span>Dubai / United Arab Emirates</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option selected" data-value="All Country" role="option"><span>All
+                                        Country</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="United Kingdom" role="option"><span>United
+                                        Kingdom</span><i class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="United States of America" role="option">
+                                    <span>United States of America</span><i class="bi bi-check2"></i>
+                                </div>
+                                <div class="custom-option" data-value="Ireland" role="option"><span>Ireland</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Canada" role="option"><span>Canada</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Germany" role="option"><span>Germany</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Georgia" role="option"><span>Georgia</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Hungary" role="option"><span>Hungary</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Poland" role="option"><span>Poland</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Malta" role="option"><span>Malta</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="France" role="option"><span>France</span><i
+                                        class="bi bi-check2"></i></div>
+                                <div class="custom-option" data-value="Dubai / United Arab Emirates" role="option">
+                                    <span>Dubai / United Arab Emirates</span><i class="bi bi-check2"></i>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-8 fld"><label for="q">Course</label><input class="form-control" id="q"
-                                placeholder="Nursing, MBA, Data Science…"></div>
-                        <div class="col-lg-2 col-md-4 p-2 d-grid"><button class="btn-x justify-content-between"
-                                type="submit" style="padding-left:1.3rem">Search<i class="bi bi-search"></i></button></div>
+                        <div class="col-lg-2 col-md-4 p-2 d-grid">
+                            <button class="btn-x justify-content-between" type="submit"
+                                style="padding-left:1.3rem">Search<i class="bi bi-search"></i></button>
+                        </div>
                     </div>
                     <div class="res" id="res"></div>
                 </form>
@@ -166,7 +204,7 @@
         <div class="dotsbg"></div>
         <div class="container">
             <div class="mb-4"><span class="tag rv" data-rv="up">About UniHelpLine</span>
-                <h2 class="h2 mt-3 rv" data-rv="up">Nearly 15 years of<br><span class="gt">sending students
+                <h2 class="h2 mt-3 rv" data-rv="up">Nearly 20 years of<br><span class="gt">sending students
                         abroad.</span></h2>
             </div>
             <div class="bento">
@@ -175,8 +213,8 @@
                         <p class="fs-5">We represent International Universities and Institutes all over the world. We
                             are a
                             valued brand by universities across the globe and have enjoyed a very strong presence in the
-                            education industry for nearly 15 years and this gives us the edge.</p>
-                        <p class="text-secondary">Our team members have more than 15 years of experience in the middle
+                            education industry for nearly 20 years and this gives us the edge.</p>
+                        <p class="text-secondary">Our team members have more than 20 years of experience in the middle
                             east
                             education market. Also, we have an excellent business relationship with various Universities
                             across the world. We provide end-to-end guidance from your initial application to
@@ -199,7 +237,7 @@
                     </div>
                 </div>
                 <div class="bc b-b rv" data-rv="up" style="--d:.1s">
-                    <div class="giant gt">15+</div>
+                    <div class="giant gt">20+</div>
                     <p class="mt-3 mb-0 text-secondary">years of experience in the Middle East education market</p>
                 </div>
                 <div class="bc b-c rv" data-rv="up" style="--d:.2s">
@@ -226,10 +264,12 @@
     <section id="services" style="background:var(--s1)">
         <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-5">
-                <div><span class="tag rv" data-rv="up"><i class="bi bi-patch-check-fill text-info me-1"></i> End-to-End Support</span>
+                <div><span class="tag rv" data-rv="up"><i class="bi bi-patch-check-fill text-info me-1"></i> End-to-End
+                        Support</span>
                     <h2 class="h2 mt-3 rv" data-rv="up">Our Services</h2>
                 </div>
-                <p class="lead2 mb-0 rv" data-rv="up">Four comprehensive ways we empower your global education journey, from your first question to your first day on campus.</p>
+                <p class="lead2 mb-0 rv" data-rv="up">Four comprehensive ways we empower your global education journey,
+                    from your first question to your first day on campus.</p>
             </div>
             <div class="sx rv" data-rv="up" id="sx">
                 <!-- Service 01 -->
@@ -252,16 +292,23 @@
                             <h3>Career Counselling</h3>
                         </div>
                         <div class="det">
-                            <p class="ex-desc">Personalized evaluation of your academic profile, strengths, and budget to design an optimal study abroad roadmap tailored specifically to your career ambitions.</p>
+                            <p class="ex-desc">Personalized evaluation of your academic profile, strengths, and budget
+                                to design an optimal study abroad roadmap tailored specifically to your career
+                                ambitions.</p>
                             <div class="ex-features">
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Course &amp; Country Matching</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Course &amp; Country
+                                    Matching</span>
                                 <span class="f-pill"><i class="bi bi-check2-circle"></i> Scholarship Assessment</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Native Language Counsellors</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Future Career &amp; PR ROI</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Native Language
+                                    Counsellors</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Future Career &amp; PR
+                                    ROI</span>
                             </div>
                             <div class="ex-footer">
-                                <a href="career-counselling.html" class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
-                                <span class="ex-badge-stat"><i class="bi bi-shield-check"></i> 100% Free Consultation</span>
+                                <a href="career-counselling.html" class="btn-x">Explore Details<i
+                                        class="bi bi-arrow-up-right"></i></a>
+                                <span class="ex-badge-stat"><i class="bi bi-shield-check"></i> 100% Free
+                                    Consultation</span>
                             </div>
                         </div>
                     </div>
@@ -287,15 +334,21 @@
                             <h3>Admission Guidance</h3>
                         </div>
                         <div class="det">
-                            <p class="ex-desc">Direct access to renowned global universities. We curate a strategic mix of dream, reach, and safe institutions while elevating your SOP, essays, and portfolio.</p>
+                            <p class="ex-desc">Direct access to renowned global universities. We curate a strategic mix
+                                of dream, reach, and safe institutions while elevating your SOP, essays, and portfolio.
+                            </p>
                             <div class="ex-features">
                                 <span class="f-pill"><i class="bi bi-check2-circle"></i> University Shortlisting</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> SOP &amp; LOR Drafting Support</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Application Fee Waiver Assistance</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Direct University Admissions Desk</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> SOP &amp; LOR Drafting
+                                    Support</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Application Fee Waiver
+                                    Assistance</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Direct University Admissions
+                                    Desk</span>
                             </div>
                             <div class="ex-footer">
-                                <a href="admission-guidance.html" class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
+                                <a href="admission-guidance.html" class="btn-x">Explore Details<i
+                                        class="bi bi-arrow-up-right"></i></a>
                                 <span class="ex-badge-stat"><i class="bi bi-mortarboard-fill"></i> 8,500+ Courses</span>
                             </div>
                         </div>
@@ -322,16 +375,24 @@
                             <h3>Application Process</h3>
                         </div>
                         <div class="det">
-                            <p class="ex-desc">End-to-end management of complex university applications, rigorous document verification, deadline monitoring, and active follow-ups to secure early offers.</p>
+                            <p class="ex-desc">End-to-end management of complex university applications, rigorous
+                                document verification, deadline monitoring, and active follow-ups to secure early
+                                offers.</p>
                             <div class="ex-features">
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Error-Free Document Audits</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Real-Time Status Tracking</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Priority Turnaround Times</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Conditional Offer Follow-ups</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Error-Free Document
+                                    Audits</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Real-Time Status
+                                    Tracking</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Priority Turnaround
+                                    Times</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Conditional Offer
+                                    Follow-ups</span>
                             </div>
                             <div class="ex-footer">
-                                <a href="https://unihelpline.com/service_details/3" target="_blank" rel="noopener" class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
-                                <span class="ex-badge-stat"><i class="bi bi-patch-check-fill"></i> 10,000+ Placements</span>
+                                <a href="https://unihelpline.com/service_details/3" target="_blank" rel="noopener"
+                                    class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
+                                <span class="ex-badge-stat"><i class="bi bi-patch-check-fill"></i> 10,000+
+                                    Placements</span>
                             </div>
                         </div>
                     </div>
@@ -357,16 +418,23 @@
                             <h3>Visa Assistance</h3>
                         </div>
                         <div class="det">
-                            <p class="ex-desc">Comprehensive visa file compilation, financial proof advisory, embassy mock interview drills, pre-departure briefings, health insurance, and airport reception.</p>
+                            <p class="ex-desc">Comprehensive visa file compilation, financial proof advisory, embassy
+                                mock interview drills, pre-departure briefings, health insurance, and airport reception.
+                            </p>
                             <div class="ex-features">
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Embassy Mock Interview Prep</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Embassy Mock Interview
+                                    Prep</span>
                                 <span class="f-pill"><i class="bi bi-check2-circle"></i> Financial Proof Advisory</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Medical &amp; Travel Insurance</span>
-                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Accommodation &amp; Airport Transfers</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Medical &amp; Travel
+                                    Insurance</span>
+                                <span class="f-pill"><i class="bi bi-check2-circle"></i> Accommodation &amp; Airport
+                                    Transfers</span>
                             </div>
                             <div class="ex-footer">
-                                <a href="https://unihelpline.com/service_details/4" target="_blank" rel="noopener" class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
-                                <span class="ex-badge-stat"><i class="bi bi-airplane-fill"></i> Full Travel Support</span>
+                                <a href="https://unihelpline.com/service_details/4" target="_blank" rel="noopener"
+                                    class="btn-x">Explore Details<i class="bi bi-arrow-up-right"></i></a>
+                                <span class="ex-badge-stat"><i class="bi bi-airplane-fill"></i> Full Travel
+                                    Support</span>
                             </div>
                         </div>
                     </div>
@@ -380,8 +448,10 @@
                     <button class="sx-dot" data-i="3" aria-label="Service 4"></button>
                 </div>
                 <div class="sx-nav-btns d-flex gap-2">
-                    <button class="sx-btn" id="sx-prev" aria-label="Previous Service"><i class="bi bi-chevron-left"></i></button>
-                    <button class="sx-btn" id="sx-next" aria-label="Next Service"><i class="bi bi-chevron-right"></i></button>
+                    <button class="sx-btn" id="sx-prev" aria-label="Previous Service"><i
+                            class="bi bi-chevron-left"></i></button>
+                    <button class="sx-btn" id="sx-next" aria-label="Next Service"><i
+                            class="bi bi-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -428,7 +498,8 @@
                 <div>
                     <span class="tag rv" data-rv="up"><i class="bi bi-bank2 me-1"></i> Global Network</span>
                     <h2 class="h2 mt-3 rv" data-rv="up">Major Partner Universities</h2>
-                    <p class="lead2 mt-2 mb-0 rv" data-rv="up">Explore world-class institutions across the UK, USA, Canada, Ireland, Europe &amp; UAE with direct admission guidance.</p>
+                    <p class="lead2 mt-2 mb-0 rv" data-rv="up">Explore world-class institutions across the UK, USA,
+                        Canada, Ireland, Europe &amp; UAE with direct admission guidance.</p>
                 </div>
                 <div class="arw"><button id="pv" aria-label="Previous"><i class="bi bi-arrow-left"></i></button><button
                         id="nx" aria-label="Next"><i class="bi bi-arrow-right"></i></button></div>
@@ -436,15 +507,18 @@
 
             <!-- Enhanced feature badges strip -->
             <div class="uni-feature-pills-wrap rv" data-rv="up">
-                <span class="uni-feat-pill"><i class="bi bi-patch-check-fill text-info"></i> Direct Official Representation</span>
-                <span class="uni-feat-pill"><i class="bi bi-lightning-charge-fill text-warning"></i> Fast-Track Offer Letters</span>
+                <span class="uni-feat-pill"><i class="bi bi-patch-check-fill text-info"></i> Direct Official
+                    Representation</span>
+                <span class="uni-feat-pill"><i class="bi bi-lightning-charge-fill text-warning"></i> Fast-Track Offer
+                    Letters</span>
                 <span class="uni-feat-pill"><i class="bi bi-gift-fill text-primary"></i> £5,000+ Scholarships</span>
                 <span class="uni-feat-pill"><i class="bi bi-briefcase-fill text-success"></i> 2–3 Yr PSW Visa</span>
             </div>
 
             <div class="us" id="us"></div>
             <div class="uni-pagination" id="uni-dots"></div>
-            <div class="text-center mt-4"><a class="btn-x" href="destinations.html">Explore All Universities &amp; Destinations<i class="bi bi-arrow-up-right"></i></a></div>
+            <div class="text-center mt-4"><a class="btn-x" href="destinations.html">Explore All Universities &amp;
+                    Destinations<i class="bi bi-arrow-up-right"></i></a></div>
         </div>
     </section>
 
@@ -480,8 +554,7 @@
         <div class="dm">
             <div class="tr" id="d2"></div>
         </div>
-        <div class="container text-center mt-4"><a class="btn-x"
-                href="destinations.html">All
+        <div class="container text-center mt-4"><a class="btn-x" href="destinations.html">All
                 destinations<i class="bi bi-arrow-up-right"></i></a></div>
     </section>
 
@@ -517,10 +590,13 @@
             <div class="d-flex flex-wrap align-items-end justify-content-between mb-5 gap-3">
                 <div>
                     <span class="tag rv" data-rv="up"><i class="bi bi-compass-fill me-1"></i> Knowledge Hub</span>
-                    <h2 class="h2 mt-3 mb-0 rv" data-rv="up">Your Guide to Global Education<br>and <span class="gt">Opportunities</span></h2>
+                    <h2 class="h2 mt-3 mb-0 rv" data-rv="up">Your Guide to Global Education<br>and <span
+                            class="gt">Opportunities</span></h2>
                 </div>
-                <p class="text-secondary rv mb-0" data-rv="up" style="max-width: 440px; font-size: 0.95rem; line-height: 1.6;">
-                    Curated intelligence, step-by-step country handbooks, and direct course listings updated weekly for ambitious students worldwide.
+                <p class="text-secondary rv mb-0" data-rv="up"
+                    style="max-width: 440px; font-size: 0.95rem; line-height: 1.6;">
+                    Curated intelligence, step-by-step country handbooks, and direct course listings updated weekly for
+                    ambitious students worldwide.
                 </p>
             </div>
             <div class="row g-4 news-track" id="news-track">
@@ -546,7 +622,8 @@
                                 <span><i class="bi bi-lightning-charge-fill me-1"></i> Policy & News Hub</span>
                             </div>
                             <h4 class="bl-title">Study Abroad News & Visa Insights</h4>
-                            <p class="bl-desc">Stay informed with the latest updates on international student visa rules, post-study work rights, scholarship cycles, and immigration policies.</p>
+                            <p class="bl-desc">Stay informed with the latest updates on international student visa
+                                rules, post-study work rights, scholarship cycles, and immigration policies.</p>
                             <div class="bl-pills">
                                 <span class="bl-pill"><i class="bi bi-shield-check"></i> Visa Alerts</span>
                                 <span class="bl-pill"><i class="bi bi-award"></i> Scholarships</span>
@@ -573,7 +650,8 @@
                                 </div>
                             </div>
                             <div class="bl-hero-bottom">
-                                <span class="bl-stat-text"><i class="bi bi-geo-alt-fill"></i> UK · USA · CAN · AUS</span>
+                                <span class="bl-stat-text"><i class="bi bi-geo-alt-fill"></i> UK · USA · CAN ·
+                                    AUS</span>
                                 <span class="bl-stat-tag">PR Guides</span>
                             </div>
                         </div>
@@ -582,7 +660,8 @@
                                 <span><i class="bi bi-globe2 me-1"></i> Country Profiles</span>
                             </div>
                             <h4 class="bl-title">Global Study Destinations</h4>
-                            <p class="bl-desc">Explore comprehensive country guides detailing top university rankings, tuition structures, living expenses, and post-graduation settlement opportunities.</p>
+                            <p class="bl-desc">Explore comprehensive country guides detailing top university rankings,
+                                tuition structures, living expenses, and post-graduation settlement opportunities.</p>
                             <div class="bl-pills">
                                 <span class="bl-pill"><i class="bi bi-cash-stack"></i> Cost of Living</span>
                                 <span class="bl-pill"><i class="bi bi-briefcase"></i> Work Rights</span>
@@ -597,10 +676,12 @@
                 </div>
 
                 <div class="col-lg-4 col-md-12 bl-col">
-                    <a class="bl rv" data-rv="up" style="--d:.2s" href="https://unihelpline.com/departments" target="_blank" rel="noopener">
+                    <a class="bl rv" data-rv="up" style="--d:.2s" href="https://unihelpline.com/departments"
+                        target="_blank" rel="noopener">
                         <div class="bl-hero bl-hero-course">
                             <div class="bl-hero-top">
-                                <span class="bl-badge bl-badge-course"><i class="bi bi-mortarboard"></i> Course Finder</span>
+                                <span class="bl-badge bl-badge-course"><i class="bi bi-mortarboard"></i> Course
+                                    Finder</span>
                                 <span class="bl-hero-pill">8,536+ Programs</span>
                             </div>
                             <div class="bl-icon-center">
@@ -609,7 +690,8 @@
                                 </div>
                             </div>
                             <div class="bl-hero-bottom">
-                                <span class="bl-stat-text"><i class="bi bi-layers-fill"></i> Bachelors · Masters · PhD</span>
+                                <span class="bl-stat-text"><i class="bi bi-layers-fill"></i> Bachelors · Masters ·
+                                    PhD</span>
                                 <span class="bl-stat-tag">High ROI</span>
                             </div>
                         </div>
@@ -618,7 +700,8 @@
                                 <span><i class="bi bi-book-half me-1"></i> Academic Directory</span>
                             </div>
                             <h4 class="bl-title">All Degree Courses & Majors</h4>
-                            <p class="bl-desc">Browse through 8,500+ accredited university degree programs across Computer Science, Business, Engineering, Healthcare, and emerging global fields.</p>
+                            <p class="bl-desc">Browse through 8,500+ accredited university degree programs across
+                                Computer Science, Business, Engineering, Healthcare, and emerging global fields.</p>
                             <div class="bl-pills">
                                 <span class="bl-pill"><i class="bi bi-cpu"></i> STEM Degrees</span>
                                 <span class="bl-pill"><i class="bi bi-graph-up-arrow"></i> Fast Track</span>
@@ -639,8 +722,10 @@
                     <button class="news-dot" data-index="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="news-nav">
-                    <button class="news-btn" id="news-prev" aria-label="Previous card"><i class="bi bi-chevron-left"></i></button>
-                    <button class="news-btn" id="news-next" aria-label="Next card"><i class="bi bi-chevron-right"></i></button>
+                    <button class="news-btn" id="news-prev" aria-label="Previous card"><i
+                            class="bi bi-chevron-left"></i></button>
+                    <button class="news-btn" id="news-next" aria-label="Next card"><i
+                            class="bi bi-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -708,22 +793,30 @@
                 <div class="col-lg-4 col-md-6">
                     <a class="brand mb-3" href="#home">
                         <span class="lg">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/>
-                                <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE" />
+                                <path
+                                    d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z"
+                                    fill="#27C2E8" />
                             </svg>
                         </span>
                         UniHelpLine
                     </a>
-                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
+                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants
+                        with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
                     <div class="footer-trust-badge mb-3">
                         <i class="bi bi-patch-check-fill"></i> Certified Study Abroad Advisors
                     </div>
                     <div class="soc">
-                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener"
+                            aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -733,11 +826,15 @@
                     <ul class="footer-links">
                         <li><a href="#home"><i class="bi bi-chevron-right small text-info"></i> Home</a></li>
                         <li><a href="about.html"><i class="bi bi-chevron-right small text-info"></i> About Us</a></li>
-                        <li><a href="#universities"><i class="bi bi-chevron-right small text-info"></i> Universities</a></li>
+                        <li><a href="#universities"><i class="bi bi-chevron-right small text-info"></i> Universities</a>
+                        </li>
                         <li><a href="#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a></li>
-                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i> Destinations</a></li>
-                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp; Insights</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a></li>
+                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Destinations</a></li>
+                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp;
+                                Insights</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -745,12 +842,18 @@
                 <div class="col-lg-3 col-md-6 col-6">
                     <h6 class="footer-title">Our Services</h6>
                     <ul class="footer-links">
-                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career Counselling</a></li>
-                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i> Admission Guidance</a></li>
-                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i> Application Process</a></li>
-                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa Assistance</a></li>
-                        <li><a href="#services"><i class="bi bi-chevron-right small text-info"></i> Scholarship Guidance</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1 Consultation</a></li>
+                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career
+                                Counselling</a></li>
+                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Admission Guidance</a></li>
+                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Application Process</a></li>
+                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa
+                                Assistance</a></li>
+                        <li><a href="#services"><i class="bi bi-chevron-right small text-info"></i> Scholarship
+                                Guidance</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1
+                                Consultation</a></li>
                     </ul>
                 </div>
 
@@ -789,7 +892,8 @@
             </div>
 
             <!-- Footer Bottom Row -->
-            <div class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+            <div
+                class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
                 <p class="small text-secondary mb-0">© 2026 UniHelpLine. All rights reserved.</p>
                 <p class="small powered-tag mb-0">Powered by <span class="credozen-badge">CREDOZEN LLP</span></p>
             </div>
@@ -797,7 +901,8 @@
     </footer>
 
     <button id="top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
-    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i
+            class="bi bi-whatsapp"></i></a>
     <div class="offcanvas offcanvas-end" id="wl">
         <div class="offcanvas-header">
             <h4 class="mb-0">Wishlist</h4><button class="btn-close" data-bs-dismiss="offcanvas"
