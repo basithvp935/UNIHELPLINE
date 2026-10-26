@@ -25,7 +25,7 @@
 
         body {
             overflow-x: hidden;
-            background: #121e3f;
+            background: #17325c;
             color: #e2e8f0;
             font-family: 'DM Sans', sans-serif;
         }
@@ -113,7 +113,8 @@
         }
 
         /* Guaranteed Visibility Fix for Smooth Transitions */
-        .rv, .js .rv {
+        .rv,
+        .js .rv {
             opacity: 1 !important;
             transform: none !important;
             visibility: visible !important;
@@ -125,8 +126,8 @@
             z-index: 2;
             padding: 5.5rem 0 6rem;
             background: radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
-                        radial-gradient(circle at 90% 85%, rgba(37, 99, 235, 0.06) 0%, transparent 45%),
-                        linear-gradient(180deg, #f0f7ff 0%, #ffffff 32%, #f8fbff 75%, #f0f7ff 100%);
+                radial-gradient(circle at 90% 85%, rgba(37, 99, 235, 0.06) 0%, transparent 45%),
+                linear-gradient(180deg, #f0f7ff 0%, #ffffff 32%, #f8fbff 75%, #f0f7ff 100%);
             color: #0f172a;
             border-top: 1px solid rgba(56, 189, 248, 0.25);
             border-bottom: 1px solid rgba(56, 189, 248, 0.25);
@@ -518,13 +519,13 @@
             position: relative;
             z-index: 2;
             padding: 5rem 0;
-            background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.12) 0%, #152246 80%);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.18) 0%, #1e4075 80%);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .cta-glass-box {
-            background: linear-gradient(135deg, rgba(26, 42, 86, 0.9) 0%, rgba(18, 30, 62, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(39, 78, 138, 0.9) 0%, rgba(27, 56, 102, 0.95) 100%);
             border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 30px;
             padding: 3.5rem 2.5rem;
@@ -605,27 +606,59 @@
         }
 
         @media (max-width: 991px) {
-            .service-banner-hero { padding: 7.5rem 0 3rem; }
-            .admission-pillars-grid { grid-template-columns: 1fr; }
-            .cta-glass-box { padding: 2.5rem 1.5rem; }
+            .service-banner-hero {
+                padding: 7.5rem 0 3rem;
+            }
+
+            .admission-pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-glass-box {
+                padding: 2.5rem 1.5rem;
+            }
         }
 
         @media (max-width: 575px) {
-            .editorial-heading { font-size: 1.75rem; }
-            .service-hero-title { font-size: 2.2rem; }
+            .editorial-heading {
+                font-size: 1.75rem;
+            }
+
+            .service-hero-title {
+                font-size: 2.2rem;
+            }
         }
 
         @media (max-width: 991px) {
-            .service-banner-hero { padding: 7.5rem 0 3rem; }
-            .editorial-glass-card { padding: 2.2rem 1.8rem; }
-            .counselling-pillars-grid { grid-template-columns: 1fr; }
-            .cta-glass-box { padding: 2.5rem 1.5rem; }
-            .evaluation-box-light { padding: 2rem 1.5rem; }
+            .service-banner-hero {
+                padding: 7.5rem 0 3rem;
+            }
+
+            .editorial-glass-card {
+                padding: 2.2rem 1.8rem;
+            }
+
+            .counselling-pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-glass-box {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .evaluation-box-light {
+                padding: 2rem 1.5rem;
+            }
         }
 
         @media (max-width: 575px) {
-            .editorial-heading { font-size: 1.75rem; }
-            .service-hero-title { font-size: 2.2rem; }
+            .editorial-heading {
+                font-size: 1.75rem;
+            }
+
+            .service-hero-title {
+                font-size: 2.2rem;
+            }
         }
     </style>
     <link rel="stylesheet" href="mobile.css">
@@ -655,7 +688,8 @@
                             data-bs-toggle="dropdown">Our Services</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="career-counselling.html">Career Counselling</a></li>
-                            <li><a class="dropdown-item active text-info" href="admission-guidance.html">Admission Guidance</a></li>
+                            <li><a class="dropdown-item active text-info" href="admission-guidance.html">Admission
+                                    Guidance</a></li>
                             <li><a class="dropdown-item" href="application-process.html">Application Process</a></li>
                             <li><a class="dropdown-item" href="visa-assistance.html">Visa Assistance</a></li>
                         </ul>
@@ -672,8 +706,9 @@
                 <div class="d-flex align-items-center gap-2 nav-actions">
                     <button class="wish" data-bs-toggle="offcanvas" data-bs-target="#wl" aria-label="Wishlist"><i
                             class="bi bi-heart"></i><span id="wc">0</span></button>
-                    <a class="btn-x" href="index.html#contact" data-tab="meet" style="padding:.35rem .35rem .35rem 1.3rem">Schedule a Meeting<i
-                            style="width:36px;height:36px" class="bi bi-arrow-up-right"></i></a>
+                    <a class="btn-x" href="index.html#contact" data-tab="meet"
+                        style="padding:.35rem .35rem .35rem 1.3rem">Schedule a Meeting<i style="width:36px;height:36px"
+                            class="bi bi-arrow-up-right"></i></a>
                 </div>
             </div>
         </div>
@@ -686,7 +721,8 @@
         <div class="container position-relative text-center">
             <!-- Top Tag Pill -->
             <div class="banner-badge-wrap rv" data-rv="up">
-                <span class="banner-top-pill"><i class="bi bi-mortarboard-fill text-info me-1"></i> UNBIASED COURSE &amp; UNIVERSITY ADMISSION</span>
+                <span class="banner-top-pill"><i class="bi bi-mortarboard-fill text-info me-1"></i> UNBIASED COURSE
+                    &amp; UNIVERSITY ADMISSION</span>
             </div>
 
             <!-- Big Title -->
@@ -696,7 +732,8 @@
 
             <!-- Subtitle -->
             <p class="service-hero-lead rv" data-rv="up">
-                Expert guidance in shortlisting courses and institutions matching your personal, academic, and financial profile—not limited to the universities we represent.
+                Expert guidance in shortlisting courses and institutions matching your personal, academic, and financial
+                profile—not limited to the universities we represent.
             </p>
 
             <!-- Stat Bar -->
@@ -704,7 +741,8 @@
                 <span class="service-stat-item"><i class="bi bi-check-circle-fill"></i> Unbiased Shortlisting</span>
                 <span class="service-stat-item"><i class="bi bi-people-fill"></i> Campus Peer Connections</span>
                 <span class="service-stat-item"><i class="bi bi-file-earmark-check-fill"></i> End-to-End Filing</span>
-                <span class="service-stat-item"><i class="bi bi-shield-check text-info"></i> Family &amp; Parent Alignment</span>
+                <span class="service-stat-item"><i class="bi bi-shield-check text-info"></i> Family &amp; Parent
+                    Alignment</span>
             </div>
 
             <!-- Breadcrumb Pill -->
@@ -725,7 +763,7 @@
         <div class="container">
             <div class="editorial-unboxed-wrap rv" data-rv="up">
                 <div class="row g-5 align-items-center">
-                    
+
                     <!-- Left: Exact & Enhanced Text Content -->
                     <div class="col-lg-7 order-lg-1 order-2">
                         <div class="editorial-text-wrap">
@@ -739,19 +777,28 @@
                             <!-- Paragraph 1 Box -->
                             <div class="editorial-lead-card">
                                 <p class="editorial-lead-text">
-                                    Choosing the right course is essential for a successful study abroad experience. Our experienced counsellors guide students in shortlisting courses that best match their personal, academic, and financial profiles—not limited to the universities we represent. Selecting the right course, country, and institution is critical to a student’s future success, and we ensure you make the right choice.
+                                    Choosing the right course is essential for a successful study abroad experience. Our
+                                    experienced counsellors guide students in shortlisting courses that best match their
+                                    personal, academic, and financial profiles—not limited to the universities we
+                                    represent. Selecting the right course, country, and institution is critical to a
+                                    student’s future success, and we ensure you make the right choice.
                                 </p>
                             </div>
 
                             <!-- Paragraph 2 -->
                             <p class="editorial-body-text">
-                                Our experts evaluate your profile and recommend a list of suitable institutions. Students can finalize their choices after discussing them with parents, friends, and our counsellors. With in-depth knowledge of admission processes across institutions and countries, our counsellors assist in every step of the journey, including connecting students with peers at their chosen institutions.
+                                Our experts evaluate your profile and recommend a list of suitable institutions.
+                                Students can finalize their choices after discussing them with parents, friends, and our
+                                counsellors. With in-depth knowledge of admission processes across institutions and
+                                countries, our counsellors assist in every step of the journey, including connecting
+                                students with peers at their chosen institutions.
                             </p>
 
                             <!-- Bold Guarantee Banner -->
                             <div class="highlight-guarantee-banner">
                                 <i class="bi bi-check2-circle"></i>
-                                <p>We handle the entire application process on behalf of the student, ensuring a seamless admission experience.</p>
+                                <p>We handle the entire application process on behalf of the student, ensuring a
+                                    seamless admission experience.</p>
                             </div>
 
                             <!-- Feature Pillars Grid -->
@@ -791,10 +838,12 @@
 
                             <!-- Action Buttons -->
                             <div class="d-flex align-items-center flex-wrap gap-3">
-                                <a href="index.html#contact" data-tab="meet" class="btn-x" style="padding: 0.5rem 1.6rem;">
+                                <a href="index.html#contact" data-tab="meet" class="btn-x"
+                                    style="padding: 0.5rem 1.6rem;">
                                     Get Admission Guidance <i class="bi bi-arrow-up-right"></i>
                                 </a>
-                                <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="btn-x btn-wa">
+                                <a href="https://wa.me/+917558951509" target="_blank" rel="noopener"
+                                    class="btn-x btn-wa">
                                     WhatsApp Us <i class="bi bi-whatsapp"></i>
                                 </a>
                             </div>
@@ -807,8 +856,7 @@
                         <div class="admission-photo-frame">
                             <img src="images/admission-guidance-hero.jpg"
                                 alt="UniHelpLine Study Abroad Admission Guidance Advisory Session"
-                                class="admission-hero-img"
-                                loading="lazy">
+                                class="admission-hero-img" loading="lazy">
                         </div>
                     </div>
 
@@ -826,7 +874,8 @@
                     Institutional Matching &amp; <span class="gt-light">Acceptance Matrix</span>
                 </h2>
                 <p class="light-section-desc">
-                    Every student is unique. We cross-evaluate academic transcripts, budget limitations, and career trajectories to match you with top-ranked global institutions.
+                    Every student is unique. We cross-evaluate academic transcripts, budget limitations, and career
+                    trajectories to match you with top-ranked global institutions.
                 </p>
             </div>
 
@@ -840,12 +889,16 @@
                                 <div class="bento-icon-bubble"><i class="bi bi-person-check-fill"></i></div>
                                 <h3 class="bento-title-text">Triple-Fit Profile Evaluation</h3>
                                 <p class="bento-desc-text">
-                                    Our counsellors analyze your GPA, test scores, research publications, budget ceiling, and post-study work goals to produce a curated list of Dream, Target, and Safe institutions across top global destinations.
+                                    Our counsellors analyze your GPA, test scores, research publications, budget
+                                    ceiling, and post-study work goals to produce a curated list of Dream, Target, and
+                                    Safe institutions across top global destinations.
                                 </p>
                             </div>
                             <div class="bento-tag-pills">
-                                <span class="bento-chip highlight"><i class="bi bi-check-circle-fill me-1"></i> Academic Merit Match</span>
-                                <span class="bento-chip highlight"><i class="bi bi-wallet2 me-1"></i> Budget &amp; Scholarship Fit</span>
+                                <span class="bento-chip highlight"><i class="bi bi-check-circle-fill me-1"></i> Academic
+                                    Merit Match</span>
+                                <span class="bento-chip highlight"><i class="bi bi-wallet2 me-1"></i> Budget &amp;
+                                    Scholarship Fit</span>
                                 <span class="bento-chip"><i class="bi bi-compass me-1"></i> Post-Study Career ROI</span>
                             </div>
                         </div>
@@ -858,12 +911,16 @@
                                 <div class="bento-icon-bubble"><i class="bi bi-globe-americas"></i></div>
                                 <h3 class="bento-title-text">Unrestricted Choice</h3>
                                 <p class="bento-desc-text">
-                                    Unlike traditional agents restricted to sponsored lists, we guide you to institutions matching your true aspirations—not limited to the universities we represent.
+                                    Unlike traditional agents restricted to sponsored lists, we guide you to
+                                    institutions matching your true aspirations—not limited to the universities we
+                                    represent.
                                 </p>
                             </div>
                             <div class="bento-tag-pills">
-                                <span class="bento-chip highlight"><i class="bi bi-stars me-1"></i> 100% Unbiased Advice</span>
-                                <span class="bento-chip"><i class="bi bi-building-check me-1"></i> Global University Reach</span>
+                                <span class="bento-chip highlight"><i class="bi bi-stars me-1"></i> 100% Unbiased
+                                    Advice</span>
+                                <span class="bento-chip"><i class="bi bi-building-check me-1"></i> Global University
+                                    Reach</span>
                             </div>
                         </div>
                     </div>
@@ -875,12 +932,16 @@
                                 <div class="bento-icon-bubble"><i class="bi bi-chat-heart-fill"></i></div>
                                 <h3 class="bento-title-text">Campus Peer Connect</h3>
                                 <p class="bento-desc-text">
-                                    Get unfiltered, direct advice from alumni and currently enrolled seniors at your shortlisted universities regarding campus life, part-time jobs, and faculty before making your deposit.
+                                    Get unfiltered, direct advice from alumni and currently enrolled seniors at your
+                                    shortlisted universities regarding campus life, part-time jobs, and faculty before
+                                    making your deposit.
                                 </p>
                             </div>
                             <div class="bento-tag-pills">
-                                <span class="bento-chip highlight"><i class="bi bi-people-fill me-1"></i> Live Senior Advice</span>
-                                <span class="bento-chip"><i class="bi bi-house-door-fill me-1"></i> Accommodation Insights</span>
+                                <span class="bento-chip highlight"><i class="bi bi-people-fill me-1"></i> Live Senior
+                                    Advice</span>
+                                <span class="bento-chip"><i class="bi bi-house-door-fill me-1"></i> Accommodation
+                                    Insights</span>
                             </div>
                         </div>
                     </div>
@@ -892,13 +953,19 @@
                                 <div class="bento-icon-bubble"><i class="bi bi-shield-fill-check"></i></div>
                                 <h3 class="bento-title-text">Family &amp; Parent Alignment Council</h3>
                                 <p class="bento-desc-text">
-                                    We arrange joint consultative sessions with students, parents, and senior counsellors to discuss fee structures, living costs, student safety, and medical health insurance so every stakeholder moves forward with total clarity and confidence.
+                                    We arrange joint consultative sessions with students, parents, and senior
+                                    counsellors to discuss fee structures, living costs, student safety, and medical
+                                    health insurance so every stakeholder moves forward with total clarity and
+                                    confidence.
                                 </p>
                             </div>
                             <div class="bento-tag-pills">
-                                <span class="bento-chip highlight"><i class="bi bi-heart-pulse-fill me-1"></i> Safety &amp; Welfare Verification</span>
-                                <span class="bento-chip highlight"><i class="bi bi-cash-stack me-1"></i> Transparent Cost Projections</span>
-                                <span class="bento-chip"><i class="bi bi-award-fill me-1"></i> End-to-End Handling</span>
+                                <span class="bento-chip highlight"><i class="bi bi-heart-pulse-fill me-1"></i> Safety
+                                    &amp; Welfare Verification</span>
+                                <span class="bento-chip highlight"><i class="bi bi-cash-stack me-1"></i> Transparent
+                                    Cost Projections</span>
+                                <span class="bento-chip"><i class="bi bi-award-fill me-1"></i> End-to-End
+                                    Handling</span>
                             </div>
                         </div>
                     </div>
@@ -911,12 +978,14 @@
     <section class="counselling-advisory-cta">
         <div class="container">
             <div class="cta-glass-box rv" data-rv="up">
-                <span class="tag mb-3 d-inline-block"><i class="bi bi-headset text-info me-1"></i> DIRECT EXPERT ADVISORY</span>
+                <span class="tag mb-3 d-inline-block"><i class="bi bi-headset text-info me-1"></i> DIRECT EXPERT
+                    ADVISORY</span>
                 <h2 class="cta-title">
                     Our Unihelpline Experts Are Ready To Answer All Your Queries
                 </h2>
                 <p class="cta-desc">
-                    Connect with our certified counsellors today for comprehensive guidance on international admissions, university shortlists, and course options.
+                    Connect with our certified counsellors today for comprehensive guidance on international admissions,
+                    university shortlists, and course options.
                 </p>
 
                 <!-- Phone & Email Pills -->
@@ -945,7 +1014,7 @@
                         Schedule A Consultation <i class="bi bi-calendar2-check"></i>
                     </a>
                     <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="btn-x btn-wa">
-                                    WhatsApp Us <i class="bi bi-whatsapp"></i>
+                        WhatsApp Us <i class="bi bi-whatsapp"></i>
                     </a>
                 </div>
             </div>
@@ -959,22 +1028,30 @@
                 <div class="col-lg-4 col-md-6">
                     <a class="brand mb-3" href="index.html#home">
                         <span class="lg">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/>
-                                <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE" />
+                                <path
+                                    d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z"
+                                    fill="#27C2E8" />
                             </svg>
                         </span>
                         UniHelpLine
                     </a>
-                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
+                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants
+                        with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
                     <div class="footer-trust-badge mb-3">
                         <i class="bi bi-patch-check-fill"></i> Certified Study Abroad Advisors
                     </div>
                     <div class="soc">
-                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener"
+                            aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -984,11 +1061,16 @@
                     <ul class="footer-links">
                         <li><a href="index.html#home"><i class="bi bi-chevron-right small text-info"></i> Home</a></li>
                         <li><a href="about.html"><i class="bi bi-chevron-right small text-info"></i> About Us</a></li>
-                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i> Universities</a></li>
-                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a></li>
-                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i> Destinations</a></li>
-                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp; Insights</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a></li>
+                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i>
+                                Universities</a></li>
+                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a>
+                        </li>
+                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Destinations</a></li>
+                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp;
+                                Insights</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -996,12 +1078,18 @@
                 <div class="col-lg-3 col-md-6 col-6">
                     <h6 class="footer-title">Our Services</h6>
                     <ul class="footer-links">
-                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career Counselling</a></li>
-                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i> Admission Guidance</a></li>
-                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i> Application Process</a></li>
-                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa Assistance</a></li>
-                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i> Scholarship Guidance</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1 Consultation</a></li>
+                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career
+                                Counselling</a></li>
+                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Admission Guidance</a></li>
+                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Application Process</a></li>
+                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa
+                                Assistance</a></li>
+                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i>
+                                Scholarship Guidance</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1
+                                Consultation</a></li>
                     </ul>
                 </div>
 
@@ -1040,7 +1128,8 @@
             </div>
 
             <!-- Footer Bottom Row -->
-            <div class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+            <div
+                class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
                 <p class="small text-secondary mb-0">© 2026 UniHelpLine. All rights reserved.</p>
                 <p class="small powered-tag mb-0">Powered by <span class="credozen-badge">CREDOZEN LLP</span></p>
             </div>
@@ -1049,7 +1138,8 @@
 
     <!-- Floating Buttons & Offcanvas -->
     <button id="top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
-    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i
+            class="bi bi-whatsapp"></i></a>
     <div class="offcanvas offcanvas-end" id="wl">
         <div class="offcanvas-header">
             <h4 class="mb-0">Wishlist</h4>

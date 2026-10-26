@@ -215,8 +215,86 @@ if(us){
 /* courses */
 const cb=$('#cats'),cpn=$('#cpan');
 if(cb && cpn){
-    cats.forEach((c,i)=>{const b=document.createElement('button');b.innerHTML=`<i class="bi ${c[1]}"></i>${c[0]}`;b.onclick=()=>sc(i);cb.append(b)});
-    function sc(i){const c=cats[i];$$('button',cb).forEach((b,j)=>b.classList.toggle('on',j===i));cpn.innerHTML=`<div class="pin"><h3>${c[0]}</h3><div class="cg">${c[3].map(x=>`<a href="${C+x[1]}" target="_blank" rel="noopener">${x[0]}<i class="bi bi-arrow-up-right"></i></a>`).join('')}</div><a class="btn-o" href="https://unihelpline.com/getdepcourses/${c[2]}" target="_blank" rel="noopener">View all ${c[0]} →</a></div>`}
+    const catDescMap = {
+        "Business": "Globally accredited programs covering corporate finance, executive management, international marketing, and strategic leadership.",
+        "Engineering": "Industry-aligned engineering specializations with state-of-the-art laboratory training and accredited global pathways.",
+        "Computer Science": "High-growth technological degrees focusing on AI, enterprise software engineering, data science, and cybersecurity.",
+        "Science": "Rigorous scientific research courses, biological studies, chemical sciences, and psychological specializations.",
+        "Health": "Accredited clinical and healthcare degrees with international hospital placements, nursing, and medical credentials.",
+        "Automotive & Transportation": "Specialized aviation programs, logistics management, modern automotive systems, and intermodal transport.",
+        "Social Service": "Community development, social care, youth support work, and public policy advocacy qualifications.",
+        "Education": "Advanced pedagogical training, childhood studies, linguistics, TESOL certifications, and educational leadership.",
+        "Arts": "Creative storytelling, digital media production, journalism, fine arts, and contemporary performing arts.",
+        "Law": "Internationally recognized LL.B and LL.M degrees, corporate law, criminology, and professional legal practice."
+    };
+
+    cats.forEach((c,i)=>{
+        const b=document.createElement('button');
+        b.type='button';
+        b.className='cat-pill'+(i===0?' on':'');
+        b.setAttribute('aria-selected', i===0?'true':'false');
+        b.innerHTML=`<i class="bi ${c[1]}"></i><span>${c[0]}</span><span class="cat-pill-count">${c[3].length}</span>`;
+        b.onclick=()=>sc(i);
+        cb.append(b);
+    });
+
+    function sc(i){
+        const c=cats[i];
+        $$('button',cb).forEach((b,j)=>{
+            const isOn = j===i;
+            b.classList.toggle('on', isOn);
+            b.setAttribute('aria-selected', isOn?'true':'false');
+        });
+        const desc = catDescMap[c[0]] || `Explore top-rated degrees, diplomas, and certifications in ${c[0]}.`;
+        cpn.innerHTML=`<div class="pin">
+            <div class="cpan-head">
+                <div class="cpan-head-left">
+                    <div class="cpan-orb"><i class="bi ${c[1]}"></i></div>
+                    <div>
+                        <div class="cpan-meta">
+                            <span class="cpan-badge"><i class="bi bi-stars"></i> Featured Faculty</span>
+                            <span class="cpan-count"><i class="bi bi-layers-fill"></i> ${c[3].length} Specializations</span>
+                        </div>
+                        <h3 class="cpan-title">${c[0]}</h3>
+                        <p class="cpan-desc">${desc}</p>
+                    </div>
+                </div>
+                <div class="cpan-head-right">
+                    <a class="cpan-explore-btn btn-x" href="https://unihelpline.com/getdepcourses/${c[2]}" target="_blank" rel="noopener">
+                        <span>Explore All ${c[0]}</span>
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cg">
+                ${c[3].map(x=>`
+                    <a href="${C+x[1]}" class="cg-card" target="_blank" rel="noopener">
+                        <div class="cg-left">
+                            <div class="cg-ic"><i class="bi ${c[1]}"></i></div>
+                            <div class="cg-text">
+                                <span class="cg-name">${x[0]}</span>
+                                <span class="cg-sub"><i class="bi bi-patch-check-fill"></i> Bachelor · Master · Diploma</span>
+                            </div>
+                        </div>
+                        <div class="cg-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+                `).join('')}
+            </div>
+
+            <div class="cpan-footer">
+                <div class="cpan-foot-text">
+                    <i class="bi bi-shield-check text-info"></i>
+                    <span>Can't decide on the right specialization? Our expert counsellors match your academic profile and budget with 97+ partner universities.</span>
+                </div>
+                <a href="#contact" data-tab="meet" class="cpan-foot-cta">
+                    <i class="bi bi-calendar-check-fill"></i> Free Profile Evaluation
+                </a>
+            </div>
+        </div>`;
+    }
     sc(0);
 }
 

@@ -25,7 +25,7 @@
 
         body {
             overflow-x: hidden;
-            background: #121e3f;
+            background: #17325c;
             color: #e2e8f0;
             font-family: 'DM Sans', sans-serif;
         }
@@ -113,7 +113,8 @@
         }
 
         /* Guaranteed Visibility Fix for Smooth Transitions */
-        .rv, .js .rv {
+        .rv,
+        .js .rv {
             opacity: 1 !important;
             transform: none !important;
             visibility: visible !important;
@@ -125,8 +126,8 @@
             z-index: 2;
             padding: 5.5rem 0 6rem;
             background: radial-gradient(circle at 85% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
-                        radial-gradient(circle at 10% 85%, rgba(37, 99, 235, 0.06) 0%, transparent 45%),
-                        linear-gradient(180deg, #f0f7ff 0%, #ffffff 32%, #f8fbff 75%, #f0f7ff 100%);
+                radial-gradient(circle at 10% 85%, rgba(37, 99, 235, 0.06) 0%, transparent 45%),
+                linear-gradient(180deg, #f0f7ff 0%, #ffffff 32%, #f8fbff 75%, #f0f7ff 100%);
             color: #0f172a;
             border-top: 1px solid rgba(56, 189, 248, 0.25);
             border-bottom: 1px solid rgba(56, 189, 248, 0.25);
@@ -544,13 +545,13 @@
             position: relative;
             z-index: 2;
             padding: 5rem 0;
-            background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.12) 0%, #152246 80%);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.18) 0%, #1e4075 80%);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .cta-glass-box {
-            background: linear-gradient(135deg, rgba(26, 42, 86, 0.9) 0%, rgba(18, 30, 62, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(39, 78, 138, 0.9) 0%, rgba(27, 56, 102, 0.95) 100%);
             border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 30px;
             padding: 3.5rem 2.5rem;
@@ -631,15 +632,31 @@
         }
 
         @media (max-width: 991px) {
-            .service-banner-hero { padding: 7.5rem 0 3rem; }
-            .application-pillars-grid { grid-template-columns: 1fr; }
-            .cta-glass-box { padding: 2.5rem 1.5rem; }
-            .quality-audit-deck { padding: 2rem 1.5rem; }
+            .service-banner-hero {
+                padding: 7.5rem 0 3rem;
+            }
+
+            .application-pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-glass-box {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .quality-audit-deck {
+                padding: 2rem 1.5rem;
+            }
         }
 
         @media (max-width: 575px) {
-            .editorial-heading { font-size: 1.75rem; }
-            .service-hero-title { font-size: 2.2rem; }
+            .editorial-heading {
+                font-size: 1.75rem;
+            }
+
+            .service-hero-title {
+                font-size: 2.2rem;
+            }
         }
     </style>
     <link rel="stylesheet" href="mobile.css">
@@ -670,7 +687,8 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="career-counselling.html">Career Counselling</a></li>
                             <li><a class="dropdown-item" href="admission-guidance.html">Admission Guidance</a></li>
-                            <li><a class="dropdown-item active text-info" href="application-process.html">Application Process</a></li>
+                            <li><a class="dropdown-item active text-info" href="application-process.html">Application
+                                    Process</a></li>
                             <li><a class="dropdown-item" href="visa-assistance.html">Visa Assistance</a></li>
                         </ul>
                     </li>
@@ -686,8 +704,9 @@
                 <div class="d-flex align-items-center gap-2 nav-actions">
                     <button class="wish" data-bs-toggle="offcanvas" data-bs-target="#wl" aria-label="Wishlist"><i
                             class="bi bi-heart"></i><span id="wc">0</span></button>
-                    <a class="btn-x" href="index.html#contact" data-tab="meet" style="padding:.35rem .35rem .35rem 1.3rem">Schedule a Meeting<i
-                            style="width:36px;height:36px" class="bi bi-arrow-up-right"></i></a>
+                    <a class="btn-x" href="index.html#contact" data-tab="meet"
+                        style="padding:.35rem .35rem .35rem 1.3rem">Schedule a Meeting<i style="width:36px;height:36px"
+                            class="bi bi-arrow-up-right"></i></a>
                 </div>
             </div>
         </div>
@@ -700,7 +719,8 @@
         <div class="container position-relative text-center">
             <!-- Top Tag Pill -->
             <div class="banner-badge-wrap rv" data-rv="up">
-                <span class="banner-top-pill"><i class="bi bi-send-check-fill text-info me-1"></i> SEAMLESS &amp; STRESS-FREE ADMISSION EXPERIENCE</span>
+                <span class="banner-top-pill"><i class="bi bi-send-check-fill text-info me-1"></i> SEAMLESS &amp;
+                    STRESS-FREE ADMISSION EXPERIENCE</span>
             </div>
 
             <!-- Big Title -->
@@ -710,7 +730,8 @@
 
             <!-- Subtitle -->
             <p class="service-hero-lead rv" data-rv="up">
-                We manage the entire application process on behalf of the student, ensuring accuracy, thorough joint review, and a strong impression on global university admissions committees.
+                We manage the entire application process on behalf of the student, ensuring accuracy, thorough joint
+                review, and a strong impression on global university admissions committees.
             </p>
 
             <!-- Stat Bar -->
@@ -739,14 +760,13 @@
         <div class="container">
             <div class="editorial-unboxed-wrap rv" data-rv="up">
                 <div class="row g-5 align-items-center">
-                    
+
                     <!-- Left: Premium Photography Frame + Official Badge -->
                     <div class="col-lg-5">
                         <div class="application-photo-frame">
                             <img src="images/application-process-hero.jpg"
                                 alt="UniHelpLine Study Abroad Application Process Consultation Session"
-                                class="application-hero-img"
-                                loading="lazy">
+                                class="application-hero-img" loading="lazy">
                         </div>
                     </div>
 
@@ -763,24 +783,33 @@
                             <!-- Paragraph 1 Box -->
                             <div class="editorial-lead-card">
                                 <p class="editorial-lead-text">
-                                    We manage the entire application process on behalf of the student, ensuring a seamless and stress-free admission experience. Applying to universities can feel overwhelming, but there’s no need to worry—most institutions now offer fully online application systems designed to make the process quick and straightforward for international students.
+                                    We manage the entire application process on behalf of the student, ensuring a
+                                    seamless and stress-free admission experience. Applying to universities can feel
+                                    overwhelming, but there’s no need to worry—most institutions now offer fully online
+                                    application systems designed to make the process quick and straightforward for
+                                    international students.
                                 </p>
                             </div>
 
                             <!-- Paragraph 2 -->
                             <p class="editorial-body-text">
-                                The application process typically involves registering on the university's website and completing a step-by-step application form. We give special attention to every application, whether it's paper-based or online, ensuring accuracy and quality.
+                                The application process typically involves registering on the university's website and
+                                completing a step-by-step application form. We give special attention to every
+                                application, whether it's paper-based or online, ensuring accuracy and quality.
                             </p>
 
                             <!-- Paragraph 3 -->
                             <p class="editorial-body-text">
-                                Before submission, our counsellors and students collaborate to review each application thoroughly. This joint effort helps ensure applications are error-free, well-presented, and ready to make a strong impression on the universities.
+                                Before submission, our counsellors and students collaborate to review each application
+                                thoroughly. This joint effort helps ensure applications are error-free, well-presented,
+                                and ready to make a strong impression on the universities.
                             </p>
 
                             <!-- Bold Guarantee Banner -->
                             <div class="highlight-guarantee-banner">
                                 <i class="bi bi-check2-circle"></i>
-                                <p>We give special attention to every application, ensuring accuracy, quality, and a strong impression on admissions committees.</p>
+                                <p>We give special attention to every application, ensuring accuracy, quality, and a
+                                    strong impression on admissions committees.</p>
                             </div>
 
                             <!-- Feature Pillars Grid -->
@@ -820,10 +849,12 @@
 
                             <!-- Action Buttons -->
                             <div class="d-flex align-items-center flex-wrap gap-3">
-                                <a href="index.html#contact" data-tab="meet" class="btn-x" style="padding: 0.5rem 1.6rem;">
+                                <a href="index.html#contact" data-tab="meet" class="btn-x"
+                                    style="padding: 0.5rem 1.6rem;">
                                     Start Application Process <i class="bi bi-arrow-up-right"></i>
                                 </a>
-                                <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="btn-x btn-wa">
+                                <a href="https://wa.me/+917558951509" target="_blank" rel="noopener"
+                                    class="btn-x btn-wa">
                                     WhatsApp Us <i class="bi bi-whatsapp"></i>
                                 </a>
                             </div>
@@ -845,7 +876,8 @@
                     The 4-Phase <span class="gt-light">Application Lifecycle</span>
                 </h2>
                 <p class="light-section-desc">
-                    Our rigorous protocol eliminates costly submission mistakes, guarantees prompt university receipt, and maximizes international admission committee consideration.
+                    Our rigorous protocol eliminates costly submission mistakes, guarantees prompt university receipt,
+                    and maximizes international admission committee consideration.
                 </p>
             </div>
 
@@ -858,10 +890,13 @@
                             <span class="timeline-step-badge">01</span>
                             <h3 class="timeline-step-title">Portal Registration</h3>
                             <p class="timeline-step-desc">
-                                We establish authorized candidate profiles across official university portals (UCAS, Common App, OUAC, university portals) ensuring accurate country codes, demographic indexing, and fee payment setup.
+                                We establish authorized candidate profiles across official university portals (UCAS,
+                                Common App, OUAC, university portals) ensuring accurate country codes, demographic
+                                indexing, and fee payment setup.
                             </p>
                         </div>
-                        <div class="text-info fw-bold small"><i class="bi bi-check2-circle me-1"></i> Setup &amp; ID Generation</div>
+                        <div class="text-info fw-bold small"><i class="bi bi-check2-circle me-1"></i> Setup &amp; ID
+                            Generation</div>
                     </div>
                 </div>
 
@@ -872,10 +907,13 @@
                             <span class="timeline-step-badge">02</span>
                             <h3 class="timeline-step-title">Dossier Data Entry</h3>
                             <p class="timeline-step-desc">
-                                Meticulous data population covering academic histories, standardized test score reports (IELTS/TOEFL/GRE/GMAT), course prerequisites, and official transcript uploads in the exact required formats.
+                                Meticulous data population covering academic histories, standardized test score reports
+                                (IELTS/TOEFL/GRE/GMAT), course prerequisites, and official transcript uploads in the
+                                exact required formats.
                             </p>
                         </div>
-                        <div class="text-info fw-bold small"><i class="bi bi-check2-circle me-1"></i> 100% Format Compliance</div>
+                        <div class="text-info fw-bold small"><i class="bi bi-check2-circle me-1"></i> 100% Format
+                            Compliance</div>
                     </div>
                 </div>
 
@@ -886,10 +924,13 @@
                             <span class="timeline-step-badge">03</span>
                             <h3 class="timeline-step-title">Joint Error-Free Audit</h3>
                             <p class="timeline-step-desc">
-                                A collaborative double-check review session where student and senior counsellor examine each field side-by-side, verifying that essays, references, and personal statements are flawless.
+                                A collaborative double-check review session where student and senior counsellor examine
+                                each field side-by-side, verifying that essays, references, and personal statements are
+                                flawless.
                             </p>
                         </div>
-                        <div class="text-info fw-bold small"><i class="bi bi-check2-circle me-1"></i> Collaborative Sign-Off</div>
+                        <div class="text-info fw-bold small"><i class="bi bi-check2-circle me-1"></i> Collaborative
+                            Sign-Off</div>
                     </div>
                 </div>
 
@@ -900,10 +941,13 @@
                             <span class="timeline-step-badge">04</span>
                             <h3 class="timeline-step-title">Filing &amp; Offer Tracking</h3>
                             <p class="timeline-step-desc">
-                                Official file submission with instant transmission timestamp. We continuously monitor application statuses, correspond with admissions teams, and track conditional/unconditional offer releases.
+                                Official file submission with instant transmission timestamp. We continuously monitor
+                                application statuses, correspond with admissions teams, and track
+                                conditional/unconditional offer releases.
                             </p>
                         </div>
-                        <div class="text-info fw-bold small"><i class="bi bi-check2-circle me-1"></i> Real-Time Status Alerts</div>
+                        <div class="text-info fw-bold small"><i class="bi bi-check2-circle me-1"></i> Real-Time Status
+                            Alerts</div>
                     </div>
                 </div>
             </div>
@@ -912,12 +956,16 @@
             <div class="quality-audit-deck">
                 <div class="row align-items-center mb-4">
                     <div class="col-lg-8">
-                        <span class="tag-light mb-2"><i class="bi bi-patch-check-fill text-info me-1"></i> QUALITY ASSURANCE CRITERIA</span>
-                        <h3 class="bento-title-text mb-1" style="font-size: 1.5rem;">Zero-Error Dossier Submission Guarantee</h3>
-                        <p class="text-secondary small mb-0">Every submission passes our 4-point verification checklist before final dispatch.</p>
+                        <span class="tag-light mb-2"><i class="bi bi-patch-check-fill text-info me-1"></i> QUALITY
+                            ASSURANCE CRITERIA</span>
+                        <h3 class="bento-title-text mb-1" style="font-size: 1.5rem;">Zero-Error Dossier Submission
+                            Guarantee</h3>
+                        <p class="text-secondary small mb-0">Every submission passes our 4-point verification checklist
+                            before final dispatch.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-                        <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
+                        <span
+                            class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
                             <i class="bi bi-shield-fill-check me-1"></i> Verified Audit Protocol
                         </span>
                     </div>
@@ -928,7 +976,8 @@
                         <div class="audit-card-item">
                             <div class="audit-icon-wrap"><i class="bi bi-mortarboard-fill"></i></div>
                             <h4 class="audit-item-title">Transcript Attestation</h4>
-                            <p class="audit-item-desc">Grade conversions, WES checks, and certified board seals verified.</p>
+                            <p class="audit-item-desc">Grade conversions, WES checks, and certified board seals
+                                verified.</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
@@ -942,14 +991,16 @@
                         <div class="audit-card-item">
                             <div class="audit-icon-wrap"><i class="bi bi-envelope-paper-fill"></i></div>
                             <h4 class="audit-item-title">Reference Letters (LOR)</h4>
-                            <p class="audit-item-desc">Academic &amp; employer institutional email dispatch verification.</p>
+                            <p class="audit-item-desc">Academic &amp; employer institutional email dispatch
+                                verification.</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="audit-card-item">
                             <div class="audit-icon-wrap"><i class="bi bi-calendar2-week-fill"></i></div>
                             <h4 class="audit-item-title">Early Priority Intake</h4>
-                            <p class="audit-item-desc">Submissions timed for early decision rounds &amp; scholarship quotas.</p>
+                            <p class="audit-item-desc">Submissions timed for early decision rounds &amp; scholarship
+                                quotas.</p>
                         </div>
                     </div>
                 </div>
@@ -961,12 +1012,14 @@
     <section class="counselling-advisory-cta">
         <div class="container">
             <div class="cta-glass-box rv" data-rv="up">
-                <span class="tag mb-3 d-inline-block"><i class="bi bi-headset text-info me-1"></i> DIRECT EXPERT ADVISORY</span>
+                <span class="tag mb-3 d-inline-block"><i class="bi bi-headset text-info me-1"></i> DIRECT EXPERT
+                    ADVISORY</span>
                 <h2 class="cta-title">
                     Our Unihelpline Experts Are Ready To Answer All Your Queries
                 </h2>
                 <p class="cta-desc">
-                    Connect with our certified counsellors today for comprehensive guidance on international admissions, university shortlists, and course options.
+                    Connect with our certified counsellors today for comprehensive guidance on international admissions,
+                    university shortlists, and course options.
                 </p>
 
                 <!-- Phone & Email Pills -->
@@ -995,12 +1048,12 @@
                         Schedule A Consultation <i class="bi bi-calendar2-check"></i>
                     </a>
                     <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="btn-x btn-wa">
-                                    WhatsApp Us <i class="bi bi-whatsapp"></i>
+                        WhatsApp Us <i class="bi bi-whatsapp"></i>
                     </a>
                 </div>
             </div>
         </div>
-    </section>    <!-- Global Website Footer -->
+    </section> <!-- Global Website Footer -->
     <footer>
         <div class="container">
             <div class="row g-4 g-lg-5">
@@ -1008,22 +1061,30 @@
                 <div class="col-lg-4 col-md-6">
                     <a class="brand mb-3" href="index.html#home">
                         <span class="lg">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/>
-                                <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE" />
+                                <path
+                                    d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z"
+                                    fill="#27C2E8" />
                             </svg>
                         </span>
                         UniHelpLine
                     </a>
-                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
+                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants
+                        with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
                     <div class="footer-trust-badge mb-3">
                         <i class="bi bi-patch-check-fill"></i> Certified Study Abroad Advisors
                     </div>
                     <div class="soc">
-                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener"
+                            aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -1033,11 +1094,16 @@
                     <ul class="footer-links">
                         <li><a href="index.html#home"><i class="bi bi-chevron-right small text-info"></i> Home</a></li>
                         <li><a href="about.html"><i class="bi bi-chevron-right small text-info"></i> About Us</a></li>
-                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i> Universities</a></li>
-                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a></li>
-                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i> Destinations</a></li>
-                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp; Insights</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a></li>
+                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i>
+                                Universities</a></li>
+                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a>
+                        </li>
+                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Destinations</a></li>
+                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp;
+                                Insights</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -1045,12 +1111,18 @@
                 <div class="col-lg-3 col-md-6 col-6">
                     <h6 class="footer-title">Our Services</h6>
                     <ul class="footer-links">
-                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career Counselling</a></li>
-                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i> Admission Guidance</a></li>
-                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i> Application Process</a></li>
-                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa Assistance</a></li>
-                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i> Scholarship Guidance</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1 Consultation</a></li>
+                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career
+                                Counselling</a></li>
+                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Admission Guidance</a></li>
+                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Application Process</a></li>
+                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa
+                                Assistance</a></li>
+                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i>
+                                Scholarship Guidance</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1
+                                Consultation</a></li>
                     </ul>
                 </div>
 
@@ -1089,7 +1161,8 @@
             </div>
 
             <!-- Footer Bottom Row -->
-            <div class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+            <div
+                class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
                 <p class="small text-secondary mb-0">© 2026 UniHelpLine. All rights reserved.</p>
                 <p class="small powered-tag mb-0">Powered by <span class="credozen-badge">CREDOZEN LLP</span></p>
             </div>
@@ -1098,7 +1171,8 @@
 
     <!-- Floating Buttons & Offcanvas -->
     <button id="top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
-    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i
+            class="bi bi-whatsapp"></i></a>
     <div class="offcanvas offcanvas-end" id="wl">
         <div class="offcanvas-header">
             <h4 class="mb-0">Wishlist</h4>

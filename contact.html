@@ -25,7 +25,7 @@
 
         body {
             overflow-x: hidden;
-            background: #121e3f;
+            background: #17325c;
             color: #e2e8f0;
             font-family: 'DM Sans', sans-serif;
         }
@@ -182,8 +182,8 @@
             z-index: 2;
             padding: 5.5rem 0 6rem;
             background: radial-gradient(circle at 85% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
-                        radial-gradient(circle at 10% 85%, rgba(37, 99, 235, 0.06) 0%, transparent 45%),
-                        linear-gradient(180deg, #f0f7ff 0%, #ffffff 32%, #f8fbff 75%, #f0f7ff 100%);
+                radial-gradient(circle at 10% 85%, rgba(37, 99, 235, 0.06) 0%, transparent 45%),
+                linear-gradient(180deg, #f0f7ff 0%, #ffffff 32%, #f8fbff 75%, #f0f7ff 100%);
             color: #0f172a;
             border-top: 1px solid rgba(56, 189, 248, 0.25);
             border-bottom: 1px solid rgba(56, 189, 248, 0.25);
@@ -375,125 +375,283 @@
         }
 
         /* ============================================================
-           INTERACTIVE CONTACT & CONSULTATION CENTER (DARK THEME ZONE)
+           INTERACTIVE CONTACT & CONSULTATION CENTER (DARK LUXURY ZONE)
            ============================================================ */
         .contact-form-section {
             position: relative;
             z-index: 2;
-            padding: 6.5rem 0;
-            background: radial-gradient(ellipse at center, rgba(39, 194, 232, 0.12) 0%, #152246 80%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6.5rem 0 7rem;
+            background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.16) 0%, transparent 45%),
+                        radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.14) 0%, transparent 45%),
+                        linear-gradient(160deg, #0a1835 0%, #10254c 45%, #0b1a38 100%);
+            border-top: 1px solid rgba(56, 189, 248, 0.22);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.22);
+            overflow: hidden;
+        }
+
+        .contact-form-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* Override any muted Bootstrap text inside this dark zone to be bright and crystal clear */
+        .contact-form-section .text-secondary {
+            color: #cbd5e1 !important;
         }
 
         /* Left Info Column */
         .contact-trust-card {
-            background: linear-gradient(135deg, rgba(26, 42, 86, 0.9) 0%, rgba(18, 30, 62, 0.95) 100%);
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: linear-gradient(145deg, rgba(16, 37, 76, 0.92) 0%, rgba(9, 23, 50, 0.96) 100%);
+            border: 1.5px solid rgba(56, 189, 248, 0.3);
             border-radius: 28px;
-            padding: 2.8rem 2.2rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 30px rgba(56, 189, 248, 0.08);
+            padding: 3rem 2.4rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 35px rgba(56, 189, 248, 0.1);
             position: relative;
             overflow: hidden;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
         }
 
         .contact-trust-card::before {
             content: '';
             position: absolute;
-            top: -20%;
+            top: -25%;
             left: 50%;
             transform: translateX(-50%);
-            width: 350px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
-            filter: blur(50px);
+            width: 380px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, transparent 70%);
+            filter: blur(55px);
             pointer-events: none;
         }
 
+        /* Direct Admission Desk Glowing Badge */
+        .contact-desk-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.45rem 1.15rem;
+            border-radius: 50px;
+            background: rgba(56, 189, 248, 0.14);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+            margin-bottom: 1.25rem;
+            width: fit-content;
+        }
+
+        .contact-desk-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #38bdf8;
+            box-shadow: 0 0 10px #38bdf8;
+            animation: pulse-dot-anim 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse-dot-anim {
+            0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 8px #38bdf8; }
+            50% { transform: scale(1.35); opacity: 0.6; box-shadow: 0 0 16px #38bdf8; }
+        }
+
+        .contact-counselor-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(2.2rem, 3.4vw, 2.9rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.1rem;
+        }
+
+        .gt-counselor {
+            background: linear-gradient(135deg, #38bdf8 0%, #7dd3fc 60%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .contact-counselor-lead {
+            color: #f1f5f9 !important;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-weight: 400;
+            margin-bottom: 1.8rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* Info Pills */
         .info-pill-item {
             background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 18px;
             padding: 1.25rem 1.4rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.1rem;
             display: flex;
             align-items: flex-start;
-            gap: 1.1rem;
-            transition: all 0.28s ease;
+            gap: 1.15rem;
+            transition: all 0.3s cubic-bezier(0.16, 0.84, 0.24, 1);
+            backdrop-filter: blur(10px);
         }
 
         .info-pill-item:hover {
             border-color: #38bdf8;
-            background: rgba(56, 189, 248, 0.12);
-            transform: translateX(4px);
+            background: rgba(56, 189, 248, 0.14);
+            transform: translateY(-2px) translateX(3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(56, 189, 248, 0.15);
         }
 
         .info-icon-box {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: rgba(56, 189, 248, 0.18);
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.28) 0%, rgba(14, 165, 233, 0.15) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #38bdf8;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+            transition: transform 0.3s ease;
+        }
+
+        .info-pill-item:hover .info-icon-box {
+            transform: scale(1.08);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.4) 0%, rgba(14, 165, 233, 0.25) 100%);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
         }
 
         .info-pill-item h6 {
             color: #ffffff;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 700;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.01em;
         }
 
         .info-pill-item p {
-            color: #cbd5e1;
-            font-size: 0.88rem;
-            margin-bottom: 0;
+            color: #ffffff;
+            font-size: 0.94rem;
+            margin-bottom: 0.2rem;
             line-height: 1.5;
         }
 
         .info-pill-item a {
             color: #38bdf8;
+            font-weight: 600;
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
+            display: inline-block;
         }
 
         .info-pill-item a:hover {
+            color: #7dd3fc;
             text-decoration: underline;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        .info-pill-subtext {
+            color: #e2e8f0 !important;
+            font-size: 0.85rem;
+            font-weight: 400;
+            display: block;
+            margin-top: 0.25rem;
+            line-height: 1.5;
+        }
+
+        /* WhatsApp Action Button */
+        .btn-wa-counselor {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.16) 0%, rgba(37, 211, 102, 0.08) 100%);
+            border: 1.5px solid rgba(37, 211, 102, 0.4);
+            color: #25d366 !important;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 0.65rem 1.3rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 0.84, 0.24, 1);
+            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.12);
+        }
+
+        .btn-wa-counselor:hover {
+            background: #25d366;
+            color: #ffffff !important;
+            border-color: #25d366;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-wa-counselor .wa-icon-orb {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #25d366;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            transition: all 0.25s ease;
+        }
+
+        .btn-wa-counselor:hover .wa-icon-orb {
+            background: #ffffff;
+            color: #25d366;
+            transform: scale(1.08);
         }
 
         /* Right Form Container */
         .contact-form-glass {
-            background: linear-gradient(135deg, rgba(26, 42, 86, 0.92) 0%, rgba(18, 30, 62, 0.95) 100%);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: linear-gradient(145deg, rgba(16, 37, 76, 0.92) 0%, rgba(9, 23, 50, 0.96) 100%);
+            border: 1.5px solid rgba(56, 189, 248, 0.32);
             border-radius: 28px;
             padding: 3rem 2.6rem;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 35px rgba(56, 189, 248, 0.1);
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 40px rgba(56, 189, 248, 0.12);
             position: relative;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
         }
 
         .form-nav-tabs {
             display: flex;
             gap: 0.5rem;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 0.3rem;
+            background: rgba(4, 12, 28, 0.7);
+            padding: 0.35rem;
             border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 1.8rem;
+            border: 1px solid rgba(56, 189, 248, 0.22);
+            margin-bottom: 2rem;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
         }
 
         .form-tab-btn {
             flex: 1;
-            padding: 0.45rem 0.85rem;
+            padding: 0.55rem 1rem;
             border-radius: 50px;
             border: none;
             background: transparent;
             color: #94a3b8;
             font-weight: 700;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.25s ease;
             text-align: center;
@@ -501,69 +659,191 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.35rem;
+            gap: 0.45rem;
+        }
+
+        .form-tab-btn:hover:not(.active) {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .form-tab-btn.active {
-            background: #ffffff;
-            color: #0f172a;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 18px rgba(2, 132, 199, 0.45);
         }
 
         @media (max-width: 576px) {
             .form-nav-tabs {
                 gap: 0.3rem;
                 padding: 0.25rem;
-                margin-bottom: 1.3rem;
+                margin-bottom: 1.5rem;
             }
+
             .form-tab-btn {
-                padding: 0.4rem 0.45rem;
-                font-size: 0.74rem;
+                padding: 0.45rem 0.5rem;
+                font-size: 0.76rem;
                 font-weight: 700;
                 white-space: nowrap;
-                letter-spacing: -0.01em;
             }
+
             .form-tab-btn i {
-                font-size: 0.75rem;
+                font-size: 0.78rem;
                 margin-right: 0.15rem !important;
             }
         }
 
         .contact-input-label {
-            font-size: 0.84rem;
+            font-size: 0.82rem;
             font-weight: 700;
-            color: #cbd5e1;
-            margin-bottom: 0.45rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
         }
 
+        .contact-input-label .req {
+            color: #38bdf8;
+            font-weight: 800;
+            margin-left: 0.25rem;
+        }
+
+        /* Form Controls - Crystal Clear Visibility */
         .form-control-uhl {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #ffffff;
+            background: rgba(18, 38, 78, 0.75) !important;
+            border: 1.5px solid rgba(56, 189, 248, 0.35) !important;
+            color: #ffffff !important;
             border-radius: 14px;
-            padding: 0.75rem 1.15rem;
-            font-size: 0.95rem;
-            transition: all 0.25s ease;
+            padding: 0.85rem 1.2rem;
+            font-size: 0.96rem;
+            font-weight: 500;
+            transition: all 0.25s cubic-bezier(0.16, 0.84, 0.24, 1);
             width: 100%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .form-control-uhl:hover {
+            background: rgba(22, 46, 94, 0.88) !important;
+            border-color: rgba(56, 189, 248, 0.6) !important;
         }
 
         .form-control-uhl:focus {
-            background: rgba(255, 255, 255, 0.09);
-            border-color: #38bdf8;
-            color: #ffffff;
+            background: rgba(24, 52, 106, 0.98) !important;
+            border-color: #38bdf8 !important;
+            color: #ffffff !important;
             outline: none;
-            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25), 0 8px 25px rgba(0, 0, 0, 0.35) !important;
         }
 
+        /* Crisp, 100% Readable Placeholders */
         .form-control-uhl::placeholder {
-            color: #64748b;
+            color: #cbd5e1 !important;
+            opacity: 0.85 !important;
+            font-weight: 400;
+        }
+        .form-control-uhl::-webkit-input-placeholder {
+            color: #cbd5e1 !important;
+            opacity: 0.85 !important;
+            font-weight: 400;
+        }
+        .form-control-uhl::-moz-placeholder {
+            color: #cbd5e1 !important;
+            opacity: 0.85 !important;
+            font-weight: 400;
+        }
+        .form-control-uhl:-ms-input-placeholder {
+            color: #cbd5e1 !important;
+            opacity: 0.85 !important;
+            font-weight: 400;
+        }
+
+        /* Custom Modern Select Dropdown */
+        select.form-control-uhl {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 1.15rem center !important;
+            background-size: 16px !important;
+            padding-right: 2.8rem !important;
+            cursor: pointer;
         }
 
         select.form-control-uhl option {
-            background: #0f172a;
+            background-color: #0b1a38;
             color: #ffffff;
+            padding: 12px 14px;
+            font-size: 0.95rem;
+        }
+
+        /* Custom Date Picker */
+        input[type="date"].form-control-uhl::-webkit-calendar-picker-indicator {
+            filter: invert(1) brightness(1.5) sepia(100%) hue-rotate(160deg);
+            cursor: pointer;
+        }
+
+        /* Enhanced Submit Button */
+        .btn-submit-counselor {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            color: #0b1a38 !important;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.98rem;
+            font-weight: 700;
+            border-radius: 50px;
+            border: none;
+            padding: 0.65rem 1.8rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35), 0 0 20px rgba(56, 189, 248, 0.15);
+            transition: all 0.3s cubic-bezier(0.16, 0.84, 0.24, 1);
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-submit-counselor .submit-icon-orb {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+        }
+
+        .btn-submit-counselor:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), 0 0 30px rgba(56, 189, 248, 0.35);
+        }
+
+        .btn-submit-counselor:hover .submit-icon-orb {
+            transform: translate(2px, -2px);
+        }
+
+        /* Privacy Assurance Note */
+        .contact-privacy-note {
+            font-size: 0.84rem;
+            color: #cbd5e1 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            line-height: 1.45;
+        }
+
+        .contact-privacy-note i {
+            color: #38bdf8;
+            font-size: 0.95rem;
         }
 
         /* FAQ Accordion in Light Theme Section */
@@ -615,9 +895,18 @@
         }
 
         @media (max-width: 991px) {
-            .contact-banner-hero { padding: 7.5rem 0 3rem; }
-            .contact-form-glass { padding: 2.2rem 1.6rem; }
-            .contact-trust-card { padding: 2.2rem 1.6rem; margin-bottom: 2rem; }
+            .contact-banner-hero {
+                padding: 7.5rem 0 3rem;
+            }
+
+            .contact-form-glass {
+                padding: 2.2rem 1.6rem;
+            }
+
+            .contact-trust-card {
+                padding: 2.2rem 1.6rem;
+                margin-bottom: 2rem;
+            }
         }
 
         /* Ensure all content on contact page is immediately 100% visible */
@@ -644,7 +933,12 @@
     <!-- Navigation Bar -->
     <nav class="npill navbar navbar-expand-lg">
         <div class="container d-flex align-items-center justify-content-between">
-            <a class="brand" href="index.html#home"><span class="lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/><path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/></svg></span>UniHelpLine</a>
+            <a class="brand" href="index.html#home"><span class="lg"><svg width="28" height="28" viewBox="0 0 24 24"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE" />
+                        <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z"
+                            fill="#27C2E8" />
+                    </svg></span>UniHelpLine</a>
             <button class="navbar-toggler ms-auto" data-bs-toggle="collapse" data-bs-target="#nv" aria-label="Menu"><i
                     class="bi bi-list fs-2"></i></button>
             <div class="collapse navbar-collapse" id="nv">
@@ -672,8 +966,8 @@
                 <div class="d-flex align-items-center gap-2 nav-actions">
                     <button class="wish" data-bs-toggle="offcanvas" data-bs-target="#wl" aria-label="Wishlist"><i
                             class="bi bi-heart"></i><span id="wc">0</span></button>
-                    <a class="btn-x" href="#contact-form" style="padding:.35rem .35rem .35rem 1.3rem">Schedule a Meeting<i
-                            style="width:36px;height:36px" class="bi bi-arrow-up-right"></i></a>
+                    <a class="btn-x" href="#contact-form" style="padding:.35rem .35rem .35rem 1.3rem">Schedule a
+                        Meeting<i style="width:36px;height:36px" class="bi bi-arrow-up-right"></i></a>
                 </div>
             </div>
         </div>
@@ -686,7 +980,8 @@
         <div class="container position-relative text-center">
             <!-- Top Tag Pill -->
             <div class="banner-badge-wrap rv" data-rv="up">
-                <span class="banner-top-pill"><i class="bi bi-headset me-1"></i> DIRECT EXPERT CONSULTATION · 24/7 SUPPORT</span>
+                <span class="banner-top-pill"><i class="bi bi-headset me-1"></i> DIRECT EXPERT CONSULTATION · 24/7
+                    SUPPORT</span>
             </div>
 
             <!-- Big Title -->
@@ -696,15 +991,18 @@
 
             <!-- Subtitle -->
             <p class="contact-hero-lead rv" data-rv="up">
-                Connect directly with certified international education advisors across our global hubs in Dubai, India, and the UK. Get 100% free guidance on university shortlisting, documentation, and admissions.
+                Connect directly with certified international education advisors across our global hubs in Dubai, India,
+                and the UK. Get 100% free guidance on university shortlisting, documentation, and admissions.
             </p>
 
             <!-- Stat Bar -->
             <div class="service-stats-pills rv" data-rv="up">
                 <span class="service-stat-item"><i class="bi bi-shield-check"></i> 100% Free Consultation</span>
-                <span class="service-stat-item"><i class="bi bi-geo-alt-fill"></i> 3 Global Hubs (UAE · India · UK)</span>
+                <span class="service-stat-item"><i class="bi bi-geo-alt-fill"></i> 3 Global Hubs (UAE · India ·
+                    UK)</span>
                 <span class="service-stat-item"><i class="bi bi-clock-history"></i> Rapid Response Within 24h</span>
-                <span class="service-stat-item"><i class="bi bi-patch-check-fill text-info"></i> Zero Placement Pressure</span>
+                <span class="service-stat-item"><i class="bi bi-patch-check-fill text-info"></i> Zero Placement
+                    Pressure</span>
             </div>
 
             <!-- Breadcrumb Pill -->
@@ -729,12 +1027,13 @@
                     Our Global <span class="gt-blue">Advisory Offices</span>
                 </h2>
                 <p class="section-subtitle-dark">
-                    Reach out directly to your closest UniHelpLine office or schedule an in-person / virtual counseling session with our senior overseas education mentors.
+                    Reach out directly to your closest UniHelpLine office or schedule an in-person / virtual counseling
+                    session with our senior overseas education mentors.
                 </p>
             </div>
 
             <div class="row g-4 justify-content-center">
-                
+
                 <!-- Card 1: UAE Head Office -->
                 <div class="col-lg-4 col-md-6 rv" data-rv="up" style="--d: 0.1s">
                     <div class="hub-card">
@@ -743,7 +1042,8 @@
                                 <div class="hub-icon-orb">
                                     <i class="bi bi-buildings"></i>
                                 </div>
-                                <span class="hub-badge"><i class="bi bi-check-circle-fill me-1"></i> Middle East Hub</span>
+                                <span class="hub-badge"><i class="bi bi-check-circle-fill me-1"></i> Middle East
+                                    Hub</span>
                             </div>
                             <h3 class="hub-title">Dubai, UAE</h3>
                             <div class="hub-region">United Arab Emirates Head Office</div>
@@ -751,7 +1051,8 @@
                             <ul class="hub-details-list">
                                 <li>
                                     <i class="bi bi-geo-alt-fill"></i>
-                                    <span>UniHelpLine Education Services, Business Bay, Dubai, United Arab Emirates</span>
+                                    <span>UniHelpLine Education Services, Business Bay, Dubai, United Arab
+                                        Emirates</span>
                                 </li>
                                 <li>
                                     <i class="bi bi-telephone-fill"></i>
@@ -772,7 +1073,8 @@
                             <a href="tel:+971505863293" class="btn-hub-call">
                                 <i class="bi bi-telephone"></i> Call Office
                             </a>
-                            <a href="https://wa.me/+971505863293" target="_blank" rel="noopener" class="btn-x btn-wa" style="padding: 0.4rem 0.4rem 0.4rem 1.2rem; font-size: 0.85rem;">
+                            <a href="https://wa.me/+971505863293" target="_blank" rel="noopener" class="btn-x btn-wa"
+                                style="padding: 0.4rem 0.4rem 0.4rem 1.2rem; font-size: 0.85rem;">
                                 WhatsApp <i class="bi bi-whatsapp" style="width:34px;height:34px;"></i>
                             </a>
                         </div>
@@ -787,7 +1089,8 @@
                                 <div class="hub-icon-orb">
                                     <i class="bi bi-building-check"></i>
                                 </div>
-                                <span class="hub-badge"><i class="bi bi-patch-check-fill me-1"></i> South Asia Hub</span>
+                                <span class="hub-badge"><i class="bi bi-patch-check-fill me-1"></i> South Asia
+                                    Hub</span>
                             </div>
                             <h3 class="hub-title">India HQ</h3>
                             <div class="hub-region">Bangalore · Kerala · Nationwide</div>
@@ -816,7 +1119,8 @@
                             <a href="tel:+917558951509" class="btn-hub-call">
                                 <i class="bi bi-telephone"></i> Call Office
                             </a>
-                            <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="btn-x btn-wa" style="padding: 0.4rem 0.4rem 0.4rem 1.2rem; font-size: 0.85rem;">
+                            <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="btn-x btn-wa"
+                                style="padding: 0.4rem 0.4rem 0.4rem 1.2rem; font-size: 0.85rem;">
                                 WhatsApp <i class="bi bi-whatsapp" style="width:34px;height:34px;"></i>
                             </a>
                         </div>
@@ -831,7 +1135,8 @@
                                 <div class="hub-icon-orb">
                                     <i class="bi bi-globe2"></i>
                                 </div>
-                                <span class="hub-badge"><i class="bi bi-mortarboard-fill me-1"></i> UK &amp; Europe</span>
+                                <span class="hub-badge"><i class="bi bi-mortarboard-fill me-1"></i> UK &amp;
+                                    Europe</span>
                             </div>
                             <h3 class="hub-title">London, UK</h3>
                             <div class="hub-region">United Kingdom &amp; Europe Desk</div>
@@ -860,7 +1165,8 @@
                             <a href="tel:+447435456580" class="btn-hub-call">
                                 <i class="bi bi-telephone"></i> Call Office
                             </a>
-                            <a href="https://wa.me/+447435456580" target="_blank" rel="noopener" class="btn-x btn-wa" style="padding: 0.4rem 0.4rem 0.4rem 1.2rem; font-size: 0.85rem;">
+                            <a href="https://wa.me/+447435456580" target="_blank" rel="noopener" class="btn-x btn-wa"
+                                style="padding: 0.4rem 0.4rem 0.4rem 1.2rem; font-size: 0.85rem;">
                                 WhatsApp <i class="bi bi-whatsapp" style="width:34px;height:34px;"></i>
                             </a>
                         </div>
@@ -875,62 +1181,67 @@
     <section class="contact-form-section" id="contact-form">
         <div class="container">
             <div class="row g-5 align-items-stretch">
-                
+
                 <!-- Left Column: Trust Pillars & Quick Communication Channels -->
                 <div class="col-lg-5 rv" data-rv="left">
                     <div class="contact-trust-card">
-                        <span class="badge bg-info text-dark px-3 py-2 rounded-pill fw-bold mb-3" style="font-size: 0.78rem;">
-                            <i class="bi bi-shield-check me-1"></i> DIRECT ADMISSION DESK
-                        </span>
-                        
-                        <h2 class="h2 text-white mb-3" style="font-size: clamp(2rem, 3.2vw, 2.7rem); line-height: 1.2;">
-                            Speak Directly With A Senior Counselor
-                        </h2>
+                        <div>
+                            <div class="contact-desk-badge">
+                                <span class="pulse-dot"></span>
+                                <i class="bi bi-shield-check"></i> Direct Admission Desk
+                            </div>
 
-                        <p class="text-secondary mb-4" style="line-height: 1.65; font-size: 0.98rem;">
-                            Whether you need guidance on course matching, scholarships, visa documentation, or university applications, our certified team is ready to assist you.
-                        </p>
+                            <h2 class="contact-counselor-title">
+                                Speak Directly With A <span class="gt-counselor">Senior Counselor</span>
+                            </h2>
 
-                        <!-- Info Pill 1 -->
-                        <div class="info-pill-item">
-                            <div class="info-icon-box">
-                                <i class="bi bi-envelope-at-fill"></i>
-                            </div>
-                            <div>
-                                <h6>Official Inquiries Email</h6>
-                                <p><a href="mailto:info@unihelpline.com">info@unihelpline.com</a></p>
-                                <small class="text-secondary" style="font-size:0.75rem;">Guaranteed response within 24 business hours</small>
-                            </div>
-                        </div>
+                            <p class="contact-counselor-lead">
+                                Whether you need guidance on course matching, scholarships, visa documentation, or
+                                university applications, our certified team is ready to assist you.
+                            </p>
 
-                        <!-- Info Pill 2 -->
-                        <div class="info-pill-item">
-                            <div class="info-icon-box">
-                                <i class="bi bi-whatsapp"></i>
+                            <!-- Info Pill 1 -->
+                            <div class="info-pill-item">
+                                <div class="info-icon-box">
+                                    <i class="bi bi-envelope-at-fill"></i>
+                                </div>
+                                <div>
+                                    <h6>Official Inquiries Email</h6>
+                                    <p><a href="mailto:info@unihelpline.com">info@unihelpline.com</a></p>
+                                    <span class="info-pill-subtext">Guaranteed response within 24 business hours</span>
+                                </div>
                             </div>
-                            <div>
-                                <h6>Instant WhatsApp Support</h6>
-                                <p><a href="https://wa.me/+917558951509" target="_blank" rel="noopener">+91 755 895 1509 (Available Now)</a></p>
-                                <small class="text-secondary" style="font-size:0.75rem;">Fastest route for rapid profile checks</small>
-                            </div>
-                        </div>
 
-                        <!-- Info Pill 3 -->
-                        <div class="info-pill-item">
-                            <div class="info-icon-box">
-                                <i class="bi bi-award-fill"></i>
+                            <!-- Info Pill 2 -->
+                            <div class="info-pill-item">
+                                <div class="info-icon-box">
+                                    <i class="bi bi-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h6>Instant WhatsApp Support</h6>
+                                    <p><a href="https://wa.me/+917558951509" target="_blank" rel="noopener">+91 755 895 1509 (Available Now)</a></p>
+                                    <span class="info-pill-subtext">Fastest route for rapid profile checks</span>
+                                </div>
                             </div>
-                            <div>
-                                <h6>100% Unbiased &amp; Ethical</h6>
-                                <p class="text-secondary">Free advisory that prioritizes your future, budget, and long-term career aspirations.</p>
+
+                            <!-- Info Pill 3 -->
+                            <div class="info-pill-item">
+                                <div class="info-icon-box">
+                                    <i class="bi bi-award-fill"></i>
+                                </div>
+                                <div>
+                                    <h6>100% Unbiased &amp; Ethical</h6>
+                                    <p class="mb-0" style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.55;">Free advisory that prioritizes your future, budget, and long-term career aspirations.</p>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Instant Action CTA -->
-                        <div class="mt-3 pt-1">
-                            <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="btn-x btn-wa w-100 justify-content-between" style="padding: 0.35rem 0.4rem 0.35rem 1.15rem; font-size: 0.85rem; white-space: nowrap;">
+                        <div class="mt-4 pt-2">
+                            <a href="https://wa.me/+917558951509" target="_blank" rel="noopener"
+                                class="btn-wa-counselor">
                                 <span>Chat On WhatsApp</span>
-                                <i class="bi bi-whatsapp" style="width: 34px; height: 34px;"></i>
+                                <span class="wa-icon-orb"><i class="bi bi-whatsapp"></i></span>
                             </a>
                         </div>
                     </div>
@@ -939,7 +1250,7 @@
                 <!-- Right Column: Interactive Consultation & Inquiry Form -->
                 <div class="col-lg-7 rv" data-rv="right">
                     <div class="contact-form-glass">
-                        
+
                         <!-- Toggle Tabs -->
                         <div class="form-nav-tabs">
                             <button type="button" class="form-tab-btn active" id="tab-enq-btn">
@@ -952,20 +1263,20 @@
 
                         <form id="contact-main-form" class="row g-3">
                             <div class="col-md-6">
-                                <label class="contact-input-label">First Name *</label>
+                                <label class="contact-input-label">First Name <span class="req">*</span></label>
                                 <input type="text" class="form-control-uhl" placeholder="e.g. John" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="contact-input-label">Last Name *</label>
+                                <label class="contact-input-label">Last Name <span class="req">*</span></label>
                                 <input type="text" class="form-control-uhl" placeholder="e.g. Doe" required>
                             </div>
 
                             <div class="col-md-6">
-                                <label class="contact-input-label">Email Address *</label>
+                                <label class="contact-input-label">Email Address <span class="req">*</span></label>
                                 <input type="email" class="form-control-uhl" placeholder="john.doe@example.com" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="contact-input-label">Phone / WhatsApp *</label>
+                                <label class="contact-input-label">Phone / WhatsApp <span class="req">*</span></label>
                                 <input type="tel" class="form-control-uhl" placeholder="+971 / +91 / +44 ..." required>
                             </div>
 
@@ -1012,30 +1323,33 @@
                             </div>
 
                             <div class="col-12">
-                                <label class="contact-input-label">Your Questions or Academic Background</label>
-                                <textarea class="form-control-uhl" rows="4" placeholder="Tell us about your educational qualification, preferred intake year, budget, or any specific universities you are considering..." required></textarea>
+                                <label class="contact-input-label">Your Questions or Academic Background <span class="req">*</span></label>
+                                <textarea class="form-control-uhl" rows="4"
+                                    placeholder="Tell us about your educational qualification, preferred intake year, budget, or any specific universities you are considering..."
+                                    required></textarea>
                             </div>
 
                             <div class="col-12 pt-2">
-                                <button type="submit" class="btn-x w-100 justify-content-center" id="submit-btn" style="padding: 0.45rem 1.25rem; font-size: 0.92rem; white-space: nowrap;">
+                                <button type="submit" class="btn-submit-counselor" id="submit-btn">
                                     <span id="submit-text">Submit Request</span>
-                                    <i class="bi bi-arrow-up-right" style="width: 36px; height: 36px;"></i>
+                                    <span class="submit-icon-orb"><i class="bi bi-arrow-up-right"></i></span>
                                 </button>
-                                <div class="text-center mt-3">
-                                    <small class="text-secondary" style="font-size:0.78rem;">
-                                        <i class="bi bi-lock-fill text-info me-1"></i> Your personal details are completely private and protected under strict confidentiality.
-                                    </small>
+                                <div class="contact-privacy-note text-center mt-3">
+                                    <i class="bi bi-shield-lock-fill"></i>
+                                    <span>Your personal details are completely private and protected under strict confidentiality.</span>
                                 </div>
                             </div>
                         </form>
 
                         <!-- Submission Success Message -->
                         <div id="form-success-box" style="display:none;" class="text-center py-5">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-success text-white rounded-circle mb-3" style="width:65px;height:65px;font-size:2rem;">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-success text-white rounded-circle mb-3"
+                                style="width:65px;height:65px;font-size:2rem;">
                                 <i class="bi bi-check-lg"></i>
                             </div>
                             <h4 class="text-white mb-2">Message Sent Successfully!</h4>
-                            <p class="text-secondary mb-4">Thank you for contacting UniHelpLine. One of our certified study abroad counselors will get in touch with you shortly.</p>
+                            <p class="text-secondary mb-4">Thank you for contacting UniHelpLine. One of our certified
+                                study abroad counselors will get in touch with you shortly.</p>
                             <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" class="btn-x btn-wa">
                                 WhatsApp Us Directly <i class="bi bi-whatsapp"></i>
                             </a>
@@ -1066,55 +1380,68 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 rv" data-rv="up">
                     <div class="accordion uhl-accordion" id="contactFaq">
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
                                     Is the counseling session with UniHelpLine truly 100% free?
                                 </button>
                             </h2>
                             <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#contactFaq">
                                 <div class="accordion-body">
-                                    <strong>Yes, completely free.</strong> We do not charge students for initial career counseling, university course shortlisting, or application guidance. We believe in providing transparent, accessible support to make overseas education attainable for everyone.
+                                    <strong>Yes, completely free.</strong> We do not charge students for initial career
+                                    counseling, university course shortlisting, or application guidance. We believe in
+                                    providing transparent, accessible support to make overseas education attainable for
+                                    everyone.
                                 </div>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
                                     Can I consult with a counselor online if I cannot visit your office?
                                 </button>
                             </h2>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
                                 <div class="accordion-body">
-                                    <strong>Absolutely.</strong> Over 70% of our global students consult via video calls (Google Meet or Zoom) and WhatsApp. Our advisors share screen reviews of university portals, syllabi, fee structures, and application documents seamlessly.
+                                    <strong>Absolutely.</strong> Over 70% of our global students consult via video calls
+                                    (Google Meet or Zoom) and WhatsApp. Our advisors share screen reviews of university
+                                    portals, syllabi, fee structures, and application documents seamlessly.
                                 </div>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
                                     How fast will someone respond after I submit the form?
                                 </button>
                             </h2>
                             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
                                 <div class="accordion-body">
-                                    Inquiries sent via the website form or WhatsApp are typically answered within <strong>15 to 30 minutes</strong> during working hours, and guaranteed within 24 hours on weekends.
+                                    Inquiries sent via the website form or WhatsApp are typically answered within
+                                    <strong>15 to 30 minutes</strong> during working hours, and guaranteed within 24
+                                    hours on weekends.
                                 </div>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
                                     Do you help with student visa applications and mock interviews?
                                 </button>
                             </h2>
                             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
                                 <div class="accordion-body">
-                                    <strong>Yes.</strong> We provide comprehensive visa assistance, financial documentation auditing, statement of purpose reviews, and realistic 1-on-1 mock consulate interview sessions boasting a 99%+ success rate.
+                                    <strong>Yes.</strong> We provide comprehensive visa assistance, financial
+                                    documentation auditing, statement of purpose reviews, and realistic 1-on-1 mock
+                                    consulate interview sessions boasting a 99%+ success rate.
                                 </div>
                             </div>
                         </div>
@@ -1133,22 +1460,30 @@
                 <div class="col-lg-4 col-md-6">
                     <a class="brand mb-3" href="index.html#home">
                         <span class="lg">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/>
-                                <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE" />
+                                <path
+                                    d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z"
+                                    fill="#27C2E8" />
                             </svg>
                         </span>
                         UniHelpLine
                     </a>
-                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
+                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants
+                        with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
                     <div class="footer-trust-badge mb-3">
                         <i class="bi bi-patch-check-fill"></i> Certified Study Abroad Advisors
                     </div>
                     <div class="soc">
-                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener"
+                            aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -1158,11 +1493,16 @@
                     <ul class="footer-links">
                         <li><a href="index.html#home"><i class="bi bi-chevron-right small text-info"></i> Home</a></li>
                         <li><a href="about.html"><i class="bi bi-chevron-right small text-info"></i> About Us</a></li>
-                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i> Universities</a></li>
-                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a></li>
-                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i> Destinations</a></li>
-                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp; Insights</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a></li>
+                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i>
+                                Universities</a></li>
+                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a>
+                        </li>
+                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Destinations</a></li>
+                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp;
+                                Insights</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -1170,12 +1510,18 @@
                 <div class="col-lg-3 col-md-6 col-6">
                     <h6 class="footer-title">Our Services</h6>
                     <ul class="footer-links">
-                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career Counselling</a></li>
-                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i> Admission Guidance</a></li>
-                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i> Application Process</a></li>
-                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa Assistance</a></li>
-                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i> Scholarship Guidance</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1 Consultation</a></li>
+                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career
+                                Counselling</a></li>
+                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Admission Guidance</a></li>
+                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Application Process</a></li>
+                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa
+                                Assistance</a></li>
+                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i>
+                                Scholarship Guidance</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1
+                                Consultation</a></li>
                     </ul>
                 </div>
 
@@ -1214,7 +1560,8 @@
             </div>
 
             <!-- Footer Bottom Row -->
-            <div class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+            <div
+                class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
                 <p class="small text-secondary mb-0">© 2026 UniHelpLine. All rights reserved.</p>
                 <p class="small powered-tag mb-0">Powered by <span class="credozen-badge">CREDOZEN LLP</span></p>
             </div>
@@ -1228,7 +1575,8 @@
                 class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body" id="wlb">
-            <p class="text-secondary">No programs shortlisted yet. Browse universities and courses to add to your list.</p>
+            <p class="text-secondary">No programs shortlisted yet. Browse universities and courses to add to your list.
+            </p>
         </div>
     </div>
 

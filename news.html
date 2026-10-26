@@ -25,7 +25,7 @@
 
         body {
             overflow-x: hidden;
-            background: #121e3f;
+            background: #17325c;
             color: #e2e8f0;
             font-family: 'DM Sans', sans-serif;
         }
@@ -122,7 +122,7 @@
 
         .news-controls-card {
             background: radial-gradient(ellipse 100% 160px at 50% -30px, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 100%),
-                        linear-gradient(180deg, rgba(26, 40, 75, 0.88) 0%, rgba(12, 22, 48, 0.94) 100%);
+                linear-gradient(180deg, rgba(26, 40, 75, 0.88) 0%, rgba(12, 22, 48, 0.94) 100%);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             border: 1.5px solid rgba(255, 255, 255, 0.25);
@@ -327,8 +327,17 @@
         }
 
         @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.85); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.85);
+            }
         }
 
         .featured-content {
@@ -400,8 +409,8 @@
             position: relative;
             z-index: 2;
             background: linear-gradient(180deg, #f8fafc 0%, #ffffff 40%, #f0f7fc 100%),
-                        radial-gradient(ellipse 60% 400px at 10% 20%, rgba(39, 194, 232, 0.08) 0%, transparent 70%),
-                        radial-gradient(ellipse 60% 400px at 90% 80%, rgba(10, 134, 190, 0.07) 0%, transparent 70%);
+                radial-gradient(ellipse 60% 400px at 10% 20%, rgba(39, 194, 232, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 400px at 90% 80%, rgba(10, 134, 190, 0.07) 0%, transparent 70%);
             padding: 5rem 0 6rem;
             border-top: 1px solid rgba(10, 134, 190, 0.14);
             border-bottom: 1px solid rgba(10, 134, 190, 0.14);
@@ -660,9 +669,9 @@
             position: relative;
             z-index: 2;
             padding: 5.5rem 0;
-            background: radial-gradient(ellipse at 50% 30%, rgba(39, 194, 232, 0.12) 0%, #152246 75%);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: radial-gradient(ellipse at 50% 30%, rgba(39, 194, 232, 0.18) 0%, #1e4075 75%);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .cta-glass-box {
@@ -848,19 +857,49 @@
         }
 
         @media (max-width: 991px) {
-            .news-hero-section { padding: 7.5rem 0 2.5rem; }
-            .news-grid { grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.4rem; }
-            .featured-content { padding: 1.8rem; }
-            .featured-img-box { min-height: 250px; }
-            .cta-glass-box { padding: 2.5rem 1.5rem; }
+            .news-hero-section {
+                padding: 7.5rem 0 2.5rem;
+            }
+
+            .news-grid {
+                grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+                gap: 1.4rem;
+            }
+
+            .featured-content {
+                padding: 1.8rem;
+            }
+
+            .featured-img-box {
+                min-height: 250px;
+            }
+
+            .cta-glass-box {
+                padding: 2.5rem 1.5rem;
+            }
         }
 
         @media (max-width: 575px) {
-            .news-grid { grid-template-columns: 1fr; }
-            .news-hero-title { font-size: 2rem; }
-            .news-search-input { font-size: 0.88rem; padding: 0.85rem 2.8rem; }
-            .featured-title { font-size: 1.35rem; }
-            .modal-hero-img { height: 200px; }
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-hero-title {
+                font-size: 2rem;
+            }
+
+            .news-search-input {
+                font-size: 0.88rem;
+                padding: 0.85rem 2.8rem;
+            }
+
+            .featured-title {
+                font-size: 1.35rem;
+            }
+
+            .modal-hero-img {
+                height: 200px;
+            }
         }
     </style>
     <link rel="stylesheet" href="mobile.css">
@@ -878,8 +917,7 @@
     <!-- Navigation Bar -->
     <nav class="npill navbar navbar-expand-lg">
         <div class="container d-flex align-items-center justify-content-between">
-            <a class="brand" href="index.html#home"><span class="lg"><img
-                        src="images/logo.png" alt="UHL logo"
+            <a class="brand" href="index.html#home"><span class="lg"><img src="images/logo.png" alt="UHL logo"
                         onerror="this.outerHTML='<svg width=\'28\' height=\'28\' viewBox=\'0 0 24 24\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z\' fill=\'#0A86BE\'/><path d=\'M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z\' fill=\'#27C2E8\'/></svg>'"></span>UniHelpLine</a>
             <button class="navbar-toggler ms-auto" data-bs-toggle="collapse" data-bs-target="#nv" aria-label="Menu"><i
                     class="bi bi-list fs-2"></i></button>
@@ -907,8 +945,9 @@
                 <div class="d-flex align-items-center gap-2 nav-actions">
                     <button class="wish" data-bs-toggle="offcanvas" data-bs-target="#wl" aria-label="Wishlist"><i
                             class="bi bi-heart"></i><span id="wc">0</span></button>
-                    <a class="btn-x" href="index.html#contact" data-tab="meet" style="padding:.35rem .35rem .35rem 1.3rem">Schedule a Meeting<i
-                            style="width:36px;height:36px" class="bi bi-arrow-up-right"></i></a>
+                    <a class="btn-x" href="index.html#contact" data-tab="meet"
+                        style="padding:.35rem .35rem .35rem 1.3rem">Schedule a Meeting<i style="width:36px;height:36px"
+                            class="bi bi-arrow-up-right"></i></a>
                 </div>
             </div>
         </div>
@@ -921,7 +960,8 @@
         <div class="container position-relative text-center">
             <!-- Top Tag Pill -->
             <div class="banner-badge-wrap rv" data-rv="up">
-                <span class="banner-top-pill"><i class="bi bi-broadcast text-info me-1"></i> VERIFIED INTELLIGENCE & POLICY HUB</span>
+                <span class="banner-top-pill"><i class="bi bi-broadcast text-info me-1"></i> VERIFIED INTELLIGENCE &
+                    POLICY HUB</span>
             </div>
 
             <!-- Big Title -->
@@ -931,7 +971,8 @@
 
             <!-- Subtitle -->
             <p class="news-hero-lead rv" data-rv="up">
-                Stay updated with verified intelligence on international admissions, visa regulations, post-study work rights (PGWP), financial guidelines, and university rankings from our overseas education consultants.
+                Stay updated with verified intelligence on international admissions, visa regulations, post-study work
+                rights (PGWP), financial guidelines, and university rankings from our overseas education consultants.
             </p>
 
             <!-- Stat Bar -->
@@ -960,8 +1001,10 @@
                 <!-- Live Search Bar -->
                 <div class="news-search-box rv" data-rv="up">
                     <i class="bi bi-search news-search-icon"></i>
-                    <input type="text" id="newsSearch" class="news-search-input" placeholder="Search news by country, visa type, keyword..." autocomplete="off">
-                    <button type="button" id="newsClear" class="news-search-clear" aria-label="Clear search"><i class="bi bi-x-circle-fill"></i></button>
+                    <input type="text" id="newsSearch" class="news-search-input"
+                        placeholder="Search news by country, visa type, keyword..." autocomplete="off">
+                    <button type="button" id="newsClear" class="news-search-clear" aria-label="Clear search"><i
+                            class="bi bi-x-circle-fill"></i></button>
                 </div>
 
                 <!-- Category Filter Pills -->
@@ -1011,32 +1054,41 @@
                             <span class="featured-badge-top"><i class="bi bi-circle-fill"></i> High Demand Guide</span>
                             <img src="https://unihelpline.com/public//uploads/news/17700329181770032918.png"
                                 alt="Criteria for Canadian PR After Studying in Canada" class="featured-img"
-                                loading="lazy" onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
+                                loading="lazy"
+                                onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
                             <div class="featured-img-overlay"></div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="featured-content">
                             <div class="featured-meta">
-                                <span class="featured-cat"><i class="bi bi-globe-americas me-1"></i> Canada Immigration</span>
+                                <span class="featured-cat"><i class="bi bi-globe-americas me-1"></i> Canada
+                                    Immigration</span>
                                 <span><i class="bi bi-calendar3 me-1"></i> February 2, 2026</span>
                                 <span><i class="bi bi-clock me-1"></i> 5 min read</span>
                             </div>
                             <h2 class="featured-title">Criteria for Canadian PR After Studying in Canada</h2>
                             <p class="featured-lead">
-                                After finishing your studies at a Designated Learning Institution (DLI), international graduates can transition seamlessly to Permanent Residency (PR) via Post-Graduation Work Permit (PGWP) and federal or provincial streams.
+                                After finishing your studies at a Designated Learning Institution (DLI), international
+                                graduates can transition seamlessly to Permanent Residency (PR) via Post-Graduation Work
+                                Permit (PGWP) and federal or provincial streams.
                             </p>
                             <div class="featured-points">
-                                <span class="point-chip"><i class="bi bi-check-circle-fill"></i> DLI Degree Completion</span>
+                                <span class="point-chip"><i class="bi bi-check-circle-fill"></i> DLI Degree
+                                    Completion</span>
                                 <span class="point-chip"><i class="bi bi-check-circle-fill"></i> Up to 3-Yr PGWP</span>
-                                <span class="point-chip"><i class="bi bi-check-circle-fill"></i> 12 Mo Skilled Work (NOC TEER 0-3)</span>
-                                <span class="point-chip"><i class="bi bi-check-circle-fill"></i> Express Entry / PNP (+600 Pts)</span>
+                                <span class="point-chip"><i class="bi bi-check-circle-fill"></i> 12 Mo Skilled Work (NOC
+                                    TEER 0-3)</span>
+                                <span class="point-chip"><i class="bi bi-check-circle-fill"></i> Express Entry / PNP
+                                    (+600 Pts)</span>
                             </div>
                             <div class="d-flex align-items-center flex-wrap gap-3 mt-auto">
-                                <button class="btn-x" onclick="openArticleModal('canada-pr')" style="padding: 0.45rem 1.4rem;">
+                                <button class="btn-x" onclick="openArticleModal('canada-pr')"
+                                    style="padding: 0.45rem 1.4rem;">
                                     Read Full Breakdown <i class="bi bi-arrow-up-right"></i>
                                 </button>
-                                <a href="https://unihelpline.com/news-details/criteria-for-canadian-pr-after-studying-in-canada" target="_blank" rel="noopener" class="btn-news-ext">
+                                <a href="https://unihelpline.com/news-details/criteria-for-canadian-pr-after-studying-in-canada"
+                                    target="_blank" rel="noopener" class="btn-news-ext">
                                     Official Source <i class="bi bi-box-arrow-up-right"></i>
                                 </a>
                             </div>
@@ -1053,22 +1105,25 @@
             <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
                 <div>
                     <span class="news-section-tag"><i class="bi bi-newspaper"></i> Verified Editorial Updates</span>
-                    <h3 class="news-section-title">Latest Bulletins &amp; <span class="gt-theme">Global Articles</span></h3>
-                    <p class="news-section-subtitle">Browse recent policy changes, interview tips, and global higher education highlights.</p>
+                    <h3 class="news-section-title">Latest Bulletins &amp; <span class="gt-theme">Global Articles</span>
+                    </h3>
+                    <p class="news-section-subtitle">Browse recent policy changes, interview tips, and global higher
+                        education highlights.</p>
                 </div>
                 <span class="badge news-showing-badge" id="showingBadge">Showing 5 articles</span>
             </div>
 
             <!-- Dynamic Grid -->
             <div class="news-grid" id="newsGrid">
-                
+
                 <!-- Card 1: UK Visa Application Financial Requirements 2025 -->
                 <article class="news-card rv" data-rv="up" data-categories="visa uk" data-id="uk-finances">
                     <div class="news-card-img-wrap">
                         <span class="news-card-cat-badge">UK Policy 2025</span>
                         <img src="https://unihelpline.com/public//uploads/news/17343592511734359251.png"
                             alt="UK Visa Application Minimum Financial Requirements in 2025 (New Policy)"
-                            class="news-card-img" loading="lazy" onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
+                            class="news-card-img" loading="lazy"
+                            onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
                         <span class="news-card-readtime"><i class="bi bi-clock"></i> 3 min</span>
                     </div>
                     <div class="news-card-body">
@@ -1078,9 +1133,12 @@
                             <span class="mx-1">·</span>
                             <span>Visa Finance</span>
                         </div>
-                        <h3 class="news-card-title">UK Visa Application Minimum Financial Requirements in 2025 (New Policy)</h3>
+                        <h3 class="news-card-title">UK Visa Application Minimum Financial Requirements in 2025 (New
+                            Policy)</h3>
                         <p class="news-card-desc">
-                            The UK Home Office has revised maintenance and fund requirements: £1,400/month for London and £1,100/month outside London for up to 9 months, backed by the mandatory 28-day consecutive bank balance rule.
+                            The UK Home Office has revised maintenance and fund requirements: £1,400/month for London
+                            and £1,100/month outside London for up to 9 months, backed by the mandatory 28-day
+                            consecutive bank balance rule.
                         </p>
                         <div class="news-card-tags">
                             <span class="news-tag">#UKVisa2025</span>
@@ -1091,7 +1149,8 @@
                             <button class="btn-news-read" onclick="openArticleModal('uk-finances')">
                                 Quick Read <i class="bi bi-arrow-right"></i>
                             </button>
-                            <a href="https://unihelpline.com/news-details/uk-visa-application-minimum-financial-requirements-in-2025-new-policy" target="_blank" rel="noopener" class="btn-news-ext">
+                            <a href="https://unihelpline.com/news-details/uk-visa-application-minimum-financial-requirements-in-2025-new-policy"
+                                target="_blank" rel="noopener" class="btn-news-ext">
                                 Source <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
@@ -1103,8 +1162,8 @@
                     <div class="news-card-img-wrap">
                         <span class="news-card-cat-badge">Visa Preparation</span>
                         <img src="https://unihelpline.com/public//uploads/news/16481658281648165828.jpg"
-                            alt="UK student visa interview questions and answers"
-                            class="news-card-img" loading="lazy" onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
+                            alt="UK student visa interview questions and answers" class="news-card-img" loading="lazy"
+                            onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
                         <span class="news-card-readtime"><i class="bi bi-clock"></i> 4 min</span>
                     </div>
                     <div class="news-card-body">
@@ -1116,7 +1175,9 @@
                         </div>
                         <h3 class="news-card-title">UK Student Visa Interview Questions and Answers</h3>
                         <p class="news-card-desc">
-                            Essential questions and strategic responses during UKVI credibility interviews. Master course justification, career progression ROI, living cost calculations, and genuine student validation.
+                            Essential questions and strategic responses during UKVI credibility interviews. Master
+                            course justification, career progression ROI, living cost calculations, and genuine student
+                            validation.
                         </p>
                         <div class="news-card-tags">
                             <span class="news-tag">#Tier4Interview</span>
@@ -1127,7 +1188,8 @@
                             <button class="btn-news-read" onclick="openArticleModal('uk-interview')">
                                 Quick Read <i class="bi bi-arrow-right"></i>
                             </button>
-                            <a href="https://unihelpline.com/news-details/uk-student-visa-interview-questions-and-answers" target="_blank" rel="noopener" class="btn-news-ext">
+                            <a href="https://unihelpline.com/news-details/uk-student-visa-interview-questions-and-answers"
+                                target="_blank" rel="noopener" class="btn-news-ext">
                                 Source <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
@@ -1139,8 +1201,8 @@
                     <div class="news-card-img-wrap">
                         <span class="news-card-cat-badge">Canada Immigrate</span>
                         <img src="https://unihelpline.com/public//uploads/news/17700329181770032918.png"
-                            alt="Criteria for Canadian PR After Studying in Canada"
-                            class="news-card-img" loading="lazy" onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
+                            alt="Criteria for Canadian PR After Studying in Canada" class="news-card-img" loading="lazy"
+                            onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
                         <span class="news-card-readtime"><i class="bi bi-clock"></i> 5 min</span>
                     </div>
                     <div class="news-card-body">
@@ -1152,7 +1214,9 @@
                         </div>
                         <h3 class="news-card-title">Criteria for Canadian PR After Studying in Canada</h3>
                         <p class="news-card-desc">
-                            Step-by-step roadmap from completing your DLI degree to obtaining a 3-year PGWP, accumulating 12 months skilled experience (TEER 0-3), and scoring high CRS points in Express Entry (CEC) or PNP.
+                            Step-by-step roadmap from completing your DLI degree to obtaining a 3-year PGWP,
+                            accumulating 12 months skilled experience (TEER 0-3), and scoring high CRS points in Express
+                            Entry (CEC) or PNP.
                         </p>
                         <div class="news-card-tags">
                             <span class="news-tag">#CanadaPR</span>
@@ -1163,7 +1227,8 @@
                             <button class="btn-news-read" onclick="openArticleModal('canada-pr')">
                                 Quick Read <i class="bi bi-arrow-right"></i>
                             </button>
-                            <a href="https://unihelpline.com/news-details/criteria-for-canadian-pr-after-studying-in-canada" target="_blank" rel="noopener" class="btn-news-ext">
+                            <a href="https://unihelpline.com/news-details/criteria-for-canadian-pr-after-studying-in-canada"
+                                target="_blank" rel="noopener" class="btn-news-ext">
                                 Source <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
@@ -1175,8 +1240,8 @@
                     <div class="news-card-img-wrap">
                         <span class="news-card-cat-badge">Global Education</span>
                         <img src="https://unihelpline.com/public//uploads/news/16485511371648551137.png"
-                            alt="8 Benefits to Studying Abroad"
-                            class="news-card-img" loading="lazy" onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
+                            alt="8 Benefits to Studying Abroad" class="news-card-img" loading="lazy"
+                            onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
                         <span class="news-card-readtime"><i class="bi bi-clock"></i> 4 min</span>
                     </div>
                     <div class="news-card-body">
@@ -1188,7 +1253,8 @@
                         </div>
                         <h3 class="news-card-title">8 Benefits to Studying Abroad</h3>
                         <p class="news-card-desc">
-                            Discover how overseas education accelerates global career opportunities, language fluency, cultural intelligence, lifelong international friendships, and personal independence.
+                            Discover how overseas education accelerates global career opportunities, language fluency,
+                            cultural intelligence, lifelong international friendships, and personal independence.
                         </p>
                         <div class="news-card-tags">
                             <span class="news-tag">#CareerEdge</span>
@@ -1199,7 +1265,8 @@
                             <button class="btn-news-read" onclick="openArticleModal('study-benefits')">
                                 Quick Read <i class="bi bi-arrow-right"></i>
                             </button>
-                            <a href="https://unihelpline.com/news-details/8-benefits-to-studying-abroad" target="_blank" rel="noopener" class="btn-news-ext">
+                            <a href="https://unihelpline.com/news-details/8-benefits-to-studying-abroad" target="_blank"
+                                rel="noopener" class="btn-news-ext">
                                 Source <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
@@ -1212,7 +1279,8 @@
                         <span class="news-card-cat-badge">Rankings & Awards</span>
                         <img src="https://unihelpline.com/public//uploads/news/16645494691664549469.jpg"
                             alt="Gannon Ranked Among Nation’s Top Universities by U.S. News & World Report"
-                            class="news-card-img" loading="lazy" onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
+                            class="news-card-img" loading="lazy"
+                            onerror="this.src='https://unihelpline.com/public//uploads/banner/news/16141702661614170266.jpg'">
                         <span class="news-card-readtime"><i class="bi bi-clock"></i> 3 min</span>
                     </div>
                     <div class="news-card-body">
@@ -1222,9 +1290,12 @@
                             <span class="mx-1">·</span>
                             <span>United States</span>
                         </div>
-                        <h3 class="news-card-title">Gannon Ranked Among Nation’s Top Universities by U.S. News &amp; World Report</h3>
+                        <h3 class="news-card-title">Gannon Ranked Among Nation’s Top Universities by U.S. News &amp;
+                            World Report</h3>
                         <p class="news-card-desc">
-                            Gannon University earned national distinction for the third consecutive year: #227 nationally, #129 in undergraduate engineering, #192 in social mobility, and top-tier physician assistant and nursing credentials.
+                            Gannon University earned national distinction for the third consecutive year: #227
+                            nationally, #129 in undergraduate engineering, #192 in social mobility, and top-tier
+                            physician assistant and nursing credentials.
                         </p>
                         <div class="news-card-tags">
                             <span class="news-tag">#USNews2022</span>
@@ -1235,7 +1306,8 @@
                             <button class="btn-news-read" onclick="openArticleModal('gannon-rankings')">
                                 Quick Read <i class="bi bi-arrow-right"></i>
                             </button>
-                            <a href="https://unihelpline.com/news-details/gannon-ranked-among-nations-top-universities-by-us-news-world-report" target="_blank" rel="noopener" class="btn-news-ext">
+                            <a href="https://unihelpline.com/news-details/gannon-ranked-among-nations-top-universities-by-us-news-world-report"
+                                target="_blank" rel="noopener" class="btn-news-ext">
                                 Source <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
@@ -1248,7 +1320,8 @@
             <div class="news-empty-state" id="newsEmpty">
                 <i class="bi bi-newspaper"></i>
                 <h4 class="h5 text-dark mb-2">No Articles Found</h4>
-                <p class="text-secondary mb-3">We couldn't find any articles matching your search query. Try different keywords or reset filters.</p>
+                <p class="text-secondary mb-3">We couldn't find any articles matching your search query. Try different
+                    keywords or reset filters.</p>
                 <button class="btn-x" onclick="resetFilters()">Reset All Filters</button>
             </div>
         </div>
@@ -1258,12 +1331,14 @@
     <section class="news-advisory-cta">
         <div class="container">
             <div class="cta-glass-box cta-light-box rv" data-rv="up">
-                <span class="tag mb-3 d-inline-block"><i class="bi bi-headset text-info me-1"></i> DIRECT CONSULTANT SUPPORT</span>
+                <span class="tag mb-3 d-inline-block"><i class="bi bi-headset text-info me-1"></i> DIRECT CONSULTANT
+                    SUPPORT</span>
                 <h2 class="cta-title">
                     Our Unihelpline Experts Are Ready To Answer All Your Queries
                 </h2>
                 <p class="cta-desc">
-                    Need clear guidance on visa policies, university shortlisting, financial proof, or scholarship eligibility? Speak directly with our international advisors today.
+                    Need clear guidance on visa policies, university shortlisting, financial proof, or scholarship
+                    eligibility? Speak directly with our international advisors today.
                 </p>
 
                 <!-- Phone & Email Pills -->
@@ -1305,10 +1380,12 @@
             <div class="modal-content news-modal">
                 <div class="modal-header">
                     <div class="d-flex align-items-center gap-2">
-                        <span class="badge bg-info text-dark font-monospace text-uppercase" id="modalCategoryBadge">POLICY HUB</span>
+                        <span class="badge bg-info text-dark font-monospace text-uppercase"
+                            id="modalCategoryBadge">POLICY HUB</span>
                         <span class="text-secondary small" id="modalDate">Updated</span>
                     </div>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <img id="modalImg" src="" alt="Article Banner" class="modal-hero-img">
@@ -1325,7 +1402,8 @@
                     <a id="modalExternalLink" href="#" target="_blank" rel="noopener" class="btn-news-ext">
                         Open Original Article on Unihelpline <i class="bi bi-box-arrow-up-right"></i>
                     </a>
-                    <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-secondary rounded-pill px-4"
+                        data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -1339,22 +1417,30 @@
                 <div class="col-lg-4 col-md-6">
                     <a class="brand mb-3" href="index.html#home">
                         <span class="lg">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE"/>
-                                <path d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z" fill="#27C2E8"/>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#0A86BE" />
+                                <path
+                                    d="M5 13.18V17.5C5 19.98 8.13 22 12 22C15.87 22 19 19.98 19 17.5V13.18L12 17L5 13.18Z"
+                                    fill="#27C2E8" />
                             </svg>
                         </span>
                         UniHelpLine
                     </a>
-                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
+                    <p class="footer-desc mb-3">Matching you to the perfect course. Trusted study abroad consultants
+                        with dedicated advisors in the UK, Dubai, Kerala, and Bangalore.</p>
                     <div class="footer-trust-badge mb-3">
                         <i class="bi bi-patch-check-fill"></i> Certified Study Abroad Advisors
                     </div>
                     <div class="soc">
-                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/unihelpline.co" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/creaticksedu" target="_blank" rel="noopener"
+                            aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/creatickedu/" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -1364,11 +1450,16 @@
                     <ul class="footer-links">
                         <li><a href="index.html#home"><i class="bi bi-chevron-right small text-info"></i> Home</a></li>
                         <li><a href="about.html"><i class="bi bi-chevron-right small text-info"></i> About Us</a></li>
-                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i> Universities</a></li>
-                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a></li>
-                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i> Destinations</a></li>
-                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp; Insights</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a></li>
+                        <li><a href="index.html#universities"><i class="bi bi-chevron-right small text-info"></i>
+                                Universities</a></li>
+                        <li><a href="index.html#courses"><i class="bi bi-chevron-right small text-info"></i> Courses</a>
+                        </li>
+                        <li><a href="destinations.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Destinations</a></li>
+                        <li><a href="news.html"><i class="bi bi-chevron-right small text-info"></i> News &amp;
+                                Insights</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> Contact Us</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -1376,12 +1467,18 @@
                 <div class="col-lg-3 col-md-6 col-6">
                     <h6 class="footer-title">Our Services</h6>
                     <ul class="footer-links">
-                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career Counselling</a></li>
-                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i> Admission Guidance</a></li>
-                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i> Application Process</a></li>
-                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa Assistance</a></li>
-                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i> Scholarship Guidance</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1 Consultation</a></li>
+                        <li><a href="career-counselling.html"><i class="bi bi-chevron-right small text-info"></i> Career
+                                Counselling</a></li>
+                        <li><a href="admission-guidance.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Admission Guidance</a></li>
+                        <li><a href="application-process.html"><i class="bi bi-chevron-right small text-info"></i>
+                                Application Process</a></li>
+                        <li><a href="visa-assistance.html"><i class="bi bi-chevron-right small text-info"></i> Visa
+                                Assistance</a></li>
+                        <li><a href="index.html#services"><i class="bi bi-chevron-right small text-info"></i>
+                                Scholarship Guidance</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-info"></i> 1-on-1
+                                Consultation</a></li>
                     </ul>
                 </div>
 
@@ -1420,7 +1517,8 @@
             </div>
 
             <!-- Footer Bottom Row -->
-            <div class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+            <div
+                class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
                 <p class="small text-secondary mb-0">© 2026 UniHelpLine. All rights reserved.</p>
                 <p class="small powered-tag mb-0">Powered by <span class="credozen-badge">CREDOZEN LLP</span></p>
             </div>
@@ -1429,7 +1527,8 @@
 
     <!-- Floating Buttons & Offcanvas -->
     <button id="top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
-    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <a id="wa-btn" href="https://wa.me/+917558951509" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i
+            class="bi bi-whatsapp"></i></a>
     <div class="offcanvas offcanvas-end" id="wl">
         <div class="offcanvas-header">
             <h4 class="mb-0">Wishlist</h4>
